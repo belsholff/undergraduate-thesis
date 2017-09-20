@@ -1,11 +1,14 @@
 // Author: Felipe Belsholff
 // Date: sep 14, 2017
-// A click router without NAT, based on Click examples.
+// A click router without NAT, based on Click examples from
+//http://read.cs.ucla.edu/click/examples/fake-iprouter.click
 // A sniffer was connected at 251.0/24 network and is delivering incomming and
 //outgoing packets to 252.0/24 network quietly.
 //
 // For better comprehension, please use clicky GUI program to visualize packet
 //flow.
+//
+// When you read "definition", please do it means "declaration and definition".
 //
 // To complaining this, I used VirtualBox's machines:
 // Router:
@@ -24,7 +27,7 @@
 // 192.168.251.0/24 is a local network in virtualized enviromment;
 // 192.168.252.0/24 same as above;
 //
-// Traffic flows from 251.0 to 30.0, using icmp or iperf command for example.
+// Traffic flows from 251.0 to 30.0, using ping or iperf command, for example.
 //Outgoing flow arrives to any machine in dst network, checked with
 //tcpdump/wireshark. Incomming answers only arrives if a route at 30.0's machine
 //was previously configured to send to our Router VM.
@@ -130,18 +133,18 @@ c2[0] -> arpr2 -> out2;
 // 2: packets for 192.168.252.
 // 3: packets for 172.16.30.
 rt :: StaticIPLookup(192.168.251.1/32 0,
-		    192.168.251.255/32 0,
-		    192.168.251.0/32 0,
-		    192.168.252.1/32 0,
-		    192.168.252.255/32 0,
-		    192.168.252.0/32 0,
-            172.16.30.123/32 0,
-            172.16.30.255/32 0,
-		    172.16.30.0/32 0,
-		    192.168.251.0/24 1,
-		    192.168.252.0/24 2,
-            172.16.30.0/23 3
-            );
+                    192.168.251.255/32 0,
+                    192.168.251.0/32 0,
+                    192.168.252.1/32 0,
+                    192.168.252.255/32 0,
+                    192.168.252.0/32 0,
+                    172.16.30.123/32 0,
+                    172.16.30.255/32 0,
+                    172.16.30.0/32 0,
+                    192.168.251.0/24 1,
+                    192.168.252.0/24 2,
+                    172.16.30.0/23 3
+                    );
 
 // Unwrapping Ethernet header definition, followed for an IP header checking
 //that drop any invalid packets, even those broadcats spreadings (when
