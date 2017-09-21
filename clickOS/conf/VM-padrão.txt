@@ -1,0 +1,28 @@
+##Nidoking
+#Usuário: root
+#Senha: k5xGHUfH6VfxVdHY2Bb9Vef
+#Comando de criação: xen-create-image --hostname nidoking --boot --cache yes --ip=192.168.2.2 --mac=00:15:17:15:5d:22 --gateway=192.168.2.1 --netmask 255.255.255.0 --lvm veemes --fs ext4 --size 6G --memory 448M --swap 448M  --install-method=debootstrap --dist jessie
+Comando start: #xl create /etc/xen/nidoking.cfg
+
+##Nidoqueen
+#Usuário: root
+#Senha: XRBdUvS5Pze24R36ra7nBLv
+#Comando de criação: # xen-create-image --hostname nidoqueen --boot --cache yes --ip=192.168.3.2 --mac=00:15:17:15:5d:32  --gateway=192.168.3.1 --netmask 255.255.255.0 --lvm veemes --fs ext4 --size 6G --memory 448M --swap 448M  --install-method=debootstrap --dist jessie
+Comando start: #xl create /etc/xen/nidoqueen.cfg
+
+##Nidoboss
+#Usuário: root
+#Senha: qAsUkHiExKmrezbaUhATzx8
+#Comando de criação: # xen-create-image --hostname nidoboss --boot --cache yes --ip=192.168.2.1 --mac=00:15:17:15:5d:21 --gateway=192.168.2.1 --netmask 255.255.255.0 --ip=192.168.3.1 --mac=00:15:17:15:5d:31 --gateway=192.168.3.1 --netmask 255.255.255.0 --lvm veemes --fs ext4 --size 6G --memory 256M --swap 256M  --install-method=debootstrap --dist jessie
+Comando start: #xl create /etc/xen/nidoboss.cfg
+
+##Click1
+#Comandos de Criação:
+	# cd clickOS/
+	# export COSMOS_ROOT=$(pwd)"/cosmos"
+	# cd clickos/minios/
+	# nano config_click.xen
+	# xl create config_click.xen
+	# nano file.click
+	# $COSMOS_ROOT/dist/bin/cosmos start click1 file.click
+
