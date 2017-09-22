@@ -12,7 +12,7 @@
 //
 // To complaining this, I used VirtualBox's machines:
 // Router:
-//        eth0, 08:00:27:43:9C:7F, 172.16.30.123
+//        eth0, 08:00:27:43:9C:7F, 172.16.30.162
 //        eth1, 08:00:27:BF:8F:22, 192.168.251.1
 //        eth2, 08:00:27:C2:45:2B, 192.168.252.1
 // 251.2 machine:
@@ -32,7 +32,7 @@
 //tcpdump/wireshark. Incomming answers only arrives if a route at 30.0's machine
 //was previously configured to send to our Router VM.
 
-define($IP0 172.16.30.123);
+define($IP0 172.16.30.162);
 define($IP1 192.168.251.1);
 define($IP2 192.168.252.1);
 define($MAC0 08:00:27:43:9C:7F);
@@ -138,7 +138,7 @@ rt :: StaticIPLookup(192.168.251.1/32 0,
                     192.168.252.1/32 0,
                     192.168.252.255/32 0,
                     192.168.252.0/32 0,
-                    172.16.30.123/32 0,
+                    172.16.30.162/32 0,
                     172.16.30.255/32 0,
                     172.16.30.0/32 0,
                     192.168.251.0/24 1,
@@ -154,8 +154,8 @@ rt :: StaticIPLookup(192.168.251.1/32 0,
 //delivered to static routing input. No packets are displayed in console.
 ip ::   Strip(14)
      -> CheckIPHeader(INTERFACES 192.168.251.1/24 192.168.252.1/24 172.16.30.1/23)
-     -> SSHFilter :: IPFilter(allow src 192.168.251.2 && dst 172.16.30.107 && dst port 22,
-                              allow src 172.16.30.107 && dst 192.168.251.2 && src port 22,
+     -> SSHFilter :: IPFilter(allow src 192.168.251.2 && dst 172.16.30.87 && dst port 22,
+                              allow src 172.16.30.87 && dst 192.168.251.2 && src port 22,
                               drop all)
      -> [0]rt;
 
@@ -210,8 +210,8 @@ rt[2] -> DropBroadcasts
 
 rt[3] -> DropBroadcasts
       -> cp0 :: PaintTee(3)
-      -> gio0 :: IPGWOptions(172.16.30.123)
-      -> FixIPSrc(172.16.30.123) //ver como configura as anotações pra trocar os IPs
+      -> gio0 :: IPGWOptions(172.16.30.162)
+      -> FixIPSrc(172.16.30.162) //ver como configura as anotações pra trocar os IPs
       -> dt0 :: DecIPTTL
       -> fr0 :: IPFragmenter(1080) //o tamanho de 300 bytes tava dando problema na hora de usar o iperf
       -> Print ('P0')
@@ -219,25 +219,25 @@ rt[3] -> DropBroadcasts
 
 // DecIPTTL[1] emits packets with expired TTLs.
 // Reply with ICMPs. Rate-limit them?
-dt0[1] -> ICMPError(172.16.30.123, timeexceeded) -> [0]rt;
+dt0[1] -> ICMPError(172.16.30.162, timeexceeded) -> [0]rt;
 dt1[1] -> ICMPError(192.168.251.1, timeexceeded) -> [0]rt;
 dt2[1] -> ICMPError(192.168.252.1, timeexceeded) -> [0]rt;
 
 // Send back ICMP UNREACH/NEEDFRAG messages on big packets with DF set.
 // This makes path mtu discovery work.
-fr0[1] -> ICMPError(172.16.30.123, unreachable, needfrag) -> [0]rt;
+fr0[1] -> ICMPError(172.16.30.162, unreachable, needfrag) -> [0]rt;
 fr1[1] -> ICMPError(192.168.251.1, unreachable, needfrag) -> [0]rt;
 fr2[1] -> ICMPError(192.168.252.1, unreachable, needfrag) -> [0]rt;
 
 // Send back ICMP Parameter Problem messages for badly formed
 // IP options. Should set the code to point to the
 // bad byte, but that's too hard.
-gio0[1] -> ICMPError(172.16.30.123, parameterproblem) -> [0]rt;
+gio0[1] -> ICMPError(172.16.30.162, parameterproblem) -> [0]rt;
 gio1[1] -> ICMPError(192.168.251.1, parameterproblem) -> [0]rt;
 gio2[1] -> ICMPError(192.168.252.1, parameterproblem) -> [0]rt;
 
 // Send back an ICMP redirect if required.
-cp0[1] -> ICMPError(172.16.30.123, redirect, host) -> [0]rt;
+cp0[1] -> ICMPError(172.16.30.162, redirect, host) -> [0]rt;
 cp1[1] -> ICMPError(192.168.251.1, redirect, host) -> [0]rt;
 cp2[1] -> ICMPError(192.168.252.1, redirect, host) -> [0]rt;
 
