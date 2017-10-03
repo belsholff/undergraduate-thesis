@@ -50,8 +50,8 @@ sink1   :: ToDevice(eth1);
 source2 :: FromDevice(eth2);
 sink2   :: ToDevice(eth2);
 
-// Classifing frames using Ethernet codes. Outputs:
-// 0. ARP queries
+/*Classifing frames using Ethernet codes. Outputs:
+// 0. ARP queries */
 // 1. ARP replies
 // 2. IP
 // 3. Other
