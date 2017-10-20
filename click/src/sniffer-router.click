@@ -50,8 +50,8 @@ sink1   :: ToDevice(eth1);
 source2 :: FromDevice(eth2);
 sink2   :: ToDevice(eth2);
 
-/*Classifing frames using Ethernet codes. Outputs:
-// 0. ARP queries */
+//Classifing frames using Ethernet codes. Outputs:
+// 0. ARP queries
 // 1. ARP replies
 // 2. IP
 // 3. Other
@@ -81,7 +81,7 @@ out1 :: Queue(200) -> sink1;
 out2 :: Queue(200) -> sink2;
 
 // ARPQuerier definition. This wrap IP packets into Ethernet frames with given
-//MAC destination previously asked.
+// MAC destination previously asked.
 arpq0 :: ARPQuerier($IP0, $MAC0);
 arpq1 :: ARPQuerier($IP1, $MAC1);
 arpq2 :: ARPQuerier($IP2, $MAC2);
@@ -105,13 +105,13 @@ arpq0 -> out0;
 arpq1 -> out1;
 arpq2 -> out2;
 
-//IP packets input 0 are waiting...
+// IP packets input 0 are waiting...
 Idle -> [0]arpq0;
 Idle -> [0]arpq1;
 Idle -> [0]arpq2;
 
 // ARP Responder definitions. It going to answer ARP queriers with an IP-matched
-//MAC address It could be more than one per MAC address. It's useful for network
+// MAC address It could be more than one per MAC address. It's useful for network
 //visibility by anothers and vice versa.
 // Remember that the Querier needs incoming routes to and outgoing from this
 //machine.
