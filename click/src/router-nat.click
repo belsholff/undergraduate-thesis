@@ -193,7 +193,6 @@ rt[1] -> DropBroadcasts
       -> FixIPSrc(192.168.251.1)
       -> dt1 :: DecIPTTL
       -> fr1 :: IPFragmenter(1080)
-      -> Print('P1')
       -> [0]arpq1;
 
 rt[2] -> DropBroadcasts
@@ -202,7 +201,6 @@ rt[2] -> DropBroadcasts
       -> FixIPSrc(192.168.252.1)
       -> dt2 :: DecIPTTL
       -> fr2 :: IPFragmenter(1080)
-      -> Print('P2')
       -> [0]arpq2;
 
 rt[3] -> DropBroadcasts
@@ -211,7 +209,6 @@ rt[3] -> DropBroadcasts
       -> FixIPSrc(172.16.30.135) //ver como configura as anotações pra trocar os IPs
       -> dt0 :: DecIPTTL
       -> fr0 :: IPFragmenter(1080)
-      -> Print ('P0')
       -> [0]arpq0;
 
 // DecIPTTL[1] emits packets with expired TTLs.
