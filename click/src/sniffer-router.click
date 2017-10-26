@@ -12,9 +12,9 @@
 //
 // To complaining this, I used VirtualBox's machines:
 // Router:
-//        eth0, 08:00:27:43:9C:7F, 172.16.30.162
-//        eth1, 08:00:27:BF:8F:22, 192.168.251.1
-//        eth2, 08:00:27:C2:45:2B, 192.168.252.1
+//        enp0s3, 08:00:27:43:9C:7F, 172.16.30.135
+//        enp0s8, 08:00:27:BF:8F:22, 192.168.251.1
+//        enp0s9, 08:00:27:C2:45:2B, 192.168.252.1
 // 251.2 machine:
 //        eth0, 08:00:27:D5:1D:42, 192.168.251.2
 // 251.3 machine:
@@ -32,7 +32,7 @@
 //tcpdump/wireshark. Incomming answers only arrives if a route at 30.0's machine
 //was previously configured to send to our Router VM.
 
-define($IP0 172.16.30.162);
+define($IP0 172.16.30.135);
 define($IP1 192.168.251.1);
 define($IP2 192.168.252.1);
 define($MAC0 08:00:27:43:9C:7F);
@@ -41,14 +41,14 @@ define($MAC2 08:00:27:C2:45:2B);
 
 // Defines didn't work here. Maybe AddressInfo could be.
 // Sources and Sinks definitions
-source0 :: FromDevice(eth0);
-sink0   :: ToDevice(eth0);
+source0 :: FromDevice(enp0s3);
+sink0   :: ToDevice(enp0s3);
 
-source1 :: FromDevice(eth1);
-sink1   :: ToDevice(eth1);
+source1 :: FromDevice(enp0s8);
+sink1   :: ToDevice(enp0s8);
 
-source2 :: FromDevice(eth2);
-sink2   :: ToDevice(eth2);
+source2 :: FromDevice(enp0s9);
+sink2   :: ToDevice(enp0s9);
 
 //Classifing frames using Ethernet codes. Outputs:
 // 0. ARP queries
@@ -138,7 +138,7 @@ rt :: StaticIPLookup(192.168.251.1/32 0,
                     192.168.252.1/32 0,
                     192.168.252.255/32 0,
                     192.168.252.0/32 0,
-                    172.16.30.162/32 0,
+                    172.16.30.135/32 0,
                     172.16.30.255/32 0,
                     172.16.30.0/32 0,
                     192.168.251.0/24 1,
@@ -217,8 +217,8 @@ rt[2] -> DropBroadcasts
 
 rt[3] -> DropBroadcasts
       -> cp0 :: PaintTee(3)
-      -> gio0 :: IPGWOptions(172.16.30.162)
-      -> FixIPSrc(172.16.30.162) //ver como configura as anotações pra trocar os IPs
+      -> gio0 :: IPGWOptions(172.16.30.135)
+      -> FixIPSrc(172.16.30.135) //ver como configura as anotações pra trocar os IPs
       -> dt0 :: DecIPTTL
       -> fr0 :: IPFragmenter(1080)
       -> Print ('P0')
@@ -226,25 +226,25 @@ rt[3] -> DropBroadcasts
 
 // DecIPTTL[1] emits packets with expired TTLs.
 // Reply with ICMPs. Rate-limit them?
-dt0[1] -> ICMPError(172.16.30.162, timeexceeded) -> [0]rt;
+dt0[1] -> ICMPError(172.16.30.135, timeexceeded) -> [0]rt;
 dt1[1] -> ICMPError(192.168.251.1, timeexceeded) -> [0]rt;
 dt2[1] -> ICMPError(192.168.252.1, timeexceeded) -> [0]rt;
 
 // Send back ICMP UNREACH/NEEDFRAG messages on big packets with DF set.
 // This makes path mtu discovery work.
-fr0[1] -> ICMPError(172.16.30.162, unreachable, needfrag) -> [0]rt;
+fr0[1] -> ICMPError(172.16.30.135, unreachable, needfrag) -> [0]rt;
 fr1[1] -> ICMPError(192.168.251.1, unreachable, needfrag) -> [0]rt;
 fr2[1] -> ICMPError(192.168.252.1, unreachable, needfrag) -> [0]rt;
 
 // Send back ICMP Parameter Problem messages for badly formed
 // IP options. Should set the code to point to the
 // bad byte, but that's too hard.
-gio0[1] -> ICMPError(172.16.30.162, parameterproblem) -> [0]rt;
+gio0[1] -> ICMPError(172.16.30.135, parameterproblem) -> [0]rt;
 gio1[1] -> ICMPError(192.168.251.1, parameterproblem) -> [0]rt;
 gio2[1] -> ICMPError(192.168.252.1, parameterproblem) -> [0]rt;
 
 // Send back an ICMP redirect if required.
-cp0[1] -> ICMPError(172.16.30.162, redirect, host) -> [0]rt;
+cp0[1] -> ICMPError(172.16.30.135, redirect, host) -> [0]rt;
 cp1[1] -> ICMPError(192.168.251.1, redirect, host) -> [0]rt;
 cp2[1] -> ICMPError(192.168.252.1, redirect, host) -> [0]rt;
 
