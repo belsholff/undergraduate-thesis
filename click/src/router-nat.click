@@ -32,82 +32,49 @@
 //tcpdump/wireshark. Incomming answers only arrives if a route at 30.0's machine
 //was previously configured to send to our Router VM.
 
-define($IP0 172.16.30.135);
-define($IP1 192.168.251.1);
-define($IP2 192.168.252.1);
-define($MAC0 08:00:27:43:9C:7F);
-define($MAC1 08:00:27:BF:8F:22);
-define($MAC2 08:00:27:C2:45:2B);
-
-// Defines didn't work here. Maybe AddressInfo could be.
-// Sources and Sinks definitions
-source0 :: FromDevice(enp0s3);
-sink0   :: ToDevice(enp0s3);
-
-source1 :: FromDevice(enp0s8);
-sink1   :: ToDevice(enp0s8);
-
-source2 :: FromDevice(enp0s9);
-sink2   :: ToDevice(enp0s9);
+AddressInfo(
+    net251 192.168.251.1 192.168.251.0/24 08:00:27:BF:8F:22,
+    net252 192.168.252.1 192.168.252.0/24 08:00:27:C2:45:2B,
+    net172 172.16.30.135 172.16.30.0/23 08:00:27:43:9C:7F,
+    int_machine 192.168.251.2 192.168.251.0/24,
+);
 
 //Classifing frames using Ethernet codes. Outputs:
 // 0. ARP queries
 // 1. ARP replies
 // 2. IP
 // 3. Other
-c0 :: Classifier(12/0806 20/0001,
-                  12/0806 20/0002,
-                  12/0800,
-                  -);
-
-c1 :: Classifier(12/0806 20/0001,
-                  12/0806 20/0002,
-                  12/0800,
-                  -);
-
-c2 :: Classifier(12/0806 20/0001,
-                  12/0806 20/0002,
-                  12/0800,
-                  -);
+classifier172, classifier251, classifier252 :: Classifier(
+    12/0806 20/0001,
+    12/0806 20/0002,
+    12/0800,
+    -
+);
 
 // Source packets output to Ethernet classifiers input 0.
-source0 -> [0]c0;
-source1 -> [0]c1;
-source2 -> [0]c2;
+FromDevice(net172:eth) -> [0]classifier172;
+FromDevice(net251:eth) -> [0]classifier251;
+FromDevice(net252:eth) -> [0]classifier252;
 
 // Queue definition and connection to sink input 0.
-out0 :: Queue(200) -> sink0;
-out1 :: Queue(200) -> sink1;
-out2 :: Queue(200) -> sink2;
+out172 :: Queue(1024) -> ToDevice(net172:eth);
+out251 :: Queue(1024) -> ToDevice(net251:eth);
+out252 :: Queue(1024) -> ToDevice(net252:eth);
 
 // ARPQuerier definition. This wrap IP packets into Ethernet frames with given
 // MAC destination previously asked.
-arpq0 :: ARPQuerier($IP0, $MAC0);
-arpq1 :: ARPQuerier($IP1, $MAC1);
-arpq2 :: ARPQuerier($IP2, $MAC2);
+arpq172 :: ARPQuerier(net172) -> out172;
+arpq251 :: ARPQuerier(net251) -> out251;
+arpq252 :: ARPQuerier(net252) -> out252;
 
 // Deliver ARP responses to ARP queriers as well as Linux. Tee() is a packet
 //multiplier and delive each copy in certain number of output ports.
 // Aparentemente não há necessidade desses diversos classificadores e cópias de
 //pacotes, pois tudo poderia entrar em um só ARPResponder com diferentes
 //atributos.
-t :: Tee(3);
-c0[1] -> t;
-c1[1] -> t;
-c2[1] -> t;
-t[0] -> [1]arpq0;
-t[1] -> [1]arpq1;
-t[2] -> [1]arpq2;
-
-// Connect ARP outputs to the interface queues.
-arpq0 -> out0;
-arpq1 -> out1;
-arpq2 -> out2;
-
-// IP packets input 0 are waiting...
-Idle -> [0]arpq0;
-Idle -> [0]arpq1;
-Idle -> [0]arpq2;
+classifier172[1] -> [1]arpq172;
+classifier251[1] -> [1]arpq251;
+classifier252[1] -> [1]arpq252;
 
 // ARP Responder definitions. It going to answer ARP queriers with an IP-matched
 // MAC address It could be more than one per MAC address. It's useful for network
@@ -116,14 +83,9 @@ Idle -> [0]arpq2;
 //machine.
 // Connecting queries from classifier to ARPResponder after this, to outside
 //world through hardware queues.
-arpr0 :: ARPResponder($IP0 $MAC0);
-c0[0] -> arpr0 -> out0;
-
-arpr1 :: ARPResponder($IP1 $MAC1, 172.16.30.0/23 $MAC1);
-c1[0] -> arpr1 -> out1;
-
-arpr2 :: ARPResponder($IP2 $MAC2, 172.16.30.0/23 $MAC2);
-c2[0] -> arpr2 -> out2;
+classifier172[0] -> ARPResponder(net172) -> out172; //checar se os pacotes estão
+classifier251[0] -> ARPResponder(net251) -> out251; //[trafegando mesmo sem o
+classifier252[0] -> ARPResponder(net252) -> out252; //[proxy ARP;
 
 // Static IP table definition. It going to send matched packets to respective
 //outputs:
@@ -152,16 +114,19 @@ rt :: StaticIPLookup(192.168.251.1/32 0,
 // REMEMBER: there's not public IP passing through this router, until it's
 //behind local networks as we see here with 172.16 network.
 ip ::   Strip(14)
-     -> CheckIPHeader(INTERFACES 192.168.251.1/24 192.168.252.1/24 172.16.30.1/23)
-     -> [0]rt;
+     -> CheckIPHeader // Se tratando de um router com NAT, não se pode definir
+     -> [0]rt;        //[os IPs de INTERFACES, ao mesmo tempo que é necessário
+                      //[forçar a verificação dos broadcasts para evitar nuvens
+                      //[de broadcasts, além da integridade dos pacotes.
+                      //[Verificar se DropBroadcasts resolve essa questão.
 
 // Inserting annotations to IP frames to mark which interface they came from.
 //It going to be useful after static routing, to find any packet that came and
 //goes to same network.
 // After annotations, frames are directed to unwrapping.
-c0[2] -> Paint(3) -> ip;
-c1[2] -> Paint(1) -> ip;
-c2[2] -> Paint(2) -> ip;
+classifier172[2] -> Paint(0) -> ip;
+classifier251[2] -> Paint(1) -> ip;
+classifier252[2] -> Paint(2) -> ip;
 
 // IP packets for this machine. What do you like to do? Me: Discard.
 // ToHost expects ethernet packets, so cook up a fake header.
@@ -187,29 +152,30 @@ rt[0] -> EtherEncap(0x0800, 1:1:1:1:1:1, 2:2:2:2:2:2) -> ToHost;
 // 7: Just a print to console, showing a string and writing packets content.
 // 8: Sending packets to ARP Querier input 0 to be wrap and set link level (MAC)
 //address correctly.
+rt[3] -> DropBroadcasts //caso não esteja sendo efetivo, o CheckIPHeader pode fazer serviço semelhante com a opção INTERFACES ou BADSRC;
+                        //DropBroadcasts ignora broadcasts apartir de uma anotação (SetPacketType) feita pelo FromDevice.
+      -> cp0 :: PaintTee(0)
+      -> gio0 :: IPGWOptions(172.16.30.135)
+      -> FixIPSrc(172.16.30.135) //ver como configura as anotações pra trocar os IPs
+      -> dt0 :: DecIPTTL
+      -> fr0 :: IPFragmenter(1492)
+      -> [0]arpq172;
+
 rt[1] -> DropBroadcasts
       -> cp1 :: PaintTee(1)
       -> gio1 :: IPGWOptions(192.168.251.1)
       -> FixIPSrc(192.168.251.1)
       -> dt1 :: DecIPTTL
-      -> fr1 :: IPFragmenter(1080)
-      -> [0]arpq1;
+      -> fr1 :: IPFragmenter(1492)
+      -> [0]arpq251;
 
 rt[2] -> DropBroadcasts
       -> cp2 :: PaintTee(2)
       -> gio2 :: IPGWOptions(192.168.252.1)
       -> FixIPSrc(192.168.252.1)
       -> dt2 :: DecIPTTL
-      -> fr2 :: IPFragmenter(1080)
-      -> [0]arpq2;
-
-rt[3] -> DropBroadcasts
-      -> cp0 :: PaintTee(3)
-      -> gio0 :: IPGWOptions(172.16.30.135)
-      -> FixIPSrc(172.16.30.135) //ver como configura as anotações pra trocar os IPs
-      -> dt0 :: DecIPTTL
-      -> fr0 :: IPFragmenter(1080)
-      -> [0]arpq0;
+      -> fr2 :: IPFragmenter(1492)
+      -> [0]arpq252;
 
 // DecIPTTL[1] emits packets with expired TTLs.
 // Reply with ICMPs. Rate-limit them?
@@ -236,6 +202,6 @@ cp1[1] -> ICMPError(192.168.251.1, redirect, host) -> [0]rt;
 cp2[1] -> ICMPError(192.168.252.1, redirect, host) -> [0]rt;
 
 // Unknown ethernet type numbers.
-c0[3] -> Print('unknown0') -> Discard;
-c1[3] -> Print('unknown1') -> Discard;
-c2[3] -> Print('unknown2') -> Discard;
+classifier172[3] -> Print('unknown0') -> Discard;
+classifier251[3] -> Print('unknown1') -> Discard;
+classifier252[3] -> Print('unknown2') -> Discard;
