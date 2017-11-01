@@ -12,7 +12,7 @@
 //
 // To complaining this, I used VirtualBox's machines:
 // Router:
-//        enp0s3, 08:00:27:43:9C:7F, 172.16.30.135
+//        enp0s3, 08:00:27:43:9C:7F, 172.16.30.155
 //        enp0s8, 08:00:27:BF:8F:22, 192.168.251.1
 //        enp0s9, 08:00:27:C2:45:2B, 192.168.252.1
 // 251.2 machine:
@@ -35,7 +35,7 @@
 AddressInfo(
     net251 192.168.251.1 192.168.251.0/24 08:00:27:BF:8F:22,
     net252 192.168.252.1 192.168.252.0/24 08:00:27:C2:45:2B,
-    net172 172.16.30.135 172.16.30.0/23 08:00:27:43:9C:7F,
+    net172 172.16.30.155 172.16.30.0/23 08:00:27:43:9C:7F,
     int_machine 192.168.251.2 192.168.251.0/24,
 );
 
@@ -52,14 +52,14 @@ classifier172, classifier251, classifier252 :: Classifier(
 );
 
 // Source packets output to Ethernet classifiers input 0.
-FromDevice(net172:eth) -> [0]classifier172;
-FromDevice(net251:eth) -> [0]classifier251;
-FromDevice(net252:eth) -> [0]classifier252;
+FromDevice(enp0s3) -> [0]classifier172;
+FromDevice(enp0s8) -> [0]classifier251;
+FromDevice(enp0s9) -> [0]classifier252;
 
 // Queue definition and connection to sink input 0.
-out172 :: Queue(1024) -> ToDevice(net172:eth);
-out251 :: Queue(1024) -> ToDevice(net251:eth);
-out252 :: Queue(1024) -> ToDevice(net252:eth);
+out172 :: Queue(1024) -> ToDevice(enp0s3);
+out251 :: Queue(1024) -> ToDevice(enp0s8);
+out252 :: Queue(1024) -> ToDevice(enp0s9);
 
 // ARPQuerier definition. This wrap IP packets into Ethernet frames with given
 // MAC destination previously asked.
@@ -92,20 +92,28 @@ classifier252[0] -> ARPResponder(net252) -> out252; //[proxy ARP;
 // 0: packets for this machine.
 // 1: packets for 192.168.251.
 // 2: packets for 192.168.252.
-// 3: packets for 172.16.30.
-rt :: StaticIPLookup(192.168.251.1/32 0,
-                    192.168.251.255/32 0,
-                    192.168.251.0/32 0,
-                    192.168.252.1/32 0,
-                    192.168.252.255/32 0,
-                    192.168.252.0/32 0,
-                    172.16.30.135/32 0,
-                    172.16.30.255/32 0,
-                    172.16.30.0/32 0,
-                    192.168.251.0/24 1,
-                    192.168.252.0/24 2,
-                    0.0.0.0/0 3
-                    );
+// 3: packets for outside.
+srouter :: StaticIPLookup(192.168.251.1/32 0,
+                     192.168.251.255/32 0,
+                     192.168.251.0/32 0,
+                     192.168.252.1/32 0,
+                     192.168.252.255/32 0,
+                     192.168.252.0/32 0,
+                     172.16.30.155/32 0, //volta por aqui
+                     172.16.30.255/32 0,
+                     172.16.30.0/32 0,
+                     192.168.251.0/24 1,
+                     192.168.252.0/24 2,
+                     0.0.0.0/0 3 //vai por aqui
+);
+
+rewriter :: IPAddrRewriter(pattern net172 - 0 1, // Aparentemente o Linux está 
+                                                 //mandando RST por não possuir
+                                                 //conexões que o Click criou
+                       drop,
+                       pass 2
+);
+Idle -> [1]rewriter;
 
 // Unwrapping Ethernet header definition, followed for an IP header checking
 //that drop any invalid source IP packets, even those broadcats spreadings (when
@@ -115,7 +123,7 @@ rt :: StaticIPLookup(192.168.251.1/32 0,
 //behind local networks as we see here with 172.16 network.
 ip ::   Strip(14)
      -> CheckIPHeader // Se tratando de um router com NAT, não se pode definir
-     -> [0]rt;        //[os IPs de INTERFACES, ao mesmo tempo que é necessário
+     -> [0]srouter;   //[os IPs de INTERFACES, ao mesmo tempo que é necessário
                       //[forçar a verificação dos broadcasts para evitar nuvens
                       //[de broadcasts, além da integridade dos pacotes.
                       //[Verificar se DropBroadcasts resolve essa questão.
@@ -124,14 +132,18 @@ ip ::   Strip(14)
 //It going to be useful after static routing, to find any packet that came and
 //goes to same network.
 // After annotations, frames are directed to unwrapping.
-classifier172[2] -> Paint(0) -> ip;
-classifier251[2] -> Paint(1) -> ip;
-classifier252[2] -> Paint(2) -> ip;
+classifier172[2] -> Paint(0) -> MarkIPHeader -> ip;
+classifier251[2] -> Paint(1) -> MarkIPHeader -> ip;
+classifier252[2] -> Paint(2) -> MarkIPHeader -> ip;
 
 // IP packets for this machine. What do you like to do? Me: Discard.
 // ToHost expects ethernet packets, so cook up a fake header.
-// rt[0] -> EtherEncap(0x0800, 1:1:1:1:1:1, 2:2:2:2:2:2) -> Discard;
-rt[0] -> EtherEncap(0x0800, 1:1:1:1:1:1, 2:2:2:2:2:2) -> ToHost;
+// Problema a resolver quando for estritamente necessário que os roteadores
+//recebam os pacotes direcionados a ele.
+// srouter[0] -> EtherEncap(0x0800, 1:1:1:1:1:1, net251) -> Discard;
+// srouter[0] -> EtherEncap(0x0800, 1:1:1:1:1:1, net251) -> ToHost(enp0s8);
+srouter[0] -> Print('Resposta chegou!') -> [2]rewriter;
+rewriter[2] -> EtherEncap(0x0800, 1:1:1:1:1:1, net251) -> Discard;
 
 // Receiving packets addressed to 251.0/24 network and preparing to send to
 //inferface destination.
@@ -152,54 +164,58 @@ rt[0] -> EtherEncap(0x0800, 1:1:1:1:1:1, 2:2:2:2:2:2) -> ToHost;
 // 7: Just a print to console, showing a string and writing packets content.
 // 8: Sending packets to ARP Querier input 0 to be wrap and set link level (MAC)
 //address correctly.
-rt[3] -> DropBroadcasts //caso não esteja sendo efetivo, o CheckIPHeader pode fazer serviço semelhante com a opção INTERFACES ou BADSRC;
-                        //DropBroadcasts ignora broadcasts apartir de uma anotação (SetPacketType) feita pelo FromDevice.
-      -> cp0 :: PaintTee(0)
-      -> gio0 :: IPGWOptions(172.16.30.135)
-      -> FixIPSrc(172.16.30.135) //ver como configura as anotações pra trocar os IPs
-      -> dt0 :: DecIPTTL
-      -> fr0 :: IPFragmenter(1492)
-      -> [0]arpq172;
+srouter[3] -> DropBroadcasts //caso não esteja sendo efetivo, o CheckIPHeader pode fazer serviço semelhante com a opção INTERFACES ou BADSRC;
+                             //DropBroadcasts ignora broadcasts apartir de uma anotação (SetPacketType) feita pelo FromDevice.
+           -> [0]rewriter
+           -> Print('Antes do Rewriter!')
+           -> cp0 :: PaintTee(0)
+           -> gio0 :: IPGWOptions(172.16.30.155)
+//           -> FixIPSrc(172.16.30.155) //ver como configura as anotações pra trocar os IPs
+           -> dt0 :: DecIPTTL
+           -> fr0 :: IPFragmenter(1492)
+           -> [0]arpq172;
 
-rt[1] -> DropBroadcasts
+rewriter[1] -> [0]srouter;
+
+srouter[1] -> DropBroadcasts
       -> cp1 :: PaintTee(1)
       -> gio1 :: IPGWOptions(192.168.251.1)
-      -> FixIPSrc(192.168.251.1)
+//      -> FixIPSrc(192.168.251.1)
       -> dt1 :: DecIPTTL
       -> fr1 :: IPFragmenter(1492)
       -> [0]arpq251;
 
-rt[2] -> DropBroadcasts
+srouter[2] -> DropBroadcasts
       -> cp2 :: PaintTee(2)
       -> gio2 :: IPGWOptions(192.168.252.1)
-      -> FixIPSrc(192.168.252.1)
+//      -> FixIPSrc(192.168.252.1)
       -> dt2 :: DecIPTTL
       -> fr2 :: IPFragmenter(1492)
       -> [0]arpq252;
 
 // DecIPTTL[1] emits packets with expired TTLs.
 // Reply with ICMPs. Rate-limit them?
-dt0[1] -> ICMPError(172.16.30.135, timeexceeded) -> [0]rt;
-dt1[1] -> ICMPError(192.168.251.1, timeexceeded) -> [0]rt;
-dt2[1] -> ICMPError(192.168.252.1, timeexceeded) -> [0]rt;
+dt0[1] -> ICMPError(172.16.30.155, timeexceeded) -> [0]srouter;
+dt1[1] -> ICMPError(192.168.251.1, timeexceeded) -> [0]srouter;
+dt2[1] -> ICMPError(192.168.252.1, timeexceeded) -> [0]srouter;
 
 // Send back ICMP UNREACH/NEEDFRAG messages on big packets with DF set.
 // This makes path mtu discovery work.
-fr0[1] -> ICMPError(172.16.30.135, unreachable, needfrag) -> [0]rt;
-fr1[1] -> ICMPError(192.168.251.1, unreachable, needfrag) -> [0]rt;
-fr2[1] -> ICMPError(192.168.252.1, unreachable, needfrag) -> [0]rt;
+fr0[1] -> ICMPError(172.16.30.155, unreachable, needfrag) -> [0]srouter;
+fr1[1] -> ICMPError(192.168.251.1, unreachable, needfrag) -> [0]srouter;
+fr2[1] -> ICMPError(192.168.252.1, unreachable, needfrag) -> [0]srouter;
 
 // Send back ICMP Parameter Problem messages for badly formed
 // IP options. Should set the code to point to the
 // bad byte, but that's too hard.
-gio0[1] -> ICMPError(172.16.30.135, parameterproblem) -> [0]rt;
-gio1[1] -> ICMPError(192.168.251.1, parameterproblem) -> [0]rt;
-gio2[1] -> ICMPError(192.168.252.1, parameterproblem) -> [0]rt;
+gio0[1] -> ICMPError(172.16.30.155, parameterproblem) -> [0]srouter;
+gio1[1] -> ICMPError(192.168.251.1, parameterproblem) -> [0]srouter;
+gio2[1] -> ICMPError(192.168.252.1, parameterproblem) -> [0]srouter;
 
 // Send back an ICMP redirect if required.
-cp0[1] -> ICMPError(172.16.30.135, redirect, host) -> [0]rt;
-cp1[1] -> ICMPError(192.168.251.1, redirect, host) -> [0]rt;
-cp2[1] -> ICMPError(192.168.252.1, redirect, host) -> [0]rt;
+cp0[1] -> ICMPError(172.16.30.155, redirect, host) -> [0]srouter;
+cp1[1] -> ICMPError(192.168.251.1, redirect, host) -> [0]srouter;
+cp2[1] -> ICMPError(192.168.252.1, redirect, host) -> [0]srouter;
 
 // Unknown ethernet type numbers.
 classifier172[3] -> Print('unknown0') -> Discard;
