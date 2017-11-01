@@ -102,14 +102,18 @@ intern_arpq :: ARPQuerier(intern);
 extern_dev -> extern_arp_class;
 extern_arp_class[0] -> ARPResponder(extern)	// ARP queries
 	-> extern_dev;
-extern_arp_class[1] -> ToHost(extern);			// ARP responses
+extern_arp_class[1] -> ToHost(extern); // ARP responses 
+                                       // desnecessário para clickOS. Ler abaixo.
 extern_arp_class[3] -> Discard;
 
 intern_dev -> intern_arp_class;
 intern_arp_class[0] -> ARPResponder(intern)	// ARP queries
 	-> intern_dev;
 intern_arp_class[1] -> intern_arpr_t :: Tee;
-	intern_arpr_t[0] -> ToHost(intern);
+	intern_arpr_t[0] -> ToHost(intern); //desnecessário para clickOS, por
+                                        //enquanto. Caso haja outros sistemas
+                                        //que necessitem da informação do ARP
+                                        //que não o clickOS, ajeitar isso aqui;
 	intern_arpr_t[1] -> [1]intern_arpq;
 intern_arp_class[3] -> Discard;
 
@@ -117,7 +121,7 @@ intern_arp_class[3] -> Discard;
 // REWRITERS
 
 IPRewriterPatterns(to_world_pat extern 50000-65535 - -,
-		to_server_pat intern 50000-65535 intern_server -);
+	                to_server_pat intern 50000-65535 intern_server -);
 
 rw :: IPRewriter(// internal traffic to outside world
 		 pattern to_world_pat 0 1,
