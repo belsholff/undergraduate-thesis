@@ -52,10 +52,10 @@
 // ADDRESS INFORMATION
 
 AddressInfo(
-  intern 	10.0.0.1	10.0.0.0/8	00:50:ba:85:84:a9,
-  extern	209.6.198.213	209.6.198.0/24	00:e0:98:09:ab:af,
+  intern 	192.168.251.1 192.168.251.0/24 08:00:27:BF:8F:22,
+  extern	172.16.30.155 172.16.30.0/23 08:00:27:43:9C:7F,
   extern_next_hop				02:00:0a:11:22:1f,
-  intern_server	10.0.0.10
+  intern_server	192.168.251.2
 );
 
 
@@ -81,8 +81,8 @@ elementclass SniffGatewayDevice {
   input -> q :: Queue(1024)
 	-> t2 :: PullTee
 	-> to :: ToDevice($device);
-  t1[1] -> ToHostSniffers;
-  t2[1] -> ToHostSniffers($device);
+//  t1[1] -> ToHostSniffers;
+//  t2[1] -> ToHostSniffers($device);
   ScheduleInfo(from .1, to 1);
 }
 
@@ -90,7 +90,7 @@ extern_dev :: SniffGatewayDevice(extern:eth);
 intern_dev :: SniffGatewayDevice(intern:eth);
 
 ip_to_host :: EtherEncap(0x0800, 1:1:1:1:1:1, intern)
-	-> ToHost;
+	-> ToHost(intern);
 
 
 // ARP MACHINERY
@@ -102,14 +102,14 @@ intern_arpq :: ARPQuerier(intern);
 extern_dev -> extern_arp_class;
 extern_arp_class[0] -> ARPResponder(extern)	// ARP queries
 	-> extern_dev;
-extern_arp_class[1] -> ToHost;			// ARP responses
+extern_arp_class[1] -> ToHost(extern);			// ARP responses
 extern_arp_class[3] -> Discard;
 
 intern_dev -> intern_arp_class;
 intern_arp_class[0] -> ARPResponder(intern)	// ARP queries
 	-> intern_dev;
 intern_arp_class[1] -> intern_arpr_t :: Tee;
-	intern_arpr_t[0] -> ToHost;
+	intern_arpr_t[0] -> ToHost(intern);
 	intern_arpr_t[1] -> [1]intern_arpq;
 intern_arp_class[3] -> Discard;
 
