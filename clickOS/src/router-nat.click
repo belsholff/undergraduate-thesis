@@ -54,13 +54,15 @@
 //RST flags in TCP packets asking to close this connection in both sides
 //(cli->srv - by Linux - and after this, srv->cli).
 
+//PS2: This router does not implement ICMP responder yet.
+
 // Checar gw colocado aqui. ip        gw            ipnet             mac
 AddressInfo(net251 192.168.251.1 192.168.251.1 192.168.251.0/24 00:15:17:15:5D:21,
             net252 192.168.252.1 192.168.252.1 192.168.252.0/24 00:15:17:15:5D:31,
             net0 192.168.0.74 192.168.0.254 192.168.0.0/23 00:16:3E:4F:D6:95
 );
 
-//Classifing frames using Ethernet codes. Outputs:
+//Classifing frames using layer 2 codes. One classifier per existing network. Outputs:
 // 0. ARP queries
 // 1. ARP replies
 // 2. IP
@@ -71,7 +73,7 @@ classifier0, classifier251, classifier252 :: Classifier(12/0806 20/0001,
                                                         -
 );
 
-// Source packets output to Ethernet classifiers input 0.
+// Source packets output to layer 2 classifiers input 0.
 FromDevice(0) -> [0]classifier0;
 FromDevice(1) -> [0]classifier251;
 FromDevice(2) -> [0]classifier252;
@@ -87,11 +89,7 @@ arpq0 :: ARPQuerier(net0) -> out0;
 arpq251 :: ARPQuerier(net251) -> out251;
 arpq252 :: ARPQuerier(net252) -> out252;
 
-// Deliver ARP responses to ARP queriers as well as Linux. Tee() is a packet
-//multiplier and delive each copy in certain number of output ports.
-// Aparentemente não há necessidade desses diversos classificadores e cópias de
-//pacotes, pois tudo poderia entrar em um só ARPResponder com diferentes
-//atributos.
+// Deliver ARP responses to ARP queriers as well as Linux.
 classifier0[1] -> [1]arpq0;
 classifier251[1] -> [1]arpq251;
 classifier252[1] -> [1]arpq252;
@@ -99,8 +97,6 @@ classifier252[1] -> [1]arpq252;
 // ARP Responder definitions. It going to answer ARP queriers with an IP-matched
 // MAC address It could be more than one per MAC address. It's useful for network
 //visibility by anothers and vice versa.
-// Remember that the Querier needs incoming routes to and outgoing from this
-//machine.
 // Connecting queries from classifier to ARPResponder after this, to outside
 //world through hardware queues.
 classifier0[0] -> ARPResponder(net0) -> out0;
@@ -112,7 +108,7 @@ classifier252[0] -> ARPResponder(net252) -> out252;
 // 0: packets for this machine.
 // 1: packets for 192.168.251.
 // 2: packets for 192.168.252.
-// 3: packets for outside.
+// 3: packets for outside, using a gateway.
 srouter :: StaticIPLookup(192.168.251.1/32 0,
                           192.168.251.255/32 0,
                           192.168.251.0/32 0,
@@ -127,56 +123,71 @@ srouter :: StaticIPLookup(192.168.251.1/32 0,
                           0.0.0.0/0 192.168.0.254 3 //vai por aqui
 );
 
-rewriter :: IPAddrRewriter(pattern net0 - 0 1, // Aparentemente o Linux está
-                                                 //mandando RST por não possuir
-                                                 //conexões que o Click criou
+// Simple NAT function. Rewrite packets that cames on it's input ports based on
+//some rules previously defined. if no one rules has been matched, IPAddrRewriter
+//follow a default behavior previously setted. For example, "pattern", "drop",
+//"pass".
+rewriter :: IPAddrRewriter(pattern net0 - 0 1,
                            drop,
                            pass 2
 );
 
+// Just telling to interpreter be calm down. It asks to connect every input port
+//defined. In this case, I'm using it because input and output ports are created
+//in pairs and I need the output port.
 Idle -> [1]rewriter;
 
+// NAT operation modifies IPv4 headers used to generate TCP and UDP checksuns.
+//Here I'm filtering these packets and, when is possible, recalculating then.
+// PS3: Look at PS1 in initial comments of this file to explanations about
+//fragmented or big transport packets.
+// A flow-separated filter is needed, because the paths after them are different.
+//Observe!
 inTransportFilter :: IPClassifier(tcp, udp, /*icmp,*/ -);
-
 outTransportFilter :: IPClassifier(tcp, udp, /*icmp,*/ -);
 
-// Unwrapping Ethernet header definition, followed for an IP header checking
-//that drop any invalid source IP packets, even those broadcats spreadings (when
-//broadcasts are source address), and so on, filtered packets are delivered to
-//static routing.
-// REMEMBER: there's not public IP passing through this router, until it's
-//behind local networks as we see here with 172.16 network.
-ip :: Strip(14) -> CheckIPHeader // Se tratando de um router com NAT, não se pode definir
-                -> [0]srouter;   //[os IPs de INTERFACES, ao mesmo tempo que é necessário
-                                 //[forçar a verificação dos broadcasts para evitar nuvens
-                                 //[de broadcasts, além da integridade dos pacotes.
-                                 //[Verificar se DropBroadcasts resolve essa questão.
+// Ethernet header unwrapping definition, followed for an IP header checking
+//that drop any invalid source IP packets, even those broadcasts spreadings (when
+//broadcasts are source address). After this, packets are delivered to static
+//routing.
+ip :: Strip(14) -> CheckIPHeader //ele cospe pacotes com erros pela saída 1. Tratar.
+                -> [0]srouter;
 
 // Inserting annotations to IP frames to mark which interface they came from.
 //It going to be useful after static routing, to find any packet that came and
-//goes to same network.
-// After annotations, frames are directed to unwrapping.
-classifier0[2] -> Print('rede0') -> Paint(0) -> MarkIPHeader -> ip;
-classifier251[2] -> Print('rede251') -> Paint(1) -> MarkIPHeader -> ip;
-classifier252[2] -> Print('rede252') -> Paint(2) -> MarkIPHeader -> ip;
+//goes to same network. Another annotation mark that frame as IPv4 protocol.
+//Click system needs it to use ToHost, frames are directed to unwrapping.
+classifier0[2] -> Print('rede0') -> Paint(0) -> ip;
+classifier251[2] -> Print('rede251') -> Paint(1) -> ip;
+classifier252[2] -> Print('rede252') -> Paint(2) -> ip;
 
 // IP packets for this machine. What do you like to do? Me: Discard.
-// ToHost expects ethernet packets, so cook up a fake header.
-// Problema a resolver quando for estritamente necessário que os roteadores
-//recebam os pacotes direcionados a ele.
+// Before this, packets from external network needs to be translated by NAT.
+//They are redirected to rewriter to inspect this.
 srouter[0] -> Print('Pode ser para subredes!') -> [2]rewriter;
 
+//Here are packets destinated to Router.
 rewriter[2] -> Print('Não é para subredes!')
+            -> SetPacketType(HOST)
             -> EtherEncap(0x0800, 1:1:1:1:1:1, net251)
-            -> Discard;
+            -> Discard; // When executing with kernel module in Linux, We have
+                        //to use ToHost.
+                        // If no Linux stack, implements simple services as ICMP
+                        //responders.
 
+// As I sad above, here are incomming NAT-ed packets. They have their checksum
+//recalculated (TCP in this case, others below) and come out translated to their
+//inner destination, and re-routed.
 rewriter[1] -> inTransportFilter
             -> SetTCPChecksum
             -> [0]srouter;
 
+//Same piece of code as above, but now handling with UDP packets.
 inTransportFilter[1] -> udpIn :: SetUDPChecksum -> [0]srouter;
-//ICMP
-inTransportFilter[2] -> Print('ICMP ou Mensagem de camada 4 desconhecida chegando!')
+
+//Same as above. ICMP and unknown layer 4  out here. Until now, ICMP checksum
+//was not compromised. I will check it better, but ping works fine!!!
+inTransportFilter[2] -> Print('ICMP ou Mensagem de camada 4 desconhecida chegando!') //checar sobre o checksum do ICMP, apesar do ping funcionar.
                      -> [0]srouter;
 
 // Receiving packets addressed to 251.0/24 network and preparing to send to
@@ -203,6 +214,7 @@ srouter[3] -> DropBroadcasts //caso não esteja sendo efetivo, o CheckIPHeader
                              //INTERFACES ou BADSRC;
                              //DropBroadcasts ignora broadcasts apartir de uma
                              //anotação (SetPacketType) feita pelo FromDevice.
+           -> SetPacketType(OUTGOING)
            -> [0]rewriter
 	       -> outTransportFilter
 	       -> SetTCPChecksum
@@ -213,12 +225,16 @@ srouter[3] -> DropBroadcasts //caso não esteja sendo efetivo, o CheckIPHeader
            -> fr0 :: IPFragmenter(1500) //tratar pacotes udp maiores que 1472 ;)
            -> [0]arpq0;
 
+//Same piece of code as above, but now handling with UDP packets.
 outTransportFilter[1] -> udpOut :: SetUDPChecksum -> cp0;
-//ICMP
+
+//Same as above. ICMP and unknown layer 4  out here. Until now, ICMP checksum
+//was not compromised. I will check it better, but ping works fine!!!
 outTransportFilter[2] -> Print('ICMP ou Mensagem de camada 4 desconhecida saíndo!')
                       -> cp0;
 
 srouter[1] -> DropBroadcasts
+           -> SetPacketType(OUTGOING) //Antes do DropBroadcasts por causa da anotação de broadcast.
            -> cp1 :: PaintTee(1)
            -> gio1 :: IPGWOptions(192.168.251.1)
 //         -> FixIPSrc(192.168.251.1)
@@ -228,6 +244,7 @@ srouter[1] -> DropBroadcasts
            -> [0]arpq251;
 
 srouter[2] -> DropBroadcasts
+           -> SetPacketType(OUTGOING)
            -> cp2 :: PaintTee(2)
            -> gio2 :: IPGWOptions(192.168.252.1)
 //         -> FixIPSrc(192.168.252.1)

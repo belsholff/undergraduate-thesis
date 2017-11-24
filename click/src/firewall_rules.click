@@ -146,7 +146,7 @@ rt :: StaticIPLookup(192.168.251.1/32 0,
                     172.16.30.0/23 3
                     );
 
-// Unwrapping Ethernet header definition, followed for an IP header checking
+// Ethernet header unwrapping definition, followed for an IP header checking
 //that drop any invalid packets, even those broadcats spreadings (when
 //broadcasts are source address). Next, an IP filter is defined and filter
 //packets according to src and dst net, and port numbers. All allows packets
