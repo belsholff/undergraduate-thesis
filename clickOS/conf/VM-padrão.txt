@@ -1,0 +1,51 @@
+##Nidoking - root@192.168.0.99
+#Usuário: root
+#Senha: dmhWcDeAEstrgnJXKzzzPDi
+#Comando de criação: xen-create-image --hostname nidoking --boot --cache yes --ip=192.168.2.2 --mac=00:15:17:15:5d:22 --gateway=192.168.2.1 --netmask 255.255.255.0 --dir /home/felipeb/vms/ --fs ext4 --size 6G --memory 448M --swap 448M  --install-method=debootstrap --dist jessie
+Comando start: #xl create /etc/xen/nidoking.cfg
+
+##Nidoqueen - root@192.168.0.100
+#Usuário: root
+#Senha: hHw5BrhudURQT2wxmUEkaby
+#Comando de criação: # xen-create-image --hostname nidoqueen --boot --cache yes --ip=192.168.3.2 --mac=00:15:17:15:5d:32  --gateway=192.168.3.1 --netmask 255.255.255.0 --dir /home/felipeb/vms/ --fs ext4 --size 6G --memory 448M --swap 448M  --install-method=debootstrap --dist jessie
+Comando start: #xl create /etc/xen/nidoqueen.cfg
+
+##Click1
+#Comandos de Criação:
+	# cd clickOS/
+	# export COSMOS_ROOT=$(pwd)"/cosmos"
+	# cd clickos/minios/
+	# nano config_click.xen
+	# xl create config_click.xen
+	# nano file.click
+	# $COSMOS_ROOT/dist/bin/cosmos start click1 file.click
+
+apt-get install grub-xen-bin grub-xen-host ipxe-qemu libaio1 libfdt1 libiscsi2 librados2 librbd1 libseccomp2 libspice-server1 libvdeplug2 libxen-4.4 libxenstore3.0 qemu-system-common qemu-system-x86 qemu-utils seabios sharutils xen-hypervisor-4.4-amd64 xen-linux-system-3.16.0-4-amd64 xen-linux-system-amd64 xen-system-amd64 xen-utils-4.4 xen-utils-common xenstore-utils debootstrap debugedit libconfig-inifiles-perl libdata-validate-domain-perl libdata-validate-ip-perl libdata-validate-uri-perl libexpect-perl libfile-slurp-perl libfile-which-perl libio-pty-perl libio-stty-perl liblist-moreutils-perl libnet-domain-tld-perl libnet-ipv6addr-perl libnet-netmask-perl libnetaddr-ip-perl libnetwork-ipv4addr-perl librpm3 librpmbuild3 librpmio3 librpmsign1 libsocket6-perl libterm-size-perl rinse rpm rpm-common rpm2cpio xen-tools
+
+apt-get install dmeventd libdevmapper-event1.02.1 liblvm2cmd2.02 libreadline5 lvm2
+
+apt-get install binutils build-essential dpkg-dev fakeroot g++ g++-4.9 gcc gcc-4.9 libalgorithm-diff-perl libalgorithm-diff-xs-perl libalgorithm-merge-perl libasan1 libatomic1 libc-dev-bin libc6-dev libcilkrts5 libdpkg-perl libfakeroot libfile-fcntllock-perl libgcc-4.9-dev libitm1 liblsan0 libstdc++-4.9-dev libtsan0 libubsan0 linux-libc-dev make manpages-dev
+
+apt-get install libxen-dev
+
+apt-get install swig swig2.0
+
+apt-get install libexpat1-dev libpython-dev libpython2.7-dev python-dev python2.7-dev
+
+apt-get install autopoint gettext libasprintf-dev libgettextpo-dev libgettextpo0
+
+apt-get install bin86 bcc elks-libc
+
+apt-get install acpica-tools iasl
+
+apt-get install uuid-dev
+
+apt-get install libncurses5-dev libtinfo-dev
+
+apt-get install pkg-config
+
+apt-get install gir1.2-spice-client-glib-2.0 libglib2.0-dev libpcre3-dev libpcrecpp0 libpixman-1-dev libpthread-stubs0-dev libqtglib-2.0-0 libspice-client-glib-2.0-dev libspice-protocol-dev libspice-server-dev libssl-dev libssl-doc libx11-dev libx11-doc libxau-dev libxcb1-dev libxdmcp-dev libxext-dev libxinerama-dev x11proto-core-dev x11proto-input-dev x11proto-kb-dev x11proto-xext-dev x11proto-xinerama-dev xorg-sgml-doctools xtrans-dev zlib1g-dev
+
+apt-get install libaio-dev
+
+apt-get install libyajl-dev
