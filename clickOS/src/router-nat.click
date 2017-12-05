@@ -138,7 +138,7 @@ rewriter :: IPAddrRewriter(pattern net0 - 0 1,
 Idle -> [1]rewriter;
 
 // NAT operation modifies IPv4 headers used to generate TCP and UDP checksuns.
-//Here I'm filtering these packets and, when is possible, recalculating then.
+//Here I'm filtering these packets and, when is possible, recalculating them.
 // PS3: Look at PS1 in initial comments of this file to explanations about
 //fragmented or big transport packets.
 // A flow-separated filter is needed, because the paths after them are different.
@@ -171,9 +171,9 @@ rewriter[2] -> Print('Não é para subredes!')
             -> SetPacketType(HOST)
             -> EtherEncap(0x0800, 1:1:1:1:1:1, net251)
             -> Discard; // When executing with kernel module in Linux, We have
-                        //to use ToHost.
+                        //to use ToHost, because obvious, you know.
                         // If no Linux stack, implements simple services as ICMP
-                        //responders.
+                        //responders to debug.
 
 // As I sad above, here are incomming NAT-ed packets. They have their checksum
 //recalculated (TCP in this case, others below) and come out translated to their
@@ -182,72 +182,74 @@ rewriter[1] -> inTransportFilter
             -> SetTCPChecksum
             -> [0]srouter;
 
-//Same piece of code as above, but now handling with UDP packets.
-inTransportFilter[1] -> udpIn :: SetUDPChecksum -> [0]srouter;
+//Same piece of code as above, but now handling with incoming UDP packets.
+inTransportFilter[1] -> udpIn :: SetUDPChecksum //tratar pacotes grandes ou fragmentados;
+                     -> [0]srouter;
 
-//Same as above. ICMP and unknown layer 4  out here. Until now, ICMP checksum
-//was not compromised. I will check it better, but ping works fine!!!
+//Same as above. ICMP and unknown layer 4 out here. Until now, ICMP checksum
+//was not compromised. I will check it better, but ping pong works fine!!!
 inTransportFilter[2] -> Print('ICMP ou Mensagem de camada 4 desconhecida chegando!') //checar sobre o checksum do ICMP, apesar do ping funcionar.
                      -> [0]srouter;
 
-// Receiving packets addressed to 251.0/24 network and preparing to send to
-//inferface destination.
-// 1: Dropping link-level broadcasts.
-// 2: Duplicating packets that was marked as packets that came from same
+// Receiving packets addressed to network (0.0) and outgoing to internet and
+//preparing to send to inferface destination.
+// Some parts of this code repeats to others interfaces handled below.
+// 1: Dropping link-level broadcasts;
+// 2: Marking as outgoing flow packet. Before DropBroadcasts because it uses the
+//same mecanism to mark broadcast packets.
+// 3: Redirecting flow to NAT element port 0;
+// 4: As shown, transport protocol filter to apply checksum recalculation to TCP;
+// 5: Recalculation as mentioned above;
+// 6: Duplicating packets that was marked as packets that came from same
 //destination network. It's undesirable and should be notified with an ICMP
 //error(see below). Packets on this situation, even through, going to devivered.
-// 3: Among other things, recompute timestamp and checksum of IP packets. If
+// 7: Among other things, recompute timestamp and checksum of IP packets. If
 //any error happens, it going to redirects those packets to output 1 (see
 //below) and send a source notification through ICMP packet for each one
-// 4: It change the source IP of packets that came from local networks if an
-//annotation require this. It also recomputes packets' checksum.
-// 5: It decrement Time-To-Live propriety of IP packets. If TTL was expired,
+// 8: It decrement Time-To-Live propriety of IP packets. If TTL was expired,
 //this packet is redirected to output 1 and an ICMP error raise.
-// 6: It fragment IP packets to choose n bytes and set fragmented bit. If a
+// 9: It fragment IP packets to choose n bytes and set fragmented bit. If a
 //non-fragment bit have been set or any other error, ICMP error will raise after
 //redirection to output 1.
-// 7: Just a print to console, showing a string and writing packets content.
-// 8: Sending packets to ARP Querier input 0 to be wrap and set link level (MAC)
+// 10: Sending packets to ARP Querier input 0 to be wrap and set link level (MAC)
 //address correctly.
-srouter[3] -> DropBroadcasts //caso não esteja sendo efetivo, o CheckIPHeader
-                             //pode fazer serviço semelhante com a opção
-                             //INTERFACES ou BADSRC;
-                             //DropBroadcasts ignora broadcasts apartir de uma
+srouter[3] -> DropBroadcasts // DropBroadcasts ignora broadcasts apartir de uma
                              //anotação (SetPacketType) feita pelo FromDevice.
+                             // Em caso de falha, ver CheckIPHeader.
            -> SetPacketType(OUTGOING)
            -> [0]rewriter
 	       -> outTransportFilter
 	       -> SetTCPChecksum
            -> cp0 :: PaintTee(0)
            -> gio0 :: IPGWOptions(192.168.0.74)
-//           -> FixIPSrc(192.168.0.74) //ver como configura as anotações pra trocar os IPs
            -> dt0 :: DecIPTTL
-           -> fr0 :: IPFragmenter(1500) //tratar pacotes udp maiores que 1472 ;)
+           -> fr0 :: IPFragmenter(1500)
            -> [0]arpq0;
 
-//Same piece of code as above, but now handling with UDP packets.
+//Same piece of code as above, but now handling with outgoing UDP packets.
 outTransportFilter[1] -> udpOut :: SetUDPChecksum -> cp0;
 
-//Same as above. ICMP and unknown layer 4  out here. Until now, ICMP checksum
+//Same as above. ICMP and unknown layer 4 out here. Until now, ICMP checksum
 //was not compromised. I will check it better, but ping works fine!!!
 outTransportFilter[2] -> Print('ICMP ou Mensagem de camada 4 desconhecida saíndo!')
                       -> cp0;
-
+// Receiving packets addressed to network (251.0) and preparing to send to
+//inferface destination.
 srouter[1] -> DropBroadcasts
            -> SetPacketType(OUTGOING) //Antes do DropBroadcasts por causa da anotação de broadcast.
            -> cp1 :: PaintTee(1)
            -> gio1 :: IPGWOptions(192.168.251.1)
-//         -> FixIPSrc(192.168.251.1)
            -> dt1 :: DecIPTTL
            -> udpcs1 :: SetTCPChecksum
            -> fr1 :: IPFragmenter(1500)
            -> [0]arpq251;
 
+// Receiving packets addressed to network (252.0) and preparing to send to
+//inferface destination.
 srouter[2] -> DropBroadcasts
            -> SetPacketType(OUTGOING)
            -> cp2 :: PaintTee(2)
            -> gio2 :: IPGWOptions(192.168.252.1)
-//         -> FixIPSrc(192.168.252.1)
            -> dt2 :: DecIPTTL
            -> udpcs2 :: SetTCPChecksum
            -> fr2 :: IPFragmenter(1500)
