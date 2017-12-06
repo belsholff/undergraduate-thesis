@@ -54,7 +54,9 @@
 //RST flags in TCP packets asking to close this connection in both sides
 //(cli->srv - by Linux - and after this, srv->cli).
 
-//PS2: This router does not implement ICMP responder yet.
+// PS2: FTP support was not implemented yet. See the second link of this file
+//(mazu-nat)to understand why, but basically that envolves TCP 23 FTP control
+// port.
 
 // Checar gw colocado aqui. ip        gw            ipnet             mac
 AddressInfo(net251 192.168.251.1 192.168.251.1 192.168.251.0/24 00:15:17:15:5D:21,
@@ -109,18 +111,19 @@ classifier252[0] -> ARPResponder(net252) -> out252;
 // 1: packets for 192.168.251.
 // 2: packets for 192.168.252.
 // 3: packets for outside, using a gateway.
-srouter :: StaticIPLookup(192.168.251.1/32 0,
-                          192.168.251.255/32 0,
+srouter :: StaticIPLookup(net251:ip 0,
+                          net251:bcast 0,
                           192.168.251.0/32 0,
-                          192.168.252.1/32 0,
-                          192.168.252.255/32 0,
+                          net252:ip 0,
+                          net252:bcast 0,
                           192.168.252.0/32 0,
-                          192.168.0.74/32 0, //volta por aqui
-                          192.168.1.255/32 0,
+                          net0:ip 0,
+                          net0:bcast 0,
                           192.168.0.0/32 0,
-                          192.168.251.0/24 1,
-                          192.168.252.0/24 2,
-                          0.0.0.0/0 192.168.0.254 3 //vai por aqui
+                          net251:ipnet 1,
+                          net252:ipnet 2,
+                          net0:ipnet 3, //pacotes para a rede não vão ao gw.
+                          0.0.0.0/0 192.168.0.254 3
 );
 
 // Simple NAT function. Rewrite packets that cames on it's input ports based on
@@ -143,8 +146,8 @@ Idle -> [1]rewriter;
 //fragmented or big transport packets.
 // A flow-separated filter is needed, because the paths after them are different.
 //Observe!
-inTransportFilter :: IPClassifier(tcp, udp, /*icmp,*/ -);
-outTransportFilter :: IPClassifier(tcp, udp, /*icmp,*/ -);
+inTransportFilter :: IPClassifier(tcp, udp, -);
+outTransportFilter :: IPClassifier(tcp, udp, -);
 
 // Ethernet header unwrapping definition, followed for an IP header checking
 //that drop any invalid source IP packets, even those broadcasts spreadings (when
@@ -166,14 +169,13 @@ classifier252[2] -> Print('rede252') -> Paint(2) -> ip;
 //They are redirected to rewriter to inspect this.
 srouter[0] -> Print('Pode ser para subredes!') -> [2]rewriter;
 
-//Here are packets destinated to Router.
+//Here are packets destinated to Router. We presume that will only comes ICMP
+//resquests through ping. So, router can answer the resquest.
 rewriter[2] -> Print('Não é para subredes!')
             -> SetPacketType(HOST)
-            -> EtherEncap(0x0800, 1:1:1:1:1:1, net251)
-            -> Discard; // When executing with kernel module in Linux, We have
-                        //to use ToHost, because obvious, you know.
-                        // If no Linux stack, implements simple services as ICMP
-                        //responders to debug.
+            -> IPFilter (allow icmp type 'echo', drop all)
+            -> ICMPPingResponder()
+            -> [0]srouter;
 
 // As I sad above, here are incomming NAT-ed packets. They have their checksum
 //recalculated (TCP in this case, others below) and come out translated to their
@@ -186,9 +188,8 @@ rewriter[1] -> inTransportFilter
 inTransportFilter[1] -> udpIn :: SetUDPChecksum //tratar pacotes grandes ou fragmentados;
                      -> [0]srouter;
 
-//Same as above. ICMP and unknown layer 4 out here. Until now, ICMP checksum
-//was not compromised. I will check it better, but ping pong works fine!!!
-inTransportFilter[2] -> Print('ICMP ou Mensagem de camada 4 desconhecida chegando!') //checar sobre o checksum do ICMP, apesar do ping funcionar.
+//Same as above. ICMP out here because ICMP checksum was not compromised by NAT.
+inTransportFilter[2] -> Print('ICMP ou Mensagem de camada 4 desconhecida chegando!')
                      -> [0]srouter;
 
 // Receiving packets addressed to network (0.0) and outgoing to internet and
@@ -221,7 +222,7 @@ srouter[3] -> DropBroadcasts // DropBroadcasts ignora broadcasts apartir de uma
 	       -> outTransportFilter
 	       -> SetTCPChecksum
            -> cp0 :: PaintTee(0)
-           -> gio0 :: IPGWOptions(192.168.0.74)
+           -> gio0 :: IPGWOptions(net0)
            -> dt0 :: DecIPTTL
            -> fr0 :: IPFragmenter(1500)
            -> [0]arpq0;
@@ -229,16 +230,16 @@ srouter[3] -> DropBroadcasts // DropBroadcasts ignora broadcasts apartir de uma
 //Same piece of code as above, but now handling with outgoing UDP packets.
 outTransportFilter[1] -> udpOut :: SetUDPChecksum -> cp0;
 
-//Same as above. ICMP and unknown layer 4 out here. Until now, ICMP checksum
-//was not compromised. I will check it better, but ping works fine!!!
+//Same as above. ICMP out here because ICMP checksum was not compromised by NAT.
 outTransportFilter[2] -> Print('ICMP ou Mensagem de camada 4 desconhecida saíndo!')
                       -> cp0;
+
 // Receiving packets addressed to network (251.0) and preparing to send to
 //inferface destination.
 srouter[1] -> DropBroadcasts
            -> SetPacketType(OUTGOING) //Antes do DropBroadcasts por causa da anotação de broadcast.
            -> cp1 :: PaintTee(1)
-           -> gio1 :: IPGWOptions(192.168.251.1)
+           -> gio1 :: IPGWOptions(net251)
            -> dt1 :: DecIPTTL
            -> udpcs1 :: SetTCPChecksum
            -> fr1 :: IPFragmenter(1500)
@@ -249,7 +250,7 @@ srouter[1] -> DropBroadcasts
 srouter[2] -> DropBroadcasts
            -> SetPacketType(OUTGOING)
            -> cp2 :: PaintTee(2)
-           -> gio2 :: IPGWOptions(192.168.252.1)
+           -> gio2 :: IPGWOptions(net252)
            -> dt2 :: DecIPTTL
            -> udpcs2 :: SetTCPChecksum
            -> fr2 :: IPFragmenter(1500)
@@ -257,27 +258,27 @@ srouter[2] -> DropBroadcasts
 
 // DecIPTTL[1] emits packets with expired TTLs.
 // Reply with ICMPs. Rate-limit them?
-dt0[1] -> ICMPError(192.168.0.74, timeexceeded) -> [0]srouter;
-dt1[1] -> ICMPError(192.168.251.1, timeexceeded) -> [0]srouter;
-dt2[1] -> ICMPError(192.168.252.1, timeexceeded) -> [0]srouter;
+dt0[1] -> ICMPError(net0, timeexceeded) -> [0]srouter;
+dt1[1] -> ICMPError(net251, timeexceeded) -> [0]srouter;
+dt2[1] -> ICMPError(net252, timeexceeded) -> [0]srouter;
 
 // Send back ICMP UNREACH/NEEDFRAG messages on big packets with DF set.
 // This makes path mtu discovery work.
-fr0[1] -> ICMPError(192.168.0.74, unreachable, needfrag) -> [0]srouter;
-fr1[1] -> ICMPError(192.168.251.1, unreachable, needfrag) -> [0]srouter;
-fr2[1] -> ICMPError(192.168.252.1, unreachable, needfrag) -> [0]srouter;
+fr0[1] -> ICMPError(net0, unreachable, needfrag) -> [0]srouter;
+fr1[1] -> ICMPError(net251, unreachable, needfrag) -> [0]srouter;
+fr2[1] -> ICMPError(net252, unreachable, needfrag) -> [0]srouter;
 
 // Send back ICMP Parameter Problem messages for badly formed
-// IP options. Should set the code to point to the
+// IP options. Should set the code tonet251 point to the
 // bad byte, but that's too hard.
-gio0[1] -> ICMPError(192.168.0.74, parameterproblem) -> [0]srouter;
-gio1[1] -> ICMPError(192.168.251.1, parameterproblem) -> [0]srouter;
-gio2[1] -> ICMPError(192.168.252.1, parameterproblem) -> [0]srouter;
+gio0[1] -> ICMPError(net0, parameterproblem) -> [0]srouter;
+gio1[1] -> ICMPError(net251, parameterproblem) -> [0]srouter;
+gio2[1] -> ICMPError(net252, parameterproblem) -> [0]srouter;
 
 // Send back an ICMP redirect if required.
-cp0[1] -> ICMPError(192.168.0.74, redirect, host) -> [0]srouter;
-cp1[1] -> ICMPError(192.168.251.1, redirect, host) -> [0]srouter;
-cp2[1] -> ICMPError(192.168.252.1, redirect, host) -> [0]srouter;
+cp0[1] -> ICMPError(net0, redirect, host) -> [0]srouter;
+cp1[1] -> ICMPError(net251, redirect, host) -> [0]srouter;
+cp2[1] -> ICMPError(net252, redirect, host) -> [0]srouter;
 
 // Unknown ethernet type numbers.
 classifier0[3] -> Discard;
