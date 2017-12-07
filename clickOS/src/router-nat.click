@@ -5,15 +5,16 @@
 //https://github.com/kohler/click/blob/57177d28f308f3bd35e83133a74a5b77a8338e96/conf/fake-iprouter.click
 //https://github.com/kohler/click/blob/57177d28f308f3bd35e83133a74a5b77a8338e96/conf/mazu-nat.click
 //
-// This NAT not complain with UDP transport packets up to 1472 bytes, or
-//fragmented ones previously routed, because recalculate checksum will cost a
+// This NAT doesn't fully complain with UDP transport packets up to 1472 bytes,
+//or fragmented ones previously routed, because recalculate checksum will cost a
 //lot of human energy and resources to collect UDP packets, sorting, rebuilding
 //original UDP packet, do checksum recalculate and split it again to then route.
-//Checksum in UDP packets are optional, so in this case, if the application
-//ignores it, everything would works.
+//Checksum in UDP packets are optional, so in this case, if the developed
+//application ignores it, everything could works.
 // More datailed information in:
 //1- http://www.ciscopress.com/articles/article.asp?p=25273&seqNum=3
 //2- https://stackoverflow.com/questions/43600295/update-udp-checksum-in-fragmented-packets
+//3- https://notes.shichao.io/tcpv1/figure_10-9.png
 // Note: For TCP implementations with TCP/IP, this question was handled.
 //
 // For better comprehension, please use clicky GUI program to graphic
@@ -41,18 +42,18 @@
 // 192.168.251.0/24 is a local network in virtualized enviromment;
 // 192.168.252.0/24 same as above;
 //
-// Traffic flows from 251.0 to 0.0, using ping or iperf command, for example.
-//Outgoing flow arrives to any machine in destination network, checked with
-//tcpdump/wireshark. It's answers are correctly translates by IPAddrRewriter,
-//re-routed and delevered.
+// Traffic flows from 251.0 and 252.0 to 0.0, using ping or iperf command, for
+//example. Outgoing flow arrives to any machine in destination network, checked
+//with tcpdump/wireshark. It's answers are correctly translates by
+//IPAddrRewriter, re-routed and delevered.
 
 // PS1: If you try to play tests with this code in a Click enviroment instance,
-//be careful with Linux network stack in TCP connections. It can close connections
-//when receive incomming answers that it haven't did (it's right at normal case),
-//but in this case, Click network stack was responsible by the TCP request. Both
-//stacks receives packets, shakes, everything. When it occours, Linux stack send
-//RST flags in TCP packets asking to close this connection in both sides
-//(cli->srv - by Linux - and after this, srv->cli).
+//be careful with Linux network stack in TCP connections. It can close
+//connections when receive incomming answers that it haven't did (it's right at
+//normal case), but in this case, Click network stack was responsible by the TCP
+//request. Both stacks receives packets, shakes, everything. When it occours,
+//Linux stack send RST flags in TCP packets asking to close this connection in
+//both sides (cli->srv - by Linux - and after this, srv->cli).
 
 // PS2: FTP support was not implemented yet. See the second link of this file
 //(mazu-nat)to understand why, but basically that envolves TCP 23 FTP control
@@ -64,7 +65,8 @@ AddressInfo(net251 192.168.251.1 192.168.251.1 192.168.251.0/24 00:15:17:15:5D:2
             net0 192.168.0.74 192.168.0.254 192.168.0.0/23 00:16:3E:4F:D6:95
 );
 
-//Classifing frames using layer 2 codes. One classifier per existing network. Outputs:
+//Classifing frames using layer 2 codes. One classifier per existing network.
+//Outputs:
 // 0. ARP queries
 // 1. ARP replies
 // 2. IP
@@ -97,8 +99,8 @@ classifier251[1] -> [1]arpq251;
 classifier252[1] -> [1]arpq252;
 
 // ARP Responder definitions. It going to answer ARP queriers with an IP-matched
-// MAC address It could be more than one per MAC address. It's useful for network
-//visibility by anothers and vice versa.
+// MAC address It could be more than one per MAC address. It's useful for
+//network visibility by anothers and vice versa.
 // Connecting queries from classifier to ARPResponder after this, to outside
 //world through hardware queues.
 classifier0[0] -> ARPResponder(net0) -> out0;
@@ -127,9 +129,9 @@ srouter :: StaticIPLookup(net251:ip 0,
 );
 
 // Simple NAT function. Rewrite packets that cames on it's input ports based on
-//some rules previously defined. if no one rules has been matched, IPAddrRewriter
-//follow a default behavior previously setted. For example, "pattern", "drop",
-//"pass".
+//some rules previously defined. if no one rules has been matched,
+//IPAddrRewriter follow a default behavior previously setted. For example,
+//"pattern", "drop", "pass".
 rewriter :: IPAddrRewriter(pattern net0 - 0 1,
                            drop,
                            pass 2
@@ -150,10 +152,10 @@ inTransportFilter :: IPClassifier(tcp, udp, -);
 outTransportFilter :: IPClassifier(tcp, udp, -);
 
 // Ethernet header unwrapping definition, followed for an IP header checking
-//that drop any invalid source IP packets, even those broadcasts spreadings (when
-//broadcasts are source address). After this, packets are delivered to static
-//routing.
-ip :: Strip(14) -> CheckIPHeader //ele cospe pacotes com erros pela saída 1. Tratar.
+//that drop any invalid source IP packets, even those broadcasts spreadings
+//(when broadcasts are source address). After this, packets are delivered to
+//static routing.
+ip :: Strip(14) -> CheckIPHeader //Deveria setar ICMPError - parameter problem?
                 -> [0]srouter;
 
 // Inserting annotations to IP frames to mark which interface they came from.
@@ -187,6 +189,10 @@ rewriter[1] -> inTransportFilter
 //Same piece of code as above, but now handling with incoming UDP packets.
 inTransportFilter[1] -> udpIn :: SetUDPChecksum //tratar pacotes grandes ou fragmentados;
                      -> [0]srouter;
+
+udpIn[1] -> Print ('Pacotes UDP maiores que 1472 bytes ou fragmentados não são
+                   tratados pela impossibilidade de recalcular o checksum.')
+         -> Discard;
 
 //Same as above. ICMP out here because ICMP checksum was not compromised by NAT.
 inTransportFilter[2] -> Print('ICMP ou Mensagem de camada 4 desconhecida chegando!')
@@ -229,6 +235,10 @@ srouter[3] -> DropBroadcasts // DropBroadcasts ignora broadcasts apartir de uma
 
 //Same piece of code as above, but now handling with outgoing UDP packets.
 outTransportFilter[1] -> udpOut :: SetUDPChecksum -> cp0;
+
+udpOut[1] -> Print ('Pacotes UDP maiores que 1472 bytes ou fragmentados não são
+                   tratados pela inviabilidade de recalcular o checksum.')
+         -> cp0;
 
 //Same as above. ICMP out here because ICMP checksum was not compromised by NAT.
 outTransportFilter[2] -> Print('ICMP ou Mensagem de camada 4 desconhecida saíndo!')
