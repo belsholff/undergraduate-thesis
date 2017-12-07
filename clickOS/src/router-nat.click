@@ -187,12 +187,11 @@ rewriter[1] -> inTransportFilter
             -> [0]srouter;
 
 //Same piece of code as above, but now handling with incoming UDP packets.
-inTransportFilter[1] -> udpIn :: SetUDPChecksum //tratar pacotes grandes ou fragmentados;
+inTransportFilter[1] -> udpIn :: SetUDPChecksum
                      -> [0]srouter;
 
-udpIn[1] -> Print ('Pacotes UDP maiores que 1472 bytes ou fragmentados não são
-                   tratados pela impossibilidade de recalcular o checksum.')
-         -> Discard;
+// Big packets or fragmented ones has an equal flow, but doesn't re-check.
+udpIn[1] -> [0]srouter;
 
 //Same as above. ICMP out here because ICMP checksum was not compromised by NAT.
 inTransportFilter[2] -> Print('ICMP ou Mensagem de camada 4 desconhecida chegando!')
@@ -236,9 +235,8 @@ srouter[3] -> DropBroadcasts // DropBroadcasts ignora broadcasts apartir de uma
 //Same piece of code as above, but now handling with outgoing UDP packets.
 outTransportFilter[1] -> udpOut :: SetUDPChecksum -> cp0;
 
-udpOut[1] -> Print ('Pacotes UDP maiores que 1472 bytes ou fragmentados não são
-                   tratados pela inviabilidade de recalcular o checksum.')
-         -> cp0;
+// Big packets or fragmented ones has an equal flow, but doesn't re-check.
+udpOut[1] -> cp0;
 
 //Same as above. ICMP out here because ICMP checksum was not compromised by NAT.
 outTransportFilter[2] -> Print('ICMP ou Mensagem de camada 4 desconhecida saíndo!')
