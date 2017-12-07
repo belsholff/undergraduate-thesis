@@ -59,7 +59,7 @@
 //(mazu-nat)to understand why, but basically that envolves TCP 23 FTP control
 // port.
 
-// Checar gw colocado aqui. ip        gw            ipnet             mac
+//                      ip            gw            ipnet             mac
 AddressInfo(net251 192.168.251.1 192.168.251.1 192.168.251.0/24 00:15:17:15:5D:21,
             net252 192.168.252.1 192.168.252.1 192.168.252.0/24 00:15:17:15:5D:31,
             net0 192.168.0.74 192.168.0.254 192.168.0.0/23 00:16:3E:4F:D6:95
