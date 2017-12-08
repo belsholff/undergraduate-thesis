@@ -1,9 +1,9 @@
 // Author: Felipe Belsholff
-// Date: dez 7, 2017
+// Date: Dez 7, 2017
 
-//                      ip            ipnet             mac
-AddressInfo(net1 ,
-            net2 ,
+//                    ip           ipnet            mac
+AddressInfo(net1 172.16.30.12  172.16.30.0/24  00:15:17:15:30:12,
+            net2 192.168.40.21 192.168.40.0/24 00:15:17:15:40:21,
 );
 
 //Classifing frames using layer 2 codes. One classifier per existing network.
@@ -66,10 +66,9 @@ Idle -> [1]rewriter;
 // As I sad above, here are incomming NAT-ed packets. They have their checksum
 //recalculated (TCP in this case, others below) and come out translated to their
 //inner destination, and re-routed.
-rewriter[0] -> SetTCPChecksum -> [0]arpq1;
-rewriter[1] -> SetTCPChecksum -> [0]arpq2;
+rewriter[0] -> SetTCPChecksum -> [0]arpq2;
+rewriter[1] -> SetTCPChecksum -> [0]arpq1;
 
 // Unknown ethernet type numbers.
-classifier0[3] -> Discard;
-classifier251[3] -> Discard;
-classifier252[3] -> Discard;
+classifier1[3] -> Discard;
+classifier2[3] -> Discard;
