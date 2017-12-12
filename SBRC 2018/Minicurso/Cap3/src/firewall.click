@@ -2,9 +2,10 @@
 // Date: Dez 8, 2017
 
 //                      ip            ipnet             mac
-AddressInfo(net0 10.0.0.2     10.0.0.0/24    00:15:17:15:00:02,
-            net1 172.16.30.11 172.16.30.0/24 00:15:17:15:30:11,
-            nat0 172.16.30.12  00:15:17:15:30:12
+AddressInfo(net0  10.0.0.2     10.0.0.0/24    00:15:17:15:00:02,
+            net1  172.16.30.11 172.16.30.0/24 00:15:17:15:30:11,
+            nat1  172.16.30.12,
+            user1 10.0.0.1
 );
 
 //Classifing frames using layer 2 codes. One classifier per existing network.
@@ -41,8 +42,8 @@ classifier1[1] -> [1]arpq1;
 //network visibility by anothers and vice versa.
 // Connecting queries from classifier to ARPResponder after this, to outside
 //world through hardware queues.
-classifier0[0] -> ARPResponder(net0, nat0:ip net0:mac) -> out0; //responder pelo NAT
-classifier1[0] -> ARPResponder(net1) -> out1;
+classifier0[0] -> ARPResponder(net0, nat1:ip net0:mac) -> out0; //responder pelo NAT
+classifier1[0] -> ARPResponder(net1, user1:ip net1:mac) -> out1;
 
 webfilter :: IPFilter(allow dst 172.16.30.12 && dst port 80 or 443,
                          drop all)
@@ -54,6 +55,6 @@ webfilter :: IPFilter(allow dst 172.16.30.12 && dst port 80 or 443,
 classifier0[2] -> Strip(14) -> CheckIPHeader() -> webfilter -> [0]arpq1;
 classifier1[2] -> Strip(14) -> CheckIPHeader() -> [0]arpq0;
 
-// Unknown ethernet type numbers.
+// Other protocol types inside ethernet frames.
 classifier1[3] -> Discard;
 classifier2[3] -> Discard;
