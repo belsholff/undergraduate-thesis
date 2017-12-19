@@ -128,8 +128,8 @@ intern_arp_class[3] -> Discard;
 //
 
 // OUTPUT PATH
-ip_to_extern :: GetIPAddress(16)
-      -> CheckIPHeader
+ip_to_extern :: GetIPAddress(16) // As duas funções preenchem a anotação de
+      -> CheckIPHeader 			 //destino. Usar apenas a CheckIPHeader.
       -> EtherEncap(0x0800, extern:eth, extern_next_hop:eth)
       -> extern_dev;
 ip_to_intern :: GetIPAddress(16)
