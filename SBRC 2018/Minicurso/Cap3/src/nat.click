@@ -12,9 +12,9 @@ AddressInfo(net0 10.0.0.3       10.0.0.0/8       00:00:00:01:00:03,
 
 ws_mappers :: SourceIPHashMapper(129 0xbadbeef, // Params: Nodes per machine=129; Seed=0xbadbeef
                                                 // Ver esses parâmetros!
-                                 - - ws1 - 0 1 1,
-                                 - - ws2 - 0 1 2,
-                                 - - ws3 - 0 1 3
+                                 - - ws1 - 0 1 101,
+                                 - - ws2 - 0 1 102,
+                                 - - ws3 - 0 1 103
 );
 
 //Classifing frames using layer 2 codes. One classifier per existing network.
@@ -30,8 +30,8 @@ classifier0, classifier1, classifier2 :: Classifier(12/0806 20/0001,
 );
 
 // Source packets output to layer 2 classifiers input 0.
-FromDevice(0) -> [0]classifier0;
-FromDevice(1) -> [0]classifier1;
+FromDevice(0) -> [0]classifier0; // Usável apenas para receber ARP replies.
+FromDevice(1) -> [0]classifier1; // Não usável para receber ARP replies.
 FromDevice(2) -> [0]classifier2;
 
 // Queue definition and connection to sink input 0.
@@ -42,12 +42,14 @@ out2 :: Queue(1024) -> ToDevice(2);
 // ARPQuerier definition. This wrap IP packets into Ethernet frames with given
 // MAC destination previously asked.
 arpq0 :: ARPQuerier(net1) -> out0;
-arpq1 :: ARPQuerier(net1) -> out1;
+// arpq1 :: ARPQuerier(net1) -> out1; // Nada IP é enviado por essa interface.
+                                      // Só envia ARP replies.
 arpq2 :: ARPQuerier(net2) -> out2;
 
 // Deliver ARP responses to ARP queriers as well as Linux.
 classifier0[1] -> [1]arpq0;
-classifier1[1] -> [1]arpq1;
+// classifier1[1] -> [1]arpq1; // Nada IP é enviado por essa interface.
+classifier1[1] -> Discard;
 classifier2[1] -> [1]arpq2;
 
 // ARP Responder definitions. It going to answer ARP queriers with an IP-matched
@@ -55,8 +57,13 @@ classifier2[1] -> [1]arpq2;
 //network visibility by anothers and vice versa.
 // Connecting queries from classifier to ARPResponder after this, to outside
 //world through hardware queues.
-//classifier0[0] -> ARPResponder(net0) -> out0; //testar se precisa negar o mac da máquina destino da requisição web para não ter conflito com o caminho através do firewall
-classifier[0] -> Discard;
+//classifier0[0] -> ARPResponder(net0) -> out0; // Testar se precisa negar o mac
+                                                //da máquina destino da requisição
+                                                //web para não ter conflito com
+                                                //o caminho através do firewall.
+                                                // Usável apenas se parte do
+                                                //fluxo não passar pelo firewall.
+classifier0[0] -> Discard;
 classifier1[0] -> ARPResponder(net1) -> out1;
 classifier2[0] -> ARPResponder(net2) -> out2;
 
