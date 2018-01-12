@@ -10,13 +10,6 @@ AddressInfo(net0 10.0.0.3       10.0.0.0/8       00:00:00:01:00:03,
             ws3  172.16.37.181
 );
 
-ws_mappers :: SourceIPHashMapper(129 0xbadbeef, // Params: Nodes per machine=129; Seed=0xbadbeef
-                                                // Ver esses parâmetros!
-                                 - - ws1 - 0 1 101,
-                                 - - ws2 - 0 1 102,
-                                 - - ws3 - 0 1 103
-);
-
 //Classifing frames using layer 2 codes. One classifier per existing network.
 //Outputs:
 // 0. ARP queries
@@ -66,6 +59,13 @@ classifier2[1] -> [1]arpq2;
 classifier0[0] -> Discard;
 classifier1[0] -> ARPResponder(net1) -> out1;
 classifier2[0] -> ARPResponder(net2) -> out2;
+
+ws_mappers :: SourceIPHashMapper(129 0xbadbeef, // Params: Nodes per machine=129; Seed=0xbadbeef
+                                                // Ver esses parâmetros!
+                                 - - ws1 - 0 1 101,
+                                 - - ws2 - 0 1 102,
+                                 - - ws3 - 0 1 103
+);
 
 // Simple NAT function. Rewrite packets that cames on it's input ports based on
 //some rules previously defined. if no one rules has been matched,
