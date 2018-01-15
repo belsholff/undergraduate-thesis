@@ -20,6 +20,8 @@ Comando start: #xl create /etc/xen/nidoqueen.cfg
 	# nano file.click
 	# $COSMOS_ROOT/dist/bin/cosmos start click1 file.click
 
+#ao usar deborphan para limpar pacotes ou desinstalar algum programa para liberar espaço em disco, ficar atento a esses pacotes.
+
 apt-get install grub-xen-bin grub-xen-host ipxe-qemu libaio1 libfdt1 libiscsi2 librados2 librbd1 libseccomp2 libspice-server1 libvdeplug2 libxen-4.4 libxenstore3.0 qemu-system-common qemu-system-x86 qemu-utils seabios sharutils xen-hypervisor-4.4-amd64 xen-linux-system-3.16.0-4-amd64 xen-linux-system-amd64 xen-system-amd64 xen-utils-4.4 xen-utils-common xenstore-utils debootstrap debugedit libconfig-inifiles-perl libdata-validate-domain-perl libdata-validate-ip-perl libdata-validate-uri-perl libexpect-perl libfile-slurp-perl libfile-which-perl libio-pty-perl libio-stty-perl liblist-moreutils-perl libnet-domain-tld-perl libnet-ipv6addr-perl libnet-netmask-perl libnetaddr-ip-perl libnetwork-ipv4addr-perl librpm3 librpmbuild3 librpmio3 librpmsign1 libsocket6-perl libterm-size-perl rinse rpm rpm-common rpm2cpio xen-tools
 
 apt-get install dmeventd libdevmapper-event1.02.1 liblvm2cmd2.02 libreadline5 lvm2
