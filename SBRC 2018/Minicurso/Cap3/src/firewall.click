@@ -24,7 +24,7 @@ classifier1 :: Classifier(12/0806 20/0001,
 FromDevice(0) -> [0]classifier1;
 
 // Queue definition and connection to sink input 0.
-out1 :: Queue(1024) -> ToDevice(1);
+out1 :: Queue(1024) -> ToDevice(0);
 
 // ARPQuerier definition. This wrap IP packets into Ethernet frames with given
 // MAC destination previously asked.
