@@ -2,10 +2,10 @@
 // Date: Dez 8, 2017
 
 //                            ip            ipnet              mac
-AddressInfo(net1        192.168.171.11 192.168.171.0/24 01:92:16:81:71:11,
+AddressInfo(net1        192.168.171.11 192.168.171.0/24 00:92:16:81:71:11,
             natlb1_int  192.168.171.12,
             natlb1_ext  10.0.0.3,
-            user1       192.168.171.10
+            user1       192.168.171.91
 );
 
 //Classifing frames using layer 2 codes. One classifier per existing network.
@@ -48,6 +48,7 @@ webfilter :: IPFilter(allow dst natlb1_ext && dst port 80 or 443,
 //goes to same network. Another annotation mark that frame as IPv4 protocol.
 //Click system needs it to use ToHost, frames are directed to unwrapping.
 classifier1[2] -> Strip(14)
+               -> Print('Chegou:')
                -> CheckIPHeader() //ver sobre passar pacotes com IPs diferentes do IP da rede -> CheckIPHeader.
                -> webfilter
                -> SetIPAddress(natlb1_int)
