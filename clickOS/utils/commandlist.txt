@@ -1,0 +1,76 @@
+##Click1
+#Comandos de Criação:
+	# cd clickOS/
+	# export COSMOS_ROOT=$(pwd)"/cosmos"
+	# cd clickos/minios/
+	# nano config_click.xen
+	# xl create config_click.xen
+	# nano file.click
+	# $COSMOS_ROOT/dist/bin/cosmos start click1 file.click
+
+***Debian 8
+
+#ao usar deborphan para limpar pacotes ou desinstalar algum programa para liberar espaço em disco, ficar atento a esses pacotes.
+
+apt-get install grub-xen-bin grub-xen-host ipxe-qemu libaio1 libfdt1 libiscsi2 librados2 librbd1 libseccomp2 libspice-server1 libvdeplug2 libxen-4.4 libxenstore3.0 qemu-system-common qemu-system-x86 qemu-utils seabios sharutils xen-hypervisor-4.4-amd64 xen-linux-system-3.16.0-4-amd64 xen-linux-system-amd64 xen-system-amd64 xen-utils-4.4 xen-utils-common xenstore-utils debootstrap debugedit libconfig-inifiles-perl libdata-validate-domain-perl libdata-validate-ip-perl libdata-validate-uri-perl libexpect-perl libfile-slurp-perl libfile-which-perl libio-pty-perl libio-stty-perl liblist-moreutils-perl libnet-domain-tld-perl libnet-ipv6addr-perl libnet-netmask-perl libnetaddr-ip-perl libnetwork-ipv4addr-perl librpm3 librpmbuild3 librpmio3 librpmsign1 libsocket6-perl libterm-size-perl rinse rpm rpm-common rpm2cpio xen-tools
+
+apt-get install dmeventd libdevmapper-event1.02.1 liblvm2cmd2.02 libreadline5 lvm2
+
+apt-get install binutils build-essential dpkg-dev fakeroot g++ g++-4.9 gcc gcc-4.9 libalgorithm-diff-perl libalgorithm-diff-xs-perl libalgorithm-merge-perl libasan1 libatomic1 libc-dev-bin libc6-dev libcilkrts5 libdpkg-perl libfakeroot libfile-fcntllock-perl libgcc-4.9-dev libitm1 liblsan0 libstdc++-4.9-dev libtsan0 libubsan0 linux-libc-dev make manpages-dev
+
+apt-get install libxen-dev
+
+apt-get install swig swig2.0
+
+apt-get install libexpat1-dev libpython-dev libpython2.7-dev python-dev python2.7-dev
+
+apt-get install autopoint gettext libasprintf-dev libgettextpo-dev libgettextpo0
+
+apt-get install bin86 bcc elks-libc
+
+apt-get install acpica-tools iasl
+
+apt-get install uuid-dev
+
+apt-get install libncurses5-dev libtinfo-dev
+
+apt-get install pkg-config
+
+apt-get install gir1.2-spice-client-glib-2.0 libglib2.0-dev libpcre3-dev libpcrecpp0 libpixman-1-dev libpthread-stubs0-dev libqtglib-2.0-0 libspice-client-glib-2.0-dev libspice-protocol-dev libspice-server-dev libssl-dev libssl-doc libx11-dev libx11-doc libxau-dev libxcb1-dev libxdmcp-dev libxext-dev libxinerama-dev x11proto-core-dev x11proto-input-dev x11proto-kb-dev x11proto-xext-dev x11proto-xinerama-dev xorg-sgml-doctools xtrans-dev zlib1g-dev
+
+apt-get install libaio-dev
+
+apt-get install libyajl-dev
+
+
+***No debian 9 (não funcionou - possivelmente por causa do compilador gcc6)
+
+##para compilar a porra toda
+apt install swig
+
+##construir Xen 4.8 no Debian 9
+apt install -yV libxc-dev liblzma-dev zlib1g-dev python-dev uuid-dev libyajl-dev libaio-dev libglib2.0-dev libpixman-1-dev pkg-config bridge-utils iproute bison flex gettext iasl libc6-dev-i386 ocaml-nox ocaml-findlib cmake markdown figlet libnl-3-200 liblzma5 libnl-3-dev bin86 bcc libncurses-dev xorg-dev libssl-dev
+
+##instalar chaos:
+apt install -yV libjansson-dev libudev-dev
+
+##instalar cosmos
+apt install -yV libxen-dev
+Buscar no pc e apontar bibliotecas para /usr/bin/include/
+
+##instalar openvswitch
+apt install graphviz libssl-dev libcap-ng python-six sparse
+
+ldconfig #para atualizar as pastas de bibliotecas
+
+
+***No Ubuntu 16.04
+
+#Pré-requisito
+apt install swig
+
+#Compilar toolchain
+apt install texinfo
+
+#Compilar ClickOS
+apt install build-essential libxen-dev xen-system-amd64 autoconf swig

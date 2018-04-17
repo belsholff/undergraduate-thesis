@@ -1,0 +1,32 @@
+#WS1
+#Senha: e3wfLqfLFkT2L3STLs92Qfh
+xen-create-image --hostname ws1 --boot --cache yes --ip=172.16.40.55 --mac=00:01:72:16:40:55 --gateway=172.16.40.21 --netmask 255.240.0.0 --bridge=br172 --dir /home/felipeb/vms/ --fs ext4 --size 6G --memory 768M --swap 768M  --install-method=debootstrap --dist jessie
+
+#WS2
+#Senha: qHfuZL3pUJqNZwDe4wreZpC
+xen-create-image --hostname ws2 --boot --cache yes --ip=172.16.80.147 --mac=00:17:21:64:01:47 --gateway=172.16.40.21 --netmask 255.240.0.0 --bridge=br172 --dir /home/felipeb/vms/ --fs ext4 --size 6G --memory 768M --swap 768M  --install-method=debootstrap --dist jessie
+
+#WS3
+#Senha: w7Ee5uqpsnGKksJft5pQGkv
+xen-create-image --hostname ws3 --boot --cache yes --ip=172.16.37.181 --mac=00:17:21:63:71:81 --gateway=172.16.40.21 --netmask 255.240.0.0 --bridge=br172 --dir /home/felipeb/vms/ --fs ext4 --size 6G --memory 768M --swap 768M  --install-method=debootstrap --dist jessie
+
+#CLI1
+#Senha: JuzB3GGRJDMrVCVt2FZ6mWE
+xen-create-image --hostname cli1 --boot --cache yes --ip=10.0.0.2 --mac=00:00:00:10:00:02 --gateway=10.255.255.254 --netmask 255.0.0.0 --bridge=br10 --dir /home/felipeb/vms/ --fs ext4 --size 6G --memory 512M --swap 512M  --install-method=debootstrap --dist jessie
+
+# Para reorganizar o fluxo no cli1, é preciso: https://superuser.com/questions/737131/bind-incoming-packets-to-1-interface-and-outgoing-packets-to-2nd-interface#737147
+#   1- Configurar a rede que receberá o fluxo normalmente, com outra rede que não a rede que transitará através dela.
+#EXEMPLO: nano /etc/network/interfaces
+auto eth1
+iface eth1 inet static
+ address 192.168.171.91
+# gateway 192.168.171.254
+ netmask 255.255.255.0
+
+#   2- Adicionar uma rota para o destino desejado que passe pela interface do desvio.
+EXEMPLO:
+route add 10.0.0.3/32 dev eth1;
+
+#   3- Adicionar uma entrada na tabela ARP que entregue o pacote ao próximo nó do desvio.
+EXEMPLO:
+arp -i eth1 -s 10.0.0.3 00:92:16:81:71:11
