@@ -24,7 +24,8 @@ iface eth1 inet static
 # gateway 192.168.171.254
  netmask 255.255.255.0
 
-#   1.5- Novo comando para fazer a interceptação dos pacotes
+#   1.5- Novo comando para fazer a interceptação dos pacotes.
+#       OBS: Substitui os comandos 2 e 3 abaixo.
 iptables -t mangle -D POSTROUTING -j TEE --gateway 192.168.171.91
 
 #   2- Adicionar uma rota para o destino desejado que passe pela interface do desvio.
