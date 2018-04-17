@@ -1,12 +1,4 @@
-##Click1
-#Comandos de Criação:
-	# cd clickOS/
-	# export COSMOS_ROOT=$(pwd)"/cosmos"
-	# cd clickos/minios/
-	# nano config_click.xen
-	# xl create config_click.xen
-	# nano file.click
-	# $COSMOS_ROOT/dist/bin/cosmos start click1 file.click
+**************INSTALAÇÃO**************
 
 ***Debian 8
 
