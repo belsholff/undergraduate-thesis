@@ -48,11 +48,13 @@ webfilter :: IPFilter(allow dst natlb1_ext && dst port 80 or 443,
 //goes to same network. Another annotation mark that frame as IPv4 protocol.
 //Click system needs it to use ToHost, frames are directed to unwrapping.
 classifier1[2] -> Strip(14)
-               -> Print('Chegou:')
-               -> CheckIPHeader() //ver sobre passar pacotes com IPs diferentes do IP da rede -> CheckIPHeader.
+	       -> CheckIPHeader() //ver sobre passar pacotes com IPs diferentes do IP da rede -> CheckIPHeader.
                -> webfilter
                -> SetIPAddress(natlb1_int)
+	       -> IPPrint
                -> [0]arpq1;
+
+webfilter[1] -> Print('Barrou') -> Discard;
 
 // Other protocol types inside ethernet frames.
 classifier1[3] -> Discard;
