@@ -13,7 +13,9 @@ AddressInfo(net0        198.51.100.98 198.51.100.0/24 00:19:85:11:00:98,
             net1        192.0.2.11    192.0.2.0/24    00:01:92:00:02:11,
             natlb       192.0.2.61
 );
-                                                        //Outputs:
+
+//Classifing frames using layer 2 codes. One classifier per existing network.
+                                                        // Outputs:
 classifier0, classifier1 :: Classifier(12/0806 20/0001, // 0. ARP queries
                                        12/0806 20/0002, // 1. ARP replies
                                        12/0800,         // 2. IP
