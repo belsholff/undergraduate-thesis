@@ -1,10 +1,11 @@
 // Author: Felipe Belsholff
 // Date: Dez 7, 2017
 
-//                  ip            ipnet                 mac
-AddressInfo(net0 10.0.0.3       10.0.0.0/8       00:00:00:01:00:03,
-            net1 192.168.171.12 192.168.171.0/24 00:92:16:81:71:12,
-            net2 172.16.40.21   172.16.0.0/12    00:01:72:16:40:21,
+// Organizing IPs, networks and MACs from this MicroVM. Or tagging known hosts.
+//          name     ip             ipnet               mac
+AddressInfo(net0 192.0.2.61     192.0.2.0/24     00:01:92:00:02:61,
+            net1 172.16.40.21   172.16.0.0/12    00:01:72:16:40:21,
+            fw0  192.0.2.11,
             ws1  172.16.40.55,
             ws2  172.16.80.147,
             ws3  172.16.37.181
@@ -12,87 +13,99 @@ AddressInfo(net0 10.0.0.3       10.0.0.0/8       00:00:00:01:00:03,
 
 //Classifing frames using layer 2 codes. One classifier per existing network.
 //Outputs:
-// 0. ARP queries
-// 1. ARP replies
-// 2. IP
-// 3. Other
-classifier0, classifier1, classifier2 :: Classifier(12/0806 20/0001,
-                                                    12/0806 20/0002,
-                                                    12/0800,
-                                                    -
+classifier0, classifier1 :: Classifier(12/0806 20/0001, // 0. ARP queries
+                                       12/0806 20/0002, // 1. ARP replies
+                                       12/0800,         // 2. IP
+                                       -                // 3. Other
 );
 
-// Source packets output to layer 2 classifiers input 0.
-FromDevice(0) -> [0]classifier0; // Usável apenas para receber ARP replies.
-FromDevice(1) -> Print('Chegou') -> [0]classifier1; // Não usável para receber ARP replies.
-FromDevice(2) -> [0]classifier2;
+// For both: Incoming packets from interfaces are going to layer 2 classifiers
+//input 0.
+FromDevice(0) -> [0]classifier0; // First network port defined in .cfg. Packets
+                                 //(requests) are coming to processing.
+FromDevice(1) -> [0]classifier1; // Second one. Packets are going out;
 
-// Queue definition and connection to sink input 0.
+// Queue definition and connection to queue input 0. Here, packets processing
+//comes push and turns to pull.
 out0 :: Queue(1024) -> ToDevice(0);
 out1 :: Queue(1024) -> ToDevice(1);
-out2 :: Queue(1024) -> ToDevice(2);
 
-// ARPQuerier definition. This wrap IP packets into Ethernet frames with given
-// MAC destination previously asked.
+// ARPQuerier definition. This wraps IP packets into Ethernet frames with given
+//MAC destination previously asked through ARP protocol queries.
 arpq0 :: ARPQuerier(net0) -> out0;
-// arpq1 :: ARPQuerier(net1) -> out1; // Nada IP é enviado por essa interface.
-                                      // Só envia ARP replies.
-arpq2 :: ARPQuerier(net2) -> out2;
+arpq1 :: ARPQuerier(net1) -> out1;
 
-// Deliver ARP responses to ARP queriers as well as Linux.
+// Delivering ARP responses to ARP queriers.
 classifier0[1] -> [1]arpq0;
-// classifier1[1] -> [1]arpq1; // Nada IP é enviado por essa interface.
-classifier1[1] -> Discard;
-classifier2[1] -> [1]arpq2;
+classifier1[1] -> [1]arpq1;
 
-Idle -> [0]arpq0;
-Idle -> [0]arpq2;
-
-// ARP Responder definitions. It going to answer ARP queriers with an IP-matched
-// MAC address It could be more than one per MAC address. It's useful for
-//network visibility by anothers and vice versa.
+// ARP Responder definitions. It's useful for host visibility by others in
+//networks. It going to answer ARP queries with MAC address based on IP-matched.
+//It could contain more than one entry, which means ARP Responders could answer
+//queries about another machines and networks. ProxyARP is an application of
+//this.
 // Connecting queries from classifier to ARPResponder after this, to outside
-//world through hardware queues.
-//classifier0[0] -> ARPResponder(net0) -> out0; // Testar se precisa negar o mac
-                                                //da máquina destino da requisição
-                                                //web para não ter conflito com
-                                                //o caminho através do firewall.
-                                                // Usável apenas se parte do
-                                                //fluxo não passar pelo firewall.
-classifier0[0] -> Discard;
+//world through queues.
+classifier0[0] -> ARPResponder(net0) -> out0;
 classifier1[0] -> ARPResponder(net1) -> out1;
-classifier2[0] -> ARPResponder(net2) -> out2;
 
-ws_mappers :: SourceIPHashMapper(129 0xbadbeef, // Params: Nodes per machine=129; Seed=0xbadbeef
-                                                // Ver esses parâmetros!
-                                 - - ws1 - 0 1 101,
-                                 - - ws2 - 0 1 102,
-                                 - - ws3 - 0 1 103
+// Mapping used to do load balancing based on quintuple SIP, SPort, DIP, DPort
+//and Protocol. It consists of a hash table with fixed size and seed, in
+//addition to maintaining consistency, which means always requests are mapped
+//from a SIP to the same cluster node. It helps in the use of TCP connections.
+// The last entry in each rule means an ID.
+// This mapping is used inside the IPRewriter element below.
+// More detailed documentation about rules and this integration here:
+//https://github.com/kohler/click/wiki/IPRewriter
+ws_mappers :: SourceIPHashMapper(13 0xbadbeef,
+                                 - - ws1 - 0 1 4055,
+                                 - - ws2 - 0 1 80147,
+                                 - - ws3 - 0 1 37181
 );
 
 // Simple NAT function. Rewrite packets that cames on it's input ports based on
-//some rules previously defined. if no one rules has been matched,
-//IPAddrRewriter follow a default behavior previously setted. For example,
-//"pattern", "drop", "pass".
+//some rules in a table. This table receives entries by handlers or general
+//lines hardcoded in arguments function. Rules are set twice at time: first one
+//about incomming flow and later about outgoing one. Each flow goes out by an
+//output port previously defined by rule. Hardcode lines sets inputs and outputs
+//ports numbering them by its order in arguments, and are used just when there's
+//no rule matched in table.
+//IPRewriter hardcoded behaviors:
+//1- pattern
+//2- drop
+//3- pass
+// IPRewriter also could receive previously defined static and dinamic tables
+//as SourceIPHashMapper (which is our case) or IPRewritterPatterns. More
+//detailed documentation in link above.
 rewriter :: IPRewriter(ws_mappers,
-                         drop
+                       drop
 );
 
-// Inserting annotations to IP frames to mark which interface they came from.
-//It going to be useful after static routing, to find any packet that came and
-//goes to same network. Another annotation mark that frame as IPv4 protocol.
-//Click system needs it to use ToHost, frames are directed to unwrapping.
-classifier0[2] -> Discard;
-classifier1[2] -> Strip(14) -> CheckIPHeader() -> IPPrint('IDA1') -> [0]rewriter;
-classifier2[2] -> Strip(14) -> CheckIPHeader() -> IPPrint('VOLTA1') -> [1]rewriter;
+// For both classifiers:
+// Ethernet packets are stripped and comes to IP packets, that has its headers
+//checked, and send to NAT/LB elements.
+classifier0[2] -> Strip(14)
+               -> CheckIPHeader()
+               -> [0]rewriter;
 
-// As I sad above, here are incomming and outgoing  NAT-ed packets. They have
+classifier1[2] -> Strip(14)
+               -> CheckIPHeader()
+               -> [1]rewriter;
+
+//For both rewriters:
+// As I sad above, here are incomming and outgoing NAT-ed packets. They have
 //their checksum recalculated (TCP in this case, others below) and come out
-//translated to their inner destination, and re-routed.
-rewriter[0] -> SetTCPChecksum() -> IPPrint('IDA2') -> [0]arpq2;
-rewriter[1] -> SetTCPChecksum() -> IPPrint('VOLTA2') -> [0]arpq0;
+//ready to be send to its destination through ARPQuerier.
+rewriter[0] -> SetTCPChecksum()
+            -> [0]arpq1;
 
-// Other protocol types inside ethernet frames.
+// Here, a default gateway needs to be set to handle packets outside of
+//reachable networks. This is why SetIPAddress are used to set destination
+//annotation address and transmit packets to our firewall/gateway.
+rewriter[1] -> SetTCPChecksum()
+            -> SetIPAddress(fw0)
+            -> [0]arpq0;
+
+// Other protocol types inside ethernet frames. They are dropped/discarded.
 classifier0[3] -> Discard;
-classifier1[3] -> Print('Passou direto') -> Discard;
-classifier2[3] -> Discard;
+classifier1[3] -> Discard;
