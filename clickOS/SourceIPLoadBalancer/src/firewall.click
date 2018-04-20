@@ -22,7 +22,8 @@ classifier0, classifier1 :: Classifier(12/0806 20/0001, // 0. ARP queries
                                        -                // 3. Other
 );
 
-// Incoming packets going to layer 2 classifiers input 0.
+// For both: Incoming packets from interfaces are going to layer 2 classifiers
+//input 0.
 FromDevice(0) -> [0]classifier0; // First network port defined in .cfg. Packets
                                  //(requests) are coming to processing.
 FromDevice(1) -> [0]classifier1; // Second one. Packets are going out;
@@ -37,7 +38,7 @@ out1 :: Queue(1024) -> ToDevice(1);
 arpq0 :: ARPQuerier(net0) -> out0;
 arpq1 :: ARPQuerier(net1) -> out1;
 
-// Delivering ARP responses to the ARP querier.
+// Delivering ARP responses to the ARP queriers.
 classifier0[1] -> [1]arpq0;
 classifier1[1] -> [1]arpq1;
 
