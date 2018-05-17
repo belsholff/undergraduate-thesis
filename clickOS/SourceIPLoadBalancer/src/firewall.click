@@ -9,8 +9,8 @@
 
 // Organizing IPs, networks and MACs from this MicroVM. Or tagging known hosts.
 //          name             ip           ipnet              mac
-AddressInfo(net0        198.51.100.98 198.51.100.0/24 00:19:85:11:00:98,
-            net1        192.0.2.11    192.0.2.0/24    00:01:92:00:02:11,
+AddressInfo(net0        198.51.100.254 198.51.100.0/24 00:19:85:11:00:54,
+            net1        192.0.2.11     192.0.2.0/24    00:01:92:00:02:11,
             natlb       192.0.2.61
 );
 
