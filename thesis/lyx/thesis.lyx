@@ -1,0 +1,1084 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass abntex2
+\begin_preamble
+% ---
+% PACOTES
+% ---
+\usepackage{lastpage}			% Usado pela Ficha catalográfica
+\usepackage{indentfirst}			% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}			% Controle das cores
+\RequirePackage{url}			% deve ser carregado para tratar url de forma correta e usado pelo abntex2cite
+\RequirePackage{breakurl}			% trata de forma correta a quebra de url entre linhas
+
+% ---
+
+% ---
+% Pacotes de citações
+% ---
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf,%
+         abnt-url-package=url]{abntex2cite}	% Citações padrão ABNT
+% O carregamento da opção abnt-url-package=url corrige os hiperlinks com quebra de linha na bibliografia
+
+% --- 
+% CONFIGURAÇÕES DE PACOTES
+% --- 
+
+% ---
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+\renewcommand{\backref}{}
+% Define os textos da citação
+\renewcommand*{\backrefalt}[4]{
+\ifcase #1
+Nenhuma citação no texto.
+\or
+Citado na página #2.
+\else
+Citado #1 vezes nas páginas #2.
+\fi}
+
+% --- 
+% Espaçamentos entre linhas e parágrafos 
+% --- 
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+% ---
+% Configurações de aparência do PDF final
+
+% alterando o aspecto da cor azul
+\definecolor{blue}{RGB}{41,5,195}
+
+% informações do PDF
+\hypersetup{
+    unicode=true,
+    backref=true,
+    pagebackref=true,
+    bookmarks=true,         		% show bookmarks bar?
+%	    pdftitle={\titulocompleto}, 
+%	    pdfauthor={\nomecompletoautor},
+%	    pdfsubject={\imprimirpreambulo},
+%	    pdfkeywords={\palavrachaveum}{\palavrachavedois}{\palavrachavetres},
+    pdfproducer={LaTeX with abnTeX2}, 	% producer of the document
+%	    pdfcreator={\nomecompletoautor},
+    colorlinks=true,       		% false: boxed links; true: colored links
+    linkcolor=blue,          	        % color of internal links
+    citecolor=blue,        		% color of links to bibliography
+    filecolor=magenta,      		% color of file links
+    urlcolor=blue,			% color of url links
+    bookmarksdepth=4,
+    breaklinks=true			% deve ser usado com o pacote breakurl, sem ele não fuciona
+}
+
+% ---
+% compila o indice
+% ---
+\makeindex
+% ---
+\end_preamble
+\options 12pt,openright,twoside,a4paper,english,brazil
+\use_default_options false
+\maintain_unincluded_children false
+\language brazilian
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Titulo
+Implementação de Funções de Rede Virtualizadas usando ClickOS
+\end_layout
+
+\begin_layout Local
+Vitória, Espírito Santo, Brasil
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+instituicao{Universidade Federal do Espírito Santo - UFES
+\backslash
+par
+\end_layout
+
+\begin_layout Plain Layout
+
+Centro Tecnológico - CT
+\backslash
+par Graduação em Ciência da Computação}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Data
+Julho 2018
+\end_layout
+
+\begin_layout Preambulo
+Projeto final de graduação apresentado ao Departamento de Informática do
+ Centro Técnológico da Universidade Federal do Espírito Santo, como requisito
+ parcial para obter o título de Bacharel em Ciência da Computação
+\end_layout
+
+\begin_layout Autor
+Felipe Belsholff Pina
+\end_layout
+
+\begin_layout Orientador
+Prof.
+ Dr.
+ Rodolfo da Silva Villaça
+\end_layout
+
+\begin_layout Co-Orientador
+Profa.
+ Msc.
+ Cristina Klippel Dominicini
+\end_layout
+
+\begin_layout Tipo-trabalho
+Monografia
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\backslash
+let
+\backslash
+ref
+\backslash
+autoref
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Veja 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://tex.stackexchange.com/questions/6059/table-figure-and-listing-prefixes
+\end_layout
+
+\end_inset
+
+ para uma explicação.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+frenchspacing
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pretextual
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+imprimircapa
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+imprimirfolhaderosto*{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Ficha catalográfica entra aqui, se necessária.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Errata seguirá aqui, se necessária.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Folha de Aprovacao
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{folhadeaprovacao}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{center}     
+\end_layout
+
+\begin_layout Plain Layout
+
+			{
+\backslash
+ABNTEXchapterfont
+\backslash
+large
+\backslash
+imprimirautor}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+vspace*{
+\backslash
+fill}
+\backslash
+vspace*{
+\backslash
+fill}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+begin{center}       
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+ABNTEXchapterfont
+\backslash
+bfseries
+\backslash
+Large
+\backslash
+imprimirtitulo     
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+end{center}     
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+vspace*{
+\backslash
+fill}          
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+hspace{.45
+\backslash
+textwidth}     
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+begin{minipage}{.5
+\backslash
+textwidth}         
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+imprimirpreambulo     
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+end{minipage}%     
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+vspace*{
+\backslash
+fill}    
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{center}             
+\end_layout
+
+\begin_layout Plain Layout
+
+	Trabalho aprovado.
+ 
+\backslash
+imprimirlocal, 
+\backslash
+_
+\backslash
+_ de julho de 2018:
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+assinatura{
+\backslash
+textbf{
+\backslash
+imprimirorientador} 
+\backslash
+
+\backslash
+ Orientador}	
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+assinatura{
+\backslash
+textbf{
+\backslash
+imprimircoorientador} 
+\backslash
+
+\backslash
+ Co-orientadora}     	
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+assinatura{
+\backslash
+textbf{Professor} 
+\backslash
+
+\backslash
+ Convidado Interno}    	
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+assinatura{
+\backslash
+textbf{Professor} 
+\backslash
+
+\backslash
+ Convidado Externo}             
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{center}     
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+vspace*{0.5cm}     
+\end_layout
+
+\begin_layout Plain Layout
+
+		{
+\backslash
+large
+\backslash
+imprimirlocal}     
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+par 
+\end_layout
+
+\begin_layout Plain Layout
+
+		{
+\backslash
+large
+\backslash
+imprimirdata}     
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+vspace*{1cm}   
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{center}    
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{folhadeaprovacao}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Dedicatoria
+\align center
+\begin_inset VSpace vfill*
+\end_inset
+
+
+\end_layout
+
+\begin_layout Dedicatoria
+\align center
+Dedicatória
+\end_layout
+
+\begin_layout Dedicatoria
+\begin_inset VSpace vfill*
+\end_inset
+
+
+\end_layout
+
+\begin_layout Epigrafe
+\align right
+\begin_inset VSpace vfill*
+\end_inset
+
+
+\end_layout
+
+\begin_layout Epigrafe
+\align right
+Epígrafe
+\end_layout
+
+\begin_layout Resumo
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Resumo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Resumo
+Com o advento da virtualização e o surgimento do modelo de computação em
+ nuvem (Cloud Computing), uma das consequências imediatas para as empresas
+ e instituições foi a redução da aquisição de novos equipamentos.
+ Além disso, ainda no ponto de vista de infraestrutura, desacoplar funções
+ que outrora eram embutidas em hardware específico e fechado, trazendo-as
+ para camadas de abstração superiores, tornou possível um menor tempo de
+ implantação, e de manutenção das mesmas, acrescido de um grande salto com
+ relação a escalabilidade.
+\end_layout
+
+\begin_layout Resumo
+Neste cenário, o paradigma de Virtualização de Funções de Rede (NFV - Network
+ Function Virtualization), tem como premissa entregar funções de rede, tais
+ como: firewalls, balanceadores de carga, Tradução de Endereço de Rede (NAT
+ - Network Address Translation), e Sistema de Detecção de Intrusão (IDS
+ - Intrusion Detection System), através de uma linguagem de alto nível,
+ colaborando com a flexibilidade do provisionamento, bem como na programabilidad
+e das mesmas, até então engessadas pelo uso dos middleboxes de prateleira.
+\end_layout
+
+\begin_layout Resumo
+Incluído neste panorama, ClickOS propõe uma plataforma de virtualização
+ para criação de middleboxes virtualizados, de alto desempenho, a ser amplamente
+ utilizada por desenvolvedores de VNFs.
+ A plataforma provê como ferramenta uma máquina virtual minimalista, escalável
+ e otimizada para executar a arquitetura Click, que por sua vez, tem por
+ objetivo criar elementos de rede customizados, reusáveis e legíveis.
+\end_layout
+
+\begin_layout Resumo
+Assim sendo, este trabalho tem como objetivo apresentar ClickOS como uma
+ alternativa para a implementação de Funções de Rede Virtualizadas (VNFs
+ - Virtualized Network Functions) dentro de NFV, usando como cenário o balanceam
+ento de carga em serviços de hospedagem web.
+\end_layout
+
+\begin_layout Resumo
+\noindent
+
+\series bold
+Palavras-chaves: 
+\series default
+NFV; virtualização de funções de rede; VNF; função de rede virtualizada;
+ click; clickOS; 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Resumo
+\noindent
+
+\series bold
+Keywords:
+\series default
+ NFV; network functions virtualization; VNF; virtualized network function;
+ click; clickOS;
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList table
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Abreviaturas em ordem alfabética
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+IDS
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Abreviação em língua inglesa para Sistema de Detecção de Intrusão
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+NAT
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Abreviação em língua inglesa para Tradução de Endereços de Rede
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+NFV
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Abreviação em língua inglesa para Virtualização de Funções de Rede
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+VNF
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Abreviação em língua inglesa para Função de Rede Virtualizada
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Símbolos em ordem de aparição
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Simbolos
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\alpha,\beta,\gamma,\ldots$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ alfabeto grego
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tableofcontents*
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+INTRODUÇÃO 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Verificar se o texto está de acordo com os ítens abaixo.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+OBJETIVO 
+\end_layout
+
+\begin_layout Standard
+Este trabalho apresenta a plataforma para implementação de VNFs ClickOS,
+ destacando sua importância e atuação dentro de NFV, entregando um rápido
+ desenvolvimento e manutenção de funções, e consolidando a virtualização
+ de dispositivos de redes como alternativa viável aos dispositivos físicos
+ semelhantes.
+\end_layout
+
+\begin_layout Standard
+Como objetivo específico, o projeto implementa duas funções de rede virtualizada
+s em ClickOS, implantadas em um cenário comum ao balanceamento de carga
+ em serviços de hospedagem web, e avalia a prova de conceito da plataforma
+ a partir de testes.
+\end_layout
+
+\begin_layout Section
+ESTRUTURA DO TRABALHO
+\end_layout
+
+\begin_layout Standard
+Para além deste, o capítulo 2 trata dos conceitos principais associados
+ ao trabalho e situa ClickOS diante a teoria apresentada; o capítulo 3 propõe
+ a realização do objetivo específico, discorrendo sobre as funções de rede
+ e o comportamento esperado; o capítulo 4 foca no projeto e implementação
+ da proposta do capítulo anterior, destacando vantagens adquiridas com o
+ uso da ferramenta Click e ao fim, exemplificando passo a passo o fluir
+ de uma requisição web dentro do cenário implantado; o capítulo 5 versa
+ sobre a realização e os resultados dos testes no cenário proposto, buscando
+ confirmar a posição de ClickOS como alternativa aos dispositivos físicos;
+ o capítulo 6 caminha no sentido de concluir todo o esforço realizado, enfatizar
+ pontos positivos e não-positivos da plataforma e da proposta, e encaminhar
+ possíveis trabalhos futuros.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+CONCEITOS
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+PROPOSTA
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+PROJETO E IMPLEMENTAÇÃO
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+TESTES
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+CONCLUSÃO
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "thesis"
+options "plain"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
