@@ -49,18 +49,16 @@ classifier1[1] -> [1]arpq1;
 classifier0[0] -> ARPResponder(net0) -> out0;
 classifier1[0] -> ARPResponder(net1) -> out1;
 
-// Mapping used to do load balancing based on quintuple SIP, SPort, DIP, DPort
-//and Protocol. It consists of a hash table with fixed size and seed, in
-//addition to maintaining consistency, which means always requests are mapped
-//from a SIP to the same cluster node. It helps in the use of TCP connections.
-// The last entry in each rule means an ID.
+// Mapping used to do load balancing based on Round Robin distribution, with a
+//quintuple SIP, SPort, DIP, DPort and Protocol, which means that requests with
+//they, are mapped to the same cluster node. It helps in the use of TCP
+//connections.
 // This mapping is used inside the IPRewriter element below.
 // More detailed documentation about rules and this integration here:
 //https://github.com/kohler/click/wiki/IPRewriter
-ws_mappers :: SourceIPHashMapper(13 0xbadbeef,
-                                 - - ws1 - 0 1 4055,
-                                 - - ws2 - 0 1 80147,
-                                 - - ws3 - 0 1 37181
+ws_mapper :: RoundRobinIPMapper(- - ws1 - 0 1,
+                                - - ws2 - 0 1,
+                                - - ws3 - 0 1
 );
 
 // Simple NAT function. Rewrite packets that cames on it's input ports based on
@@ -77,7 +75,7 @@ ws_mappers :: SourceIPHashMapper(13 0xbadbeef,
 // IPRewriter also could receive previously defined static and dinamic tables
 //as SourceIPHashMapper (which is our case) or IPRewritterPatterns. More
 //detailed documentation in link above.
-rewriter :: IPRewriter(ws_mappers,
+rewriter :: IPRewriter(ws_mapper,
                        drop
 );
 
