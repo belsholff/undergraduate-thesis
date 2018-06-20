@@ -86,6 +86,15 @@
 	doi = {10.17487/RFC7665}
 }
 
+@techreport{postel1980rfc,
+  title={RFC 768},
+  author={Postel, Jon and Protocol, User Datagram},
+  journal={User datagram protocol},
+  pages={1--3},
+  year={1980},
+  publisher={28August}
+}
+
 @article{han_network_2015,
 	title = {Network function virtualization: {Challenges} and opportunities for innovations},
 	volume = {53},
@@ -242,5 +251,114 @@
 	file = {osdi16-panda.pdf:/media/Dados/felipe/Documentos/UFES/PG/Zotero/storage/N9X3ERSW/osdi16-panda.pdf:application/pdf}
 }
 
-@article{noauthor_notitle_nodate
+@book{veras2012cloud,
+  title={Cloud Computing: nova arquitetura da TI},
+  author={Veras, Manoel},
+  year={2012},
+  publisher={Brasport},
+  pages={34--35}
+}
+
+@article{etsi2014gs,
+  title={GS NFV 003-V1. 2.1-Network Function Virtualisation (NFV): Terminology for Main concepts in NFV},
+  author={ETSI, NFVISG},
+  journal={publishing December},
+  year={2014}
+}
+
+@article{carpenter2002middleboxes,
+  title={Middleboxes: Taxonomy and Issues. RFC 3234},
+  author={Carpenter, B and Brim, S},
+  year={2002}
+}
+
+@techreport{Mell:2011:SND:2206223,
+  author = {Mell, Peter M. and Grance, Timothy},
+  title = {SP 800-145. The NIST Definition of Cloud Computing},
+  year = {2011},
+  publisher = {National Institute of Standards \& Technology},
+  address = {Gaithersburg, MD, United States},
+  pages={3}
+}
+
+@misc{kohler_elements_nodate,
+	title = {Elements · kohler/click {Wiki} · {GitHub}},
+	url = {https://github.com/kohler/click/wiki/Elements},
+	language = {Inglês},
+	urldate = {2018-06-08},
+	journal = {GitHub},
+	author = {Kohler, Eddie},
+	file = {Elements · kohler/click Wiki · GitHub:/media/Dados/felipe/Documentos/UFES/PG/Zotero/storage/QSKA4JGU/Elements.html:text/html}
+}
+
+@misc{noauthor_linux_2018,
+	title = {Linux - {The} {Linux} {Foundation}},
+	url = {https://www.linuxfoundation.org/projects/linux/},
+	urldate = {2018-06-08},
+	file = {Linux - The Linux Foundation:/media/Dados/felipe/Documentos/UFES/PG/Zotero/storage/5DQDJHG8/linux.html:text/html}
+}
+
+
+@inproceedings{barbette_fast_2015,
+	address = {Washington, DC, USA},
+	series = {{ANCS} '15},
+	title = {Fast {Userspace} {Packet} {Processing}},
+	isbn = {978-1-4673-6632-8},
+	url = {http://dl.acm.org/citation.cfm?id=2772722.2772727},
+	abstract = {In recent years, we have witnessed the emergence of high speed packet I/O frameworks, bringing unprecedented network performance to userspace. Using the Click modular router, we first review and quantitatively compare several such packet I/O frameworks, showing their superiority to kernel-based forwarding. We then reconsider the issue of software packet processing, in the context of modern commodity hardware with hardware multi-queues, multi-core processors and non-uniform memory access. Through a combination of existing techniques and improvements of our own, we derive modern general principles for the design of software packet processors. Our implementation of a fast packet processor framework, integrating a faster Click with both Netmap and DPDK, exhibits up-to about 2.3x speed-up compared to other software implementations, when used as an IP router.},
+	booktitle = {Proceedings of the {Eleventh} {ACM}/{IEEE} {Symposium} on {Architectures} for {Networking} and {Communications} {Systems}},
+	publisher = {IEEE Computer Society},
+	author = {Barbette, Tom and Soldani, Cyril and Mathy, Laurent},
+	year = {2015},
+	keywords = {click modular router, fast packet i/o, high-speed net- working, intel dpdk, multi-queue, netmap, network processing., numa, userspace i/o},
+	pages = {5--16},
+	file = {userspaceio.pdf:/media/Dados/felipe/Documentos/UFES/PG/Zotero/storage/VJQZRQ3W/userspaceio.pdf:application/pdf}
+}
+
+@article{rizzo_revisiting_2012,
+	title = {Revisiting {Network} {I}/{O} {APIs}: {The} {Netmap} {Framework}},
+	volume = {55},
+	issn = {0001-0782},
+	shorttitle = {Revisiting {Network} {I}/{O} {APIs}},
+	url = {http://doi.acm.org/10.1145/2093548.2093565},
+	doi = {10.1145/2093548.2093565},
+	abstract = {It is possible to achieve huge performance improvements in the way packet processing is done on modern operating systems.},
+	number = {3},
+	journal = {Commun. ACM},
+	author = {Rizzo, Luigi},
+	month = mar,
+	year = {2012},
+	pages = {45--51},
+	file = {ACM Full Text PDF:/media/Dados/felipe/Documentos/UFES/PG/Zotero/storage/GGXV2TUI/Rizzo - 2012 - Revisiting Network IO APIs The Netmap Framework.pdf:application/pdf}
+}
+
+@inproceedings{varis2012anatomy,
+  title={Anatomy of a Linux bridge},
+  author={Varis, Nuutti},
+  booktitle={Proceedings of Seminar on Network Protocols in Operating Systems},
+  pages={58},
+  year={2012}
+}
+
+@article{pfaff_extending_2009,
+	title = {Extending {Networking} into the {Virtualization} {Layer}},
+	abstract = {The move to virtualization has created a new network access layer residing on hosts that connects the various VMs. Virtualized deployment environments impose re- quirements on networking for which traditional models are not well suited. They also provide advantages to the networking layer (such as software flexibility and well- defined end host events) that are not present in physical networks. To date, this new virtualization network layer has been largely built around standard Ethernet switching, but this technology neither satisfies these new requirements nor leverages the available advantages. We present Open vSwitch, a network switch specifically built for virtual environments. Open vSwitch differs from traditional approaches in that it exports an external interface for fine-grained control of configuration state and forwarding behavior. We describe how Open vSwitch can be used to tackle problems such as isolation in joint-tenant environments, mobility across subnets, and distributing configuration and visibility across hosts.},
+	author = {Pfaff, Ben and Pettit, Justin and Koponen, Teemu and Amidon, Keith and Casado, Martin and Shenkerz, Scott},
+	month = jan,
+	year = {2009},
+	file = {OpenVSwitch09.pdf:/media/Dados/felipe/Documentos/UFES/PG/Zotero/storage/GWTCDIPC/OpenVSwitch09.pdf:application/pdf}
+}
+
+@phdthesis{kuroda2013analise,
+  title={An{\'a}lise de desempenho de interfaces de rede virtualizadas com Napi},
+  author={Kuroda, Eduardo Hideo},
+  year={2013},
+  school={Universidade de S{\~a}o Paulo}
+}
+
+@misc{noauthor_xen_nodate,
+	title = {Xen {Networking} - {Xen}},
+	url = {https://wiki.xen.org/wiki/Xen_Networking},
+	urldate = {2018-06-17},
+	file = {Xen Networking - Xen:/media/Dados/felipe/Documentos/UFES/PG/Zotero/storage/V2MTJRUH/Xen_Networking.html:text/html}
 }

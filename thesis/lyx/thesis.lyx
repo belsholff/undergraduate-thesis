@@ -21,7 +21,7 @@
 % Pacotes de citações
 % ---
 \usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
-\usepackage[alf,%
+\usepackage[num,%
          abnt-url-package=url]{abntex2cite}	% Citações padrão ABNT
 % O carregamento da opção abnt-url-package=url corrige os hiperlinks com quebra de linha na bibliografia
 
@@ -88,7 +88,7 @@ Citado #1 vezes nas páginas #2.
 \makeindex
 % ---
 \end_preamble
-\options 12pt,openright,twoside,a4paper,english,brazil
+\options 12pt,openright,twoside,a4paper,brazil,portuguese
 \use_default_options false
 \maintain_unincluded_children false
 \language brazilian
@@ -157,7 +157,7 @@ Citado #1 vezes nas páginas #2.
 \begin_body
 
 \begin_layout Titulo
-Implementação de Funções de Rede Virtualizadas usando ClickOS
+Implementação de Funções de Rede Virtuais usando ClickOS
 \end_layout
 
 \begin_layout Local
@@ -353,13 +353,6 @@ Errata seguirá aqui, se necessária.
 \begin_layout Folha de Aprovacao
 \begin_inset ERT
 status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{folhadeaprovacao}
-\end_layout
 
 \begin_layout Plain Layout
 
@@ -617,13 +610,6 @@ vspace*{1cm}
 end{center}    
 \end_layout
 
-\begin_layout Plain Layout
-
-
-\backslash
-end{folhadeaprovacao}
-\end_layout
-
 \end_inset
 
 
@@ -663,19 +649,6 @@ Epígrafe
 \end_layout
 
 \begin_layout Resumo
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Resumo
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Resumo
 Com o advento da virtualização e o surgimento do modelo de computação em
  nuvem (Cloud Computing), uma das consequências imediatas para as empresas
  e instituições foi a redução da aquisição de novos equipamentos.
@@ -707,16 +680,16 @@ Incluído neste panorama, ClickOS propõe uma plataforma de virtualização
 
 \begin_layout Resumo
 Assim sendo, este trabalho tem como objetivo apresentar ClickOS como uma
- alternativa para a implementação de Funções de Rede Virtualizadas (VNFs
- - Virtualized Network Functions) dentro de NFV, usando como cenário o balanceam
-ento de carga em serviços de hospedagem web.
+ alternativa para a implementação de Funções de Rede Virtuais (VNFs - Virtual
+ Network Functions) dentro de NFV, usando como cenário o balanceamento de
+ carga em serviços de hospedagem web.
 \end_layout
 
 \begin_layout Resumo
 \noindent
 
 \series bold
-Palavras-chaves: 
+Palavras-chave: 
 \series default
 NFV; virtualização de funções de rede; VNF; função de rede virtualizada;
  click; clickOS; 
@@ -733,10 +706,19 @@ NFV; virtualização de funções de rede; VNF; função de rede virtualizada;
 \noindent
 
 \series bold
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abstract
+\end_layout
+
+\end_inset
+
 Keywords:
 \series default
- NFV; network functions virtualization; VNF; virtualized network function;
- click; clickOS;
+ NFV; network functions virtualization; VNF; virtual network function; click;
+ clickOS;
 \end_layout
 
 \begin_layout Standard
@@ -777,9 +759,315 @@ status open
 Abreviaturas em ordem alfabética
 \end_layout
 
+\begin_layout Plain Layout
+Se a tradução está aqui, retirá-las do texto parece uma boa
+\end_layout
+
 \end_inset
 
 
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+API
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Sigla em língua inglesa para Interface de Programação de Aplicação
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+ARP
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Acrônimo em língua inglesa para Protocolo de Resolução de Endereços
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+BSS
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Sigla em língua inglesa para Sistemas de Suporte aos Negócios
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+BwM-NG
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Sigla em língua inglesa 
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+CAPEX
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Acrônimo em língua inglesa para Capital Investido
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+CSV
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Sigla em língua inglesa
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+DHCP
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Sigla em língua inglesa
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+DNAT
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Sigla em língua inglesa 
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+DPDK
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Sigla em língua inglesa para Kit de Desenvolvimento em Plano de Dados da
+ Intel
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+ETSI
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Sigla em língua inglesa para o Instituto de Padronização de Telecomunicações
+ Europeu
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+GNU
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Acrômino em língua inglesa
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+HTTP
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Sigla em língua inglesa para Protocolo de Transmissão de Hipertexto
 \end_layout
 
 \begin_layout Siglas
@@ -804,7 +1092,108 @@ status open
 
 \end_inset
 
- Abreviação em língua inglesa para Sistema de Detecção de Intrusão
+ Sigla em língua inglesa para Sistema de Detecção de Intrusão
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+IP
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Sigla em língua inglesa para Protocolo da Internet
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+KVM
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Sigla em língua inglesa para Máquina Virtual baseada em Núcleo
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+LAMP
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Sigla em língua inglesa para a junção dos nomes de Linux, Apache, MySQL
+ e PHP
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+MSS
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Sigla em língua inglesa para Tamanho de Segmento Máximo
 \end_layout
 
 \begin_layout Siglas
@@ -829,7 +1218,57 @@ status open
 
 \end_inset
 
- Abreviação em língua inglesa para Tradução de Endereços de Rede
+ Acrônimo em língua inglesa para Tradução de Endereços de Rede
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+NEC
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Acrônimo em língua inglesa para Companhia Elérica Nipônica
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+NF
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Sigla em língua inglesa para Função de Rede
 \end_layout
 
 \begin_layout Siglas
@@ -854,7 +1293,384 @@ status open
 
 \end_inset
 
- Abreviação em língua inglesa para Virtualização de Funções de Rede
+ Sigla em língua inglesa para Virtualização de Funções de Rede
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+NFV MANO
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Combinação de sigla e acrônimo em língua inglesa para Orquestração e Gerenciame
+nto da Virtualização de Funções de Rede
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+NFVI
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Sigla em língua inglesa para Infraestrutura de Virtualização de Funções
+ de Rede
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+NIC.BR
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Sigla em língua portuguesa para 
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+OPEX
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Acrônimo em língua inglesa para Despesa Operacional
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+OSI
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Acrônimo em língua inglesa para Interconexão de Sistemas Abertos
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+OSS
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Acrônimo em língua inglesa para Sistemas de Suporte às Operações
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+RFC
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Sigla em língua inglesa para Requisição Para Comentários
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+SDN
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Sigla em língua inglesa para Rede Definida por Software
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+SNMP
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Sigla em língua inglesa para 
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+SSH
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Sigla em língua inglesa para 
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+STP
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Sigla em língua inglesa para Protocolo de Árvore Geradora
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+TCP
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Sigla em língua inglesa Protocolo de Controle de Transmissão
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+UX
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Sigla em língua inglesa para Experiência do Usuário
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+VIM
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Acrônimo em língua inglesa para Gerente de Infraestrutura Virtual
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+VM
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Sigla em língua inglesa para Máquina Virtual
 \end_layout
 
 \begin_layout Siglas
@@ -879,49 +1695,7 @@ status open
 
 \end_inset
 
- Abreviação em língua inglesa para Função de Rede Virtualizada
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Símbolos em ordem de aparição
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Simbolos
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-[
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $\alpha,\beta,\gamma,\ldots$
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-]
-\end_layout
-
-\end_inset
-
- alfabeto grego
+ Sigla em língua inglesa para Função de Rede Virtual
 \end_layout
 
 \begin_layout Standard
@@ -955,7 +1729,7 @@ tableofcontents*
 \end_layout
 
 \begin_layout Chapter
-INTRODUÇÃO 
+INTRODUÇÃO
 \begin_inset Note Note
 status collapsed
 
@@ -968,8 +1742,117 @@ Verificar se o texto está de acordo com os ítens abaixo.
 
 \end_layout
 
+\begin_layout Standard
+Os middleboxes são dispositivos de propósito específico que implantam serviços
+ ao longo de redes físicas, promovendo segurança, isolamento, compartilhamento,
+ otimização, gerenciamento, etc.
+ São exemplos os switches, roteadores, firewalls, balanceadores de carga,
+ priorizadores de pacotes, limitadores de banda, proxies, filtros de conteúdo,
+ dentre outros 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "martins_clickos_2014"
+
+\end_inset
+
+.
+ Durante muito tempo foram exclusivamente dispositivos de hardware com software
+ embarcado, com alto custo e ciclo de vida reduzido, diante do rápido desenvolvi
+mento das redes de computadores.
+ No âmbito de atualizações e manutenções, não são equipamentos modulares,
+ o que somado ao fim do ciclo de uma versão do sistema operacional, ocasiona
+ a troca dos aparelhos com uma certa frequência
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Referência
+\end_layout
+
+\end_inset
+
+, prejudicando o CAPEX e OPEX das empresas usuárias.
+ 
+\end_layout
+
+\begin_layout Standard
+No entanto, este modelo não está mais sozinho.
+ Esforços para a construção de middleboxes em hardware de propósito geral
+ já eram uma tópico discutido desde o fim da década de noventa, com Click
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "morris_click_1999"
+
+\end_inset
+
+, por exemplo.
+ Mas o início deste século trouxe o processamento em altas frequências,
+ junto com a capacidade de paralelizá-lo, e mais a frente, a viabilidade
+ da camada de virtualização de maneira geral, com baixa perda de desempenho,
+ grande eficiência energética e econômica para os investidores.
+ Desta forma, os middleboxes dissociados de hardware se tornaram realidade,
+ na forma de funções de rede virtuais (VNFs) com o uso de tecnologias como
+ containers e paravirtualização.
+\end_layout
+
+\begin_layout Standard
+Um dos padrões em desenvolvimento nesse sentido é o de Virtualização de
+ Funções de Rede (NFV), que sob responsabilidade do Gerente de Infraestrutura
+ Virtual (VIM) aloca recursos de um hardware de propósito geral para prover
+ funções personalizadas, habilitando escalabilidade, manutenibilidade, maior
+ ciclo de vida de hardware e software, e economia de recursos e investimentos.
+ Justamente os pontos fracos do modelo acoplado ao hardware.
+ Citado anteriormente como exemplo, Click foi um dos casos de sucesso em
+ matéria de desacoplar código, sendo o equivalente da época a uma função
+ de rede virtual.
+ Mais de uma década depois, sua existência e vantagens se tornaram parte
+ de um dos projetos de virtualização de dispositivos de rede: chama-se ClickOS.
+\end_layout
+
+\begin_layout Standard
+ClickOS otimiza a trinca Click, Xen e MiniOS em uma plataforma integrável
+ a soluções NFV 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+referência?
+\end_layout
+
+\end_inset
+
+para uma fácil implementação de VNFs, com uma linguagem de marcação voltada
+ para visão de fluxos, sendo de fácil legibilidade; para o provimento da
+ camada de virtualização necessária, incluindo a gerência dos recursos das
+ máquinas virtuais; e para prover um micro-kernel suficientemente robusto
+ e pequeno para que as VNFs sejam executadas de maneira escalável com o
+ devido isolamento em um ambiente de paravirtualização.
+\end_layout
+
+\begin_layout Standard
+No entanto, até pela questão das disputas do nicho e pelo ainda recente
+ desenvolvimento de soluções para provimento de VNFs a plataforma sofre
+ com a falta de materiais didáticos, sejam em inglês ou português, mesmo
+ aqueles que tratam apenas de Click, desestimulando seu uso em detrimento
+ de outros semelhantes como atualmente acontece com P4 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+referência
+\end_layout
+
+\end_inset
+
+, que está em evidência.
+ Como exemplo, a integração de Click com os switches VALE e OpenVSwitch;
+ as documentações de instalação do ClickOS; e a falta de exemplos sobre
+ o correto uso dos elementos podem ser citados.
+\end_layout
+
 \begin_layout Section
-OBJETIVO 
+OBJETIVO
 \end_layout
 
 \begin_layout Standard
@@ -981,10 +1864,10 @@ Este trabalho apresenta a plataforma para implementação de VNFs ClickOS,
 \end_layout
 
 \begin_layout Standard
-Como objetivo específico, o projeto implementa duas funções de rede virtualizada
-s em ClickOS, implantadas em um cenário comum ao balanceamento de carga
- em serviços de hospedagem web, e avalia a prova de conceito da plataforma
- a partir de testes.
+Como objetivo específico, no trabalho implementa-se duas funções de rede
+ virtuais em ClickOS, em um cenário comum ao balanceamento de carga em serviços
+ de hospedagem web, e avalia a prova de conceito da plataforma a partir
+ de testes.
 \end_layout
 
 \begin_layout Section
@@ -992,19 +1875,50 @@ ESTRUTURA DO TRABALHO
 \end_layout
 
 \begin_layout Standard
-Para além deste, o capítulo 2 trata dos conceitos principais associados
- ao trabalho e situa ClickOS diante a teoria apresentada; o capítulo 3 propõe
- a realização do objetivo específico, discorrendo sobre as funções de rede
- e o comportamento esperado; o capítulo 4 foca no projeto e implementação
- da proposta do capítulo anterior, destacando vantagens adquiridas com o
- uso da ferramenta Click e ao fim, exemplificando passo a passo o fluir
- de uma requisição web dentro do cenário implantado; o capítulo 5 versa
- sobre a realização e os resultados dos testes no cenário proposto, buscando
- confirmar a posição de ClickOS como alternativa aos dispositivos físicos;
- o capítulo 6 caminha no sentido de concluir todo o esforço realizado, enfatizar
- pontos positivos e não-positivos da plataforma e da proposta, e encaminhar
- possíveis trabalhos futuros.
- 
+Para além deste, o 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "chap:CONCEITOS"
+
+\end_inset
+
+ trata dos conceitos principais associados ao trabalho; o 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "chap:ENTENDENDO-CLICKOS"
+
+\end_inset
+
+ visa detalhar os mecanismos de ClickOS e Click para suas aplicações no
+ trabalho; o 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "chap:PROJETO-E-IMPLEMENTAÇÃO"
+
+\end_inset
+
+ projeta e executa a realização do objetivo específico, discorrendo sobre
+ as funções de rede e o comportamento esperado, exemplificando passo a passo
+ os rastros de uma comunicação dentro do cenário, destacando vantagens adquirida
+s com o uso das ferramentas e plataformas; o 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "chap:TESTES"
+
+\end_inset
+
+ versa sobre a realização e os resultados dos testes no cenário proposto,
+ buscando confirmar a posição de ClickOS como alternativa aos dispositivos
+ físicos; o 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "chap:CONCLUSÃO"
+
+\end_inset
+
+ caminha no sentido de concluir todo o esforço realizado, enfatizar pontos
+ positivos e negativos da plataforma e da proposta, e encaminhar possíveis
+ trabalhos futuros.
 \end_layout
 
 \begin_layout Standard
@@ -1016,6 +1930,1653 @@ Para além deste, o capítulo 2 trata dos conceitos principais associados
 
 \begin_layout Chapter
 CONCEITOS
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:CONCEITOS"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Inserir um resumo sobre a estrutura desse capítulo.
+\end_layout
+
+\begin_layout Plain Layout
+Materiais de apoio.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Virtualização de Funções de Rede 
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Virtualização-de-Funções"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O modelo de Virtualização de Funções de Rede (NFV) foi proposto em 2012
+ por grandes empresas de telecomunicações em conjunto com o Instituto de
+ Padronização de Telecomunicações Europeu (ETSI – European Telecommunications
+ Standards Institute), tendo a redução de capital investido (CAPEX) e de
+ despesas operacionais (OPEX) como principal objetivo.
+ Para tal, a proposta é desacoplar as funções em software dos equipamentos
+ de rede hospedeiros 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "mijumbi_network_2016"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Para o ETSI, paradigma já possui uma arquitetura especificada, embora ainda
+ não fechada ou padronizada.
+ Os itens mais importantes são descritos da seguinte forma:
+\end_layout
+
+\begin_layout Itemize
+Infraestrutura NFV (NFVI): combinação de recursos de hardware e software
+ sobre os quais as funções de rede virtualizadas são desenvolvidas.
+ As abstrações dos recursos são atingidas ao inserir uma camada de virtualização
+ usando hypervisors, desacoplando então as funções de rede dos recursos
+ físicos.
+ Máquinas Virtuais (VMs) representam o uso de recursos de processamento
+ e armazenamento, enquanto links e nós virtuais (sistemas operacionais em
+ VMs) representam o uso de recursos de rede 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "mijumbi_network_2016"
+
+\end_inset
+
+.
+ São exemplos de hypervisors o projeto Xen, KVM, HyperV, VMware vSphere,
+ VirtualBox 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+ref
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Serviços e Funções de Rede Virtuais: as Funções de Rede (NFs) são funcionalidade
+s dentro de uma infraestrutura de rede com interfaces externas e comportamento
+ bem definidas 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "etsi2014gs"
+
+\end_inset
+
+.
+ Alguns exemplos mais comuns são: firewall, roteadores, balanceadores de
+ carga.
+ Boa parte delas também é conhecida pelo termo Middlebox 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "carpenter2002middleboxes"
+
+\end_inset
+
+.
+ Já as Funções de Rede Virtuais (VNFs) são implementações destas NFs implantadas
+ em recursos virtuais, que podem conter diversos elementos internos de rede,
+ e ser instalada em diversas soluções virtualizadas como VMs e Containers
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Ref
+\end_layout
+
+\end_inset
+
+, seja de forma a replicar funcionalidades ou de forma a dividir tarefas
+ de uma dada função 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "mijumbi_network_2016"
+
+\end_inset
+
+.
+ Do ponto de vista do usuário, as VNFs devem ser idênticas as NFs 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "mijumbi_network_2016"
+
+\end_inset
+
+, inclusive em termos de desempenho.
+\end_layout
+
+\begin_layout Itemize
+Orquestração e Gerenciamento NFV (NFV MANO): funcionalidades para prover
+ as VNFs e suas operações relacionadas, tais como as configurações de recursos,
+ de ciclo de vida, e os comportamentos das funções virtuais, sob responsabilidad
+e do VIM.
+ Isso inclui a orquestração e o gerenciamento do ciclo de vida de recursos
+ de software e hardware que dão suporte a virtualização.
+ NFV MANO foca em tarefas especificas para gerenciamento de virtualização
+ no framework NFV.
+ Já o framework é responsável por definir as interfaces para comunicação
+ de componentes do NFV MANO, tal qual a coordenação de sistemas tradicionais
+ de gerenciamento como os Sistemas de Suporte às Operações (OSS) e os Sistemas
+ de Suporte aos Negócios (BSS) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "mijumbi_network_2016"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Inserir figura.
+ De preferência, direta do ETSI
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Com a arquitetura descrita, várias implementações tiveram seu desenvolvimento
+ inciado e outros núcleos de padronização como a Força-Tarefa de Engenharia
+ da Internet (IETF)
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+ref
+\end_layout
+
+\end_inset
+
+ passaram a discutir o NFV em suas especificações.
+ OPNFV, OpenStack, e IETF SFC WG e o IRTF NFV RG 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+ref
+\end_layout
+
+\end_inset
+
+são exemplos, ainda que questões técnicas e de negócios estejam abertas.
+ Segundo 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "mijumbi_network_2016"
+
+\end_inset
+
+, algumas dessas questões são: a) controle e gerência de equipamentos legados;
+ b) quais funções de rede virtuais devem ser implantadas em datacenters
+ ou operadoras; c) quais devem estar dentro de VMs ou containers; d) quais
+ recursos do NFVI são necessários para desenvolver uma determinada função
+ virtual; e) quais os requerimentos operacionais de ambientes que operam
+ VNFs e equipamentos legados.
+\end_layout
+
+\begin_layout Standard
+O modelo projetado traz diversas vantagens em relação ao modelo de software
+ acoplado a hardware além das economias financeiras por si só.
+ A programabilidade das funções de rede permitem um desenvolvimento, manutenção
+ e implantação de acordo com os anseios do cliente, de maneira mais rápida
+ e estimulando um movo mercado de serviços localmente.
+ Já o advento da virtualização traz a tona o uso de recursos de hardware
+ sob demanda, agrupando o que antes eram diversos equipamentos com recursos
+ mal utilizados em um conjunto de hardwares potentes, capaz de escalar recursos
+ conforme o uso da rede se torne mais intenso, com custo mínimo para o desempenh
+o.
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Linux-Bridge"
+
+\end_inset
+
+Linux Bridge
+\end_layout
+
+\begin_layout Standard
+Os dispositivos de rede chamados comutadores (switches) são resposáveis
+ por conectar diversos elos de rede entre si para criar uma rede local 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "varis2012anatomy"
+
+\end_inset
+
+.
+ O objetivo da versão virtualizada desses equipamentos é basicamente igual
+ embora guarde diferenças de implementação como visto em 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "pfaff_extending_2009"
+
+\end_inset
+
+.
+ Os switches virtuais fazem parte da nova camada de acesso de rede que ainda
+ está emergindo, e provêem conectividade dentro e entre VMs, involvendo
+ muitas das mesmas funções providas pelas versões físicas 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "pfaff_extending_2009"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Um dos expoentes dessa classe é o OpenVSwitch
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+referencia
+\end_layout
+
+\end_inset
+
+, que leva programabilidade para as redes ao abordar a questão de Redes
+ Definidas por Software (SDNs).
+ No entanto outros mais simples podem ser úteis em determinadas situações.
+ É o caso do VALE Switch 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rizzo_vale_2012"
+
+\end_inset
+
+ e do Ethernet Linux Bridge
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+procurar referência exata
+\end_layout
+
+\end_inset
+
+, que é o switch que este trabalho faz uso.
+ O Linux Bridge faz parte do kernel Linux como um módulo e é dividido de
+ forma grosseira em quatro partes 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "varis2012anatomy"
+
+\end_inset
+
+: 
+\end_layout
+
+\begin_layout Itemize
+Conjunto de portas: usado para encaminhar tráfego entre os dispositivos
+ ligados a ele, sejam outros switches ou clientes finais;
+\end_layout
+
+\begin_layout Itemize
+Plano de controle: usado basicamente para executar o Protocolo de Árvore
+ Geradora (STP), que calcula a árvore geradora mínima para a rede local,
+ prevenindo que repetições infinitas quebrem o sistema;
+\end_layout
+
+\begin_layout Itemize
+Plano de encaminhamento: responsável por processar fragmentos de pacotes
+ que entram pela porta de rede, fazendo uma decisão de encaminhamento sobre
+ qual porta deve receber os dados;
+\end_layout
+
+\begin_layout Itemize
+Aprendizado de MACs: mantém rastreado em um banco de dados ou tabela a porta
+ de rede na qual o MAC está conectado, e portanto, servindo de consulta
+ para encaminhar os fragmentos para seu destinatário.
+ Caso o MAC não conste na tabela, o fragmento é enviado para todas as portas
+ exceto a de origem.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Estrutura das interfaces virtuais de rede no Linux Bridge
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Estrutura-das-interfaces-bridge"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/vif_bridge.png
+	lyxscale 90
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "noauthor_xen_nodate"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A título de descrição, a 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Estrutura-das-interfaces-bridge"
+
+\end_inset
+
+ retrata o conjunto de portas de um switch virtual.
+ Ele possui quatro portas ocupadas, sendo duas com interfaces virtuais de
+ duas VMs convidadas (vif4.0 e vif7.0), uma porta com a interface física do
+ hospedeiro para comunicação externa a camada de virtualização, e por último
+ uma porta conectada ao elemento de rede que identifica o switch conectado.
+ Este último recebe um IP caso queira que o hospedeiro esteja conectado
+ a rede dos convidados.
+\end_layout
+
+\begin_layout Standard
+Dada a rede virtual criada e configurada por um assistente como o brctl
+ no GNU/Linux, um conjunto de pacotes pode ser lançado da dom4 para a dom7
+ através da camada de enlace.
+ Dado o conjunto de portas, estes fragmentos trafegam como esperado a partir
+ do momento que: o plano de controle não detecta caminhos circulares; o
+ plano de encaminhamento solicita a informação sobre qual porta enviar o
+ fluxo para a dom7, e recebe essa informação do plano de aprendizado de
+ MACs, seja contendo em suas tabelas ou fazendo a busca.
+\end_layout
+
+\begin_layout Standard
+Após realizar as configurações, a comunicação entre as duas VMs se dá da
+ seguinte forma: dom4 envia fragmentos através da sua interface de rede
+ de saída, entrando então na vif4.0, que por sua vez encaminha automaticamente
+ em saída para o processamento dos componentes do switch citados anteriormente.
+ Detectado que o destino de saída é pela porta conectada a vif7.0, o switch
+ encaminha os fragmentos até a sua entrada, que por sua vez encaminha automatica
+mente em saída para a interface de rede da máquina virtual.
+ Um detalhe que a partir do hospedeiro é possível saber o que trafega nessa
+ rede virtual, fazendo da segurança deste, primordial.
+\end_layout
+
+\begin_layout Standard
+Uma das formas de anexar VMs ao switch virtual criado é através dos arquivos
+ de configuração de recursos das próprias.
+ No caso do Xen, com as entradas vif = [ ].
+ A 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Uma-aplicação-dos"
+
+\end_inset
+
+ demonstra um exemplo mais concreto em seu topo, porém um exemplo simplificado
+ é vif=[ 'bridge=mybridge' ], onde o Xen atribui aleatoriamente um endereço
+ MAC, porém conectada ao switch virtual mybridge 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "noauthor_xen_nodate"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+ver proxima nota
+\end_layout
+
+\end_inset
+
+São três as principais estruturas de dados que provém as funcionalidades
+ necessárias para sua operação.
+ A principal delas é a net_bridge, que mantém todas as informações sobre
+ a cofiguração de seu switch virtual.
+ Cada porta da bridge guarda dados na net_bridge_port, que contém parâmetros
+ específicos sobre a porta que representa.
+ Por último, a estrutura net_bridge_fdb_entry representa uma entrada na
+ tabela de encaminhamento 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "varis2012anatomy"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Estrutura de dados do Linux Bridge
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Estrutura-de-dados"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/linux_bridge_data_structure.png
+	lyxscale 95
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "varis2012anatomy"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Analisando a 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Estrutura-de-dados"
+
+\end_inset
+
+, a estrutura net_bridge mantém uma referência para cada estrutura net_bridge_po
+rt criada por uma porta; mantém outra referência para a interface de rede
+ que ela representa; por fim, uma referência a cada tabela de encaminhamento
+ existente.
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+continuar somente se necessário
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+ENTENDENDO CLICKOS
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:ENTENDENDO-CLICKOS"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Click"
+
+\end_inset
+
+Click
+\end_layout
+
+\begin_layout Standard
+A arquitetura Click foi idealizada por Robert Morris, Eddie Kohler e sua
+ equipe do Laboratório de Ciências da Computação do Instituto Tecnológico
+ de Massachusetts (MIT) em 1999, que propuseram e desenvolveram uma plataforma
+ em hardware geral e em software livre, para permitir o desenvolvimento
+ de funções de rede sob demanda, e sem as limitações corriqueiramente impostas
+ por soluções proprietárias em redes.
+ Não há restrição de camadas ou protocolos de transmissão, bastando adicionar
+ seu suporte, porém o foco está na camada 2 e 3 do modelo OSI
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+referência
+\end_layout
+
+\end_inset
+
+, com diversas operações na camada 4.
+\end_layout
+
+\begin_layout Standard
+Click trabalha com uma unidade chamada elemento.
+ Ele representa a execução de uma atividade esperada no pacote recebido
+ e deve ser conectado a outros como em um grafo, permitindo o fluxo de pacotes.
+ Essa junção cria uma função de rede como um firewall, balanceador de carga,
+ ou qualquer outro processador de pacotes.
+ Fazem parte do framework uma gama considerável de elementos pré-implementados
+ pelos desenvolvedores (cerca de 300), em código aberto, e podem ser alterados
+ conforme desejado desde que o editor tenha conhecimentos em C++ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "morris_click_1999"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Descrição gráfica de um elemento em Click
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Descrição-gráfica-de"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/click_element.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "morris_click_1999"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Uma lista não extensa desses elementos com base na documentação do Click
+ disponível 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kohler_elements_nodate"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+Ethernet: EtherEncap, EtherSwitch, EtherVLANEncap, SetEtherAddress;
+\end_layout
+
+\begin_layout Itemize
+ARP: ARPQuerier, ARPResponder; ARPTable; CheckARPHeader;
+\end_layout
+
+\begin_layout Itemize
+IPv4: CheckIPHeader, IPEncap, IPFragmenter, SetIPAddress, SetIPChecksum;
+\end_layout
+
+\begin_layout Itemize
+IPv6: CheckIP6Header, SetIP6Address, ProtocolTranslator64, ProtocolTranslator46;
+\end_layout
+
+\begin_layout Itemize
+Classificadores: Classifier, IPClassifier;
+\end_layout
+
+\begin_layout Itemize
+Roteamento: StaticIPLookup, LinearIPLookup, DirectIPLookup, IPRouteTable;
+\end_layout
+
+\begin_layout Itemize
+NAT: IPRewriter, ICMPRewriter, TCPRewriter, RoundRobinIPMapper, SouceIPHashMappe
+r;
+\end_layout
+
+\begin_layout Itemize
+Modelagem de tráfego (traffic shaping): BandwidthShaper, RatedSplitter,
+ BandwidthRatedSplitter, Shaper;
+\end_layout
+
+\begin_layout Itemize
+Escalonamento (scheduling): PrioSched, RoundRobinSched;
+\end_layout
+
+\begin_layout Itemize
+Gerenciamento de filas: RED (Detecção Adiantada Randômica), CoDel (Controlled
+ Delay);
+\end_layout
+
+\begin_layout Itemize
+Redes sem Fio: WifiEncap, WifiDecap, WirelessInfo, BeaconScanner, OpenAuthReques
+er;
+\end_layout
+
+\begin_layout Itemize
+e demais elementos de controle, de testes e de procura de erros.
+\end_layout
+
+\begin_layout Standard
+A reutilização de código é visível, porém a legibilidade é tão importante
+ quanto.
+ Para isso, a ferramenta dispõe de uma linguagem de entrada própria que
+ esconde sua linguagem de programação base.
+ Ela evidencia uma visão em grafos de fluxo, onde os elementos são nós e
+ as arestas são as conexões por onde fluem os pacotes.
+ Cada elemento possui especificações sobre o número de portas de entrada
+ e saída, que devem ser criados e conectados no decorrer da implementação,
+ no arquivo da função virtual.
+ Veja a 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Descrição-gráfica-de"
+
+\end_inset
+
+e a 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Uma-aplicação-dos"
+
+\end_inset
+
+ para exemplos.
+\end_layout
+
+\begin_layout Standard
+As portas podem ser do tipo de fluxo pull ou push, imitando a relação produtor-c
+onsumidor.
+ As portas pull aguardam para enviar (saída) ou requisitam para receber
+ (entrada) pacotes do seu vizinho, respectivamente.
+ Já as portas push não realizam esse procedimento, e portanto, os elementos
+ que as utilizam devem estar sempre disponíveis para enviar e receber pacotes
+ ou eles se perderão.
+ Por fim, há portas chamadas agnósticas, que assumem o comportamento do
+ fluxo de processamento predominante
+\begin_inset CommandInset citation
+LatexCommand cite
+key "morris_click_1999"
+
+\end_inset
+
+.
+ Veja a 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Condicionador-de-tráfego"
+
+\end_inset
+
+ para uma melhor visualização.
+\end_layout
+
+\begin_layout Standard
+A existência de ambos se dá pela natureza do uso de uma rede de alta velocidade
+ compartilhada como as redes Ethernet
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Referência
+\end_layout
+
+\end_inset
+
+: esvazie seu buffer de entrada o mais rápido possível para que possa continuar
+ recebendo pacotes sem perdas; aguarde a sua vez para enviar a rede o mais
+ rápido possível sem degradar outros pacotes
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Referência
+\end_layout
+
+\end_inset
+
+.
+ Logo, percebe-se que o mecanismo push compõe o recebimento e o mecanismo
+ pull o envio.
+ Já as filas, que são o único elemento capaz de converter o fluxo de processamen
+to com portas push para aquele com portas pull, são responsáveis por armazenar
+ os pacotes processados mas impedidos de irem ao buffer de saída do equipamento
+ (rede bastante ocupada, com muita entrega e pouca saída de pacotes).
+\end_layout
+
+\begin_layout Standard
+Ainda em relação as portas, algumas regras devem ser obedecidas: Olhando
+ a partir de um elemento, uma dada saída não pode ser conectada a várias
+ entradas de elementos seguintes, pois geraria efeito de duplicidade e inconsist
+ência na rede; a mesma negativa se observa para as entradas do tipo pull;
+ nenhum outro elemento é capaz de converter tipos de fluxo exceto as filas,
+ como comentado.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Condicionador de tráfego em Click
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Condicionador-de-tráfego"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/click_traffic_cond.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "morris_click_1999"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dados parâmetros do elemento classificador, os pacotes que entram nele com
+ diferentes características possuem quatro caminhos: a) um chaveador de
+ fluxo (Meter) que limita em no máximo 7500 pacotes por segundo despejados
+ em uma fila ou descarta todos os pacotes; b) uma fila acoplada a um elemento
+ limitador de fluxo (Shaper), que solicita pacotes a uma taxa de no máximo
+ 10000 pacotes por segundo; c) outro chaveador de fluxo com 12500 pacotes
+ por segundo em outra fila, ou a passagem no elemento que marca o campo
+ de serviços diferenciados do cabeçalho IP para o valor quatro antes de
+ despejar em uma quarta fila; d) quarta fila aliás, que também recebe o
+ fluxo que sai pela porta quatro do classificador.
+ O percurso dos três primeiros caminhos terminam em um escalonador do padrão
+ Round Robin 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+referência
+\end_layout
+
+\end_inset
+
+, que após seu processamento, este ainda sofre o processamento de outro
+ escalonador baseado em prioridade ordenada, onde a primeira entrada tem
+ precedência sobre a próxima.
+ Ao fim, os pacotes saem pela interface escolhida no elemento de envio (ToDevice
+).
+\end_layout
+
+\begin_layout Standard
+Ainda sobre a 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Condicionador-de-tráfego"
+
+\end_inset
+
+, ao passar pelas filas a coloração das portas muda, indicando a mudança
+ de fluxo de processsamento de push para pull e o papel das filas nesse
+ quesito está representado.
+ Outra observação interessante é quanto a fila do quarto caminho que recebe
+ as saídas de processamento de dois elementos, evidenciando que as portas
+ de entrada push, ao contrário das portas pull, podem receber fluxos de
+ múltiplas saídas.
+\end_layout
+
+\begin_layout Standard
+O exemplo acima possui uma visão em grafo.
+ Já o presente na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Uma-aplicação-dos"
+
+\end_inset
+
+ demonstra através da linguagem de marcação do Click uma estrutura mínima
+ para atuar sobre o protocolo IP: 
+\end_layout
+
+\begin_layout Itemize
+Todos os momentos onde :: é utilizado significa uma definição de macro.
+ Toda vez que uma -> é utilizada significa uma ligação entre a porta de
+ saída X e a porta de entrada Y de dois elementos;
+\end_layout
+
+\begin_layout Itemize
+O AdressInfo é como um banco de dados rústico, para guardar dados sobre
+ um dispositivo e usar o nome atribuído para representá-los;
+\end_layout
+
+\begin_layout Itemize
+FromDevice e ToDevice fazem o recebimento e o envio de fragmentos de rede
+ dos e para os buffers de rede;
+\end_layout
+
+\begin_layout Itemize
+Já o Classifier classifica os pacotes com base na comparação de valores
+ dos cabeçalhos, onde os dois primeiros parâmetros são códigos referentes
+ aos dados do protocolo ARP (consulta e resposta, respectivamente), o terceiro
+ parâmetro contém o código para os pacotes com cabeçalho IP e o quarto para
+ todos os outros;
+\end_layout
+
+\begin_layout Itemize
+ARPQuerier e ARPResponder realizam o papel de preencher a tabela ARP de
+ um dispositivo.
+ O primeiro, diante da não existência de uma entrada para o destino solicitado
+ por um pacote, consulta o equivalente ao ARPResponder de todos os dispositivos
+ na rede acerca do endereço MAC, e ao receber a resposta, encapsula.
+ O mesmo vale quando o gateway se torna o destinatário temporário, que é
+ solicitado quando o SetIPAddress é usado.
+ Como é de se imaginar, o segundo elemento responde às consultas feitas
+ por outros dispositivos e pode ser utilizado para realizar Proxy ARP;
+\end_layout
+
+\begin_layout Itemize
+Queue define uma fila de 200 entradas para receber os pacotes do fluxo push
+ para entregar quando solicitado pelos elementos do fluxo pull;
+\end_layout
+
+\begin_layout Itemize
+Conexões entre: FromDevice e o Classifier; Queue e ToDevice; as requisições
+ ARP vindas do Classifier e o ARPResponder; deste último e a Queue; as respostas
+ ARP vindas do Classifier e a entrada 1 do ARPQuerier; de um indicador de
+ aguardo (Idle) e a entrada 0 do ARPQuerier para evitar mensagens de erro,
+ e a conexão deste mesmo elemento a uma fila de tamanho 200 para escoar
+ os pacotes encapsulados;
+\end_layout
+
+\begin_layout Itemize
+Os pacotes IP classificados no Classifier saem pela porta 2 e então podem
+ ser modificados como desejado.
+ Inclusive, não é necessário inserir todos os código neste bloco, desde
+ que hajam ligações deste que levem até os demais; O último elemento deve
+ se conectar ao ARPQuerier para que os pacotes sejam encapsulados e enviados
+ através da rede; 
+\end_layout
+
+\begin_layout Itemize
+Os demais pacotes saem pela porta 3 e são descartados ao ligar tal saída
+ do Classifier ao Discard.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Uma aplicação dos elementos mínimos para ações sobre o protocolo IP
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Uma-aplicação-dos"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/clickos_arquivoBase.png
+	scale 63
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Todos os elementos podem ser consultados na documentação oficial do Click
+ em 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kohler_elements_nodate"
+
+\end_inset
+
+ para um maior entendimento de detalhes que fogem este trabalho.
+ Outra fonte interessante são os livros, artigos, padronizações e textos
+ técnicos sobre o uso dos protocolos de rede como por exemplo as RFCs
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+referência
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A linguagem de marcação de Click possui um analisador que encontra erros
+ de sintaxe e semântica em tempo de execução para auxilio no desenvolvimento.
+ Na mesma linha, a ferramenta disponibiliza manipuladores de elementos (element
+ handlers) básicos para que seja possível analisar comportamentos indesejados
+ em tempo de execução.
+ Um exemplo é a tabela TCP disponibilizada pelo elemento NAT (IPRewriter),
+ que pode indicar o correto funcionamento ou não de uma VNF que a utilize.
+ Outros manipuladores são capazes de alterar determinadas variáveis em tempo
+ de execução, mas não são muito comuns.
+ De qualquer forma, Click permite a implementação de outros manipuladores
+ para os elementos dado um conhecimento em C++.
+ Para consultar quais manipuladores estão implementados, basta consultar
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kohler_elements_nodate"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Outra forma de facilitar a correção de erros e também facilitar o entendimento
+ de uma implementação em Click é através do uso da ferramenta de geração
+ de grafos distribuída com Click chamada Clicky.
+ Ela transforma o código em uma figura baseado em um arquivo de estilo CSS
+ e também é capaz de analisar erros e retorná-los.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Interface gráfica e representação gráfica padrão da 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Uma-aplicação-dos"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Durante o desenvolvimento deste trabalho, algumas limitações nos elementos
+ foram observadas: Para criar balanceadores de carga, os elementos existentes
+ são limitados ao mecanismo de Round Robin 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+referência
+\end_layout
+
+\end_inset
+
+ (RoundRobinIPMapper) e distribuição por IP de origem (SourceIPHashMapper),
+ sem uma análise da carga dos servidores que recebem o balanceamento, através
+ do SNMP, por exemplo; a manipulação de mensagens UDP maiores que o MSS
+ é um problema quando se desenvolve um NAT em Click, já que para o recálculo
+ da soma de verificação (checksum) usando o UDPChecksum, seria necessário
+ remontar a mensagem UDP
+\begin_inset CommandInset citation
+LatexCommand cite
+key "postel1980rfc"
+
+\end_inset
+
+, o que Click não disponibiliza, comprometendo o protocolo nessa situação.
+\end_layout
+
+\begin_layout Standard
+Click possui um módulo para operar em espaço de kernel, em substituição
+ ao módulo do sistema operacional.
+ Isso significa um desempenho maior em relação a sua execução em espaço
+ de usuário para sistemas com essa divisão.
+ É em espaço de kernel que os desenvolvedores, à época, conseguiram desempenho
+ próximo ao módulo padrão do Linux
+\begin_inset CommandInset citation
+LatexCommand cite
+key "morris_click_1999"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "noauthor_linux_2018"
+
+\end_inset
+
+.
+ No entanto, atualmente o módulo do Click, encontra-se bastante defasado,
+ compatibilizando com a versão do kernel Linux 2.6, em face da versão 4.16
+ atual.
+ Essa defasagem faz com que seu uso em um sistema operacional tradicional
+ seja desestimulado, defido a complexidade em se programar para o kernel.
+ Seu uso atual possui escopo em middleboxes virtualizados, como em FastClick
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "barbette_fast_2015"
+
+\end_inset
+
+, ESCAPE 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "csoma_escape:_2014"
+
+\end_inset
+
+, CliMB 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "laufer_climb:_2016"
+
+\end_inset
+
+, ClickOS 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "martins_clickos_2014"
+
+\end_inset
+
+ (ver 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:ClickOS"
+
+\end_inset
+
+) e outros não relacionados a um kernel como o seu uso em DPDK
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Referenciar trabalhos do nerds e outros
+\end_layout
+
+\end_inset
+
+.
+ Outros usos mais diversificados são encontrados em 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Verificar quais são ligados a virtualização e quais não
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Desde o título esta monografia se propõe a trabalhar com uma dessas aplicações
+ que cresceram em torno de Click.
+ ClickOS especializou uma micro máquina virtual, desenvolvendo novos elementos,
+ adaptando seu micro-kernel para executar Click com seu módulo de forma
+ eficiente atingindo 10Gb/s para a maioria dos tamanhos de pacotes 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "martins_clickos_2014"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:ClickOS"
+
+\end_inset
+
+ClickOS
+\end_layout
+
+\begin_layout Standard
+ClickOS é parte de um projeto de pesquisa da Universidade politécnica de
+ Bucareste junto com a Companhia Elétrica Nipônica na Europa – NEC Europe
+ – para o provisionamento de VNFs que possam substituir middleboxes de hardware.
+ Ele se encontra representado no modelo NFV pela camada de virtualização,
+ gerenciando localmente as funções de rede virtuais.
+ Trata-se primeiramente de um sistema operacional baseado em Click, focado
+ em alta vazão, baixo atraso e isolamento 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bondan_management_2014"
+
+\end_inset
+
+.
+ Porém seus criadores objetivam também uma plataforma de alta performance
+ com flexibilidade, escalabilidade e reúso de código no topo de hardwares
+ de propósito geral 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "martins_clickos_2014"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Para a alcunha de plataforma fazer sentido, os limites de um sistema operacional
+ para micro-máquinas virtuais devem ser superados.
+ ClickOS se apoia no projeto Xen e no VALE Switch 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rizzo_vale_2012"
+
+\end_inset
+
+ e propõe mudanças significativas as estruturas de ambos ao inserí-los em
+ sua solução.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Arquitetura inicial presente no ClickOS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/clickos_arch.png
+	scale 53
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "martins_clickos_2014"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+No Xen, hypervisor de virtualização desenvolvido pela comunidade de software
+ livre, várias otimizações foram realizadas segundo 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "martins_clickos_2014"
+
+\end_inset
+
+.
+ dentre elas, se destacam: o acesso aos pacotes recebeu uma atenção especial
+ ao remover intermediários da comunicação entre as máquinas virtuais e o
+ switch virtual como o driver netback, que passou a ter um papel de controle
+ apenas; já o driver netfront associado as VMs foi reprogramado para colocar
+ na memória de sua VMs o buffer da porta do switch; por fim, as interfaces
+ virtuais do Xen (vifs) foram ignoradas e então removidas.
+\end_layout
+
+\begin_layout Standard
+Já o VALE Switch, dispositivo de comutação de pacotes virtual (switch virtual)
+ apresentado por Luigi Rizzo e Giuseppe Lettieri da Universidade de Pisa,
+ usado para interconectar máquinas virtuais em redes a partir da API Netmap
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rizzo_revisiting_2012"
+
+\end_inset
+
+, entra na plataforma substituindo o pouco otimizado OpenVSwitch e ao fim
+ é alterado para que forneça acesso direto aos buffers das portas do seu
+ switch para o netfront, e para que possua mais portas, para citar as principais
+ modificações
+\begin_inset CommandInset citation
+LatexCommand cite
+key "martins_clickos_2014"
+
+\end_inset
+
+.
+ Ao fim é renomeado para ClickOS Switch 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "martins_clickos_2014"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Antes e depois das alterações mencionadas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/xen_network_io_scheme.png
+	lyxscale 85
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "martins_clickos_2014"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A escolha por Click para integrar a plataforma deve-se a flexibilidade e
+ o reúso de código mencionados nos objetivos dos criadores e abordados na
+ seção 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:Click"
+
+\end_inset
+
+.
+ ClickOS constroi seu sistema operacional a partir do MiniOS: um micro-kernel
+ de sistema operacional minimalista voltado para um processamento quase
+ monoprocessado, escalável, e de baixa carga de CPU, criado pelos desenvolvedore
+s do projeto Xen.
+ A adaptação de Click ao micro-kernel do MiniOS, inclusive portando as bibliotec
+as necessárias sua construção neste sistema, resultou em um kernel enxuto,
+ que dentro de uma micro-VM consume ao executar 5MB de memória, sendo instanciáv
+el em 30 milissegundos, provocando um atraso na rede de 45 microssegundos,
+ não necessitando de disco e alcançando uma vazão de 10Gbps 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "martins_clickos_2014"
+
+\end_inset
+
+.
+ Este desempenho confirma as caracteristicas atribuídas a ele no inicio
+ desta seção.
+\end_layout
+
+\begin_layout Standard
+Para instanciar as VNFs, ClickOS usa o método disponibilizado pelo projeto
+ Xen, através de um arquivo de configuração, onde é possível descrever itens
+ como quantidade de processadores, memória, interfaces virtuais de rede,
+ comportamento de falhas e o nome da função virtual.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Exemplo de arquivo de configuração de uma VNF
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Exemplo-de-arquivo-cfg"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Baseando-se na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Exemplo-de-arquivo-cfg"
+
+\end_inset
+
+, é importante dizer que os dados sobre as redes conectadas devem estar
+ de acordo com os dados atribuídos a VNF no código de Click para não haver
+ enganos e erros.
+ Muito cuidado ao gerar endereços MAC ou IP, pois existem classes e restrições
+ em ambos
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+referência
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+O segundo passo da criação de VNFs em ClickOS passa pelo uso do gerente
+ de pilha Cosmos
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+referência
+\end_layout
+
+\end_inset
+
+.
+ Também conhecido como ClickOS-ctl, ele recebe o código Click e a identificação
+ da VM criada com o kernel ClickOS para inserir o primeiro no segundo, transform
+ando-o em um middlebox virtual.
+\end_layout
+
+\begin_layout Standard
+As VNFs não possuem linha de comando ou interface semelhante para seu gerenciame
+nto próprio, sendo esse um papel da máquina hospedeira.
+ No momento da implantação das funções a partir do hospedeiro, não há passagem
+ de parâmetros em tempo de inicialização.
+ Apenas algumas operações de leitura e escrita em tempo de execução através
+ dos manipuladores de elementos descritos na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:Click"
+
+\end_inset
+
+, que podem ser acionadas através do hospedeiro com o comando cosmos, mas
+ muito longe de ser um suporte consistente a configurações em tempo de execução
+ como uma adição de regras em um firewall ou uma remoção de servidor no
+ balanceador de carga.
+ Para contornar isso, scripts de marcação de texto podem ser utilizados
+ para gerar os arquivos na linguagem de Click e recarregar a função de rede,
+ mesmo que signifique uma queda repentina do serviço associado.
+ 
+\end_layout
+
+\begin_layout Standard
+Por fim, ClickOS pode trabalhar em conjunto com soluções NFV através de
+ uma integração com o VIM da solução.
+ São exemplos já implementados o OpenStack e o Nomad
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ventre_performance_2016"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+É preciso referenciar as ferramentas quando o artigo referenciado antes
+ fala sobre elas?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1026,7 +3587,1707 @@ CONCEITOS
 \end_layout
 
 \begin_layout Chapter
-PROPOSTA
+PROJETO E IMPLEMENTAÇÃO 
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:PROJETO-E-IMPLEMENTAÇÃO"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A partir dos conceitos apresentados, este capítulo propõe a construção de
+ duas funções de rede virtuais, motivado pelos benefícios da camada de virtualiz
+ação no âmbito de servidores e redes com seus dispositivos.
+ As características atribuídas ao ClickOS na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:ClickOS"
+
+\end_inset
+
+, incluíndo-se Click na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:Click"
+
+\end_inset
+
+, pavimentam a intenção de demonstrar o desenvolvimento de VNFs de maneira
+ mais clara, a partir de uma visão macro em relação àquela vista em linguagens
+ de programação, sem se desenhar apenas como uma plataforma de ensino, já
+ que em determinado momento é capaz de entregar desempenho satisfatório,
+ inclusive sendo habilitável ao NFV.
+\end_layout
+
+\begin_layout Standard
+As funções escolhidas são um firewall e um balanceador de carga em uma rede
+ com Ethernet, TCP/IP.
+ A escolha se deve pela boa legibilidade e assimilação de suas funções mais
+ importantes, facilmente encontrados nas infraestruturas da Tecnologia da
+ Informação.
+ No 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "chap:TESTES"
+
+\end_inset
+
+ as funções centrais desenvolvidas a partir desta proposta são testados
+ justamente em um desses cenários: um serviço de hospedagem web.
+\end_layout
+
+\begin_layout Standard
+Espera-se que a curva de aprendizado da ferramenta seja melhor a partir
+ dessas funções do que com funções simples porém desintegradas.
+ Inclusive, foge o escopo deste trabalho demonstrar VNFs complexas como
+ as aplicadas hoje em middleboxes físicos, que significam recursos superestimado
+s e subutilizados na maioria dos casos; justamente um dos pontos de combate
+ do NFV e suas funções virtuais.
+\end_layout
+
+\begin_layout Standard
+Tanto o firewall quanto o balanceador de carga possuem elementos mínimos
+ para seu funcionamento, como é o caso da estrutura de camada física e de
+ enlace, composta pelos elementos FromDevice, ToDevice, Classifier, ARPQuerier
+ e ARPResponder (ver um uso delas na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Uma-aplicação-dos"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Firewall"
+
+\end_inset
+
+Firewall
+\end_layout
+
+\begin_layout Standard
+A proposta aqui passa por realizar os bloqueios no nível da camada de roteamento
+ e transporte.
+ O elemento de Click responsável deve avaliar a quádrupla de endereços e
+ portas de origem e destino para decidir com base nas regras implantadas
+ a permissão ou não para seguir fluxo, em modo sem estado (stateless).
+ Dada a lista de pacotes no fluxo exibida na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:Exemplo-de-fluxo-fw"
+
+\end_inset
+
+ e a lista de regras na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:Exemplo-de-regras-fw"
+
+\end_inset
+
+, o resultado esperado segue na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:Resultado-do-processamento-fw"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Exemplo de fluxo de pacotes que vai ao firewall
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Exemplo-de-fluxo-fw"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+#Pct
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IP origem
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Porta envio
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IP destino
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Porta alvo
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+198.51.100.55
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+203.0.113.71
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+443
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+203.0.113.71
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+443
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+198.51.100.55
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+45045
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+198.51.100.55
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+60365
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+203.0.113.4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+21
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+192.0.2.237
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+53385
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+203.0.113.71
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+22222
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+203.0.113.71
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+22222
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+192.0.2.237
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+53385
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Exemplo de regras no firewall
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Exemplo-de-regras-fw"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="6">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+#Regra
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IP origem
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Porta envio
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IP destino
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Porta alvo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ação
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+22222
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Aceitar
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+203.0.113.0/24
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1024-65536
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+203.0.113.0/24
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+21
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Aceitar
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+203.0.113.0/24
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+22222
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+203.0.113.0/24
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1024-65536
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Aceitar
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+203.0.113.71
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+443
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Aceitar
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+203.0.113.71
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+443
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Aceitar
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rejeitar
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultado do processamento no firewall
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Resultado-do-processamento-fw"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="6">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+#Pct
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IP origem
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Porta envio
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IP destino
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Porta alvo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Situação
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+198.51.100.55
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+203.0.113.71
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+443
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ACEITO em 4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+203.0.113.71
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+443
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+198.51.100.55
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+45045
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ACEITO em 5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+198.51.100.55
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+60365
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+203.0.113.4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+21
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+REJEITADO em 6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+192.0.2.237
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+53385
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+203.0.113.71
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+22222
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ACEITO em 1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+203.0.113.71
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+22222
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+192.0.2.237
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+53385
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+REJEITADO em 6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Os pacotes aceitos são transmitidos ao próximo nó da rede, que no caso da
+ proposta será sempre o balanceador de carga.
+ 
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Balanceador-de-Carga"
+
+\end_inset
+
+Balanceador de Carga
+\end_layout
+
+\begin_layout Standard
+A proposta para esta VNF é dividir um determinado fluxo entre servidores
+ de uma função semelhante, diminuindo a possibilidade de um servidor específico
+ sobrecarregar ou ter vida útil reduzida, conferindo maior disponibilidade
+ e durabilidade dos equipamentos.
+ O método escolhido para realizar a divisão proposta é conhecido como Round
+ Robin, e este divide os pacotes para os servidores com base em um tempo
+ de concessão fixo.
+ Ele não avalia a carga atual e a situação atual dos servidores para tomar
+ as decisões, recebendo como entrada apenas o número de servidores disponibiliza
+dos.
+\end_layout
+
+\begin_layout Standard
+Dado um fluxo de mil e quinhentos pacotes emitido pelo cliente, espera-se
+ que os servidores recebam os pacotes aproximadamente da seguinte forma:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Exemplo de divisão do fluxo de pacotes vindos do cliente
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Exemplo-de-divisão"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dispositivo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pacotes transmitidos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pacotes recebidos
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cliente
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1500
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Servidor 1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1500/n
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Servidor 2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1500/n
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\vdots$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\vdots$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\vdots$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Servidor n
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1500/n
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Um dia dentro das funções propostas
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Um-dia-dentro"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Um pacote criado por um cliente irá solicitar alguma ação para o servidor.
+ Dada a abstração para que o dado chegue até o primeiro ponto de parada
+ (firewall), ele chega pela rede, entra na interface virtual do switch virtual,
+ que encaminha o mesmo para a interface contida na VNF.
+ Nesse ponto o pacote é encaminhado para o buffer de entrada presente no
+ kernel do ClickOS, que por sua vez permite que o Click receba os pacotes
+ na interface de rede 0 através do elemento FromDevice.
+ O elemento citado transmite o dado para o classificador (Classifier), que
+ diante da análise o passa pela saída 2 ao verificar que se trata de um
+ pacote Ethernet com cabeçalho IP na camada mais interna.
+ Logo a frente, seu cabeçalho Ethernet é removido (Strip), seu cabeçalho
+ IP é checado (CheckIPHeader), para que posteriormente possa ser analisado
+ pelo elemento base do Firewall (IPFilter).
+ Ao ser autorizado, o pacote inicia o caminho de saída para o próximo nó
+ do cenário entrando no elemento responsável por consultar o MAC do próximo
+ e encapsulá-lo (ARPQuerier), logo após chegando a fila usada para armazenar
+ os pacotes enquanto o dispositivo de saída não está pronto (Queue), que
+ quando o buffer de saída estiver apto, é removido de lá pelo elemento ToDevice
+ enviando-o pela interface de rede 1, notabilizando uma possível rede diferente
+ daquela de entrada.
+ Então o pacote vai ao buffer de saída da VNF e de lá para a interface virtual
+ e para o switch virtual que encaminha para a porta do próximo nó.
+ Passagens: 1, 2 e parte do 3 na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Comportamento-esperado-das"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+O processo se repete para a entrada do pacote no balanceador de carga até
+ a etapa de checagem do endereço IP, onde ele é entregue ao elemento responsável
+ pelo processo de troca de endereços de destino no DNAT (IPRewriter).
+ Aqui a troca é feita conforme o elemento configurado para balancear a carga
+ (SourceIPHashMapper ou RoundRobinIPMapper).
+ O pacote com IP alterado para o servidor escolhido entra pela porta 0 de
+ entrada e pela configuração sai pela porta 0 de saída, onde a correção
+ da soma de verificação do protocolo TCP o aguarda e logo após o pacote
+ sai em direção ao seu encapsulamento do cabeçalho Ethernet, repetindo o
+ todo o processo de saída da VNF pela interface de rede 1, e o processo
+ para sua entrega ao proximo nó.
+ Passagens: parte de 3, 4 e parte do 5 na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Comportamento-esperado-das"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+O próximo nó é o servidor, que assim como os outros recebe em sua interface
+ de rede o pacote da interface virtual, adicionando ao buffer de entrada
+ que em um momento analisa o protocolo de transporte e entrega-o de acordo
+ com o serviço conectado a porta de destino definida.
+ O serviço destinado analisa o pacote recebido, e supondo que seja respondível,
+ o faz, o que ao fim gera um pacote resposta na rede em sentido contrário,
+ que inicialmente sai do buffer de saída da interface de rede, passa pela
+ interface virtual e chega ao switch virtual, que reencaminha o pacote para
+ a porta onde está a interface com o balanceador de carga.
+ Passagens: parte do 5, 6 e parte do 7 na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Comportamento-esperado-das"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comportamento esperado das VNFs propostas
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Comportamento-esperado-das"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/undergrad-thesis-fw-lbdnat.png
+	lyxscale 59
+	scale 29
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+No sentido contrário, o pacote resposta faz um percurso parecido que no
+ sentido normal.
+ As principais diferenças estão na chegada a partir da interface de rede
+ 1 e saída para o firewall na interface de saída 0, e no elemento de troca
+ de endereços.
+ Este último recebe o dado do elemento de checagem de endereços pela porta
+ 1 ao invés da porta 0, para que possa descartar o pacote caso não haja
+ regra compatível.
+ Pela regra gravada na fase de envio, o pacote resposta ao pacote original
+ deve sair pela porta 1 do elemento após corretamente convertido para os
+ IPs externos.
+ Assim que sai pela porta 1, o pacote tem seu reprocessamento da soma de
+ verificação como anteriormente, e recebe a anotação (SetIPAddress) que
+ indica a máquina a ser alcançada é um portão (gateway) para o destino final,
+ e não o destino final em si.
+ Todo o restante do processo no balanceador de carga é comum aos passos
+ já mencionados.
+ Passagens: parte do 7, 8 e parte de 9 na 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Comportamento-esperado-das"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Chegando ao firewall, o pacote resposta passa pelo mesmo procedimento mencionado
+ no início, trocando as interfaces de rede em que entram e saem os pacotes:
+ respectivamente porta 1 e porta 0.
+ A partir deste ponto, retoma-se a abstração com relação a chegada do pacote
+ resposta ao cliente.
+ Passagens: parte do 9, 10, e 11.
 \end_layout
 
 \begin_layout Standard
@@ -1037,7 +5298,2235 @@ PROPOSTA
 \end_layout
 
 \begin_layout Chapter
-PROJETO E IMPLEMENTAÇÃO
+TESTES 
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:TESTES"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dadas as implementações de firewall e balanceador de carga com DNAT, os
+ testes demonstram suas validades.
+ Este capítulo discorre sobre os recursos de hardware e software necessários
+ para a execução dos testes (
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:Infraestrutura-e-softwares"
+
+\end_inset
+
+ e 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:Alocação-de-recursos"
+
+\end_inset
+
+); encaminha a configuração de um ambiente de testes com simulação em um
+ serviço de hospedagem de páginas web na internet, tomando como base os
+ elementos construídos no 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "chap:ENTENDENDO-CLICKOS"
+
+\end_inset
+
+ (
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:Protótipo"
+
+\end_inset
+
+); e propõe os testes, descreve a execução e apresenta os resultados encontrados
+, pontuando seus detalhes (
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:Proposta_exec_resultados"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Section
+Infraestrutura e softwares
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Infraestrutura-e-softwares"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A estrutura utilizada para os testes consiste em um servidor de virtualização
+ com VMware, onde uma máquina virtual com o sistema operacional Debian é
+ alocada para todo o experimento.
+ As especificações são:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Hospedeiro - Dell PowerEdge R820
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Máquina Virtual - dom0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8 CPUs x Intel Xeon CPU E5-4603 @ 2.00GHz
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4 vCPUs
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+383.96 GB de RAM DDR3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6GB de RAM
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2 HDs x 2TB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20GB de HD
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+VMware ESXi 6.5.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Debian Server 8.7 - kernel 3.16.51-3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row endfirsthead="true" caption="true">
+<cell multicolumn="1" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Especificações de hardware para os testes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como dito na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:ClickOS"
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+não esquecer de dizer isso
+\end_layout
+
+\end_inset
+
+, ClickOS introduz uma nova camada de virtualização ao sistema que o hospeda
+ através do Xen, e isso ocorre dentro de outra camada de virtualização provida
+ pelo VMware, o que não parece ideal.
+ Como o foco deste trabalho é a implementação, o excesso de camadas de virtualiz
+ação não se mostrou um problema da maior relevância.
+ Reserva-se para trabalhos futuros a otimização deste ambiente de testes
+ com foco em desempenho.
+\end_layout
+
+\begin_layout Standard
+Ao que se refere aos softwares instalados na máquina virtual criada pelo
+ VMware, uma lista não extensiva deles é:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="3">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tipo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Software
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Versão
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Provedor de VNFs
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ClickOS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Hypervisor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Xen Project 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.4.1-9
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Manipulador de VNFs
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cosmos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Switch virtual
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Linux Bridge
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.16.51-3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Gerente do Switch
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bridge utilities
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.5-9
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Monitor de rede
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BwM-NG
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.6-3.1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Analisador de tráfego
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tcpdump
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.9.2-1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sincronizador de relógio
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ntpdate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.2.6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row endfirsthead="true" caption="true">
+<cell multicolumn="1" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Softwares para a VM hospedeira
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Importante mencionar que a criação do ClickOSSwitch pelos autores do ClickOS
+ não exclui a possibilidade de uso de outros comutadores como o próprio
+ OpenVSwitch e o Linux Bridge.
+ A consequência do uso destes outros é a perda de desempenho, mas para testes
+ e aplicações que não exijam desempenho prontamente, a plataforma facilita
+ sua aplicação nesses ambientes.
+ Este trecho é importante no contexto deste trabalho, uma vez que o foco
+ é a implementação e o Linux Bridge entrega o mínimo para a troca de fluxos.
+\end_layout
+
+\begin_layout Standard
+Já os softwares instalados nas máquinas virtualizadas pelo Xen que fazem
+ papel de clientes (cli[1-3]) do serviço de hospedagem web são:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="3">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tipo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Software
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Versão
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sistema Operacional
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Debian Server
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ 8.7 - kernel 3.16.51-3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Gerador de tráfego HTTP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Siege
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.0.8-1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Navegador web
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Lynx
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.8.9
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sincronizador de relógio
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ntpdate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.2.6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Gerente de interfaces de rede
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ifconfig
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.60-26
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Gerente de rotas de rede
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+route
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.60-26
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row endfirsthead="true" caption="true">
+<cell multicolumn="1" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Softwares para as VMs clientes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por fim, os softwares instalados nas máquinas virtualizadas pelo Xen que
+ fazem o papel de servidores web (ws[1-3]) do serviço em questão são:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="3">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tipo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Software
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Versão
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sistema Operacional
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Debian Server
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ 8.7 - kernel 3.16.51-3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Serviço de hospedagem web
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Apache
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Worker - 2.4.10-10
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Gerente de interfaces de rede
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ifconfig
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.60-26
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Gerente de rotas de rede
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+route
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.60-26
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row endfirsthead="true" caption="true">
+<cell multicolumn="1" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Softwares para as VMs servidoras
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Alocação de recursos
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Alocação-de-recursos"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Mesmo com as modificações feitas pelo ClickOS, o Xen ainda sim é capaz de
+ entregar virtualização de máquinas com sistemas operacionais gerais como
+ os GNU/Linux.
+ Isso possibilita que o ambiente de teste seja todo desenvolvido em um mesmo
+ local, facilitando o processo de implantação dos testes.
+ Além das máquinas virtualizadas citadas na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:Infraestrutura-e-softwares"
+
+\end_inset
+
+, aqui o Xen também virtualiza duas micro-VMs para o firewall e o balanceador
+ de carga respectivamente.
+ Seguem os recursos alocados para cada uma delas através de virtualização:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Recurso
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Alocado
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Processador
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 CPU dedicado
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Memória
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1GB dedicado
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Disco
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20GB
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Swap em disco
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1280MB alocados dinamicamente
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row endfirsthead="true" caption="true">
+<cell multicolumn="1" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Recursos do hospedeiro (dom0)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esta alocação dedicada retira tais recursos do total disponível para a virtualiz
+ação, assim restando 5GB de memória e três CPUs das fornecidas pelo VMware
+ para toda a estrutura do teste.
+ Os recursos restantes são todos compartilhados com os dispositivos abaixo:
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Recurso
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Alocado
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Processador
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 CPU compartilhado
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Memória
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+256MB compartilhado
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Disco
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6GB alocados dinamicamente
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Swap em disco
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+512MB alocados dinamicamente
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Interface de Rede
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2x em modo bridge
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row endfirsthead="true" caption="true">
+<cell multicolumn="1" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Recursos das três VMs clientes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Recurso
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Alocado
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Processador
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 CPU compartilhado
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Memória
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+768MB compartilhado
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Disco
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6GB alocados dinamicamente
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Swap em disco
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+768MB alocados dinamicamente
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Interface de Rede
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2x em modo bridge
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row endfirsthead="true" caption="true">
+<cell multicolumn="1" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Recursos das três VMs servidoras
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Recurso
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Alocado
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Processador
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 CPU compartilhado
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Memória
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+24MB compartilhado
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Interface de Rede
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2x em modo bridge
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row endfirsthead="true" caption="true">
+<cell multicolumn="1" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Recursos das duas VMs para as VNFs
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Como essa alocação é feita nos arquivos .cfg
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Protótipo
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Protótipo"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Os recursos mencionados na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:Alocação-de-recursos"
+
+\end_inset
+
+ foram alocados pensando em um ambiente de validação baseado em hospedagem
+ web.
+ Nesse ambiente é provável encontrar equipamentos que desempenham as funções
+ de rede implementadas no capítulo anterior, sendo as empresas desse setor
+ possíveis interessadas neste protótipo de solução virtualizada.
+ No entanto, o ambiente proposto abstrai certa complexidade quando conecta
+ o cliente diretamente ao firewall, sem saltos e sem que ao invés disso
+ haja um dispositivo que redirecione as requisições ao mesmo.
+ Mas é importante notar que esta adaptação não prejudica os testes que são
+ propostos na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:Proposta_exec_resultados"
+
+\end_inset
+
+.
+ O protótipo planejado segue abaixo e esta presente no 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Colocar figura no apêndice em folha A4
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/undergrad-thesis topology.png
+	scale 58
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Protótipo para execução dos testes
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Protótipo-para-execução"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Três pontes (bridges) ethernet foram criadas no switch virtual Linux Bridge
+ para prover as conexões entre as máquinas virtuais, e uma entre estas e
+ as demais redes físicas para fins de administração dos testes.
+\end_layout
+
+\begin_layout Standard
+Após criadas e configuradas com seus softwares, as máquinas usuárias têm
+ suas interfaces de rede configuradas com um IP e máscara de sub-rede usados
+ para a comunicação entre VMs (198.51.100.0/24) e outro para que o controle
+ das operações seja realizado de outra máquina (192.168.0.0/23) via SSH.
+ Tal configuração é feita na linha de comando das VMs clientes para cada
+ interface de rede usando o ifconfig, e também no arquivo de configuração
+ das VMs no hospedeiro.
+ Neste arquivo também se determina a qual rede do switch virtual as interfaces
+ de rede virtuais das VMs estão conectadas.
+ No caso do protótipo, trata-se das redes dentro das áreas amarelas na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Protótipo-para-execução"
+
+\end_inset
+
+ e a rede de controle que não é exibida na figura.
+ Por fim, as interfaces usadas para o teste em si recebem através do route
+ a informação de um gateway, que é um dispositivo responsável pela saída
+ dos pacotes cuja rede é inalcançável pelo cliente.
+ Isto é essencial para que os pacotes cheguem até o serviço web, tendo o
+ firewall como gateway e primeira parada.
+\end_layout
+
+\begin_layout Standard
+O firewall e o balanceador de carga recebem boa parte das suas configurações
+ na fase de implementação, de modo estático, tais como IPs e máscaras de
+ sub-rede como os vistos na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Protótipo-para-execução"
+
+\end_inset
+
+.
+ Para uma melhor visualização da configuração de rede dessas VNFs, o ideal
+ é consultar a 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+seção do fw no cap de implementação
+\end_layout
+
+\end_inset
+
+e a 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+seção do lb no cap de implementação
+\end_layout
+
+\end_inset
+
+.
+ No mais, os arquivos de configuração das VMs no hospedeiro recebem as informaçõ
+es sobre as redes do switch virtual usadas e as suas configurações para
+ cada uma delas.
+ 
+\end_layout
+
+\begin_layout Standard
+Idênticos aos clientes com relação a configuração de rede, os servidores
+ web abdicam de interfaces de rede virtuais para seu gerenciamento, já que
+ se configurados uma única vez se tornam dispositivos passivos nesse quesito,
+ com modificações esporádicas e suportáveis através do hospedeiro.
+ Antes de inseridos a rede local alimentada pelo balanceador de carga (172.16.0.0/1
+2), seus softwares são configurados e recebem a página web que será usada
+ para os testes.
+ Trata-se de uma página HTML minimalista contendo apenas a identificação
+ exclusiva de cada um dos três servidores.
+ Nenhum ajuste extra foi feito no Apache Worker visando desempenho.
+\end_layout
+
+\begin_layout Standard
+Alguns detalhes comuns a alguns ou todos os dispositivos:
+\end_layout
+
+\begin_layout Itemize
+A unidade de transporte máxima (MTU) é padronizada em 1500 bytes para todos
+ do protótipo através do uso do 
+\shape italic
+ifconfig
+\shape default
+ nas interfaces de rede virtuais e nas interfaces do switch virtual;
+\end_layout
+
+\begin_layout Itemize
+Os relógios dos clientes, servidores web, e hospedeiro foram sincronizados
+ antes dos testes para facilitar a análise dos resultados, usando o 
+\shape italic
+Ntpdate
+\shape default
+ com o servidor b.ntp.br do NIC.BR;
+\end_layout
+
+\begin_layout Section
+Proposta, execução e resultados
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Proposta_exec_resultados"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nesta seção, dois testes principais são descritos dentro do protótipo descrito
+ na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:Protótipo"
+
+\end_inset
+
+.
+ O primeiro testa a função do firewall em bloquear o acesso a determinadas
+ portas, como por exemplo, a capacidade da função de rede programada de
+ exercer o bloqueio ao acesso por máquinas indesejáveis.
+ De forma idêntica, o segundo testa a função do balanceador de carga em
+ dividir o fluxo de entrada entre vários servidores com base no endereço
+ IP e na nº da porta de origem do pacote.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Reescrever
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Firewall
+\end_layout
+
+\begin_layout Standard
+Usando o Siege a partir de um cliente qualquer da rede, emite-se tráfego
+ tendo como destino a borda do serviço de hospedagem como na figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Protótipo-para-execução"
+
+\end_inset
+
+.
+ O tráfego HTTP gerado passa obrigatoriamente pelo firewall, permitindo
+ uma análise detalhada do fluxo, realizando concessões e bloqueios conforme
+ a proposta.
+ 
+\end_layout
+
+\begin_layout Standard
+As decisões tomadas pela função afetam a execução do Siege.
+ Para monitorá-las, aplica-se o BwM-NG nas interfaces virtuais relacionadas
+ ao firewall e ao cliente em questão, a procura de padrões que demonstrem
+ o comportamento do fluxo.
+ Não trafegam quaisquer outras conexões pelas interfaces testadas.
+\end_layout
+
+\begin_layout Standard
+Para a execução, executa-se os softwares em paralelo e sincronizadamente,
+ com o Siege no cliente e o BwM-NG no hospedeiro da plataforma ClickOS.
+ O primeiro é configurado para uma execução em no máximo quinze segundos
+ com cem processos concorrentes emitindo requisições para http://192.0.2.61:X/index
+2.html, onde X é o número da porta a ser acessada.
+ Já o segundo guarda uma leitura do fluxo dos pacotes a cada meio segundo
+ nas interfaces selecionadas, de acordo com padrão CSV.
+\end_layout
+
+\begin_layout Standard
+Para auxílio na geração dos gráficos e análise dos resultados, os arquivos
+ resultantes de ambos comandos armazenam os segundos do relógio do sistema.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tfw/p80_pctsOUTGOING.png
+	lyxscale 47
+	scale 54
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tfw/p80_pctsINCOMING.png
+	lyxscale 47
+	scale 54
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fluxo de pacotes TCP 80 com foco no firewall
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Fluxo-de-pacotes-fw-80"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tfw/p8080_pctsOUTGOING.png
+	lyxscale 47
+	scale 54
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tfw/p8080_pctsINCOMING.png
+	lyxscale 47
+	scale 54
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fluxo de pacotes TCP 8080 com foco no firewall
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Fluxo-de-pacotes-fw-8080"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para tornar os gráficos mais limpos, foram excluídas as representações dos
+ clientes não utilizados no momento da execução.
+\end_layout
+
+\begin_layout Standard
+Como se pode observar na parte superior da 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Fluxo-de-pacotes-fw-80"
+
+\end_inset
+
+, o cliente configurado para enviar o fluxo de requisições através da porta
+ TCP 80 possui um padrão condizente com o esperado em uma conexão normal,
+ respeitando o controle de fluxo nativo do protocolo de transporte em questão,
+ e sem perdas significantes.
+ O tráfego gerado por ele é notado nas interfaces de entrada e de saída
+ do firewall, demonstrando aceitação deste pelas regras.
+ No outro sentido do tráfego e na parte inferior da figura, as respostas
+ mantêm proporções semelhantes se comparadas ao gráfico de envio, salvo
+ variações mínimas nas quantidades a serem interpretadas como naturais ao
+ procedimento de medição, e demonstrando inexistência de condições adversas.
+\end_layout
+
+\begin_layout Standard
+Já o cliente configurado para enviar requisições HTTP pela porta TCP 8080,
+ na parte superior da 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Fluxo-de-pacotes-fw-8080"
+
+\end_inset
+
+, demonstra problemas para utilizar o protocolo para estabelecer transporte
+ para o servidor web, enviando apenas cem pacotes de sincronia em intervalos
+ de tempo binários, e que não aparecem na interface virtual de saída do
+ firewall, sendo então bloqueados pela função de rede virtual.
+ Este número não é em vão, já que são cem os processos concorrentes que
+ requisitam conexões com o serviço.
+ Se o fluxo de saída não chega ao serviço, logo é improvável que seja haja
+ resposta em forma de tráfego de entrada representado na parte inferior,
+ o que de fato não ocorre exceto por um único pacote, que por exclusão,
+ é uma resposta ARP do próprio firewall a uma requisição do cliente (veja
+ no segundo seis de ambos gráficos).
+ Importante lembrar que este firewall trabalha apenas com pacotes IP e não
+ responde pelos pacotes ARP, que seguem outros fluxos na árvore de execução
+ do Click como visto na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Uma-aplicação-dos"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Balanceador de carga
+\end_layout
+
+\begin_layout Standard
+O Siege emite o mesmo tipo de fluxo a partir de um cliente para a borda
+ do serviço de hospedagem.
+ O tráfego HTTP na porta 80 passa obrigatoriamente pelo firewall, e uma
+ vez filtrado chega ao balanceador de carga, que o distribui aos servidores
+ web configurados na VNF, através da aplicação da DNAT.
+\end_layout
+
+\begin_layout Standard
+O BwM-NG é usado novamente para monitorar as interfaces virtuais relacionadas
+ ao cliente e aos servidores web, que são origem e destino dos pacotes,
+ a procura de padrões que demonstrem o comportamento do fluxo.
+ Não trafegam quaisquer outras conexões pelas interfaces testadas.
+\end_layout
+
+\begin_layout Standard
+A execução ocorre da mesma forma que na proposta anterior, gerando o arquivo
+ CSV, e armazenando os segundos do relógio do sistema para auxílio na geração
+ dos gráficos e análise dos resultados.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tnatlb1/p80_pctsOUTGOING.png
+	lyxscale 47
+	scale 54
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tnatlb1/p80_pctsINCOMING.png
+	lyxscale 47
+	scale 54
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fluxo de pacotes com foco no balanceador de carga
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Fluxo-de-pacotes-lb"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na parte superior da 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Fluxo-de-pacotes-lb"
+
+\end_inset
+
+, está o fluxo de pacotes enviados pelo cliente.
+ Observa-se uma semelhança entre as quantidades de pacotes enviados pelo
+ cliente e recebidos por todos os servidores, respeitando o controle de
+ fluxo implementado pelo protocolo de transporte.
+ Os servidores web recebem individualmente cerca de um terço do total de
+ pacotes, como é possível ver nas três linhas que os representam, praticamente
+ sobrepostas, e corroboram com a expectativa despejada em cima do balanceador
+ de carga desenvolvido.
+\end_layout
+
+\begin_layout Standard
+Na parte inferior da figura está o fluxo de pacotes recebido pelo cliente,
+ vindo dos servidores, e em resposta as requisições HTTP.
+ Este gráfico se assemelha ao anterior em suas linhas e nas quantidades
+ de pacotes enviados a cada intervalo, o que é de se esperar de uma rede
+ neutra, e demonstrando que o teste não sofreu reações adversas, tampouco
+ alta carga de processamento com os parâmetros usados.
+\end_layout
+
+\begin_layout Standard
+Para tornar os gráficos mais limpos, foram excluídas as representações dos
+ clientes não utilizados no momento da execução.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Teste de stress
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1048,18 +7537,18 @@ PROJETO E IMPLEMENTAÇÃO
 \end_layout
 
 \begin_layout Chapter
-TESTES
-\end_layout
+CONCLUSÃO 
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:CONCLUSÃO"
 
-\begin_layout Standard
-\begin_inset Newpage cleardoublepage
 \end_inset
 
 
 \end_layout
 
-\begin_layout Chapter
-CONCLUSÃO
+\begin_layout Standard
+Reafirmar a porra toda
 \end_layout
 
 \begin_layout Standard
