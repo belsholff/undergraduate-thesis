@@ -1,6 +1,10 @@
-// Rede no vnf.cfg:
-// vif         = ['ip=10.0.0.1,mac=00:19:85:11:00:54,bridge=suaBridge',
-//                'ip=outroIP,mac=outroMAC,bridge=outraBridge']
+// Network in vnf.cfg:
+// vif         = ['ip=10.0.0.1,mac=00:19:85:11:00:54,bridge=yourBridge',
+//                'ip=anotherIP,mac=anotherMAC,bridge=anotherBridge']
+// If you'll use this, please change vnf.cfg with network information, change
+//AdressInfo with networks configured, duplicate this structure for new networks,
+//and then, make an analysis of witch elements are needed. After all, start
+//development of your VNF.
 
 //          name             ip           ipnet         mac (def em vnf.cfg)
 AddressInfo(net0        10.0.0.1       10.0.0.0/8     00:19:85:11:00:54, ...);
