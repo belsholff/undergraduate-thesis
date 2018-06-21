@@ -4,7 +4,7 @@
 \begin_header
 \save_transient_properties true
 \origin unavailable
-\textclass abntex2
+\textclass ../../../../Documentos/UFES/PG/undergraduate-thesis/thesis/lyx/abntex2
 \begin_preamble
 % ---
 % PACOTES
@@ -2920,8 +2920,15 @@ ARPQuerier e ARPResponder realizam o papel de preencher a tabela ARP de
  O primeiro, diante da não existência de uma entrada para o destino solicitado
  por um pacote, consulta o equivalente ao ARPResponder de todos os dispositivos
  na rede acerca do endereço MAC, e ao receber a resposta, encapsula.
- O mesmo vale quando o gateway se torna o destinatário temporário, que é
- solicitado quando o SetIPAddress é usado.
+ O mesmo vale quando o portão (gateway) se torna o destinatário temporário,
+ o que acontece quando o SetIPAddress é usado (detalhes no 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "chap:PROJETO-E-IMPLEMENTAÇÃO"
+
+\end_inset
+
+), por exemplo.
  Como é de se imaginar, o segundo elemento responde às consultas feitas
  por outros dispositivos e pode ser utilizado para realizar Proxy ARP;
 \end_layout
@@ -3048,6 +3055,23 @@ Outra forma de facilitar a correção de erros e também facilitar o entendiment
  de grafos distribuída com Click chamada Clicky.
  Ela transforma o código em uma figura baseado em um arquivo de estilo CSS
  e também é capaz de analisar erros e retorná-los.
+ Na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Interface-gráfica-e"
+
+\end_inset
+
+, pode-se ver o grafo em Clicky, representando o código descrito na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Uma-aplicação-dos"
+
+\end_inset
+
+, exceto o ramo da porta 2 que encontra erros e por isso é ignorado.
+ Caso seja da vontade, é possível gerar figuras ou documentos contendo as
+ representações.
 \end_layout
 
 \begin_layout Standard
@@ -3071,6 +3095,13 @@ reference "fig:Uma-aplicação-dos"
 
 \end_inset
 
+ em Clicky
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Interface-gráfica-e"
+
+\end_inset
+
 
 \end_layout
 
@@ -3080,6 +3111,13 @@ reference "fig:Uma-aplicação-dos"
 \end_layout
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/clicky-iface.png
+	scale 60
+
+\end_inset
+
 
 \end_layout
 
@@ -3478,6 +3516,13 @@ name "fig:Exemplo-de-arquivo-cfg"
 \end_layout
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/vnf_xen_config.png
+	scale 73
+
+\end_inset
+
 
 \end_layout
 
@@ -3524,9 +3569,8 @@ referência
 \end_inset
 
 .
- Também conhecido como ClickOS-ctl, ele recebe o código Click e a identificação
- da VM criada com o kernel ClickOS para inserir o primeiro no segundo, transform
-ando-o em um middlebox virtual.
+ Ele recebe o código Click e a identificação da VM criada com o kernel ClickOS
+ para inserir o primeiro no segundo, transformando-o em um middlebox virtual.
 \end_layout
 
 \begin_layout Standard
@@ -3534,15 +3578,15 @@ As VNFs não possuem linha de comando ou interface semelhante para seu gerenciam
 nto próprio, sendo esse um papel da máquina hospedeira.
  No momento da implantação das funções a partir do hospedeiro, não há passagem
  de parâmetros em tempo de inicialização.
- Apenas algumas operações de leitura e escrita em tempo de execução através
- dos manipuladores de elementos descritos na 
+ Apenas algumas operações de leitura e escrita em tempo de execução são
+ permitidas, através dos manipuladores de elementos descritos na 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "sec:Click"
 
 \end_inset
 
-, que podem ser acionadas através do hospedeiro com o comando cosmos, mas
+, que podem ser acionados através do hospedeiro com o comando cosmos, mas
  muito longe de ser um suporte consistente a configurações em tempo de execução
  como uma adição de regras em um firewall ou uma remoção de servidor no
  balanceador de carga.
@@ -3559,6 +3603,20 @@ Por fim, ClickOS pode trabalhar em conjunto com soluções NFV através de
 \begin_inset CommandInset citation
 LatexCommand cite
 key "ventre_performance_2016"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Comandos para criação e execução estão no apêndice 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+inserir o apendice
+\end_layout
 
 \end_inset
 
@@ -3598,7 +3656,7 @@ name "chap:PROJETO-E-IMPLEMENTAÇÃO"
 \end_layout
 
 \begin_layout Standard
-A partir dos conceitos apresentados, este capítulo propõe a construção de
+A partir dos conceitos apresentados, este capítulo propõe, projeta e implementa
  duas funções de rede virtuais, motivado pelos benefícios da camada de virtualiz
 ação no âmbito de servidores e redes com seus dispositivos.
  As características atribuídas ao ClickOS na 
@@ -3626,8 +3684,8 @@ reference "sec:Click"
 As funções escolhidas são um firewall e um balanceador de carga em uma rede
  com Ethernet, TCP/IP.
  A escolha se deve pela boa legibilidade e assimilação de suas funções mais
- importantes, facilmente encontrados nas infraestruturas da Tecnologia da
- Informação.
+ importantes, ja que são facilmente encontrados nas infraestruturas da Tecnologi
+a da Informação.
  No 
 \begin_inset CommandInset ref
 LatexCommand formatted
@@ -3635,8 +3693,8 @@ reference "chap:TESTES"
 
 \end_inset
 
- as funções centrais desenvolvidas a partir desta proposta são testados
- justamente em um desses cenários: um serviço de hospedagem web.
+ tais funções são testados justamente em um cenário de serviço de hospedagem
+ web.
 \end_layout
 
 \begin_layout Standard
@@ -3644,8 +3702,8 @@ Espera-se que a curva de aprendizado da ferramenta seja melhor a partir
  dessas funções do que com funções simples porém desintegradas.
  Inclusive, foge o escopo deste trabalho demonstrar VNFs complexas como
  as aplicadas hoje em middleboxes físicos, que significam recursos superestimado
-s e subutilizados na maioria dos casos; justamente um dos pontos de combate
- do NFV e suas funções virtuais.
+s e subutilizados na maioria dos casos.
+ Justamente um dos pontos de combate do NFV e suas funções virtuais.
 \end_layout
 
 \begin_layout Standard
@@ -3660,6 +3718,64 @@ reference "fig:Uma-aplicação-dos"
 \end_inset
 
 ).
+ Já outros como IPFilter, SetIPAddress, RoundRobinIPMapper, SourceIPHashMapper,
+ IPRewriter SetTCPChecksum estão associados a tarefa de cada VNF de forma
+ específica.
+ Segue um detalhamento deles com base na documentação:
+\end_layout
+
+\begin_layout Itemize
+IPFilter: possui uma porta de entrada por onde passam pacotes IP, e duas
+ de saída por onde saem fluxos permitidos e fluxos bloqueados.
+ Ao invés do último caso, há a possibilidade de ignorá-los, o que faz com
+ que tal fluxo não saia pela respectiva porta.
+ O que define o caminho dos pacotes são as regras adicionadas nos parâmetros
+ do elemento, com base na ação descrita.
+ A comparação pacote-regra é feita de forma ordenada, logo as regras mais
+ específicas devem estar antes das mais genéricas.
+ Em um firewall de produção, é comum que o padrão seja bloquear por padrão
+ e aceitar as exceções, sendo que para reproduzir este comportamento, basta
+ adicionar as regras de permissão antes da regra deny all ou drop all, ao
+ fim;
+\end_layout
+
+\begin_layout Itemize
+SetIPAddress: possui uma porta de entrada e outra de saída.
+ É o elemento utilizado para configurar o endereço do gateway da rede, usado
+ para os pacotes cujo destino está a mais de um salto a partir da rede atual.
+ Quando configurado, realiza uma anotação no pacote recebido que é utilizada
+ pelos elementos ARP ao encapsular o pacote IP.
+ A anotação tem precedência sobre o endereço IP de destino presente no pacote
+ no momento de busca pelo MAC associado na tabela ARP.
+ Dessa forma, um pacote consegue saltar para as redes do gateway em busca
+ do seu destino, que por sua vez pode repetir a operação sucessivamente
+ até que encontre-o;
+\end_layout
+
+\begin_layout Itemize
+RoundRobinIPMapper: Não possui portas.
+ Serve como um anexo ao IPRewriter para determinar qual regra deve ser utilizada
+ no momento da reescrição de endereço IP e portas a ser feita por este.
+ A determinação acontece seguindo um padrão de intervalo de tempo sem prioridade
+ como é o escalonamento Round Robin.
+ Ele permite que o IPRewriter tente distribuir de maneira uniforme os pacotes
+ que recebe;
+\end_layout
+
+\begin_layout Itemize
+SourceIPHashMapper: Na mesma linha do anterior, no entanto a regra utilizada
+ nesse caso depende de uma função hash para fazer a escolha dentre aquelas
+ configuradas em seus parâmetros, fixando-a através do endereço IP de origem
+ para que todos os pacotes provenientes do endereço tenham a mesma ação,
+ independentemente de outras variáveis como endereço IP de destino ou portas;
+\end_layout
+
+\begin_layout Itemize
+IPRewriter
+\end_layout
+
+\begin_layout Itemize
+SetTCPChecksum
 \end_layout
 
 \begin_layout Section
@@ -5266,14 +5382,14 @@ No sentido contrário, o pacote resposta faz um percurso parecido que no
  deve sair pela porta 1 do elemento após corretamente convertido para os
  IPs externos.
  Assim que sai pela porta 1, o pacote tem seu reprocessamento da soma de
- verificação como anteriormente, e recebe a anotação (SetIPAddress) que
- indica a máquina a ser alcançada é um portão (gateway) para o destino final,
- e não o destino final em si.
+ verificação como anteriormente, e depois recebe a anotação (SetIPAddress)
+ indicando que o pacote precisa passar por um gateway no próximo nó para
+ rumar ao seu destino final.
  Todo o restante do processo no balanceador de carga é comum aos passos
  já mencionados.
  Passagens: parte do 7, 8 e parte de 9 na 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:Comportamento-esperado-das"
 
 \end_inset
@@ -7069,10 +7185,9 @@ reference "fig:Protótipo-para-execução"
 
  e a rede de controle que não é exibida na figura.
  Por fim, as interfaces usadas para o teste em si recebem através do route
- a informação de um gateway, que é um dispositivo responsável pela saída
- dos pacotes cuja rede é inalcançável pelo cliente.
+ a informação de um gateway.
  Isto é essencial para que os pacotes cheguem até o serviço web, tendo o
- firewall como gateway e primeira parada.
+ firewall como intermediário.
 \end_layout
 
 \begin_layout Standard
@@ -7435,7 +7550,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tnatlb1/p80_pctsOUTGOING.png
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tnatlb_rr/p80_pctsOUTGOING.png
 	lyxscale 47
 	scale 54
 
@@ -7447,7 +7562,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tnatlb1/p80_pctsINCOMING.png
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tnatlb_rr/p80_pctsINCOMING.png
 	lyxscale 47
 	scale 54
 
