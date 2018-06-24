@@ -53,7 +53,7 @@ classifier0[0] -> ARPResponder(net0) -> out0;
 classifier1[0] -> ARPResponder(net1) -> out1;
 
 // Firewall application accepting only http requests to natlb from entire net0.
-webFilterIN :: IPFilter(allow src net0:ipnet && dst natlb && dst port 80,
+webFilterIN :: IPFilter(allow src net0:ipnet && dst natlb && src port >= 32768 && src port <= 61000 && dst port 80,
                         drop all)
 
 // Firewall application accepting only http responses (through dynamic ports)
