@@ -4,7 +4,7 @@
 \begin_header
 \save_transient_properties true
 \origin unavailable
-\textclass abntex2
+\textclass ../../../../Documentos/UFES/PG/undergraduate-thesis/thesis/lyx/abntex2
 \begin_preamble
 % ---
 % PACOTES
@@ -3574,8 +3574,8 @@ referência
 \end_layout
 
 \begin_layout Standard
-As VNFs não possuem linha de comando ou interface semelhante para seu gerenciame
-nto próprio, sendo esse um papel da máquina hospedeira.
+As VNFs não possuem linha de comandos para seu gerenciamento próprio, sendo
+ esse um papel da máquina hospedeira.
  No momento da implantação das funções a partir do hospedeiro, não há passagem
  de parâmetros em tempo de inicialização.
  Apenas algumas operações de leitura e escrita em tempo de execução são
@@ -3590,22 +3590,17 @@ reference "sec:Click"
  muito longe de ser um suporte consistente a configurações em tempo de execução
  como uma adição de regras em um firewall ou uma remoção de servidor no
  balanceador de carga.
- Para contornar isso, scripts de marcação de texto podem ser utilizados
- para gerar os arquivos na linguagem de Click e recarregar a função de rede,
- mesmo que signifique uma queda repentina do serviço associado.
+ Para contornar essa limitação, scripts de marcação de texto podem ser utilizado
+s a parte para gerar os arquivos na linguagem de Click e recarregar a função
+ de rede, mesmo que signifique uma queda repentina do serviço associado.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Adicionar dados sobre o terminal tty
-\end_layout
-
-\end_inset
-
-
+Apesar de não possuir linha de comandos, as máquinas virtuais com o núcleo
+ do ClickOS exibem um registro de alertas e erros exibido pelo comando xl
+ console, que pode reportar erros de códificação de todos os níveis, erros
+ de inicialização, más configurações e elementos de análise de erros para
+ informar estados através deste.
 \end_layout
 
 \begin_layout Standard
@@ -3622,7 +3617,8 @@ key "ventre_performance_2016"
 \end_layout
 
 \begin_layout Standard
-Comandos para criação e execução estão no apêndice 
+Comandos para criação e execução, monitoramento e análise de erros estão
+ no apêndice 
 \begin_inset Note Note
 status open
 
@@ -3633,20 +3629,6 @@ inserir o apendice
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-É preciso referenciar as ferramentas quando o artigo referenciado antes
- fala sobre elas?
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -3996,7 +3978,7 @@ reference "fig:Comportamento-esperado-das"
 \begin_layout Standard
 Chegando ao firewall, o pacote resposta passa pelo mesmo procedimento mencionado
  no início, trocando as interfaces de rede em que entram e saem os pacotes:
- respectivamente porta 1 e porta 0.
+ agora na porta 1 e porta 0, respectivamente.
  A partir deste ponto, retoma-se a abstração com relação a chegada do pacote
  resposta ao cliente.
  Passagens: parte do 9, 10, e 11.
@@ -5204,8 +5186,8 @@ REJEITADO em 6
 \end_layout
 
 \begin_layout Standard
-Os pacotes aceitos seriam transmitidos ao próximo nó da rede, que no caso
- da proposta é o balanceador de carga.
+Os pacotes aceitos são transmitidos ao próximo nó da rede: o balanceador
+ de carga.
 \end_layout
 
 \begin_layout Standard
@@ -5216,9 +5198,8 @@ reference "sec:Um-dia-dentro"
 
 \end_inset
 
-, são necessárias duas interfaces de rede para diferenciar os fluxos entre
- aquele que trafega do e para o cliente, e o fluxo do e para o balanceador
- de carga.
+, são necessárias duas interfaces de rede para diferenciar os fluxos do
+ e para o mundo externo, e o fluxo do e para o balanceador de carga.
  Essa separação naturalmente exige dois conjuntos mínimos de elementos para
  tratar os pacotes na camada de enlace, respondendo e realizando requisições
  ARP, e classificando os pacotes conforme seus cabeçalhos.
@@ -5238,23 +5219,26 @@ key "martins_clickos_2014"
 \end_inset
 
 .
- Em caso de problemas, ClickOS dá sinais sobre sua parada no terminal serial,
- e portanto, uma heurística pode definir melhor quais recursos ajustar para
- a função sem que haja desperdício.
+ Em caso de problemas, ClickOS dá sinais sobre sua parada no registro de
+ erros e alertas, e portanto, uma heurística pode definir melhor quais recursos
+ ajustar para a função sem que haja desperdício.
+ A quantidade de entradas nas filas de saída de pacotes deve ser estudada.
 \end_layout
 
 \begin_layout Standard
-Uma vez que os elementos para tratar os pacotes de controle forem corretamente
- configurados, é preciso tratar os pacotes de dados, e por consequência
- extrair o pacote IP do pacote Ethernet (elemento Strip com o número de
- bytes usados pelo cabeçalho Ethernet), e verificar sua validade com relação
- a seus cabeçalhos, para garantir que o pacote ainda é válido.
+Uma vez que os elementos para tratamento de pacotes ARP e os elementos para
+ tratamento de entrada e saída de pacotes são corretamente configurados,
+ é preciso tratar os pacotes de dados.
+ O uso do elemento Strip, passando o número de bytes usados pelo cabeçalho
+ Ethernet para que os remova é o primeiro passo.
+ Verificar a validade do cabeçalho IP extraído, para garantir que o pacote
+ ainda é válido, é o segundo.
  Isto é providenciado pelo elemento CheckIPHeader, que também pode filtrar
- pacotes com base em IPs indesejados, incluíndo IPs de comunicação abrangente
- (broadcasts).
+ pacotes com base em IPs indesejados, principalmente IPs de comunicação
+ abrangente (broadcasts).
  
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 configurar no elemento no código.
@@ -5262,19 +5246,19 @@ configurar no elemento no código.
 
 \end_inset
 
- Depois desse tratamento e checagem, é possível pensar no bloqueio e autorização
- de pacotes.
+Depois desse tratamento e checagem, é possível pensar no bloqueio e autorização
+ de pacotes de maneira geral.
 \end_layout
 
 \begin_layout Standard
-Com o IPFilter, é possível realizar filtragens com elementos a partir do
- endereço IP origem e destino, portas de origem e destino, e o tipo de protocolo
- de transporte, inclusive limitando pelos tipos diferentes de pacotes dentro
- destes e valores padrão.
+IPFilter, a partir de cabeçalhos, realiza filtragens de pacotes usando valores
+ de endereço IP origem e destino, portas de origem e destino, e o tipo de
+ protocolo de transporte, inclusive limitando pelos tipos diferentes de
+ pacotes dentro destes e valores padrão de variáveis.
  As regras de autorização ou bloqueio devem ser construídas com essas bases,
  atentando-se para não limitar ou autorizar acesso em excesso.
  Para conhecimento de como as regras devem ser construídas, uma consulta
- aos elementos IPFilter e IPClassifier na documentação ajuda
+ aos elementos IPFilter e IPClassifier na documentação é essencial
 \begin_inset CommandInset citation
 LatexCommand cite
 key "kohler_elements_nodate"
@@ -5285,7 +5269,98 @@ key "kohler_elements_nodate"
 \end_layout
 
 \begin_layout Standard
-Após tudo isso
+Dois filtros devem ser configurados: o primeiro trabalha no sentido de entrada
+ do fluxo externo, aceitando apenas pacotes cujos cabeçalhos cumpram requisitos
+ de endereço de rede IP de origem, endereço único IP de destino, número
+ de porta de origem dentro de um intervalo e por fim, o número único de
+ porta de destino, limitando não só os recursos e serviços acessados, como
+ para quem estão disponíveis, e ignorando os demais; já o segundo trabalha
+ no sentido de saída do fluxo, portanto, vindo do balanceador.
+ Este aceita que apenas os pacotes-resposta retornem ao mundo externo de
+ onde vieram suas requisições, e visa limitar a comunicação indesejada dos
+ dispositivos balanceados, ignorando os demais pacotes e servindo de camada
+ de proteção contra as invasões, principalmente.
+ Uma análise de tráfego é mandatória para que nenhuma comunicação crítica
+ dos dispositivos seja bloqueada nas redes envolvidas, no caso de firewall
+ e balanceador em sistemas já implantados.
+\end_layout
+
+\begin_layout Standard
+Uma vez que os pacotes de dados fluem pelas duas interfaces de rede, eles
+ são classificados, extraídos de seus cabeçalhos Ethernet, e na sequência
+ checados quanto a suas validades.
+ Daí então cada fluxo entra em seu respectivo filtro e, se autorizados,
+ devem se encaminhados para o reencapsulamento do cabeçalho Ethernet com
+ destino ao balanceador ou ao mundo externo, sendo dispensado na respectiva
+ fila e depois no respectivo elemento de saída do ClickOS correspondente
+ para chegar ao seu destino.
+\end_layout
+
+\begin_layout Standard
+Por fim, pacotes não classificados são descartados.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Código em linguagem de marcação implementado para o firewall
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Código-fw"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/firewall_code.png
+	scale 67
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dado o projeto descrito anteriormente, a 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Código-fw"
+
+\end_inset
+
+ demonstra a implementação realizada e utilizada no 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "chap:TESTES"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
