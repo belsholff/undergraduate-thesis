@@ -4,7 +4,7 @@
 \begin_header
 \save_transient_properties true
 \origin unavailable
-\textclass ../../../../Documentos/UFES/PG/undergraduate-thesis/thesis/lyx/abntex2
+\textclass abntex2
 \begin_preamble
 % ---
 % PACOTES
@@ -210,9 +210,9 @@ Prof.
 \end_layout
 
 \begin_layout Co-Orientador
-Profa.
- Msc.
- Cristina Klippel Dominicini
+Prof.
+ Dr.
+ Magnos Martinello
 \end_layout
 
 \begin_layout Tipo-trabalho
@@ -660,13 +660,11 @@ Com o advento da virtualização e o surgimento do modelo de computação em
 \end_layout
 
 \begin_layout Resumo
-Neste cenário, o paradigma de Virtualização de Funções de Rede (NFV - Network
- Function Virtualization), tem como premissa entregar funções de rede, tais
- como: firewalls, balanceadores de carga, Tradução de Endereço de Rede (NAT
- - Network Address Translation), e Sistema de Detecção de Intrusão (IDS
- - Intrusion Detection System), através de uma linguagem de alto nível,
- colaborando com a flexibilidade do provisionamento, bem como na programabilidad
-e das mesmas, até então engessadas pelo uso dos middleboxes de prateleira.
+Neste cenário, o paradigma NFV, tem como premissa entregar funções de rede,
+ tais como: firewalls, balanceadores de carga, NATs, e IDSs, através de
+ uma linguagem de marcação de alto nível, colaborando com a flexibilidade
+ do provisionamento, bem como na programabilidade das mesmas, até então
+ engessadas pelo uso dos middleboxes de prateleira.
 \end_layout
 
 \begin_layout Resumo
@@ -679,10 +677,10 @@ Incluído neste panorama, ClickOS propõe uma plataforma de virtualização
 \end_layout
 
 \begin_layout Resumo
-Assim sendo, este trabalho tem como objetivo apresentar ClickOS como uma
- alternativa para a implementação de Funções de Rede Virtuais (VNFs - Virtual
- Network Functions) dentro de NFV, usando como cenário o balanceamento de
- carga em serviços de hospedagem web.
+Assim sendo, este trabalho tem como objetivo apresentar detalhadamente ClickOS
+ como uma alternativa para a implementação de Funções de Rede Virtuais (VNFs
+ - Virtual Network Functions) dentro de NFV, usando como cenário o balanceamento
+ de carga em serviços de hospedagem web.
 \end_layout
 
 \begin_layout Resumo
@@ -691,8 +689,8 @@ Assim sendo, este trabalho tem como objetivo apresentar ClickOS como uma
 \series bold
 Palavras-chave: 
 \series default
-NFV; virtualização de funções de rede; VNF; função de rede virtualizada;
- click; clickOS; 
+NFV; virtualização de funções de rede; VNF; função de rede virtual; Click;
+ ClickOS; 
 \end_layout
 
 \begin_layout Standard
@@ -717,8 +715,8 @@ Abstract
 
 Keywords:
 \series default
- NFV; network functions virtualization; VNF; virtual network function; click;
- clickOS;
+ NFV; network functions virtualization; VNF; virtual network function; Click;
+ ClickOS;
 \end_layout
 
 \begin_layout Standard
@@ -745,23 +743,6 @@ Keywords:
 
 \begin_layout Standard
 \begin_inset FloatList table
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Abreviaturas em ordem alfabética
-\end_layout
-
-\begin_layout Plain Layout
-Se a tradução está aqui, retirá-las do texto parece uma boa
-\end_layout
 
 \end_inset
 
@@ -865,7 +846,7 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa 
+ Sigla em língua inglesa para Monitor de Largura de Banda NG
 \end_layout
 
 \begin_layout Siglas
@@ -915,7 +896,7 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa
+ Sigla em língua inglesa para Valores Separados por Vírgula
 \end_layout
 
 \begin_layout Siglas
@@ -940,7 +921,8 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa
+ Sigla em língua inglesa para Protocolo de Configuração Dinâmica de Dispositivos
+ 
 \end_layout
 
 \begin_layout Siglas
@@ -965,7 +947,7 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa 
+ Acrônimo em língua inglesa para Tradução de Endereços de Rede Dinâmico
 \end_layout
 
 \begin_layout Siglas
@@ -1042,7 +1024,7 @@ status open
 
 \end_inset
 
- Acrômino em língua inglesa
+ Acrônimo recursivo em língua inglesa para GNU não é Unix
 \end_layout
 
 \begin_layout Siglas
@@ -1257,31 +1239,6 @@ status open
 
 \end_inset
 
-NF
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-]
-\end_layout
-
-\end_inset
-
- Sigla em língua inglesa para Função de Rede
-\end_layout
-
-\begin_layout Siglas
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-[
-\end_layout
-
-\end_inset
-
 NFV
 \begin_inset ERT
 status open
@@ -1370,7 +1327,8 @@ status open
 
 \end_inset
 
- Sigla em língua portuguesa para 
+ Sigla em língua portuguesa para Núcleo de Informação e Coordenação do Ponto
+ BR
 \end_layout
 
 \begin_layout Siglas
@@ -1520,7 +1478,7 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa para 
+ Sigla em língua inglesa para Protocolo Simples de Gerência de Rede
 \end_layout
 
 \begin_layout Siglas
@@ -1545,7 +1503,7 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa para 
+ Sigla em língua inglesa para Shell Seguro
 \end_layout
 
 \begin_layout Siglas
@@ -1771,7 +1729,8 @@ Referência
 
 \end_inset
 
-, prejudicando o CAPEX e OPEX das empresas usuárias.
+, prejudicando o capital investido (CAPEX) e o despesa operacional (OPEX)
+ das empresas usuárias.
  
 \end_layout
 
@@ -1807,22 +1766,27 @@ Um dos padrões em desenvolvimento nesse sentido é o de Virtualização de
  matéria de desacoplar código, sendo o equivalente da época a uma função
  de rede virtual.
  Mais de uma década depois, sua existência e vantagens se tornaram parte
- de um dos projetos de virtualização de dispositivos de rede: chama-se ClickOS.
+ de um dos projetos de virtualização de dispositivos de rede: chama-se ClickOS
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "martins_clickos_2014"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
 ClickOS otimiza a trinca Click, Xen e MiniOS em uma plataforma integrável
  a soluções NFV 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-referência?
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ventre_performance_2016"
 
 \end_inset
 
-para uma fácil implementação de VNFs, com uma linguagem de marcação voltada
+ para uma fácil implementação de VNFs, com uma linguagem de marcação voltada
  para visão de fluxos, sendo de fácil legibilidade; para o provimento da
  camada de virtualização necessária, incluindo a gerência dos recursos das
  máquinas virtuais; e para prover um micro-kernel suficientemente robusto
@@ -1836,19 +1800,31 @@ No entanto, até pela questão das disputas do nicho e pelo ainda recente
  com a falta de materiais didáticos, sejam em inglês ou português, mesmo
  aqueles que tratam apenas de Click, desestimulando seu uso em detrimento
  de outros semelhantes como atualmente acontece com P4 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-referência
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bosshart:2014:PPP:2656877.2656890"
 
 \end_inset
 
 , que está em evidência.
- Como exemplo, a integração de Click com os switches VALE e OpenVSwitch;
- as documentações de instalação do ClickOS; e a falta de exemplos sobre
- o correto uso dos elementos podem ser citados.
+ Como exemplo dessa questão, é possível citar a falta de documentações sobre:
+ a integração de Click com os switches VALE 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rizzo_vale_2012"
+
+\end_inset
+
+ e OpenVSwitch 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "pfaff_extending_2009"
+
+\end_inset
+
+ através de ClickOS; as documentações de instalação do mesmo; e a falta
+ de exemplos sobre o correto uso dos elementos, exemplos implementados e
+ comentados e documentação oficial incompleta.
 \end_layout
 
 \begin_layout Section
@@ -1865,9 +1841,9 @@ Este trabalho apresenta a plataforma para implementação de VNFs ClickOS,
 
 \begin_layout Standard
 Como objetivo específico, no trabalho implementa-se duas funções de rede
- virtuais em ClickOS, em um cenário comum ao balanceamento de carga em serviços
- de hospedagem web, e avalia a prova de conceito da plataforma a partir
- de testes.
+ virtuais em ClickOS detalhadamente, em um cenário comum ao balanceamento
+ de carga em serviços de hospedagem web, e avalia a prova de conceito da
+ plataforma a partir de testes.
 \end_layout
 
 \begin_layout Section
@@ -1909,16 +1885,16 @@ reference "chap:TESTES"
 
  versa sobre a realização e os resultados dos testes no cenário proposto,
  buscando confirmar a posição de ClickOS como alternativa aos dispositivos
- físicos; o 
+ físicos de rede; o 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "chap:CONCLUSÃO"
 
 \end_inset
 
- caminha no sentido de concluir todo o esforço realizado, enfatizar pontos
- positivos e negativos da plataforma e da proposta, e encaminhar possíveis
- trabalhos futuros.
+ caminha no sentido de analisar o esforço realizado, enfatizar pontos positivos
+ e negativos da plataforma e da proposta, e encaminhar possíveis trabalhos
+ futuros.
 \end_layout
 
 \begin_layout Standard
@@ -1968,11 +1944,9 @@ name "sec:Virtualização-de-Funções"
 \end_layout
 
 \begin_layout Standard
-O modelo de Virtualização de Funções de Rede (NFV) foi proposto em 2012
- por grandes empresas de telecomunicações em conjunto com o Instituto de
- Padronização de Telecomunicações Europeu (ETSI – European Telecommunications
- Standards Institute), tendo a redução de capital investido (CAPEX) e de
- despesas operacionais (OPEX) como principal objetivo.
+O modelo NFV foi proposto em 2012 por grandes empresas de telecomunicações
+ em conjunto com o Instituto de Padronização de Telecomunicações Europeu
+ (ETSI), tendo a redução de CAPEX e de OPEX como principal objetivo.
  Para tal, a proposta é desacoplar as funções em software dos equipamentos
  de rede hospedeiros 
 \begin_inset CommandInset citation
@@ -2019,11 +1993,22 @@ ref
 \end_inset
 
 .
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+AQUIIIIIIIIII
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
-Serviços e Funções de Rede Virtuais: as Funções de Rede (NFs) são funcionalidade
-s dentro de uma infraestrutura de rede com interfaces externas e comportamento
+Serviços e Funções de Rede Virtuais: as funções de rede são funcionalidades
+ dentro de uma infraestrutura de rede com interfaces externas e comportamento
  bem definidas 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -2042,15 +2027,12 @@ key "carpenter2002middleboxes"
 \end_inset
 
 .
- Já as Funções de Rede Virtuais (VNFs) são implementações destas NFs implantadas
- em recursos virtuais, que podem conter diversos elementos internos de rede,
- e ser instalada em diversas soluções virtualizadas como VMs e Containers
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Ref
-\end_layout
+ Já as VNFs são representações implementadas e implantadas em recursos virtuais,
+ que podem conter diversos elementos internos de rede, e ser instalada em
+ diversas soluções virtualizadas como VMs e containers Docker ou Linux 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Merkel:2014:DLL:2600239.2600241"
 
 \end_inset
 
@@ -2063,7 +2045,8 @@ key "mijumbi_network_2016"
 \end_inset
 
 .
- Do ponto de vista do usuário, as VNFs devem ser idênticas as NFs 
+ Do ponto de vista do usuário, as VNFs devem ser idênticas as funções de
+ rede 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "mijumbi_network_2016"
@@ -3149,10 +3132,10 @@ referência
  do SNMP, por exemplo; a manipulação de mensagens UDP maiores que o MSS
  é um problema quando se desenvolve um NAT em Click, já que para o recálculo
  da soma de verificação (checksum) usando o UDPChecksum, seria necessário
- remontar a mensagem UDP
+ remontar a mensagem UDP 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "postel1980rfc"
+key "rfc768"
 
 \end_inset
 
@@ -6194,6 +6177,13 @@ Nas linhas de 29 à 33 há uma declaração e definição do elemento de balance
 \end_layout
 
 \begin_layout Standard
+No caso do elemento de balanceamento por Round Robin, as linhas descritas
+ acima são substituidas pela declaração e definição do referido elemento,
+ onde os parâmetros se limitam às modificações necessárias para cada servidor
+ disponível, sem os identificadores naturais a tabela hash.
+\end_layout
+
+\begin_layout Standard
 Nas linhas 34 à 36 acontece uma declaração e definição do elemento que reescreve
  os cabeçalhos conforme as regras determinadas pelos elementos de balanceamento.
  Ele reescreve desta forma apenas os pacotes que entram pela sua porta 0
@@ -8344,15 +8334,122 @@ reference "fig:Uma-aplicação-dos"
 \end_layout
 
 \begin_layout Subsection
-Balanceador de carga
+Balanceador de carga por endereço IP
 \end_layout
 
 \begin_layout Standard
-O Siege emite o mesmo tipo de fluxo a partir de um cliente para a borda
- do serviço de hospedagem.
+Neste teste três clientes emitem fluxos para a borda do serviço de hospedagem
+ duas vezes cada, de forma que as emissões não se sobrepõem.
+ O tráfego gerado passa obrigatoriamente pelo firewall, e uma vez filtrado
+ chega ao balanceador, que o distribui aos servidores web configurados na
+ VNF através da aplicação de um DNAT.
+\end_layout
+
+\begin_layout Standard
+Novamente o BwM-NG é usado para monitorar as interfaces virtuais relacionadas
+ ao cliente e aos servidores, que são respectivamente origem e destino dos
+ pacotes, a procura de padrões que demonstrem o comportamento do fluxo.
+ Não existem quaisquer outras conexões vigentes no ambiente de teste.
+\end_layout
+
+\begin_layout Standard
+A execução é feita em sequência, partindo do primeiro cliente ao terceiro,
+ duas vezes.
+ São seis execuções sequenciais e alternadas de no máximo quinze segundos
+ cada para http://192.0.2.61:80/index2.html, gerando o arquivo CSV, e armazenando
+ os segundos do relógio do sistema para auxílio na geração dos gráficos
+ e análise dos resultados.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fluxo de pacotes no balanceador de carga por endereço IP
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Fluxo-de-pacotes-lb-sip"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/felipe/github/undergraduate-thesis/thesis/docs/results/tnatlb_sip/p80_pctsOUTGOING.png
+	scale 54
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/felipe/github/undergraduate-thesis/thesis/docs/results/tnatlb_sip/p80_pctsINCOMING.png
+	scale 54
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nos gráficos da 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Fluxo-de-pacotes-lb-sip"
+
+\end_inset
+
+o primeiro, acima, demonstra a saída dos pacotes dos clientes e a chegada
+ deles nos servidores web e o segundo, abaixo, demonstra o caminho contrário,
+ onde os pacotes-resposta retornam do servidor para o cliente.
+ Em todos os seis momentos do primeiro gráfico há um cliente enviando e
+ seus pacotes chegando a um único servidor, inclusive mantendo a relação
+ cliente servidor definida nas segundas tentativas.
+ Cada cliente foi balanceado para um servidor diferente, embora nesse caso
+ não seja um resultado ruim que dois deles fossem encaminhados para o mesmo
+ servidor, já que o elemento não analisa o estado atual dos nós balanceadores.
+ Claro que ao se tratar de uma conexão TCP, os pacotes-resposta também precisam
+ retornar corretamente para que não haja uma queda na transmissão por parte
+ do cliente.
+ Dessa forma, junto com a perda insignificante de pacotes e o controle de
+ fluxo inalterado, o bom funcionamento da VNF é validado.
+\end_layout
+
+\begin_layout Subsection
+Balanceador de carga por Round Robin
+\end_layout
+
+\begin_layout Standard
+O Siege emite o mesmo tipo de fluxo do firewall partir de um cliente para
+ a borda do serviço de hospedagem.
  O tráfego HTTP na porta 80 passa obrigatoriamente pelo firewall, e uma
  vez filtrado chega ao balanceador de carga, que o distribui aos servidores
- web configurados na VNF, através da aplicação da DNAT.
+ web configurados na VNF, através da aplicação de um DNAT.
 \end_layout
 
 \begin_layout Standard
@@ -8363,9 +8460,9 @@ O BwM-NG é usado novamente para monitorar as interfaces virtuais relacionadas
 \end_layout
 
 \begin_layout Standard
-A execução ocorre da mesma forma que na proposta anterior, gerando o arquivo
- CSV, e armazenando os segundos do relógio do sistema para auxílio na geração
- dos gráficos e análise dos resultados.
+A execução ocorre de forma parecida com a do teste anterior, porém sem a
+ necessidade de múltiplas execuções.
+ Desta forma, apenas um cliente é necessário.
 \end_layout
 
 \begin_layout Standard
@@ -8402,10 +8499,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Fluxo de pacotes com foco no balanceador de carga
+Fluxo de pacotes no balanceador de carga por Round Robin
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Fluxo-de-pacotes-lb"
+name "fig:Fluxo-de-pacotes-lb-rr"
 
 \end_inset
 
@@ -8414,10 +8511,6 @@ name "fig:Fluxo-de-pacotes-lb"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -8430,7 +8523,7 @@ name "fig:Fluxo-de-pacotes-lb"
 Na parte superior da 
 \begin_inset CommandInset ref
 LatexCommand formatted
-reference "fig:Fluxo-de-pacotes-lb"
+reference "fig:Fluxo-de-pacotes-lb-rr"
 
 \end_inset
 
