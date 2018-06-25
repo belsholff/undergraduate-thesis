@@ -2891,14 +2891,15 @@ reference "fig:Uma-aplicação-dos"
 \end_layout
 
 \begin_layout Itemize
-Todos os momentos onde :: é utilizado significa uma definição de macro.
+Todos os momentos onde :: é utilizado significa uma definição de nome para
+ o elemento criado.
  Toda vez que uma -> é utilizada significa uma ligação entre a porta de
  saída X e a porta de entrada Y de dois elementos;
 \end_layout
 
 \begin_layout Itemize
 O AdressInfo é como um banco de dados rústico, para guardar dados sobre
- um dispositivo e usar o nome atribuído para representá-los;
+ um dispositivo e usar a macro atribuída para representá-los;
 \end_layout
 
 \begin_layout Itemize
@@ -2911,7 +2912,11 @@ Já o Classifier classifica os pacotes com base na comparação de valores
  dos cabeçalhos, onde os dois primeiros parâmetros são códigos referentes
  aos dados do protocolo ARP (consulta e resposta, respectivamente), o terceiro
  parâmetro contém o código para os pacotes com cabeçalho IP e o quarto para
- todos os outros;
+ todos os outros.
+ A análise do cabeçalho é feita de forma que o elemento procura o código
+ do cabeçalho em determinado byte, formando a sequência byte/código.
+ Em caso de mais de uma sequência, a procura se torna mais específica como
+ no caso do protocolo ARP;
 \end_layout
 
 \begin_layout Itemize
@@ -3152,6 +3157,15 @@ key "postel1980rfc"
 \end_inset
 
 , o que Click não disponibiliza, comprometendo o protocolo nessa situação.
+ 
+\end_layout
+
+\begin_layout Standard
+Outra questão envolvendo estes elementos é que a tabela criada através desses
+ não se apaga, e pode criar instabilidade quanto aos balanceamentos já desta
+ forma os balanceadores só garantem o balanceamento na hora de criar a regra,
+ e uma vez que elas permaneçam indefinidamente, determinadas conexões perenes
+ podem desbalancear o sistema, já que não seriam rebalanceadas.
 \end_layout
 
 \begin_layout Standard
@@ -3586,8 +3600,8 @@ reference "sec:Click"
 
 \end_inset
 
-, que podem ser acionados através do hospedeiro com o comando cosmos, mas
- muito longe de ser um suporte consistente a configurações em tempo de execução
+, que podem ser acionados através do hospedeiro com o Cosmos, mas muito
+ longe de ser um suporte consistente a configurações em tempo de execução
  como uma adição de regras em um firewall ou uma remoção de servidor no
  balanceador de carga.
  Para contornar essa limitação, scripts de marcação de texto podem ser utilizado
@@ -5222,13 +5236,12 @@ key "martins_clickos_2014"
  Em caso de problemas, ClickOS dá sinais sobre sua parada no registro de
  erros e alertas, e portanto, uma heurística pode definir melhor quais recursos
  ajustar para a função sem que haja desperdício.
- A quantidade de entradas nas filas de saída de pacotes deve ser estudada.
+ O tamanho das filas de saída de pacotes deve ser estudado.
 \end_layout
 
 \begin_layout Standard
-Uma vez que os elementos para tratamento de pacotes ARP e os elementos para
- tratamento de entrada e saída de pacotes são corretamente configurados,
- é preciso tratar os pacotes de dados.
+Uma vez que os conjuntos de elementos são corretamente configurados, é preciso
+ tratar os pacotes de dados.
  O uso do elemento Strip, passando o número de bytes usados pelo cabeçalho
  Ethernet para que os remova é o primeiro passo.
  Verificar a validade do cabeçalho IP extraído, para garantir que o pacote
@@ -5314,7 +5327,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Código em linguagem de marcação implementado para o firewall
+Código para o firewall em Click
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Código-fw"
@@ -5363,6 +5376,110 @@ reference "chap:TESTES"
 .
 \end_layout
 
+\begin_layout Standard
+Da linha 2 à 5 há uma definição de macros no AddressInfo, que nos dois primeiros
+ parâmetros descrevem para net0 e net1 endereços IP próprios, endereços
+ IP das redes e endereços MAC respectivamente.
+ Estes são os endereços atribuídos as interfaces de rede ao inserí-los nos
+ elementos ARP.
+ O terceiro parâmetro guarda apenas o endereço IP do balanceador de carga
+ para onde são enviados os pacotes autorizados.
+\end_layout
+
+\begin_layout Standard
+De 7 à 11 há a definição e declaração de dois classificadores, sendo um
+ para cada rede.
+ Ambos, idênticos, são definidos para filtrar pacotes de consulta do protocolo
+ ARP na porta 0, pacotes de respostas do protocolo ARP na porta 1, pacotes
+ do protocolo IP quaisquer na porta 2, e por fim os demais pacotes na porta
+ 3.
+\end_layout
+
+\begin_layout Standard
+Nas linhas 13 e 14, acontece a conexão entre as entradas de pacotes das
+ interfaces de rede e a porta 0 de seus respectivos classificadores.
+\end_layout
+
+\begin_layout Standard
+Nas linhas 16 e 17 há a declaração e definição das duas filas necessárias
+ para a conversão do fluxo push em pull no momento do despacho dos pacotes
+ já filtrados, sendo uma para cada interface novamente.
+ A porta 0 de saída de cada fila se conecta com a porta 0 de entrada do
+ respectivo elemento de saída de pacotes à respectiva interface de rede.
+\end_layout
+
+\begin_layout Standard
+Logo abaixo, na linha 19 e 20, duas novas declarações e definições são realizada
+s, com o intuito de inserir o par de endereços IP e MAC de cada interface
+ da VNF (net0 e net1) na respectiva tabela ARP, para quê o elemento de consulta
+ desse protocolo realize o correto encapsulamento no nível da camada de
+ enlace, principalmente o que diz respeito ao MAC de origem.
+ Após isso, a porta de saída 0 de tais elementos é conectada a porta de
+ entrada da respectiva fila.
+\end_layout
+
+\begin_layout Standard
+Continuando nas linhas 22 e 23, as portas de saída 1 dos classificadores
+ contém as respostas de consultas ARP, e são conectadas as portas de entrada
+ 1 dos respectivos elementos de consulta para que as receba corretamente
+ e possa encapsular pacotes IP com o correto endereço MAC de destino consultado.
+\end_layout
+
+\begin_layout Standard
+Nas linhas 25 e 26, as portas de saída 0 de ambos classificadores se conectam
+ as respectivas portas de entradas 0 do elemento responsável por responder
+ as consultas ARP de outros dispositivos com o correto endereço MAC para
+ o endereço seu IP consultado.
+ Tal elemento é responsável por atribuir o endereço IP daquela interface
+ de rede na VNF, podendo responder por mais de um deles caso seja desejado.
+ Perceba que os endereços configurados aqui são os mesmos que foram configurados
+ nas linhas 19 e 20, para que haja não só o recebimento dos pacotes mas
+ também a correta indicação ao par da comunicação de para quem enviar os
+ seus.
+\end_layout
+
+\begin_layout Standard
+Nas linhas 28 e 29, ocorre uma declaração e definição do elemento de filtragem
+ que está relacionado a entrada do fluxo externo.
+ Ele possui apenas duas regras definidas em seus parâmetros: uma para permitir
+ pacotes com endereço IP de origem local à interface de rede 0, que tenham
+ como endereço IP de destino o balanceador de carga, cujo número da porta
+ de origem esteja entre 32768 e 61000, e a porta de destino seja a porta
+ 80; e outra para ignorar todos os demais pacotes que cheguem.
+\end_layout
+
+\begin_layout Standard
+Com a mesma intenção, nas linhas 31 e 32 há uma declaração e definição semelhant
+e a anterior, mudando apenas o foco de seu uso: a intenção agora é filtrar
+ os pacotes que chegam do balanceador e que estão de saída para redes externas.
+ Para isso, os endereços e números de portas que eram de origem se tornam
+ de destino e vice-versa.
+\end_layout
+
+\begin_layout Standard
+Entre as linhas 34 e 37, a porta de saida 2 do classificador da rede 0 entrega
+ os pacotes para a extração do pacote IP no elemento, que por sua vez despacha
+ os pacotes IP para o elemento de checagem do cabeçalho IP, que por sua
+ vez passa os pacotes checados para o filtro de entrada, que realizando
+ sua tarefa, encaminha-os para o encapsulamento da camada de enlace na rede
+ 1, fluindo em direção a respectiva interface de rede, onde está o balanceador
+ de carga.
+ Todas as portas não mencionadas, sejam de entrada ou saída, são de índice
+ 0.
+\end_layout
+
+\begin_layout Standard
+De maneira semelhante, entre as linhas 39 e 42 o processo se repete, e os
+ pacotes-resposta vindos do balanceador pela interface de rede 1, que são
+ autorizados, são entregues para encapsulamento na rede 0, fluindo em direção
+ a sua respectiva interface.
+\end_layout
+
+\begin_layout Standard
+Por último, nas linhas 44 e 45, os pacotes que saem pela porta 3 do classificado
+r entram em um elemento que determina o descarte deles.
+\end_layout
+
 \begin_layout Section
 \begin_inset CommandInset label
 LatexCommand label
@@ -5378,17 +5495,20 @@ A proposta para esta VNF é dividir um determinado fluxo entre servidores
  de uma função semelhante, diminuindo a possibilidade de um servidor específico
  sobrecarregar ou ter vida útil reduzida, conferindo maior disponibilidade
  e durabilidade dos equipamentos.
- O método escolhido para realizar a divisão proposta é conhecido como Round
- Robin, e este divide os pacotes para os servidores com base em um tempo
- de concessão fixo.
+ Podem haver duas versões, entre o método conhecido como Round Robin e o
+ método por endereço IP de origem.
+ O primeiro divide os pacotes para os servidores com base em um tempo de
+ concessão fixo e o segundo envia todos os pacotes com um mesmo endereço
+ IP de origem para o mesmo servidor destino, fazendo a seleção com base
+ em uma hash.
  Ele não avalia a carga atual e a situação atual dos servidores para tomar
  as decisões, recebendo como entrada apenas o número de servidores disponibiliza
 dos.
 \end_layout
 
 \begin_layout Standard
-Dado um fluxo de mil e quinhentos pacotes emitido pelo cliente, espera-se
- que os servidores recebam os pacotes aproximadamente da seguinte forma:
+Dado 1500 pacotes emitido pelo cliente, espera-se que os servidores recebam
+ os pacotes aproximadamente da seguinte forma com o método Round Robin:
 \end_layout
 
 \begin_layout Standard
@@ -5401,10 +5521,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Exemplo de divisão do fluxo de pacotes vindos do cliente
+Divisão do fluxo de pacotes vindos do cliente com Round Robin
 \begin_inset CommandInset label
 LatexCommand label
-name "tab:Exemplo-de-divisão"
+name "tab:Exemplo-de-divisão-rr"
 
 \end_inset
 
@@ -5617,6 +5737,500 @@ Servidor n
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Já no método por endereço IP de origem, com três diferentes clientes e 1500
+ pacotes cada, espera-se que:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Divisão do fluxo de pacotes vindos de 3 clientes com endereço IP de origem
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Exemplo-de-divisão-sip"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dispositivo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pacotes transmitidos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pacotes recebidos
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cliente 1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1500
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cliente 2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1500
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cliente 3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1500
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cliente 1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1500
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cliente 1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1500
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Servidor 1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1500
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Servidor 2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1500
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Servidor 3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4500
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para que o balanceador de carga funcione de acordo com a 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:Um-dia-dentro"
+
+\end_inset
+
+ e a 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:Exemplo-de-divisão-rr"
+
+\end_inset
+
+, são necessárias duas interfaces de rede para diferenciar os fluxos originados
+ e destinados ao mundo externo, dos fluxos originados e destinados aos servidore
+s.
+ Assim como no firewall, esta separação exige dois conjuntos mínimos de
+ elementos na camada de enlace para tratar a entrada e saída na rede, gerenciar
+ os pacotes de controle do protocolo ARP e separar os pacotes de acordo
+ com o protocolo.
+ A semelhança segue com os requisitos de memória e processamento, a correta
+ configuração dos elementos mínimos e os elementos Strip de desencapsulamento
+ e CheckIPHeader de checagem do protocolo IP.
+\end_layout
+
+\begin_layout Standard
+Um elemento sem portas de entrada ou saída deve ser configurado para cada
+ método descrito.
+ Aquele que cobre o método Round Robin, deve conter um parâmetro para cada
+ servidor disponível, num formato que indique qual a modificação para cada
+ um dos itens dentre endereço IP de origem, número de porta de origem, endereço
+ IP de destino e número de porta de destino, nessa ordem, sendo que os não
+ indicados permanecem intactos.
+ Após tais indicações, os parâmetros são finalizados com o informe de uma
+ porta de saída do elemento para a regra criada a partir dessas indicações,
+ e o informe de uma porta de saída para a regra de conversão do seu pacote-respo
+sta em fluxo de retorno.
+ Já que este elemento não possui portas, elas são alocadas no elemento de
+ NAT no IPRewriter, pois a função deste é fornecer novas funcionalidades
+ ao NAT disponível por Click, tal qual uma variação no momento de criação
+ de suas regras.
+\end_layout
+
+\begin_layout Standard
+Já o elemento para o método de balanceamento por endereço IP de origem precisa
+ de mais parâmetros.
+ Como trabalha com uma estrutura de tabela hash, é preciso indicar uma semente
+ e um tamanho de tabela como primeiro parâmetro, e só após iniciar com os
+ parâmetro de modificação de cabeçalho.
+ Estes, por sua vez, possuem apenas uma modificação inserida ao final de
+ cada parâmetro: um identificador para comparações na tabela.
+ Assim como o elemento anterior, ele não possui portas, servindo como uma
+ nova funcionalidade ao NAT no IPRewriter.
+\end_layout
+
+\begin_layout Standard
+O IPRewriter dessa proposta é simples e passa como parâmetro o conjunto
+ de indicações dos elementos acima, para que sejam usados no caso dos pacotes
+ de entrada de sua respectiva porta não combinarem com as regras existentes;
+ e também uma outra determinação para ignorar os pacotes que entram por
+ um outra porta na mesma situação.
+\end_layout
+
+\begin_layout Standard
+Uma vez que os pacotes de dados fluem pelas duas interfaces de rede, eles
+ são classificados, extraídos de seus cabeçalhos Ethernet, e na sequência
+ checados quanto a suas validades.
+ Dai então o fluxo vindo do mundo externo entra por sua porta 0 e o fluxo
+ vindo dos servidores pela sua porta 1.
+ A saída do primeiro fluxo, com as modificações deve acontecer pela porta
+ 0, e a saída do outro fluxo pela porta 1, permitindo então que a soma de
+ verificação do protocolo TCP seja redefinida separadamente em ambos, através
+ de elementos instanciados.
+\end_layout
+
+\begin_layout Standard
+Após esse processo, os pacotes são encaminhados para o reencapsulamento
+ com destino ao servidor definido pelo NAT e ao cliente, respectivamente.
+ Uma observação importante é que no último caso, o destino só é alcançável
+ com mais de um salto na rede, o que significa que o reencapsulamento da
+ camada de enlace deve ser atribuído ao gateway da rede, no caso o próprio
+ firewall, para que ele possa dar destino ao pacote.
+ Um elemento deve realizar a tarefa de indicá-lo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Código para o balanceador de carga por endereço IP de origem no Click
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/lb_code.png
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+As descrições para as ações programadas entre as linhas 2 e 27 são idênticas
+ para aquelas feitas na implementação  da 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Código-fw"
+
+\end_inset
+
+.
+ O mesmo vale para as linhas 53 e 54.
+\end_layout
+
+\begin_layout Standard
+Nas linhas de 29 à 33 há uma declaração e definição do elemento de balanceamento
+ por endereço IP de origem, com seu tamanho de tabela hash e semente como
+ primeiro parâmetro e nos seguintes, as modificações necessárias para cada
+ servidor, a serem mapeadas no próximo elemento como regras de ida e volta.
+ Pode-se ver também os identificadores ao final de cada parâmetro para efeitos
+ de comparação.
+\end_layout
+
+\begin_layout Standard
+Nas linhas 34 à 36 acontece uma declaração e definição do elemento que reescreve
+ os cabeçalhos conforme as regras determinadas pelos elementos de balanceamento.
+ Ele reescreve desta forma apenas os pacotes que entram pela sua porta 0
+ e não possuem um regra de reescrição anteriormente definida.
+ Já os pacotes que entram pela porta 1, são ignorados caso não possuam regra
+ predefinida.
+\end_layout
+
+\begin_layout Standard
+Entre as linhas 38 e 44, dado que as portas não mencionadas de entrada e
+ saída são portas 0, os classificadores das diferentes interfaces de rede
+ enviam os pacotes IP por suas portas de saída 2, onde entram nos elementos
+ de extração de cabeçalho Ethernet, saíndo direto para a entrada nos elementos
+ de checagem do cabeçalho IP, e após esse processo, entram cada um em uma
+ porta de entrada diferente do elemento responsável pelo NAT.
+ O primeiro fluxo entra pela porta 0 e se depara com o elemento de balanceamento
+, que nesse caso sorteia um servidor e executa a reescrição, enviando o
+ pacote pela sua porta de saída 0.
+ O segundo fluxo entra pela porta 1 e espera encontrar a regra inversa a
+ alteração efetuada para que possa retornar para aquele dispositivo que
+ o requisitou.
+ A porta de saída nesse caso é a de número 1.
+ Caso não encontrem a regra, os pacotes nessa situação são simplesmente
+ ignorados.
+\end_layout
+
+\begin_layout Standard
+As saídas do NAT entre as linhas 46 e 51 têm como destino o encapsulamento
+ no respectivo elemento de consulta ARP.
+ No caso, o encapsulamento dos pacotes que chegam de fora, é feito pelo
+ elemento ARP associado a rede do balanceador, e vice versa.
+ Porém antes precisam ter suas somas de verificação do protocolo TCP refeitas
+ para evitar falsos erros.
+ O caso dos pacotes-resposta requer um elemento que anota o endereço do
+ gateway ao pacote para que o encapsulamento seja feito com ele, mesmo sem
+ alterar o cabeçalho IP.
+ O gateway nesse caso é indocado através do parâmetro.
 \end_layout
 
 \begin_layout Standard
