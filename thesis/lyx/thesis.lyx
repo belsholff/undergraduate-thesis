@@ -4,7 +4,7 @@
 \begin_header
 \save_transient_properties true
 \origin unavailable
-\textclass abntex2
+\textclass ../../../../Documentos/UFES/PG/undergraduate-thesis/thesis/lyx/abntex2
 \begin_preamble
 % ---
 % PACOTES
@@ -1164,6 +1164,32 @@ status open
 
 \end_inset
 
+MIT
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Acrônimo em língua inglesa para Instituto Tecnológico de Massachussetts,
+ Estados Unidos
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
 MSS
 \begin_inset ERT
 status open
@@ -1916,20 +1942,39 @@ name "chap:CONCEITOS"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Inserir um resumo sobre a estrutura desse capítulo.
-\end_layout
-
-\begin_layout Plain Layout
-Materiais de apoio.
-\end_layout
+Este capítulo expõe rapidamente dois conceitos necessários para entender
+ o ecossistema onde o trabalho proposto se insere.
+ Na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:Virtualização-de-Funções"
 
 \end_inset
 
+, uma rápida introdução ao contexto da Virtualização de Funções de Rede
+ é exposta, com suas motivações e o caminho já trilhado que possibilita
+ a discussão da virtualização de dispositivos de redes.
+ Já na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:Linux-Bridge"
 
+\end_inset
+
+, o switch virtual é posicionado dentro do cenário de virtualização, com
+ o cuidado de explicar ao máximo seu mecanismo básico de uso, como insumo
+ para o restante do trabalho.
+\end_layout
+
+\begin_layout Standard
+Mais conceitos são tratados no 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "chap:ENTENDENDO-CLICKOS"
+
+\end_inset
+
+, no entanto a riqueza de detalhes faz deste um capítulo com destaque.
 \end_layout
 
 \begin_layout Section
@@ -2022,7 +2067,7 @@ key "etsi2014gs"
  Boa parte delas também é conhecida pelo termo Middlebox 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "carpenter2002middleboxes"
+key "rfc3234"
 
 \end_inset
 
@@ -2187,18 +2232,8 @@ key "pfaff_extending_2009"
 \end_layout
 
 \begin_layout Standard
-Um dos expoentes dessa classe é o OpenVSwitch
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-referencia
-\end_layout
-
-\end_inset
-
-, que leva programabilidade para as redes ao abordar a questão de Redes
- Definidas por Software (SDNs).
+Um dos expoentes dessa classe é o OpenVSwitch, que leva programabilidade
+ para as redes ao abordar a questão de Redes Definidas por Software (SDNs).
  No entanto outros mais simples podem ser úteis em determinadas situações.
  É o caso do VALE Switch 
 \begin_inset CommandInset citation
@@ -2207,13 +2242,10 @@ key "rizzo_vale_2012"
 
 \end_inset
 
- e do Ethernet Linux Bridge
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-procurar referência exata
-\end_layout
+ e do Ethernet Linux Bridge 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "varis2012anatomy"
 
 \end_inset
 
@@ -2372,6 +2404,11 @@ key "noauthor_xen_nodate"
 \end_layout
 
 \begin_layout Standard
+OBS: Favor considerar a necessidade do trecho abaixo desta seção.
+ Me parece supérfulo e muito detalhista.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
 status collapsed
 
@@ -2509,17 +2546,14 @@ A arquitetura Click foi idealizada por Robert Morris, Eddie Kohler e sua
  de funções de rede sob demanda, e sem as limitações corriqueiramente impostas
  por soluções proprietárias em redes.
  Não há restrição de camadas ou protocolos de transmissão, bastando adicionar
- seu suporte, porém o foco está na camada 2 e 3 do modelo OSI
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-referência
-\end_layout
+ seu suporte, porém o foco está na camada 2 e 3 do modelo OSI 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "day_osi_1983"
 
 \end_inset
 
-, com diversas operações na camada 4.
+, com diversas operações na camada de transporte.
 \end_layout
 
 \begin_layout Standard
@@ -2602,7 +2636,7 @@ Uma lista não extensa desses elementos com base na documentação do Click
  disponível 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "kohler_elements_nodate"
+key "kohler_click:_2018"
 
 \end_inset
 
@@ -2717,29 +2751,16 @@ reference "fig:Condicionador-de-tráfego"
 
 \begin_layout Standard
 A existência de ambos se dá pela natureza do uso de uma rede de alta velocidade
- compartilhada como as redes Ethernet
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Referência
-\end_layout
+ compartilhada como as redes Ethernet 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "noauthor_ieee_2016"
 
 \end_inset
 
 : esvazie seu buffer de entrada o mais rápido possível para que possa continuar
  recebendo pacotes sem perdas; aguarde a sua vez para enviar a rede o mais
- rápido possível sem degradar outros pacotes
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Referência
-\end_layout
-
-\end_inset
-
-.
+ rápido possível sem degradar outros pacotes.
  Logo, percebe-se que o mecanismo push compõe o recebimento e o mecanismo
  pull o envio.
  Já as filas, que são o único elemento capaz de converter o fluxo de processamen
@@ -2825,14 +2846,11 @@ Dados parâmetros do elemento classificador, os pacotes que entram nele com
  de serviços diferenciados do cabeçalho IP para o valor quatro antes de
  despejar em uma quarta fila; d) quarta fila aliás, que também recebe o
  fluxo que sai pela porta quatro do classificador.
- O percurso dos três primeiros caminhos terminam em um escalonador do padrão
+ O percurso dos três primeiros caminhos terminam em um escalonador do tipo
  Round Robin 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-referência
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "RASMUSSEN2008617"
 
 \end_inset
 
@@ -2893,9 +2911,15 @@ FromDevice e ToDevice fazem o recebimento e o envio de fragmentos de rede
 \begin_layout Itemize
 Já o Classifier classifica os pacotes com base na comparação de valores
  dos cabeçalhos, onde os dois primeiros parâmetros são códigos referentes
- aos dados do protocolo ARP (consulta e resposta, respectivamente), o terceiro
- parâmetro contém o código para os pacotes com cabeçalho IP e o quarto para
- todos os outros.
+ aos dados do protocolo ARP 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rfc826"
+
+\end_inset
+
+ (consulta e resposta, respectivamente), o terceiro parâmetro contém o código
+ para os pacotes com cabeçalho IP e o quarto para todos os outros.
  A análise do cabeçalho é feita de forma que o elemento procura o código
  do cabeçalho em determinado byte, formando a sequência byte/código.
  Em caso de mais de uma sequência, a procura se torna mais específica como
@@ -2995,23 +3019,14 @@ Todos os elementos podem ser consultados na documentação oficial do Click
  em 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "kohler_elements_nodate"
+key "kohler_click:_2018"
 
 \end_inset
 
  para um maior entendimento de detalhes que fogem este trabalho.
  Outra fonte interessante são os livros, artigos, padronizações e textos
- técnicos sobre o uso dos protocolos de rede como por exemplo as RFCs
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-referência
-\end_layout
-
-\end_inset
-
-.
+ técnicos sobre o uso dos protocolos de rede como por exemplo as Requisições
+ Para Comentários (RFCs) do IETF.
 \end_layout
 
 \begin_layout Standard
@@ -3020,8 +3035,15 @@ A linguagem de marcação de Click possui um analisador que encontra erros
  Na mesma linha, a ferramenta disponibiliza manipuladores de elementos (element
  handlers) básicos para que seja possível analisar comportamentos indesejados
  em tempo de execução.
- Um exemplo é a tabela TCP disponibilizada pelo elemento NAT (IPRewriter),
- que pode indicar o correto funcionamento ou não de uma VNF que a utilize.
+ Um exemplo é a tabela TCP 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rfc793"
+
+\end_inset
+
+ disponibilizada pelo elemento NAT (IPRewriter), que pode indicar o correto
+ funcionamento ou não de uma VNF que a utilize.
  Outros manipuladores são capazes de alterar determinadas variáveis em tempo
  de execução, mas não são muito comuns.
  De qualquer forma, Click permite a implementação de outros manipuladores
@@ -3030,7 +3052,7 @@ A linguagem de marcação de Click possui um analisador que encontra erros
  
 \begin_inset CommandInset citation
 LatexCommand cite
-key "kohler_elements_nodate"
+key "kohler_click:_2018"
 
 \end_inset
 
@@ -3040,7 +3062,7 @@ key "kohler_elements_nodate"
 \begin_layout Standard
 Outra forma de facilitar a correção de erros e também facilitar o entendimento
  de uma implementação em Click é através do uso da ferramenta de geração
- de grafos distribuída com Click chamada Clicky.
+ de grafos distribuída com Click chamada Clicky .
  Ela transforma o código em uma figura baseado em um arquivo de estilo CSS
  e também é capaz de analisar erros e retorná-los.
  Na 
@@ -3129,10 +3151,17 @@ referência
 
  (RoundRobinIPMapper) e distribuição por IP de origem (SourceIPHashMapper),
  sem uma análise da carga dos servidores que recebem o balanceamento, através
- do SNMP, por exemplo; a manipulação de mensagens UDP maiores que o MSS
- é um problema quando se desenvolve um NAT em Click, já que para o recálculo
- da soma de verificação (checksum) usando o UDPChecksum, seria necessário
- remontar a mensagem UDP 
+ do SNMP 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rfc1157"
+
+\end_inset
+
+, por exemplo; a manipulação de mensagens UDP maiores que o MSS é um problema
+ quando se desenvolve um NAT em Click, já que para o recálculo da soma de
+ verificação (checksum) usando o UDPChecksum, seria necessário remontar
+ a mensagem UDP 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "rfc768"
@@ -3672,8 +3701,21 @@ reference "sec:Click"
 \end_layout
 
 \begin_layout Standard
-As funções escolhidas são um firewall e um balanceador de carga em uma rede
- com Ethernet, TCP/IP.
+As funções escolhidas são um firewall (
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:Firewall"
+
+\end_inset
+
+) e um balanceador de carga (
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:Balanceador-de-Carga"
+
+\end_inset
+
+) em uma rede com Ethernet, TCP/IP.
  A escolha se deve pela boa legibilidade e assimilação de suas funções mais
  importantes, ja que são facilmente encontrados nas infraestruturas da Tecnologi
 a da Informação.
@@ -3695,8 +3737,16 @@ Espera-se que a curva de aprendizado da ferramenta seja melhor a partir
  dessas funções do que com funções simples porém desintegradas.
  Inclusive, foge o escopo deste trabalho demonstrar VNFs complexas como
  as aplicadas hoje em middleboxes físicos, que significam recursos superestimado
-s e subutilizados na maioria dos casos.
- Justamente um dos pontos de combate do NFV e suas funções virtuais.
+s e subutilizados na maioria dos casos, o que justamente é um dos pontos
+ de combate do NFV e suas funções virtuais.
+ Um resumo do proposto pode ser visto na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:Um-dia-dentro"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -3717,7 +3767,7 @@ reference "fig:Uma-aplicação-dos"
  Segue um detalhamento deles com base na documentação 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "kohler_elements_nodate"
+key "kohler_click:_2018"
 
 \end_inset
 
@@ -5254,10 +5304,10 @@ IPFilter, a partir de cabeçalhos, realiza filtragens de pacotes usando valores
  As regras de autorização ou bloqueio devem ser construídas com essas bases,
  atentando-se para não limitar ou autorizar acesso em excesso.
  Para conhecimento de como as regras devem ser construídas, uma consulta
- aos elementos IPFilter e IPClassifier na documentação é essencial
+ aos elementos IPFilter e IPClassifier na documentação é essencial 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "kohler_elements_nodate"
+key "kohler_click:_2018"
 
 \end_inset
 
@@ -6264,7 +6314,7 @@ reference "sec:Alocação-de-recursos"
  elementos construídos no 
 \begin_inset CommandInset ref
 LatexCommand formatted
-reference "chap:ENTENDENDO-CLICKOS"
+reference "chap:PROJETO-E-IMPLEMENTAÇÃO"
 
 \end_inset
 
@@ -6450,16 +6500,6 @@ Como dito na
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "sec:ClickOS"
-
-\end_inset
-
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-não esquecer de dizer isso
-\end_layout
 
 \end_inset
 
@@ -8174,7 +8214,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tfw/p80_pctsOUTGOING.png
-	lyxscale 47
+	lyxscale 95
 	scale 54
 
 \end_inset
@@ -8186,7 +8226,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tfw/p80_pctsINCOMING.png
-	lyxscale 47
+	lyxscale 95
 	scale 54
 
 \end_inset
@@ -8228,7 +8268,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tfw/p8080_pctsOUTGOING.png
-	lyxscale 47
+	lyxscale 95
 	scale 54
 
 \end_inset
@@ -8240,7 +8280,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tfw/p8080_pctsINCOMING.png
-	lyxscale 47
+	lyxscale 95
 	scale 54
 
 \end_inset
@@ -8391,8 +8431,10 @@ name "fig:Fluxo-de-pacotes-lb-sip"
 \end_layout
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
-	filename /home/felipe/github/undergraduate-thesis/thesis/docs/results/tnatlb_sip/p80_pctsOUTGOING.png
+	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tnatlb_sip/p80_pctsOUTGOING.png
+	lyxscale 95
 	scale 54
 
 \end_inset
@@ -8403,7 +8445,8 @@ name "fig:Fluxo-de-pacotes-lb-sip"
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /home/felipe/github/undergraduate-thesis/thesis/docs/results/tnatlb_sip/p80_pctsINCOMING.png
+	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tnatlb_sip/p80_pctsINCOMING.png
+	lyxscale 95
 	scale 54
 
 \end_inset
