@@ -1,0 +1,30 @@
+-----------CLI1-----------
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>WS1 - 172.16.40.55</title>
+
+  <body>
+        <h3>WS1 - 172.16.40.55</h3>
+  </body>
+</html>
+-----------CLI2-----------
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>WS2 - 172.16.80.147</title>
+
+  <body>
+        <h3>WS2 - 172.16.80.147</h3>
+  </body>
+</html>
+-----------CLI3-----------
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>WS3 - 172.16.37.181</title>
+
+  <body>
+        <h3>WS3 - 172.16.37.181</h3>
+  </body>
+</html>
