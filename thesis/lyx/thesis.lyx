@@ -14,17 +14,14 @@
 \usepackage{color}			% Controle das cores
 \RequirePackage{url}			% deve ser carregado para tratar url de forma correta e usado pelo abntex2cite
 \RequirePackage{breakurl}			% trata de forma correta a quebra de url entre linhas
-
-% ---
-
 % ---
 % Pacotes de citações
 % ---
 \usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
-\usepackage[num,%
-         abnt-url-package=url]{abntex2cite}	% Citações padrão ABNT
+\usepackage[num,abnt-url-package=url
+  ]{abntex2cite}	% Citações padrão ABNT
 % O carregamento da opção abnt-url-package=url corrige os hiperlinks com quebra de linha na bibliografia
-
+%\bibliographystyle{unsrt}
 % --- 
 % CONFIGURAÇÕES DE PACOTES
 % --- 
@@ -108,7 +105,7 @@ Citado #1 vezes nas páginas #2.
 \graphics default
 \default_output_format default
 \output_sync 0
-\bibtex_command default
+\bibtex_command bibtex
 \index_command default
 \float_placement H
 \paperfontsize default
@@ -128,7 +125,7 @@ Citado #1 vezes nas páginas #2.
 \use_package undertilde 1
 \cite_engine basic
 \cite_engine_type default
-\biblio_style plain
+\biblio_style unsrt
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -216,7 +213,7 @@ Prof.
 \end_layout
 
 \begin_layout Tipo-trabalho
-Monografia
+Tese de Conclusão de Curso
 \end_layout
 
 \begin_layout Standard
@@ -484,11 +481,7 @@ end{center}
 	Trabalho aprovado.
  
 \backslash
-imprimirlocal, 
-\backslash
-_
-\backslash
-_ de julho de 2018:
+imprimirlocal, 13 de julho de 2018:
 \end_layout
 
 \begin_layout Plain Layout
@@ -523,7 +516,7 @@ imprimircoorientador}
 \backslash
 
 \backslash
- Co-orientadora}     	
+ Co-orientador}     	
 \end_layout
 
 \begin_layout Plain Layout
@@ -536,7 +529,7 @@ textbf{Professor}
 \backslash
 
 \backslash
- Convidado Interno}    	
+ Convidado Interno}
 \end_layout
 
 \begin_layout Plain Layout
@@ -545,11 +538,13 @@ textbf{Professor}
 \backslash
 assinatura{
 \backslash
-textbf{Professor} 
+textbf{Profa.
+ Dra.
+ Cristina Klippel Dominicini} 
 \backslash
 
 \backslash
- Convidado Externo}             
+ Convidado Externo}
 \end_layout
 
 \begin_layout Plain Layout
@@ -625,7 +620,13 @@ end{center}
 
 \begin_layout Dedicatoria
 \align center
-Dedicatória
+
+\shape italic
+Em memória de Leonina, e dedicado àqueles que diante das
+\begin_inset Newline newline
+\end_inset
+
+ negativas do mundo, contrariaram-no na busca pelo sim.
 \end_layout
 
 \begin_layout Dedicatoria
@@ -635,6 +636,10 @@ Dedicatória
 
 \end_layout
 
+\begin_layout Agradecimentos
+A
+\end_layout
+
 \begin_layout Epigrafe
 \align right
 \begin_inset VSpace vfill*
@@ -644,43 +649,107 @@ Dedicatória
 \end_layout
 
 \begin_layout Epigrafe
+\paragraph_spacing single
 \align right
-Epígrafe
+
+\shape italic
+\begin_inset Quotes eld
+\end_inset
+
+Você toma a pílula azul — a história acaba, e
+\begin_inset Newline newline
+\end_inset
+
+você acorda em sua cama acreditando no que
+\begin_inset Newline newline
+\end_inset
+
+quiser acreditar.
+ Você toma a pílula vermelha —
+\begin_inset Newline newline
+\end_inset
+
+ fica no País da Maravilhas, e lhe mostro quão
+\begin_inset Newline newline
+\end_inset
+
+fundo a toca do coelho vai.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Epigrafe
+\align right
+(Morpheus, The Matrix)
 \end_layout
 
 \begin_layout Resumo
 Com o advento da virtualização e o surgimento do modelo de computação em
- nuvem (Cloud Computing), uma das consequências imediatas para as empresas
- e instituições foi a redução da aquisição de novos equipamentos.
+ nuvem (
+\shape italic
+Cloud Computing
+\shape default
+), uma das consequências imediatas para as empresas e instituições foi a
+ redução da aquisição de novos equipamentos.
  Além disso, ainda no ponto de vista de infraestrutura, desacoplar funções
- que outrora eram embutidas em hardware específico e fechado, trazendo-as
- para camadas de abstração superiores, tornou possível um menor tempo de
- implantação, e de manutenção das mesmas, acrescido de um grande salto com
- relação a escalabilidade.
+ que estavam embarcadas em hardware específico e fechado, trazendo-as até
+ camadas de abstração superiores, habilita um menor tempo de implantação
+ e de manutenção, acrescido de um grande salto com relação a escalabilidade
+ e gerenciamento das mesmas.
 \end_layout
 
 \begin_layout Resumo
-Neste cenário, o paradigma NFV, tem como premissa entregar funções de rede,
- tais como: firewalls, balanceadores de carga, NATs, e IDSs, através de
- uma linguagem de marcação de alto nível, colaborando com a flexibilidade
- do provisionamento, bem como na programabilidade das mesmas, até então
- engessadas pelo uso dos middleboxes de prateleira.
+Neste cenário, o objetivo do paradigma NFV é prover funções de rede como:
+ 
+\shape italic
+firewalls
+\shape default
+, balanceadores de carga, NATs, e IDSs, etc, através de uma linguagem de
+ marcação, colaborando com a flexibilidade do provisionamento e a programabilida
+de de tais funções, até então também engessadas pelo uso dos 
+\shape italic
+middleboxes
+\shape default
+ de prateleira.
 \end_layout
 
 \begin_layout Resumo
-Incluído neste panorama, ClickOS propõe uma plataforma de virtualização
- para criação de middleboxes virtualizados, de alto desempenho, a ser amplamente
- utilizada por desenvolvedores de VNFs.
- A plataforma provê como ferramenta uma máquina virtual minimalista, escalável
- e otimizada para executar a arquitetura Click, que por sua vez, tem por
- objetivo criar elementos de rede customizados, reusáveis e legíveis.
+Neste quesito, ClickOS propõe uma plataforma de virtualização para criação
+ de funções de rede virtuais de alto desempenho, a serem amplamente utilizados
+ por desenvolvedores de VNFs.
+ Ele provê como ferramenta uma máquina virtual minimalista, escalável e
+ otimizada para executar o 
+\shape italic
+software
+\shape default
+ Click no 
+\shape italic
+hypervisor
+\shape default
+ do Projeto Xen, seguido de uma sequência de otimizações focadas na vazão
+ de pacotes.
+\end_layout
+
+\begin_layout Resumo
+No entanto, a pouca quantidade de trabalhos ou artigos detalhando o uso
+ de ClickOS diante da atual demanda por NFV, até mesmo em língua inglesa,
+ dificulta sua adoção, difusão, e por fim, o desenvolvimento da plataforma
+ e seus conceitos por pesquisadores, professores, empresas e outros atores
+ interessados, mesmo que este seja em software livre e possua uma documentação
+ online, já que o conhecimento sobre ele está disperso.
 \end_layout
 
 \begin_layout Resumo
 Assim sendo, este trabalho tem como objetivo apresentar detalhadamente ClickOS
- como uma alternativa para a implementação de Funções de Rede Virtuais (VNFs
- - Virtual Network Functions) dentro de NFV, usando como cenário o balanceamento
- de carga em serviços de hospedagem web.
+ como uma alternativa para a implementação de funções de rede virtuais dentro
+ de NFV, usando como cenário o balanceamento de carga em serviços de hospedagem
+ 
+\shape italic
+web
+\shape default
+.
 \end_layout
 
 \begin_layout Resumo
@@ -689,8 +758,8 @@ Assim sendo, este trabalho tem como objetivo apresentar detalhadamente ClickOS
 \series bold
 Palavras-chave: 
 \series default
-NFV; virtualização de funções de rede; VNF; função de rede virtual; Click;
- ClickOS; 
+NFV; virtualização de funções de rede; VNF; função de rede virtual; middleboxes
+ virtuais; Click; ClickOS.
 \end_layout
 
 \begin_layout Standard
@@ -698,6 +767,46 @@ NFV; virtualização de funções de rede; VNF; função de rede virtual; Click;
 \end_inset
 
 
+\end_layout
+
+\begin_layout Resumo
+With the advent of virtualization and the Cloud Computing model arising,
+ one of the fresh consequences for companies and institutions was new equipment
+ acquisition reduction.
+ In addition, still from an infrastructure viewpoint, decoupling functions
+ that were embedded into specific and closed hardware up to higher abstraction
+ layers enables a shorter deployment and maintenance time, plus a big increase
+ related to scability and management of them.
+\end_layout
+
+\begin_layout Resumo
+In this scenario, the NFV paradigm goals is provide network functions as:
+ firewalls, load balancers, NATs, IDSes, etc, through a markup language,
+ collaborating with the provisioning flexibility and programmability of
+ such functions, until then also plastered by the use if shelf middleboxes.
+\end_layout
+
+\begin_layout Resumo
+In this regard, ClickOS proposes a virtualization platform for high performance
+ virtual network functions construction by developers.
+ It provides as a tool a minimalist, scalable, and optimized virtual machine
+ to run Click software in the Xen Project hypervisor, followed by some optimizat
+ions focused on packet throughput.
+\end_layout
+
+\begin_layout Resumo
+However, a lack of works, articles or papers detailing ClickOS use in face
+ of current NFV demand, even in english language, makes it difficult to
+ adopt, disseminate, and finally, the development of the platform and its
+ concepts by reseachers, professors, companies and other stakeholders, even
+ if it is in free software and has an online documentation, since the knowledge
+ about it is dispersed.
+\end_layout
+
+\begin_layout Resumo
+Thus, this work aims to present in detail ClickOS as an alternative to the
+ virtual network functions implementation within NFV, using a load balancing
+ scenario in web hosting services.
 \end_layout
 
 \begin_layout Resumo
@@ -715,8 +824,8 @@ Abstract
 
 Keywords:
 \series default
- NFV; network functions virtualization; VNF; virtual network function; Click;
- ClickOS;
+ NFV; network functions virtualization; VNF; virtual network function; virtual
+ middleboxes; Click; ClickOS.
 \end_layout
 
 \begin_layout Standard
@@ -835,7 +944,7 @@ status open
 
 \end_inset
 
-BwM-NG
+BWM-NG
 \begin_inset ERT
 status open
 
@@ -947,7 +1056,8 @@ status open
 
 \end_inset
 
- Acrônimo em língua inglesa para Tradução de Endereços de Rede Dinâmico
+ Acrônimo em língua inglesa para Tradução de Endereços de Rede de Destino.
+ Não confundir neste trabalho com Tradução de Endereços de Rede Dinâmicos.
 \end_layout
 
 \begin_layout Siglas
@@ -1418,6 +1528,31 @@ status open
 
 \end_inset
 
+PHP
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Sigla em língua inglesa para Personal Home Page
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
 OSS
 \begin_inset ERT
 status open
@@ -1429,7 +1564,7 @@ status open
 
 \end_inset
 
- Acrônimo em língua inglesa para Sistemas de Suporte às Operações
+ Sigla em língua inglesa para Sistemas de Suporte às Operações
 \end_layout
 
 \begin_layout Siglas
@@ -1518,6 +1653,31 @@ status open
 
 \end_inset
 
+SQL
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Sigla em língua inglesa para Linguagem de Consulta Estruturada
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
 SSH
 \begin_inset ERT
 status open
@@ -1529,7 +1689,7 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa para Shell Seguro
+ Sigla em língua inglesa para o protocolo Shell Seguro
 \end_layout
 
 \begin_layout Siglas
@@ -1593,7 +1753,7 @@ status open
 
 \end_inset
 
-UX
+UDP
 \begin_inset ERT
 status open
 
@@ -1604,7 +1764,7 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa para Experiência do Usuário
+ Sigla em língua inglesa Protocolo de Datagramas de Usuário
 \end_layout
 
 \begin_layout Siglas
@@ -1712,6 +1872,22 @@ tableofcontents*
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textual
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Chapter
 INTRODUÇÃO
 \begin_inset Note Note
@@ -1727,12 +1903,27 @@ Verificar se o texto está de acordo com os ítens abaixo.
 \end_layout
 
 \begin_layout Standard
-Os middleboxes são dispositivos de propósito específico que implantam serviços
- ao longo de redes físicas, promovendo segurança, isolamento, compartilhamento,
- otimização, gerenciamento, etc.
- São exemplos os switches, roteadores, firewalls, balanceadores de carga,
- priorizadores de pacotes, limitadores de banda, proxies, filtros de conteúdo,
- dentre outros 
+Os 
+\shape italic
+middleboxes
+\shape default
+ são dispositivos de propósito específico que implantam serviços ao longo
+ de redes físicas, promovendo segurança, isolamento, compartilhamento, otimizaçã
+o, gerenciamento, etc.
+ São exemplos os 
+\shape italic
+switches
+\shape default
+, roteadores, 
+\shape italic
+firewalls
+\shape default
+, balanceadores de carga, priorizadores de pacotes, limitadores de banda,
+ 
+\shape italic
+proxies
+\shape default
+, filtros de conteúdo, dentre outros 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "martins_clickos_2014"
@@ -1740,31 +1931,34 @@ key "martins_clickos_2014"
 \end_inset
 
 .
- Durante muito tempo foram exclusivamente dispositivos de hardware com software
+ Durante muito tempo foram exclusivamente dispositivos de 
+\shape italic
+hardware
+\shape default
+ com 
+\shape italic
+software
+\shape default
  embarcado, com alto custo e ciclo de vida reduzido, diante do rápido desenvolvi
 mento das redes de computadores.
  No âmbito de atualizações e manutenções, não são equipamentos modulares,
- o que somado ao fim do ciclo de uma versão do sistema operacional, ocasiona
- a troca dos aparelhos com uma certa frequência
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Referência
-\end_layout
-
-\end_inset
-
-, prejudicando o capital investido (CAPEX) e o despesa operacional (OPEX)
- das empresas usuárias.
- 
+ o que somado ao fim do suporte ocasiona a troca dos aparelhos, prejudicando
+ o capital investido (CAPEX) e o despesa operacional (OPEX) das empresas
+ usuárias.
 \end_layout
 
 \begin_layout Standard
 No entanto, este modelo não está mais sozinho.
- Esforços para a construção de middleboxes em hardware de propósito geral
- já eram uma tópico discutido desde o fim da década de noventa, com Click
- 
+ Esforços para a construção de 
+\shape italic
+middleboxes
+\shape default
+ em 
+\shape italic
+hardware
+\shape default
+ de propósito geral já eram discutidos desde o fim da década de noventa,
+ com Click 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "morris_click_1999"
@@ -1772,13 +1966,24 @@ key "morris_click_1999"
 \end_inset
 
 , por exemplo.
- Mas o início deste século trouxe o processamento em altas frequências,
- junto com a capacidade de paralelizá-lo, e mais a frente, a viabilidade
- da camada de virtualização de maneira geral, com baixa perda de desempenho,
- grande eficiência energética e econômica para os investidores.
- Desta forma, os middleboxes dissociados de hardware se tornaram realidade,
- na forma de funções de rede virtuais (VNFs) com o uso de tecnologias como
- containers e paravirtualização.
+ O início deste século trouxe o processamento em altas frequências, junto
+ com a capacidade de paralelizá-lo, e mais a frente, a viabilidade da camada
+ de virtualização de maneira geral, com menor perda de desempenho, grande
+ eficiência energética e econômica para os investidores.
+ Desta forma, os 
+\shape italic
+middleboxes
+\shape default
+ dissociados de 
+\shape italic
+hardware
+\shape default
+ se tornaram viáveis, na forma de funções de rede virtuais (VNFs) com o
+ uso de tecnologias como 
+\shape italic
+containers
+\shape default
+ e paravirtualização.
 \end_layout
 
 \begin_layout Standard
@@ -2856,7 +3061,7 @@ key "RASMUSSEN2008617"
 
 , que após seu processamento, este ainda sofre o processamento de outro
  escalonador baseado em prioridade ordenada, onde a primeira entrada tem
- precedência sobre a próxima.
+ precedência sobre a seguinte.
  Ao fim, os pacotes saem pela interface escolhida no elemento de envio (ToDevice
 ).
 \end_layout
@@ -2870,8 +3075,8 @@ reference "fig:Condicionador-de-tráfego"
 \end_inset
 
 , ao passar pelas filas a coloração das portas muda, indicando a mudança
- de fluxo de processsamento de push para pull e o papel das filas nesse
- quesito está representado.
+ de fluxo de processamento de push para pull e o papel das filas nesse quesito
+ está representado.
  Outra observação interessante é quanto a fila do quarto caminho que recebe
  as saídas de processamento de dois elementos, evidenciando que as portas
  de entrada push, ao contrário das portas pull, podem receber fluxos de
@@ -3042,7 +3247,7 @@ key "rfc793"
 
 \end_inset
 
- disponibilizada pelo elemento NAT (IPRewriter), que pode indicar o correto
+ disponibilizada pelo elemento de NAT (IPRewriter), que pode indicar o correto
  funcionamento ou não de uma VNF que a utilize.
  Outros manipuladores são capazes de alterar determinadas variáveis em tempo
  de execução, mas não são muito comuns.
@@ -3139,29 +3344,20 @@ name "fig:Interface-gráfica-e"
 \begin_layout Standard
 Durante o desenvolvimento deste trabalho, algumas limitações nos elementos
  foram observadas: Para criar balanceadores de carga, os elementos existentes
- são limitados ao mecanismo de Round Robin 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-referência
-\end_layout
-
-\end_inset
-
- (RoundRobinIPMapper) e distribuição por IP de origem (SourceIPHashMapper),
- sem uma análise da carga dos servidores que recebem o balanceamento, através
- do SNMP 
+ são limitados ao mecanismo de Round Robin (RoundRobinIPMapper) e distribuição
+ por IP de origem (SourceIPHashMapper), sem uma análise da carga dos servidores
+ que recebem o balanceamento, através do SNMP 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "rfc1157"
 
 \end_inset
 
-, por exemplo; a manipulação de mensagens UDP maiores que o MSS é um problema
- quando se desenvolve um NAT em Click, já que para o recálculo da soma de
- verificação (checksum) usando o UDPChecksum, seria necessário remontar
- a mensagem UDP 
+, por exemplo; a manipulação de mensagens do Protocolo de Datagrama do Usuário
+ (UDP) maiores que o Tamanho de Seguimento Máximo (MSS) da camada de transporte
+ é um problema quando se desenvolve um NAT em Click, já que para o recálculo
+ da soma de verificação (checksum) usando o UDPChecksum, seria necessário
+ remontar a mensagem UDP 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "rfc768"
@@ -3174,10 +3370,27 @@ key "rfc768"
 
 \begin_layout Standard
 Outra questão envolvendo estes elementos é que a tabela criada através desses
- não se apaga, e pode criar instabilidade quanto aos balanceamentos já desta
- forma os balanceadores só garantem o balanceamento na hora de criar a regra,
- e uma vez que elas permaneçam indefinidamente, determinadas conexões perenes
- podem desbalancear o sistema, já que não seriam rebalanceadas.
+ não se apaga como deveria 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kohler_modular_2002"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kohler_click:_2018"
+
+\end_inset
+
+ devido a um erro de implementação que reinicia o contador responsável,
+ e pode criar instabilidade quanto aos balanceamentos.
+ Desta forma os balanceadores só garantem o balanceamento em tempo de criação
+ da regra, e uma vez que elas permaneçam indefinidamente, determinadas conexões
+ perenes podem desbalancear o sistema, já que não seriam rebalanceadas.
+ Este erro foi reportado a comunidade, mas não a tempo de ser corrigido
+ para este trabalho.
 \end_layout
 
 \begin_layout Standard
@@ -3205,7 +3418,7 @@ key "noauthor_linux_2018"
  compatibilizando com a versão do kernel Linux 2.6, em face da versão 4.16
  atual.
  Essa defasagem faz com que seu uso em um sistema operacional tradicional
- seja desestimulado, defido a complexidade em se programar para o kernel.
+ seja desestimulado, devido a complexidade em se programar para o kernel.
  Seu uso atual possui escopo em middleboxes virtualizados, como em FastClick
  
 \begin_inset CommandInset citation
@@ -3225,6 +3438,13 @@ key "csoma_escape:_2014"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "laufer_climb:_2016"
+
+\end_inset
+
+, NetBricks
+\begin_inset CommandInset citation
+LatexCommand cite
+key "panda_netbricks:_2016"
 
 \end_inset
 
@@ -3624,7 +3844,7 @@ s a parte para gerar os arquivos na linguagem de Click e recarregar a função
 \begin_layout Standard
 Apesar de não possuir linha de comandos, as máquinas virtuais com o núcleo
  do ClickOS exibem um registro de alertas e erros exibido pelo comando xl
- console, que pode reportar erros de códificação de todos os níveis, erros
+ console, que pode reportar erros de codificação de todos os níveis, erros
  de inicialização, más configurações e elementos de análise de erros para
  informar estados através deste.
 \end_layout
@@ -6113,15 +6333,15 @@ s.
 \begin_layout Standard
 Um elemento sem portas de entrada ou saída deve ser configurado para cada
  método descrito.
- Aquele que cobre o método Round Robin, deve conter um parâmetro para cada
- servidor disponível, num formato que indique qual a modificação para cada
- um dos itens dentre endereço IP de origem, número de porta de origem, endereço
- IP de destino e número de porta de destino, nessa ordem, sendo que os não
- indicados permanecem intactos.
+ Aquele que cobre o método Round Robin (RoundRobinIPMapper), deve conter
+ um parâmetro para cada servidor disponível, num formato que indique qual
+ a modificação para cada um dos itens dentre endereço IP de origem, número
+ de porta de origem, endereço IP de destino e número de porta de destino,
+ nessa ordem, sendo que os não indicados permanecem intactos.
  Após tais indicações, os parâmetros são finalizados com o informe de uma
  porta de saída do elemento para a regra criada a partir dessas indicações,
  e o informe de uma porta de saída para a regra de conversão do seu pacote-respo
-sta em fluxo de retorno.
+sta, já em fluxo de retorno.
  Já que este elemento não possui portas, elas são alocadas no elemento de
  NAT no IPRewriter, pois a função deste é fornecer novas funcionalidades
  ao NAT disponível por Click, tal qual uma variação no momento de criação
@@ -6129,8 +6349,8 @@ sta em fluxo de retorno.
 \end_layout
 
 \begin_layout Standard
-Já o elemento para o método de balanceamento por endereço IP de origem precisa
- de mais parâmetros.
+Já o elemento para o método de balanceamento por endereço IP de origem (SouceIPH
+ashMapper) precisa de mais parâmetros.
  Como trabalha com uma estrutura de tabela hash, é preciso indicar uma semente
  e um tamanho de tabela como primeiro parâmetro, e só após iniciar com os
  parâmetro de modificação de cabeçalho.
@@ -6141,11 +6361,11 @@ Já o elemento para o método de balanceamento por endereço IP de origem precis
 \end_layout
 
 \begin_layout Standard
-O IPRewriter dessa proposta é simples e passa como parâmetro o conjunto
- de indicações dos elementos acima, para que sejam usados no caso dos pacotes
- de entrada de sua respectiva porta não combinarem com as regras existentes;
- e também uma outra determinação para ignorar os pacotes que entram por
- um outra porta na mesma situação.
+O elemento de NAT (IPRewriter) dessa proposta é simples e passa como parâmetro
+ o conjunto de indicações dos elementos acima, para que sejam usados no
+ caso dos pacotes de entrada de sua respectiva porta não combinarem com
+ as regras existentes; e também uma outra determinação para ignorar os pacotes
+ que entram por um outra porta na mesma situação.
 \end_layout
 
 \begin_layout Standard
@@ -6712,7 +6932,7 @@ Monitor de rede
 \begin_inset Text
 
 \begin_layout Plain Layout
-BwM-NG
+BWM-NG
 \end_layout
 
 \end_inset
@@ -8093,10 +8313,18 @@ Idênticos aos clientes com relação a configuração de rede, os servidores
  com modificações esporádicas e suportáveis através do hospedeiro.
  Antes de inseridos a rede local alimentada pelo balanceador de carga (172.16.0.0/1
 2), seus softwares são configurados e recebem a página web que será usada
- para os testes.
+ para os testes, que possui cerca de 200 bytes.
  Trata-se de uma página HTML minimalista contendo apenas a identificação
  exclusiva de cada um dos três servidores.
- Nenhum ajuste extra foi feito no Apache Worker visando desempenho.
+ Nenhum ajuste extra foi feito no Apache Worker além do bloqueio de escrita
+ de registros apenas para os testes da 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "subsec:Desempenho"
+
+\end_inset
+
+, já que as operações estavam afetando sensivelmente a análise dos resultados.
 \end_layout
 
 \begin_layout Standard
@@ -8163,6 +8391,13 @@ Reescrever
 
 \begin_layout Subsection
 Firewall
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Firewall"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -8183,7 +8418,7 @@ reference "fig:Protótipo-para-execução"
 
 \begin_layout Standard
 As decisões tomadas pela função afetam a execução do Siege.
- Para monitorá-las, aplica-se o BwM-NG nas interfaces virtuais relacionadas
+ Para monitorá-las, aplica-se o BWM-NG nas interfaces virtuais relacionadas
  ao firewall e ao cliente em questão, a procura de padrões que demonstrem
  o comportamento do fluxo.
  Não trafegam quaisquer outras conexões pelas interfaces testadas.
@@ -8191,7 +8426,7 @@ As decisões tomadas pela função afetam a execução do Siege.
 
 \begin_layout Standard
 Para a execução, executa-se os softwares em paralelo e sincronizadamente,
- com o Siege no cliente e o BwM-NG no hospedeiro da plataforma ClickOS.
+ com o Siege no cliente e o BWM-NG no hospedeiro da plataforma ClickOS.
  O primeiro é configurado para uma execução em no máximo quinze segundos
  com cem processos concorrentes emitindo requisições para http://192.0.2.61:X/index
 2.html, onde X é o número da porta a ser acessada.
@@ -8361,9 +8596,9 @@ reference "fig:Fluxo-de-pacotes-fw-8080"
  o que de fato não ocorre exceto por um único pacote, que por exclusão,
  é uma resposta ARP do próprio firewall a uma requisição do cliente (veja
  no segundo seis de ambos gráficos).
- Importante lembrar que este firewall trabalha apenas com pacotes IP e não
- responde pelos pacotes ARP, que seguem outros fluxos na árvore de execução
- do Click como visto na 
+ Importante lembrar que este firewall trabalha apenas com filtragem de pacotes
+ IP e não responde pelos pacotes ARP, que seguem outros fluxos na árvore
+ de execução do Click como visto na 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:Uma-aplicação-dos"
@@ -8374,11 +8609,18 @@ reference "fig:Uma-aplicação-dos"
 \end_layout
 
 \begin_layout Subsection
-Balanceador de carga por endereço IP
+Balanceador de carga por endereço IP de origem
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Balanceador-de-carga-sip"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Neste teste três clientes emitem fluxos para a borda do serviço de hospedagem
+Neste teste, três clientes emitem fluxos para a borda do serviço de hospedagem
  duas vezes cada, de forma que as emissões não se sobrepõem.
  O tráfego gerado passa obrigatoriamente pelo firewall, e uma vez filtrado
  chega ao balanceador, que o distribui aos servidores web configurados na
@@ -8386,7 +8628,7 @@ Neste teste três clientes emitem fluxos para a borda do serviço de hospedagem
 \end_layout
 
 \begin_layout Standard
-Novamente o BwM-NG é usado para monitorar as interfaces virtuais relacionadas
+Novamente o BWM-NG é usado para monitorar as interfaces virtuais relacionadas
  ao cliente e aos servidores, que são respectivamente origem e destino dos
  pacotes, a procura de padrões que demonstrem o comportamento do fluxo.
  Não existem quaisquer outras conexões vigentes no ambiente de teste.
@@ -8478,13 +8720,18 @@ o primeiro, acima, demonstra a saída dos pacotes dos clientes e a chegada
  servidor, já que o elemento não analisa o estado atual dos nós balanceadores.
  Claro que ao se tratar de uma conexão TCP, os pacotes-resposta também precisam
  retornar corretamente para que não haja uma queda na transmissão por parte
- do cliente.
- Dessa forma, junto com a perda insignificante de pacotes e o controle de
- fluxo inalterado, o bom funcionamento da VNF é validado.
+ do cliente, o que acontece e valida o bom funcionamento da VNF.
 \end_layout
 
 \begin_layout Subsection
 Balanceador de carga por Round Robin
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Balanceador-de-carga-rr"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -8496,7 +8743,7 @@ O Siege emite o mesmo tipo de fluxo do firewall partir de um cliente para
 \end_layout
 
 \begin_layout Standard
-O BwM-NG é usado novamente para monitorar as interfaces virtuais relacionadas
+O BWM-NG é usado novamente para monitorar as interfaces virtuais relacionadas
  ao cliente e aos servidores web, que são origem e destino dos pacotes,
  a procura de padrões que demonstrem o comportamento do fluxo.
  Não trafegam quaisquer outras conexões pelas interfaces testadas.
@@ -8572,8 +8819,7 @@ reference "fig:Fluxo-de-pacotes-lb-rr"
 
 , está o fluxo de pacotes enviados pelo cliente.
  Observa-se uma semelhança entre as quantidades de pacotes enviados pelo
- cliente e recebidos por todos os servidores, respeitando o controle de
- fluxo implementado pelo protocolo de transporte.
+ cliente e recebidos por todos os servidores.
  Os servidores web recebem individualmente cerca de um terço do total de
  pacotes, como é possível ver nas três linhas que os representam, praticamente
  sobrepostas, e corroboram com a expectativa despejada em cima do balanceador
@@ -8594,12 +8840,312 @@ Para tornar os gráficos mais limpos, foram excluídas as representações dos
  clientes não utilizados no momento da execução.
 \end_layout
 
+\begin_layout Subsection
+Desempenho
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Desempenho"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Embora o desempenho não seja primordial para este trabalho, é possível fazer
+ algumas análises sobre a adição de ClickOS ao ambiente virtualizado, mesmo
+ com uma camada extra de virtualização.
+ A intenção é analisar o tráfego, os erros e o tempo de resposta médio do
+ protótipo e de seus recortes, onde as VNFs são retiradas gradativamente
+ começando pelo balanceador, passando pelo firewall e assim chegando a uma
+ conexão direta entre cliente e servidor.
+\end_layout
+
+\begin_layout Standard
+Apenas o Siege é utilizado, já que em seu relatório indica os dados necessários
+ e com a facilidade do formato CSV.
+ Ele é configurado para enviar pacotes por sessenta segundos aos endereços,
+ que por sua vez variam de acordo com o recorte do protótipo.
+ Outra variável é o número de usuários concorrentes em cada máquina cliente.
+ Durante os pré-testes, verificou-se uma limitação de mil usuários simultâneos
+ para cada cliente, e números acima deste causam vazamentos de memória nas
+ máquinas.
+ Dado que o cenário é todo virtualizado, optou-se por manter três clientes
+ ao invés de buscar mais recursos e clientes com novas VMs.
+\end_layout
+
+\begin_layout Standard
+Para gerar uma amostragem, um passo de cem clientes foi escolhido, totalizando
+ dez execuções crescentes para o protótipo e os recortes.
+ Uma pausa de cinco minutos é dada entre uma execução de amostra e outra,
+ totalizando cerca de sessenta minutos de execução para cada situação testada,
+ para eliminar qualquer conexão ainda estabelecida nos servidores web que
+ estejam aguardando resposta, e portanto ocupando-o.
+\end_layout
+
+\begin_layout Standard
+Dessa forma, os gráficos representam quatro situações: com balanceador Round
+ Robin, com balanceador por endereço IP de origem, apenas com o firewall,
+ e sem VNFs.
+ Todas foram medidas separadamente, de forma que as interferências inerentes
+ ao processamento compartilhado das máquinas e do ambiente de virtualização
+ podem afetar uma mas não a outra.
+ Uma tentativa de minimizar este problema reside em anular o registro de
+ acessos e erros do Apache Worker no caso do processamento nas máquinas,
+ e restringir o uso das máquinas virtuais em meio aos testes, inclusive
+ fazendo os testes durante horários de pouca carga no ambiente do VMware.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tclickos_stress/transacoes.png
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Média de transações por segundo de acordo com o número de usuários
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Média-de-transações"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Média-de-transações"
+
+\end_inset
+
+, fica clara a influência das VNFs na quantidade de transações efetuadas.
+ É de se esperar que uma ligação direta entre as VMs clientes e as servidoras
+ traga melhores resultados; que logo em seguida viria o desempenho de um
+ elemento que, neste trabalho, é considerado somente leitura, adicionando
+ mais um nó na comunicação cliente-servidor; e por último, também adicionando
+ mais um nó, estariam os balanceadores de carga, que efetuam altas cargas
+ de escrita e afetam o tempo de resposta como demonstrado na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Tempo-médio-de"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Entre os balanceadores cabe analisar a eficiência de cada um deles dentro
+ do protótipo.
+ Essencialmente, o IPRewriter realiza quatro operações de escrita nos pacotes
+ associados a uma transação, independente do método de balanceamento: as
+ alterações de cabeçalho IP, e o recálculo da soma de verificação TCP, em
+ cada sentido.
+ A adição dessas operações ao sistema trazem os benefícios desejados, mas
+ também uma queda de desempenho notável, aliada a uma falha de implementação
+ que impede as regras com conexões finalizadas sejam eliminadas da tabela
+ de regras, causando nesta um crescimento proporcional ao fluxo de entrada,
+ e tornando sua consulta cada vez mais lenta até que o balanceador seja
+ reiniciado.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+OBS: Favor ignorar daqui pra frente
+\end_layout
+
+\begin_layout Standard
+Com os dados gerados dos vários pré-testes, não foi possível atribuir diferença
+ significativa de desempenho entre os métodos de balanceamento, e portanto,
+ qualquer avaliação dos códigos de ambos não faz efeito.
+ A alta variação da média de transações do balanceamento por IP de origem
+ não encontra explicações nos estudos feitos feitos sobre a ferramenta,
+ e passa a assumir questões da carga do sistema como um todo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tclickos_stress/erros.png
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Números absolutos de erros de acordo com o número de usuários
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Números-absolutos-de"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nesta parte do teste, é preciso diferenciar os dois principais tipos de
+ erros que acontecem.
+ O primeiro é o erro de tempo limite atingido, que cancela uma conexão dado
+ uma ausência de pacotes de dados ou de controle trocados em determinado
+ tempo.
+ O Siege configura um tempo limite de trinta segundos para estabelecimento
+ de conexão e quando atingido libera o usuário para uma nova tentativa.
+ Já o Apache, configura vários destes no âmbito de dados, podendo o tempo
+ variar de vinte a sessenta segundos por padrão.
+ Já o segundo trata-se de uma conexão reiniciada pelo par, que pode acontecer
+ tanto da parte do cliente quanto do servidor...
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Continuar
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A grande parte dos erros apresentados para as execuções sem balanceador
+ são do tipo tempo limite atingido, onde o servidor web reporta com o código
+ 408 o fim do tempo de espera para o recebimento de algum pacote de dados.
+ No caso das execuções com o balanceador, o tipo predominante de erro é
+ o de conexão reiniciada.
+ É de se esperar que o número de erros fosse de uma grandeza próxima na
+ primeira situação devido a exclusiva leitura do firewall, e que crescesse
+ na segunda situação devido as operações de escrita, mas a mudança no tipo
+ de erro merece atenção.
+\end_layout
+
 \begin_layout Standard
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-Teste de stress
+Qual a justificativa associada a escrita dos pacotes para essa mudança?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tclickos_stress/tempo_de_resposta.png
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tempo médio de resposta de acordo com o número de usuários
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Tempo-médio-de"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O tempo de resposta na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Tempo-médio-de"
+
+\end_inset
+
+ acompanha quase que rigorosamente o comportamento da média da taxa de transaçõe
+s da 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Média-de-transações"
+
+\end_inset
+
+.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+continuar
 \end_layout
 
 \end_inset
@@ -8640,10 +9186,14 @@ Reafirmar a porra toda
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 bibfiles "thesis"
-options "plain"
+options "bibtotoc,abntex2-num"
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 
