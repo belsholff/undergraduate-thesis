@@ -4,7 +4,7 @@
 \begin_header
 \save_transient_properties true
 \origin unavailable
-\textclass ../../../../Documentos/UFES/PG/undergraduate-thesis/thesis/lyx/abntex2
+\textclass abntex2
 \begin_preamble
 % ---
 % PACOTES
@@ -987,6 +987,31 @@ status open
 \end_inset
 
  Acrônimo em língua inglesa para Capital Investido
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+CPU
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Sigla em língua inglesa para Unidade de Processamento Central
 \end_layout
 
 \begin_layout Siglas
@@ -2134,12 +2159,46 @@ projeção de nfv e cloud
 
 \end_inset
 
-Citado anteriormente como exemplo, Click foi um dos casos de sucesso em
+
+\end_layout
+
+\begin_layout Standard
+Algumas das tecnologias existentes para provimento de funções virtuais nesse
+ âmbito são P4 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bosshart:2014:PPP:2656877.2656890"
+
+\end_inset
+
+, NetBricks
+\begin_inset CommandInset citation
+LatexCommand cite
+key "panda_netbricks:_2016"
+
+\end_inset
+
+, Elastic Edge
+\begin_inset CommandInset citation
+LatexCommand cite
+key "palkar_e2:_2015"
+
+\end_inset
+
+, OpenNetVM 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "zhang_opennetvm:_2016"
+
+\end_inset
+
+.
+ Citado anteriormente como exemplo, Click foi um dos casos de sucesso em
  matéria de desacoplar código, sendo o equivalente de sua época a uma função
  de rede virtual.
  E mais de uma década depois, sua existência e vantagens se tornaram parte
- de um dos projetos de virtualização de dispositivos de rede: chama-se ClickOS
- 
+ de um desses projetos de virtualização de dispositivos de rede e que é
+ utilizado neste trabalho: chama-se ClickOS 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "martins_clickos_2014"
@@ -2198,14 +2257,7 @@ No entanto, até pela questão das disputas do nicho e pelo ainda recente
  desenvolvimento de soluções para provimento de VNFs, a plataforma sofre
  com a falta de materiais didáticos, sejam em inglês ou português, mesmo
  aqueles que tratam apenas de Click, desestimulando seu uso em detrimento
- de outros semelhantes como atualmente acontece com P4 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Bosshart:2014:PPP:2656877.2656890"
-
-\end_inset
-
-.
+ de outros semelhantes como atualmente acontece com P4.
  Como exemplo dessa questão, é possível citar a falta de documentações sobre:
  a integração de Click com os 
 \shape italic
@@ -3549,10 +3601,14 @@ reference "fig:Uma-aplicação-dos"
 \end_layout
 
 \begin_layout Alineas
-Todos os momentos onde :: é utilizado significa uma definição de nome para
+Todos os momentos onde :: é utilizado significam uma definição de nome para
  o elemento criado.
- Toda vez que uma -> é utilizada significa uma ligação entre a porta de
- saída X e a porta de entrada Y de dois elementos;
+ Toda vez que uma 
+\family typewriter
+->
+\family default
+ é utilizada significa uma ligação entre a porta de saída X e a porta de
+ entrada Y de dois elementos, fluíndo nesse sentido;
 \end_layout
 
 \begin_layout Alineas
@@ -4112,10 +4168,6 @@ key "martins_clickos_2014"
 .
 \end_layout
 
-\begin_layout Standard
-OBS: Parei aqui <—
-\end_layout
-
 \begin_layout Section
 \begin_inset CommandInset label
 LatexCommand label
@@ -4127,9 +4179,17 @@ ClickOS
 \end_layout
 
 \begin_layout Standard
-ClickOS é parte de um projeto de pesquisa da Universidade politécnica de
- Bucareste junto com a Companhia Elétrica Nipônica na Europa – NEC Europe
- – para o provisionamento de VNFs que possam substituir middleboxes de hardware.
+ClickOS é parte de um projeto de pesquisa da Universidade Politécnica de
+ Bucareste junto com a Companhia Elétrica Nipônica na Europa (NEC Europe)
+ para o provisionamento de VNFs que possam substituir 
+\shape italic
+middleboxes
+\shape default
+ em 
+\shape italic
+hardware
+\shape default
+.
  Ele se encontra representado no modelo NFV pela camada de virtualização,
  gerenciando localmente as funções de rede virtuais.
  Trata-se primeiramente de um sistema operacional baseado em Click, focado
@@ -4155,17 +4215,20 @@ key "martins_clickos_2014"
 \end_layout
 
 \begin_layout Standard
-Para a alcunha de plataforma fazer sentido, os limites de um sistema operacional
- para micro-máquinas virtuais devem ser superados.
- ClickOS se apoia no projeto Xen e no VALE Switch 
+Para a alcunha de plataforma fazer sentido, ClickOS ultrapassa os limites
+ de um sistema operacional para micro-máquinas virtuais.
+ Ele se apoia no Projeto Xen e no VALE 
+\shape italic
+Switch
+\shape default
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "rizzo_vale_2012"
 
 \end_inset
 
- e propõe mudanças significativas as estruturas de ambos ao inserí-los em
- sua solução.
+ e propõe mudanças significativas as estruturas de ambos ao aglutiná-los.
 \end_layout
 
 \begin_layout Standard
@@ -4179,6 +4242,13 @@ status open
 
 \begin_layout Plain Layout
 Arquitetura inicial presente no ClickOS
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Arquitetura-inicial-presente"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -4187,6 +4257,7 @@ Arquitetura inicial presente no ClickOS
 \end_layout
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/clickos_arch.png
 	scale 53
@@ -4214,38 +4285,91 @@ key "martins_clickos_2014"
 \end_layout
 
 \begin_layout Standard
-No Xen, hypervisor de virtualização desenvolvido pela comunidade de software
- livre, várias otimizações foram realizadas segundo 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Explicação desta figura
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+No Xen, algumas se destacam a partir de 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "martins_clickos_2014"
 
 \end_inset
 
+: o acesso aos pacotes recebeu uma atenção especial ao remover intermediários
+ da comunicação entre as máquinas virtuais e o 
+\shape italic
+switch
+\shape default
+ virtual como o driver 
+\shape italic
+netback
+\shape default
+, que passou a ter um papel de controle apenas.
+ Já o driver 
+\shape italic
+netfront
+\shape default
+ associado as VMs foi reprogramado para colocar na memória de suas VMs os
+ respectivos 
+\shape italic
+buffers
+\shape default
+ da porta do 
+\shape italic
+switch
+\shape default
 .
- dentre elas, se destacam: o acesso aos pacotes recebeu uma atenção especial
- ao remover intermediários da comunicação entre as máquinas virtuais e o
- switch virtual como o driver netback, que passou a ter um papel de controle
- apenas; já o driver netfront associado as VMs foi reprogramado para colocar
- na memória de sua VMs o buffer da porta do switch; por fim, as interfaces
- virtuais do Xen (vifs) foram ignoradas e então removidas.
+ Por fim, as interfaces virtuais do Xen (
+\shape italic
+vifs
+\shape default
+) foram ignoradas e então removidas.
+ Ver 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Antes-e-depois"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-Já o VALE Switch, dispositivo de comutação de pacotes virtual (switch virtual)
- apresentado por Luigi Rizzo e Giuseppe Lettieri da Universidade de Pisa,
- usado para interconectar máquinas virtuais em redes a partir da API Netmap
- 
+Já o VALE 
+\shape italic
+Switch
+\shape default
+, dispositivo de comutação virtual apresentado por Luigi Rizzo e Giuseppe
+ Lettieri da Universidade de Pisa, é usado para interconectar máquinas virtuais
+ em redes a partir da API Netmap 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "rizzo_revisiting_2012"
 
 \end_inset
 
-, entra na plataforma substituindo o pouco otimizado OpenVSwitch e ao fim
- é alterado para que forneça acesso direto aos buffers das portas do seu
- switch para o netfront, e para que possua mais portas, para citar as principais
- modificações
+.
+ Ele entra na plataforma substituindo o pouco otimizado OpenVSwitch e ao
+ fim é alterado para que forneça acesso direto aos 
+\shape italic
+buffers
+\shape default
+ de suas portas para o 
+\shape italic
+netfront
+\shape default
+ de cada VM, e também para que aumente-se o número de portas, para citar
+ dois motivos de seu uso 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "martins_clickos_2014"
@@ -4253,7 +4377,11 @@ key "martins_clickos_2014"
 \end_inset
 
 .
- Ao fim é renomeado para ClickOS Switch 
+ Ao fim é renomeado para ClickOS 
+\shape italic
+Switch
+\shape default
+ devido as mudanças realizadas 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "martins_clickos_2014"
@@ -4274,6 +4402,13 @@ status open
 
 \begin_layout Plain Layout
 Antes e depois das alterações mencionadas
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Antes-e-depois"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -4282,6 +4417,7 @@ Antes e depois das alterações mencionadas
 \end_layout
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/xen_network_io_scheme.png
 	lyxscale 85
@@ -4320,14 +4456,24 @@ reference "sec:Click"
 \end_inset
 
 .
- ClickOS constrói seu sistema operacional a partir do MiniOS: um micro-kernel
+ ClickOS constrói seu sistema operacional a partir do MiniOS: um 
+\shape italic
+micro-kernel
+\shape default
  de sistema operacional minimalista voltado para um processamento quase
- monoprocessado, escalável, e de baixa carga de CPU, criado pelos desenvolvedore
-s do projeto Xen.
- A adaptação de Click ao micro-kernel do MiniOS, inclusive portando as bibliotec
-as necessárias sua construção neste sistema, resultou em um kernel enxuto,
- que dentro de uma micro-VM consume 5MB de memória ao executar, sendo instanciáv
-el em 30 ms, provocando um atraso na rede de 45
+ monoprocessado, escalável, e de baixa carga de uso de CPU, criado pelos
+ desenvolvedores do Xen.
+ A adaptação de Click ao 
+\shape italic
+micro-kernel
+\shape default
+ do MiniOS, inclusive portando as bibliotecas necessárias sua construção
+ neste sistema, resultou em um 
+\shape italic
+kernel
+\shape default
+ ainda enxuto, que dentro de uma micro-VM consume 5MB de memória ao executar,
+ sendo instanciável em 30ms, provocando um atraso na rede de 45
 \begin_inset Formula $\mu$
 \end_inset
 
@@ -4344,8 +4490,8 @@ key "martins_clickos_2014"
 \end_layout
 
 \begin_layout Standard
-Para instanciar as VNFs, ClickOS usa o método disponibilizado pelo projeto
- Xen, através de um arquivo de configuração, onde é possível descrever itens
+Para instanciar as VNFs, ClickOS usa o método disponibilizado pelo Xen,
+ através de um arquivo de configuração, onde é possível descrever itens
  como quantidade de processadores, memória, interfaces virtuais de rede,
  comportamento de falhas e o nome da função virtual.
 \end_layout
@@ -4412,13 +4558,10 @@ reference "fig:Exemplo-de-arquivo-cfg"
  de acordo com os dados atribuídos a VNF no código de Click para não haver
  enganos e erros.
  Muito cuidado ao gerar endereços MAC ou IP, pois existem classes e restrições
- em ambos
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-referência
-\end_layout
+ em ambos 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "noauthor_ieee_2016"
 
 \end_inset
 
@@ -4427,7 +4570,85 @@ referência
 
 \begin_layout Standard
 O segundo passo da criação de VNFs em ClickOS passa pelo uso do gerente
- de pilha Cosmos
+ de pilha próprio da plataforma chamado Cosmos.
+ Ele recebe o código Click e a identificação da VM criada com o 
+\shape italic
+kernel
+\shape default
+ ClickOS para inserir o primeiro no segundo, transformando-o em uma VNF.
+\end_layout
+
+\begin_layout Standard
+Elas não possuem entrada em linha de comando para seu gerenciamento próprio,
+ sendo esse um papel da máquina hospedeira.
+ No momento da implantação das funções a partir do hospedeiro, não há passagem
+ de parâmetros em tempo de inicialização.
+ Apenas algumas operações de leitura e escrita em tempo de execução são
+ permitidas, através dos manipuladores descritos na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:Click"
+
+\end_inset
+
+, que podem ser acionados através do hospedeiro com o Cosmos, mas muito
+ longe de ser um suporte consistente a configurações em tempo de execução
+ como uma adição de regras em um 
+\shape italic
+firewall
+\shape default
+ ou uma remoção de servidor no balanceador de carga.
+ Para contornar essa limitação, scripts de marcação de texto podem ser utilizado
+s a parte para gerar os arquivos na linguagem de Click e recarregar a função
+ de rede, mesmo que signifique uma queda repentina do serviço associado.
+\end_layout
+
+\begin_layout Standard
+Apesar de não possuir linha de comando, as máquinas virtuais com o núcleo
+ do ClickOS exibem um registro de alertas e erros exibido pelo comando 
+\family typewriter
+xl console
+\family default
+, que pode reportar erros de codificação de todos os níveis, erros de inicializa
+ção, más configurações e saídas de elementos de análise de erros.
+ É possível também verificar a carga delas através do comando 
+\family typewriter
+xentop
+\family default
+, tomando cuidado para um pequeno erro que faz os valores decrecerem de
+ cem por cento para zero ao invés do comportamento costumeiro.
+\end_layout
+
+\begin_layout Standard
+Como 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "martins_clickos_2014"
+
+\end_inset
+
+ demonstra, ClickOS sofre com um problema comum a essas soluções e que é
+ alvo de pesquisas no momento: a queda de desempenho ao encadear VNFs uma
+ após a outra para prover um serviço mais completo.
+ Uma das soluções para amenizar esse efeito está presente no 
+\shape italic
+zero-copy
+\shape default
+ do OpenNetVM 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "yurchenko_opennetvm:_2018"
+
+\end_inset
+
+, mas ClickOS, um projeto de quatro anos em relação ao anterior, ainda não
+ possui algo do tipo.
+\end_layout
+
+\begin_layout Standard
+Por fim, ClickOS pode trabalhar em conjunto com soluções NFV através de
+ uma integração com o VIM da solução.
+ São exemplos já implementados o OpenStack e o Nomad 
 \begin_inset Note Note
 status open
 
@@ -4437,100 +4658,7 @@ referência
 
 \end_inset
 
-.
- Ele recebe o código Click e a identificação da VM criada com o kernel ClickOS
- para inserir o primeiro no segundo, transformando-o em um middlebox virtual.
-\end_layout
-
-\begin_layout Standard
-As VNFs não possuem linha de comandos para seu gerenciamento próprio, sendo
- esse um papel da máquina hospedeira.
- No momento da implantação das funções a partir do hospedeiro, não há passagem
- de parâmetros em tempo de inicialização.
- Apenas algumas operações de leitura e escrita em tempo de execução são
- permitidas, através dos manipuladores de elementos descritos na 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "sec:Click"
-
-\end_inset
-
-, que podem ser acionados através do hospedeiro com o Cosmos, mas muito
- longe de ser um suporte consistente a configurações em tempo de execução
- como uma adição de regras em um firewall ou uma remoção de servidor no
- balanceador de carga.
- Para contornar essa limitação, scripts de marcação de texto podem ser utilizado
-s a parte para gerar os arquivos na linguagem de Click e recarregar a função
- de rede, mesmo que signifique uma queda repentina do serviço associado.
-\end_layout
-
-\begin_layout Standard
-Apesar de não possuir linha de comandos, as máquinas virtuais com o núcleo
- do ClickOS exibem um registro de alertas e erros exibido pelo comando xl
- console, que pode reportar erros de codificação de todos os níveis, erros
- de inicialização, más configurações e elementos de análise de erros para
- informar estados através deste.
-\end_layout
-
-\begin_layout Standard
-P4, NetBricks
-\begin_inset CommandInset citation
-LatexCommand cite
-key "panda_netbricks:_2016"
-
-\end_inset
-
-, Elastic Edge
-\begin_inset CommandInset citation
-LatexCommand cite
-key "palkar_e2:_2015"
-
-\end_inset
-
-, OpenNetVM 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "zhang_opennetvm:_2016"
-
-\end_inset
-
  
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-semelhantes
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Encadeamento
-\end_layout
-
-\end_inset
-
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "yurchenko_opennetvm:_2018"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Por fim, ClickOS pode trabalhar em conjunto com soluções NFV através de
- uma integração com o VIM da solução.
- São exemplos já implementados o OpenStack e o Nomad
 \begin_inset CommandInset citation
 LatexCommand cite
 key "ventre_performance_2016"
@@ -4538,21 +4666,7 @@ key "ventre_performance_2016"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-Comandos para criação e execução, monitoramento e análise de erros estão
- no apêndice 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-inserir o apendice
-\end_layout
-
-\end_inset
-
-.
+ OBS: Parei aqui <—
 \end_layout
 
 \begin_layout Standard
@@ -4762,6 +4876,25 @@ SetTCPChecksum: com uma porta de entrada e outra de saída, este elemento
  os recebem.
  Muito associado as saídas de um IPRewriter para validar os pacotes alterados
  por ele.
+\end_layout
+
+\begin_layout Standard
+No caso deste trabalho, as 
+\shape italic
+vifs
+\shape default
+ são mantidas.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Escrever sobre as decisões tomadas quanto aos softwares
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -7226,6 +7359,21 @@ Inserir clicky
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Comandos para criação e execução, monitoramento e análise de erros estão
+ no apêndice 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+inserir o apendice
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
