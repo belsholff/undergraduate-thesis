@@ -18,10 +18,8 @@
 % Pacotes de citações
 % ---
 \usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
-\usepackage[num,abnt-url-package=url
-  ]{abntex2cite}	% Citações padrão ABNT
+\usepackage[num,abnt-url-package=url]{abntex2cite}	% Citações padrão ABNT
 % O carregamento da opção abnt-url-package=url corrige os hiperlinks com quebra de linha na bibliografia
-%\bibliographystyle{unsrt}
 % --- 
 % CONFIGURAÇÕES DE PACOTES
 % --- 
@@ -79,13 +77,20 @@ Citado #1 vezes nas páginas #2.
     breaklinks=true			% deve ser usado com o pacote breakurl, sem ele não fuciona
 }
 
+
+\renewcommand{\partref}{\Partref}
+\renewcommand{\tabref}{\Tabref}
+\renewcommand{\figref}{\Figref}
+\renewcommand{\chapref}{\Chapref}
+\renewcommand{\secref}{\Secref}
+
 % ---
 % compila o indice
 % ---
 \makeindex
 % ---
 \end_preamble
-\options 12pt,openright,twoside,a4paper,brazil,portuguese
+\options 12pt,openright,twoside,a4paper,brazil,brazilian
 \use_default_options false
 \maintain_unincluded_children false
 \language brazilian
@@ -213,7 +218,7 @@ Prof.
 \end_layout
 
 \begin_layout Tipo-trabalho
-Tese de Conclusão de Curso
+Trabalho de Conclusão de Curso
 \end_layout
 
 \begin_layout Standard
@@ -323,7 +328,7 @@ imprimirfolhaderosto*{}
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Ficha catalográfica entra aqui, se necessária.
@@ -336,7 +341,7 @@ Ficha catalográfica entra aqui, se necessária.
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Errata seguirá aqui, se necessária.
@@ -622,7 +627,8 @@ end{center}
 \align center
 
 \shape italic
-Em memória de Leonina, e dedicado àqueles que diante das
+Em memória de Leonina.
+ Dedicado àqueles que diante das
 \begin_inset Newline newline
 \end_inset
 
@@ -994,6 +1000,31 @@ status open
 
 \end_inset
 
+CSS
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Sigla em língua inglesa para Folhas de Estilo em Cascata
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
 CSV
 \begin_inset ERT
 status open
@@ -1198,6 +1229,56 @@ status open
 
 \end_inset
 
+IETF
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Sigla em língua inglesa para Força-Tarefa de Engenharia da Internet
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+IRTF
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Sigla em língua inglesa para Força-Tarefa de Pesquisa da Internet
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
 IP
 \begin_inset ERT
 status open
@@ -1261,6 +1342,31 @@ status open
 
  Sigla em língua inglesa para a junção dos nomes de Linux, Apache, MySQL
  e PHP
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+MAC
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Acrônimo em língua inglesa para Controle de Acesso ao Meio
 \end_layout
 
 \begin_layout Siglas
@@ -1565,6 +1671,31 @@ status open
 \end_inset
 
  Sigla em língua inglesa para Sistemas de Suporte às Operações
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+RED
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Acrônimo em língua inglesa para Detecção Adiantada Randômica
 \end_layout
 
 \begin_layout Siglas
@@ -1943,7 +2074,7 @@ software
 mento das redes de computadores.
  No âmbito de atualizações e manutenções, não são equipamentos modulares,
  o que somado ao fim do suporte ocasiona a troca dos aparelhos, prejudicando
- o capital investido (CAPEX) e o despesa operacional (OPEX) das empresas
+ o capital investido (CAPEX) e a despesa operacional (OPEX) das empresas
  usuárias.
 \end_layout
 
@@ -1991,12 +2122,22 @@ Um dos padrões em desenvolvimento nesse sentido é o de Virtualização de
  Funções de Rede (NFV), que sob responsabilidade do Gerente de Infraestrutura
  Virtual (VIM) aloca recursos de um hardware de propósito geral para prover
  funções personalizadas, habilitando escalabilidade, manutenibilidade, maior
- ciclo de vida de hardware e software, e economia de recursos e investimentos.
- Justamente os pontos fracos do modelo acoplado ao hardware.
- Citado anteriormente como exemplo, Click foi um dos casos de sucesso em
- matéria de desacoplar código, sendo o equivalente da época a uma função
+ ciclo de vida de hardware e software, e economia de recursos e investimentos
+ – justamente os pontos fracos do modelo acoplado ao hardware.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+projeção de nfv e cloud 
+\end_layout
+
+\end_inset
+
+Citado anteriormente como exemplo, Click foi um dos casos de sucesso em
+ matéria de desacoplar código, sendo o equivalente de sua época a uma função
  de rede virtual.
- Mais de uma década depois, sua existência e vantagens se tornaram parte
+ E mais de uma década depois, sua existência e vantagens se tornaram parte
  de um dos projetos de virtualização de dispositivos de rede: chama-se ClickOS
  
 \begin_inset CommandInset citation
@@ -2009,25 +2150,52 @@ key "martins_clickos_2014"
 \end_layout
 
 \begin_layout Standard
-ClickOS otimiza a trinca Click, Xen e MiniOS em uma plataforma integrável
- a soluções NFV 
+ClickOS otimiza a trinca Click, Projeto Xen 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "barham_xen_2003"
+
+\end_inset
+
+ e MiniOS 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Popuri_200-"
+
+\end_inset
+
+ em uma plataforma integrável a soluções NFV como mostra 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "ventre_performance_2016"
 
 \end_inset
 
- para uma fácil implementação de VNFs, com uma linguagem de marcação voltada
- para visão de fluxos, sendo de fácil legibilidade; para o provimento da
- camada de virtualização necessária, incluindo a gerência dos recursos das
- máquinas virtuais; e para prover um micro-kernel suficientemente robusto
- e pequeno para que as VNFs sejam executadas de maneira escalável com o
- devido isolamento em um ambiente de paravirtualização.
+, para: 
+\end_layout
+
+\begin_layout Alineas
+uma fácil implementação de VNFs com uma linguagem de marcação voltada para
+ visão de fluxos, sendo de fácil legibilidade;
+\end_layout
+
+\begin_layout Alineas
+para o provimento da camada de virtualização necessária, incluindo a gerência
+ dos recursos das máquinas virtuais;
+\end_layout
+
+\begin_layout Alineas
+para prover um 
+\shape italic
+micro-kernel
+\shape default
+ suficientemente robusto e pequeno para que as VNFs sejam executadas de
+ maneira escalável com o devido isolamento em um ambiente de paravirtualização.
 \end_layout
 
 \begin_layout Standard
 No entanto, até pela questão das disputas do nicho e pelo ainda recente
- desenvolvimento de soluções para provimento de VNFs a plataforma sofre
+ desenvolvimento de soluções para provimento de VNFs, a plataforma sofre
  com a falta de materiais didáticos, sejam em inglês ou português, mesmo
  aqueles que tratam apenas de Click, desestimulando seu uso em detrimento
  de outros semelhantes como atualmente acontece com P4 
@@ -2037,9 +2205,13 @@ key "Bosshart:2014:PPP:2656877.2656890"
 
 \end_inset
 
-, que está em evidência.
+.
  Como exemplo dessa questão, é possível citar a falta de documentações sobre:
- a integração de Click com os switches VALE 
+ a integração de Click com os 
+\shape italic
+switches
+\shape default
+ VALE 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "rizzo_vale_2012"
@@ -2053,9 +2225,9 @@ key "pfaff_extending_2009"
 
 \end_inset
 
- através de ClickOS; as documentações de instalação do mesmo; e a falta
- de exemplos sobre o correto uso dos elementos, exemplos implementados e
- comentados e documentação oficial incompleta.
+ através de ClickOS; as documentações de sua instalação; a falta de exemplos
+ sobre o correto uso dos elementos; exemplos implementados e comentados;
+ e documentação oficial incompleta.
 \end_layout
 
 \begin_layout Section
@@ -2072,9 +2244,12 @@ Este trabalho apresenta a plataforma para implementação de VNFs ClickOS,
 
 \begin_layout Standard
 Como objetivo específico, no trabalho implementa-se duas funções de rede
- virtuais em ClickOS detalhadamente, em um cenário comum ao balanceamento
- de carga em serviços de hospedagem web, e avalia a prova de conceito da
- plataforma a partir de testes.
+ virtuais em ClickOS detalhadamente, com um cenário comum ao balanceamento
+ de carga em serviços de hospedagem 
+\shape italic
+web
+\shape default
+, e avalia a prova de conceito da plataforma a partir de testes.
 \end_layout
 
 \begin_layout Section
@@ -2096,7 +2271,7 @@ reference "chap:ENTENDENDO-CLICKOS"
 
 \end_inset
 
- visa detalhar os mecanismos de ClickOS e Click para suas aplicações no
+ visa detalhar os mecanismos de Click e ClickOS para suas aplicações no
  trabalho; o 
 \begin_inset CommandInset ref
 LatexCommand formatted
@@ -2156,19 +2331,26 @@ reference "sec:Virtualização-de-Funções"
 
 \end_inset
 
-, uma rápida introdução ao contexto da Virtualização de Funções de Rede
- é exposta, com suas motivações e o caminho já trilhado que possibilita
- a discussão da virtualização de dispositivos de redes.
- Já na 
+, uma rápida introdução ao contexto de NFV é exposta, com suas motivações
+ e realizações que possibilitam a discussão da virtualização dos caros dispositi
+vos de rede.
+\end_layout
+
+\begin_layout Standard
+Já na 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "sec:Linux-Bridge"
 
 \end_inset
 
-, o switch virtual é posicionado dentro do cenário de virtualização, com
- o cuidado de explicar ao máximo seu mecanismo básico de uso, como insumo
- para o restante do trabalho.
+, o 
+\shape italic
+switch
+\shape default
+ virtual é posicionado dentro do cenário de virtualização, com o cuidado
+ de explicar ao máximo seu mecanismo básico de uso, como insumo para o restante
+ do trabalho.
 \end_layout
 
 \begin_layout Standard
@@ -2183,7 +2365,7 @@ reference "chap:ENTENDENDO-CLICKOS"
 \end_layout
 
 \begin_layout Section
-Virtualização de Funções de Rede 
+Virtualização de Funções de Rede – NFV
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Virtualização-de-Funções"
@@ -2194,9 +2376,9 @@ name "sec:Virtualização-de-Funções"
 \end_layout
 
 \begin_layout Standard
-O modelo NFV foi proposto em 2012 por grandes empresas de telecomunicações
- em conjunto com o Instituto de Padronização de Telecomunicações Europeu
- (ETSI), tendo a redução de CAPEX e de OPEX como principal objetivo.
+O modelo NFV foi proposto em 2012 pelas empresas de telecomunicações em
+ conjunto com o Instituto de Padronização de Telecomunicações Europeu (ETSI),
+ tendo a redução de CAPEX e de OPEX como principal objetivo.
  Para tal, a proposta é desacoplar as funções em software dos equipamentos
  de rede hospedeiros 
 \begin_inset CommandInset citation
@@ -2215,14 +2397,24 @@ Para o ETSI, paradigma já possui uma arquitetura especificada, embora ainda
  Os itens mais importantes são descritos da seguinte forma:
 \end_layout
 
-\begin_layout Itemize
-Infraestrutura NFV (NFVI): combinação de recursos de hardware e software
+\begin_layout Alineas
+Infraestrutura NFV (NFVI): combinação de recursos de 
+\shape italic
+hardware
+\shape default
+ e 
+\shape italic
+software
+\shape default
  sobre os quais as funções de rede virtualizadas são desenvolvidas.
- As abstrações dos recursos são atingidas ao inserir uma camada de virtualização
- usando hypervisors, desacoplando então as funções de rede dos recursos
- físicos.
+ As abstrações dos recursos são atingidas ao inserir sobre elas uma camada
+ de virtualização usando 
+\shape italic
+hypervisors
+\shape default
+, habilitando então a separação entre as funções de rede e os recursos físicos.
  Máquinas Virtuais (VMs) representam o uso de recursos de processamento
- e armazenamento, enquanto links e nós virtuais (sistemas operacionais em
+ e armazenamento, enquanto elos e nós virtuais (sistemas operacionais em
  VMs) representam o uso de recursos de rede 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -2231,34 +2423,44 @@ key "mijumbi_network_2016"
 \end_inset
 
 .
- São exemplos de hypervisors o projeto Xen, KVM, HyperV, VMware vSphere,
- VirtualBox 
-\begin_inset Note Note
-status collapsed
+ São exemplos de 
+\shape italic
+hypervisors
+\shape default
+ o Projeto Xen, KVM 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kvm_article"
 
-\begin_layout Plain Layout
-ref
-\end_layout
+\end_inset
+
+, HyperV 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "scooley_introducao_hyperV"
+
+\end_inset
+
+, VMware vSphere 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "vsphere"
+
+\end_inset
+
+, VirtualBox 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "watson_virtualbox:_2008"
 
 \end_inset
 
 .
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-AQUIIIIIIIIII
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Serviços e Funções de Rede Virtuais: as funções de rede são funcionalidades
- dentro de uma infraestrutura de rede com interfaces externas e comportamento
+\begin_layout Alineas
+Serviços e Funções de Rede Virtuais: funções de rede são normalmente dispositivo
+s dentro de uma infraestrutura de rede com interfaces externas e comportamento
  bem definidas 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -2269,7 +2471,11 @@ key "etsi2014gs"
 .
  Alguns exemplos mais comuns são: firewall, roteadores, balanceadores de
  carga.
- Boa parte delas também é conhecida pelo termo Middlebox 
+ Boa parte delas também é conhecida pelo termo 
+\shape italic
+middlebox
+\shape default
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "rfc3234"
@@ -2279,10 +2485,17 @@ key "rfc3234"
 .
  Já as VNFs são representações implementadas e implantadas em recursos virtuais,
  que podem conter diversos elementos internos de rede, e ser instalada em
- diversas soluções virtualizadas como VMs e containers Docker ou Linux 
+ diversas soluções virtualizadas como VMs e containers Docker 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Merkel:2014:DLL:2600239.2600241"
+
+\end_inset
+
+ ou Linux 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "biederman2006multiple"
 
 \end_inset
 
@@ -2296,21 +2509,21 @@ key "mijumbi_network_2016"
 
 .
  Do ponto de vista do usuário, as VNFs devem ser idênticas as funções de
- rede 
+ rede, inclusive em termos de desempenho 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "mijumbi_network_2016"
 
 \end_inset
 
-, inclusive em termos de desempenho.
+.
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Alineas
 Orquestração e Gerenciamento NFV (NFV MANO): funcionalidades para prover
  as VNFs e suas operações relacionadas, tais como as configurações de recursos,
- de ciclo de vida, e os comportamentos das funções virtuais, sob responsabilidad
-e do VIM.
+ de ciclo de vida, e o comportamento das funções virtuais, sob responsabilidade
+ do VIM.
  Isso inclui a orquestração e o gerenciamento do ciclo de vida de recursos
  de software e hardware que dão suporte a virtualização.
  NFV MANO foca em tarefas especificas para gerenciamento de virtualização
@@ -2329,12 +2542,56 @@ key "mijumbi_network_2016"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status collapsed
+\begin_inset Float figure
+wide false
+sideways false
+status open
 
 \begin_layout Plain Layout
-Inserir figura.
- De preferência, direta do ETSI
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Representação do modelo NFV
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Representação-do-modelo-NFV"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/modelo_NFV.png
+	lyxscale 75
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Adaptado de 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "han_network_2015"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2344,29 +2601,30 @@ Inserir figura.
 
 \begin_layout Standard
 Com a arquitetura descrita, várias implementações tiveram seu desenvolvimento
- inciado e outros núcleos de padronização como a Força-Tarefa de Engenharia
- da Internet (IETF)
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-ref
-\end_layout
+ inciado, como OPNFV 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "price2012opnfv"
 
 \end_inset
 
- passaram a discutir o NFV em suas especificações.
- OPNFV, OpenStack, e IETF SFC WG e o IRTF NFV RG 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-ref
-\end_layout
+ e OpenStack 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "sefraoui_openstack:_2012"
 
 \end_inset
 
-são exemplos, ainda que questões técnicas e de negócios estejam abertas.
+ e órgãos de padronização já discutem formas de universalizá-lo mesmo que
+ questões técnicas e de negócios estejam abertas, como em NFVRG 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "_irtf_nfvrg_2015"
+
+\end_inset
+
+ da Força-Tarefa de Pesquisa da Internet (IRTF), associada a Força-Tarefa
+ de Engenharia da Internet (IETF).
  Segundo 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -2375,11 +2633,17 @@ key "mijumbi_network_2016"
 \end_inset
 
 , algumas dessas questões são: a) controle e gerência de equipamentos legados;
- b) quais funções de rede virtuais devem ser implantadas em datacenters
- ou operadoras; c) quais devem estar dentro de VMs ou containers; d) quais
- recursos do NFVI são necessários para desenvolver uma determinada função
- virtual; e) quais os requerimentos operacionais de ambientes que operam
- VNFs e equipamentos legados.
+ b) quais funções de rede virtuais devem ser implantadas em 
+\shape italic
+datacenters
+\shape default
+ ou operadoras; c) quais devem estar dentro de VMs ou 
+\shape italic
+containers
+\shape default
+; d) quais recursos do NFVI são necessários para desenvolver uma determinada
+ função virtual; e) quais os requerimentos operacionais de ambientes que
+ operam VNFs e equipamentos legados.
 \end_layout
 
 \begin_layout Standard
@@ -2387,12 +2651,19 @@ O modelo projetado traz diversas vantagens em relação ao modelo de software
  acoplado a hardware além das economias financeiras por si só.
  A programabilidade das funções de rede permitem um desenvolvimento, manutenção
  e implantação de acordo com os anseios do cliente, de maneira mais rápida
- e estimulando um movo mercado de serviços localmente.
- Já o advento da virtualização traz a tona o uso de recursos de hardware
+ e estimulando um novo mercado de serviços de software para um novo extrato
+ de empresas.
+ Já o advento da virtualização traz a tona o uso de recursos de 
+\shape italic
+hardware
+\shape default
  sob demanda, agrupando o que antes eram diversos equipamentos com recursos
- mal utilizados em um conjunto de hardwares potentes, capaz de escalar recursos
- conforme o uso da rede se torne mais intenso, com custo mínimo para o desempenh
-o.
+ mal utilizados em um conjunto de 
+\shape italic
+hardwares
+\shape default
+ potentes, capaz de escalar recursos conforme o uso da rede se torne mais
+ intenso, com custo mínimo para o desempenho, e menor para o investidor.
 \end_layout
 
 \begin_layout Section
@@ -2406,8 +2677,12 @@ Linux Bridge
 \end_layout
 
 \begin_layout Standard
-Os dispositivos de rede chamados comutadores (switches) são resposáveis
- por conectar diversos elos de rede entre si para criar uma rede local 
+Os dispositivos de rede chamados comutadores (
+\shape italic
+switches
+\shape default
+) são responsáveis por conectar diversos nós entre si para assim facilitar
+ uma rede local 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "varis2012anatomy"
@@ -2415,7 +2690,7 @@ key "varis2012anatomy"
 \end_inset
 
 .
- O objetivo da versão virtualizada desses equipamentos é basicamente igual
+ O objetivo da versão virtualizada desses equipamentos é basicamente igual,
  embora guarde diferenças de implementação como visto em 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -2424,23 +2699,26 @@ key "pfaff_extending_2009"
 \end_inset
 
 .
- Os switches virtuais fazem parte da nova camada de acesso de rede que ainda
- está emergindo, e provêem conectividade dentro e entre VMs, involvendo
- muitas das mesmas funções providas pelas versões físicas 
+ Os 
+\shape italic
+switches
+\shape default
+ virtuais provêem conectividade entre VMs e destas com o mundo externo,
+ envolvendo muitas das mesmas funções providas pelas versões físicas 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "pfaff_extending_2009"
 
 \end_inset
 
-.
+ para centenas de dispositivos virtualizados por hospedeiro.
 \end_layout
 
 \begin_layout Standard
 Um dos expoentes dessa classe é o OpenVSwitch, que leva programabilidade
  para as redes ao abordar a questão de Redes Definidas por Software (SDNs).
  No entanto outros mais simples podem ser úteis em determinadas situações.
- É o caso do VALE Switch 
+ É o caso do VALE 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "rizzo_vale_2012"
@@ -2454,9 +2732,24 @@ key "varis2012anatomy"
 
 \end_inset
 
-, que é o switch que este trabalho faz uso.
- O Linux Bridge faz parte do kernel Linux como um módulo e é dividido de
- forma grosseira em quatro partes 
+, que é o 
+\shape italic
+switch
+\shape default
+ deste trabalho.
+ O Linux Bridge faz parte do 
+\shape italic
+kernel
+\shape default
+ Linux 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "noauthor_linux_2018"
+
+\end_inset
+
+ como um módulo e é dividido de forma grosseira em quatro componentes como
+ a maioria desses dispositivos 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "varis2012anatomy"
@@ -2466,29 +2759,36 @@ key "varis2012anatomy"
 : 
 \end_layout
 
-\begin_layout Itemize
-Conjunto de portas: usado para encaminhar tráfego entre os dispositivos
- ligados a ele, sejam outros switches ou clientes finais;
+\begin_layout Alineas
+O conjunto de portas usado para encaminhar tráfego entre os dispositivos
+ ligados a ele, reais ou virtuais;
 \end_layout
 
-\begin_layout Itemize
-Plano de controle: usado basicamente para executar o Protocolo de Árvore
- Geradora (STP), que calcula a árvore geradora mínima para a rede local,
- prevenindo que repetições infinitas quebrem o sistema;
+\begin_layout Alineas
+O plano de controle usado para executar o Protocolo de Árvore Geradora (STP),
+ que calcula a árvore geradora mínima para a rede local, prevenindo que
+ repetições infinitas quebrem a rede;
 \end_layout
 
-\begin_layout Itemize
-Plano de encaminhamento: responsável por processar fragmentos de pacotes
- que entram pela porta de rede, fazendo uma decisão de encaminhamento sobre
- qual porta deve receber os dados;
+\begin_layout Alineas
+O plano de encaminhamento responsável por processar quadros que entram pela
+ porta de rede, fazendo uma decisão de encaminhamento sobre qual porta deve
+ recebê-los;
 \end_layout
 
-\begin_layout Itemize
-Aprendizado de MACs: mantém rastreado em um banco de dados ou tabela a porta
- de rede na qual o MAC está conectado, e portanto, servindo de consulta
- para encaminhar os fragmentos para seu destinatário.
- Caso o MAC não conste na tabela, o fragmento é enviado para todas as portas
- exceto a de origem.
+\begin_layout Alineas
+O aprendizado de endereços de Controle de Acesso ao Meio (MAC) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "noauthor_ieee_2016"
+
+\end_inset
+
+ mantém registrado em um banco de dados (tabela) a porta de rede (no caso,
+ virtual) na qual o endereço MAC está conectado, e portanto, servindo de
+ consulta para encaminhar quadros para seu destinatário.
+ Caso não conste o endereço, o quadro é enviado para todas as portas exceto
+ a de origem.
 \end_layout
 
 \begin_layout Standard
@@ -2530,7 +2830,7 @@ name "fig:Estrutura-das-interfaces-bridge"
 
 \begin_layout Plain Layout
 \align center
-Fonte: 
+Fonte: Adaptado de 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "noauthor_xen_nodate"
@@ -2553,42 +2853,100 @@ reference "fig:Estrutura-das-interfaces-bridge"
 
 \end_inset
 
- retrata o conjunto de portas de um switch virtual.
+ retrata o conjunto de portas de um 
+\shape italic
+switch
+\shape default
+ virtual.
  Ele possui quatro portas ocupadas, sendo duas com interfaces virtuais de
- duas VMs convidadas (vif4.0 e vif7.0), uma porta com a interface física do
- hospedeiro para comunicação externa a camada de virtualização, e por último
- uma porta conectada ao elemento de rede que identifica o switch conectado.
- Este último recebe um IP caso queira que o hospedeiro esteja conectado
- a rede dos convidados.
+ duas VMs convidadas (
+\family typewriter
+vif4.0
+\family default
+ e 
+\family typewriter
+vif7.0
+\family default
+), uma porta com a interface física do hospedeiro para comunicação externa
+ a camada de virtualização, e por último uma porta conectada ao elemento
+ de rede que identifica o comutador conectado.
+ Este último recebe um endereço do Protocolo de Internet (IP) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rfc791"
+
+\end_inset
+
+ caso queira que o hospedeiro esteja conectado a rede dos convidados.
 \end_layout
 
 \begin_layout Standard
-Dada a rede virtual criada e configurada por um assistente como o brctl
- no GNU/Linux, um conjunto de pacotes pode ser lançado da dom4 para a dom7
+Dada o comutador virtual criado e configurado por um assistente como o 
+\family typewriter
+brctl
+\family default
+ no GNU/Linux, um conjunto de quadros pode ser lançado da VM 
+\family typewriter
+dom4
+\family default
+ para a 
+\family typewriter
+dom7
+\family default
  através da camada de enlace.
- Dado o conjunto de portas, estes fragmentos trafegam como esperado a partir
- do momento que: o plano de controle não detecta caminhos circulares; o
- plano de encaminhamento solicita a informação sobre qual porta enviar o
- fluxo para a dom7, e recebe essa informação do plano de aprendizado de
- MACs, seja contendo em suas tabelas ou fazendo a busca.
+ Dado o conjunto de portas, os quadros trafegam como esperado a partir do
+ momento que: o plano de controle não detecta caminhos circulares; o plano
+ de encaminhamento solicita a informação sobre qual porta enviar o fluxo
+ para a 
+\family typewriter
+dom7
+\family default
+, e recebe essa informação do plano de aprendizado de MACs através de consulta
+ ao seu banco de dados ou fazendo uma busca.
 \end_layout
 
 \begin_layout Standard
-Após realizar as configurações, a comunicação entre as duas VMs se dá da
- seguinte forma: dom4 envia fragmentos através da sua interface de rede
- de saída, entrando então na vif4.0, que por sua vez encaminha automaticamente
- em saída para o processamento dos componentes do switch citados anteriormente.
- Detectado que o destino de saída é pela porta conectada a vif7.0, o switch
- encaminha os fragmentos até a sua entrada, que por sua vez encaminha automatica
-mente em saída para a interface de rede da máquina virtual.
- Um detalhe que a partir do hospedeiro é possível saber o que trafega nessa
- rede virtual, fazendo da segurança deste, primordial.
+Após realizar as configurações, a comunicação entre as duas máquinas virtuais
+ se dá da seguinte forma: 
+\family typewriter
+dom4
+\family default
+ envia quadros através da sua interface de rede de saída, entrando então
+ na interface virtual 
+\family typewriter
+vif4.0
+\family default
+, que por sua vez os encaminha automaticamente para o processamento dos
+ componentes do 
+\shape italic
+switch
+\shape default
+ citados anteriormente.
+ Tendo o destino sido detectado na porta a qual se conecta a 
+\family typewriter
+vif7.0
+\family default
+, o 
+\shape italic
+switch
+\shape default
+ encaminha os quadros até a sua entrada, que por sua vez encaminha automaticamen
+te em saída para a interface de rede da VM.
+ Um detalhe importante a se comentar é que todo esse tráfego é transparente
+ para o hospedeiro, fazendo de sua segurança e isolamento algo primordial.
 \end_layout
 
 \begin_layout Standard
-Uma das formas de anexar VMs ao switch virtual criado é através dos arquivos
- de configuração de recursos das próprias.
- No caso do Xen, com as entradas vif = [ ].
+Uma das formas de anexar VMs ao 
+\shape italic
+switch
+\shape default
+ virtual criado é através dos arquivos de configuração de recursos das próprias.
+ No caso do Xen, com as entradas 
+\family typewriter
+vif = [ ]
+\family default
+.
  A 
 \begin_inset CommandInset ref
 LatexCommand formatted
@@ -2597,8 +2955,16 @@ reference "fig:Uma-aplicação-dos"
 \end_inset
 
  demonstra um exemplo mais concreto em seu topo, porém um exemplo simplificado
- é vif=[ 'bridge=mybridge' ], onde o Xen atribui aleatoriamente um endereço
- MAC, porém conectada ao switch virtual mybridge 
+ é 
+\family typewriter
+vif=[ 'bridge=mybridge' ]
+\family default
+, onde o Xen atribui aleatoriamente um endereço MAC e conecta a máquina
+ ao comutador virtual 
+\family typewriter
+mybridge
+\family default
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "noauthor_xen_nodate"
@@ -2606,120 +2972,6 @@ key "noauthor_xen_nodate"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-OBS: Favor considerar a necessidade do trecho abaixo desta seção.
- Me parece supérfulo e muito detalhista.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-ver proxima nota
-\end_layout
-
-\end_inset
-
-São três as principais estruturas de dados que provém as funcionalidades
- necessárias para sua operação.
- A principal delas é a net_bridge, que mantém todas as informações sobre
- a cofiguração de seu switch virtual.
- Cada porta da bridge guarda dados na net_bridge_port, que contém parâmetros
- específicos sobre a porta que representa.
- Por último, a estrutura net_bridge_fdb_entry representa uma entrada na
- tabela de encaminhamento 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "varis2012anatomy"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Estrutura de dados do Linux Bridge
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Estrutura-de-dados"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/linux_bridge_data_structure.png
-	lyxscale 95
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-Fonte: 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "varis2012anatomy"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Analisando a 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:Estrutura-de-dados"
-
-\end_inset
-
-, a estrutura net_bridge mantém uma referência para cada estrutura net_bridge_po
-rt criada por uma porta; mantém outra referência para a interface de rede
- que ela representa; por fim, uma referência a cada tabela de encaminhamento
- existente.
- 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-continuar somente se necessário
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Chapter
@@ -2733,6 +2985,41 @@ name "chap:ENTENDENDO-CLICKOS"
 
 \end_layout
 
+\begin_layout Standard
+Este capítulo expôe de forma aprofundada as duas principais tecnologias
+ utilizadas neste trabalho.
+ Na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:Click"
+
+\end_inset
+
+, Click é dissecado com detalhes sobre seu funcionamento, entregando uma
+ literatura básica para que seja possível compreender e posteriormente desenvolv
+er funções de rede a partir do zero.
+ Alguns pequenos problemas encontrados durante o desenvolvimento deste trabalho
+ também recebem destaque, junto com seu principal caso de uso atual no âmbito
+ de NFV, e sua ferramenta de geração de grafos para maior visibilidade quando
+ necessário.
+ 
+\end_layout
+
+\begin_layout Standard
+Já na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:ClickOS"
+
+\end_inset
+
+, o mesmo detalhamento com relação a tecnologia ClickOS e seu uso é feito,
+ mantendo o cuidado com a função de uma literatura de consulta para o leitor.
+ Todo o processo para a instanciação de uma máquina virtual é citado, mesmo
+ de forma ampla, deixando a implementação para capítulos posteriores.
+ 
+\end_layout
+
 \begin_layout Section
 \begin_inset CommandInset label
 LatexCommand label
@@ -2744,12 +3031,19 @@ Click
 \end_layout
 
 \begin_layout Standard
-A arquitetura Click foi idealizada por Robert Morris, Eddie Kohler e sua
- equipe do Laboratório de Ciências da Computação do Instituto Tecnológico
- de Massachusetts (MIT) em 1999, que propuseram e desenvolveram uma plataforma
- em hardware geral e em software livre, para permitir o desenvolvimento
- de funções de rede sob demanda, e sem as limitações corriqueiramente impostas
- por soluções proprietárias em redes.
+A arquitetura Click foi idealizada por Robert Morris, Eddie Kohler e a equipe
+ do Laboratório de Ciências da Computação do Instituto Tecnológico de Massachuse
+tts (MIT) em 1999, que propuseram e desenvolveram uma plataforma em 
+\shape italic
+hardware
+\shape default
+ geral e em 
+\shape italic
+software
+\shape default
+ livre, para permitir o desenvolvimento de funções de rede sob demanda,
+ e sem as limitações corriqueiramente impostas por soluções proprietárias
+ em redes.
  Não há restrição de camadas ou protocolos de transmissão, bastando adicionar
  seu suporte, porém o foco está na camada 2 e 3 do modelo OSI 
 \begin_inset CommandInset citation
@@ -2758,21 +3052,31 @@ key "day_osi_1983"
 
 \end_inset
 
-, com diversas operações na camada de transporte.
+, com diversas operações na camada 4.
 \end_layout
 
 \begin_layout Standard
 Click trabalha com uma unidade chamada elemento.
  Ele representa a execução de uma atividade esperada no pacote recebido
  e deve ser conectado a outros como em um grafo, permitindo o fluxo de pacotes.
- Essa junção cria uma função de rede como um firewall, balanceador de carga,
- ou qualquer outro processador de pacotes.
- Fazem parte do framework uma gama considerável de elementos pré-implementados
- pelos desenvolvedores (cerca de 300), em código aberto, e podem ser alterados
- conforme desejado desde que o editor tenha conhecimentos em C++ 
+ A junção de vários desses obedecendo uma lógica cria uma VNF como um 
+\shape italic
+firewall
+\shape default
+, balanceador de carga, ou qualquer outro processador de pacotes.
+ Fazem parte do projeto cerca de trezentos elementos pré-implementados pelos
+ desenvolvedores e parceiros, em código aberto, e podem ser alterados conforme
+ desejado desde que o editor tenha conhecimentos em C++ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "morris_click_1999"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Stroustrup:2013:CPL:2543987"
 
 \end_inset
 
@@ -2812,7 +3116,7 @@ name "fig:Descrição-gráfica-de"
 \align center
 \begin_inset Graphics
 	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/click_element.png
-	scale 50
+	scale 65
 
 \end_inset
 
@@ -2821,7 +3125,7 @@ name "fig:Descrição-gráfica-de"
 
 \begin_layout Plain Layout
 \align center
-Fonte: 
+Fonte: Adaptado de 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "morris_click_1999"
@@ -2848,68 +3152,120 @@ key "kohler_click:_2018"
 :
 \end_layout
 
-\begin_layout Itemize
-Ethernet: EtherEncap, EtherSwitch, EtherVLANEncap, SetEtherAddress;
+\begin_layout Alineas
+Protocolo Ethernet: 
+\family typewriter
+EtherEncap, EtherSwitch, EtherVLANEncap, SetEtherAddress
+\family default
+;
 \end_layout
 
-\begin_layout Itemize
-ARP: ARPQuerier, ARPResponder; ARPTable; CheckARPHeader;
+\begin_layout Alineas
+Protocolo ARP: 
+\family typewriter
+ARPQuerier, ARPResponder; ARPTable; CheckARPHeader
+\family default
+;
 \end_layout
 
-\begin_layout Itemize
-IPv4: CheckIPHeader, IPEncap, IPFragmenter, SetIPAddress, SetIPChecksum;
+\begin_layout Alineas
+Protocolo IPv4: 
+\family typewriter
+CheckIPHeader, IPEncap, IPFragmenter, SetIPAddress, SetIPChecksum
+\family default
+;
 \end_layout
 
-\begin_layout Itemize
-IPv6: CheckIP6Header, SetIP6Address, ProtocolTranslator64, ProtocolTranslator46;
+\begin_layout Alineas
+Protocolo IPv6: 
+\family typewriter
+CheckIP6Header, SetIP6Address, ProtocolTranslator64, ProtocolTranslator46
+\family default
+;
 \end_layout
 
-\begin_layout Itemize
-Classificadores: Classifier, IPClassifier;
+\begin_layout Alineas
+Classificadores: 
+\family typewriter
+Classifier, IPClassifier
+\family default
+;
 \end_layout
 
-\begin_layout Itemize
-Roteamento: StaticIPLookup, LinearIPLookup, DirectIPLookup, IPRouteTable;
+\begin_layout Alineas
+Roteamento: 
+\family typewriter
+StaticIPLookup, LinearIPLookup, DirectIPLookup, IPRouteTable
+\family default
+;
 \end_layout
 
-\begin_layout Itemize
-NAT: IPRewriter, ICMPRewriter, TCPRewriter, RoundRobinIPMapper, SouceIPHashMappe
-r;
+\begin_layout Alineas
+NAT: 
+\family typewriter
+IPRewriter, ICMPRewriter, TCPRewriter, RoundRobinIPMapper, SouceIPHashMapper
+\family default
+;
 \end_layout
 
-\begin_layout Itemize
-Modelagem de tráfego (traffic shaping): BandwidthShaper, RatedSplitter,
- BandwidthRatedSplitter, Shaper;
+\begin_layout Alineas
+Modelagem de tráfego (
+\shape italic
+traffic shaping
+\shape default
+): 
+\family typewriter
+BandwidthShaper, RatedSplitter, BandwidthRatedSplitter, Shaper
+\family default
+;
 \end_layout
 
-\begin_layout Itemize
-Escalonamento (scheduling): PrioSched, RoundRobinSched;
+\begin_layout Alineas
+Escalonamento (
+\shape italic
+scheduling
+\shape default
+): 
+\family typewriter
+PrioSched, RoundRobinSched
+\family default
+;
 \end_layout
 
-\begin_layout Itemize
-Gerenciamento de filas: RED (Detecção Adiantada Randômica), CoDel (Controlled
- Delay);
+\begin_layout Alineas
+Gerenciamento de filas: 
+\family typewriter
+RED
+\family default
+ (Detecção Adiantada Randômica), 
+\family typewriter
+CoDel
+\family default
+ (Controlled Delay);
 \end_layout
 
-\begin_layout Itemize
-Redes sem Fio: WifiEncap, WifiDecap, WirelessInfo, BeaconScanner, OpenAuthReques
-er;
+\begin_layout Alineas
+Redes sem Fio: 
+\family typewriter
+WifiEncap, WifiDecap, WirelessInfo, BeaconScanner, OpenAuthRequeser
+\family default
+;
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Alineas
 e demais elementos de controle, de testes e de procura de erros.
 \end_layout
 
 \begin_layout Standard
 A reutilização de código é visível, porém a legibilidade é tão importante
  quanto.
- Para isso, a ferramenta dispõe de uma linguagem de entrada própria que
- esconde sua linguagem de programação base.
+ Para isso, a ferramenta dispõe de uma linguagem marcação própria que esconde
+ sua linguagem de programação base.
  Ela evidencia uma visão em grafos de fluxo, onde os elementos são nós e
  as arestas são as conexões por onde fluem os pacotes.
  Cada elemento possui especificações sobre o número de portas de entrada
- e saída, que devem ser criados e conectados no decorrer da implementação,
- no arquivo da função virtual.
+ e saída, que devem ser conectadas no decorrer da implementação, no arquivo
+ da função virtual.
  Veja a 
 \begin_inset CommandInset ref
 LatexCommand formatted
@@ -2928,13 +3284,28 @@ reference "fig:Uma-aplicação-dos"
 \end_layout
 
 \begin_layout Standard
-As portas podem ser do tipo de fluxo pull ou push, imitando a relação produtor-c
-onsumidor.
- As portas pull aguardam para enviar (saída) ou requisitam para receber
- (entrada) pacotes do seu vizinho, respectivamente.
- Já as portas push não realizam esse procedimento, e portanto, os elementos
- que as utilizam devem estar sempre disponíveis para enviar e receber pacotes
- ou eles se perderão.
+Falando sobre portas, elas podem ser do tipo de fluxo 
+\shape italic
+pull
+\shape default
+ ou 
+\shape italic
+push
+\shape default
+, imitando a relação produtor-consumidor presente em sistemas distribuídos.
+ Os elementos com portas 
+\shape italic
+pull
+\shape default
+ aguardam um sinal para enviar quadros ou requisitam através de um para
+ receber outros do seu elemento vizinho.
+ Já as portas 
+\shape italic
+push
+\shape default
+ possuem um comportamento de envio indiscriminado, e portanto, os elementos
+ que as utilizam devem estar sempre disponíveis para receber pacotes ou
+ eles se perdem.
  Por fim, há portas chamadas agnósticas, que assumem o comportamento do
  fluxo de processamento predominante
 \begin_inset CommandInset citation
@@ -2956,31 +3327,57 @@ reference "fig:Condicionador-de-tráfego"
 
 \begin_layout Standard
 A existência de ambos se dá pela natureza do uso de uma rede de alta velocidade
- compartilhada como as redes Ethernet 
+ compartilhada como as redes 
+\shape italic
+Ethernet
+\shape default
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "noauthor_ieee_2016"
 
 \end_inset
 
-: esvazie seu buffer de entrada o mais rápido possível para que possa continuar
- recebendo pacotes sem perdas; aguarde a sua vez para enviar a rede o mais
+: esvazie seu 
+\shape italic
+buffer
+\shape default
+ de entrada de quadros o mais rápido possível para que possa continuar recebendo
+-os sem perdas; aguarde a sua vez para enviar os seus quadros à rede o mais
  rápido possível sem degradar outros pacotes.
- Logo, percebe-se que o mecanismo push compõe o recebimento e o mecanismo
- pull o envio.
- Já as filas, que são o único elemento capaz de converter o fluxo de processamen
-to com portas push para aquele com portas pull, são responsáveis por armazenar
- os pacotes processados mas impedidos de irem ao buffer de saída do equipamento
- (rede bastante ocupada, com muita entrega e pouca saída de pacotes).
+ Desta forma, percebe-se que o mecanismo 
+\shape italic
+push
+\shape default
+ compõe o recebimento e o mecanismo 
+\shape italic
+pull
+\shape default
+ o envio.
+ Já as filas, que são o único elemento capaz de converter o fluxo de 
+\shape italic
+push
+\shape default
+ para 
+\shape italic
+pull
+\shape default
+, são responsáveis por armazenar os pacotes processados mas impedidos de
+ ir ao 
+\shape italic
+buffer
+\shape default
+ de saída do equipamento (rede bastante congestionada, com muito recebimento
+ de quadros pelos dispositivos e por outro lado pouca saída).
 \end_layout
 
 \begin_layout Standard
-Ainda em relação as portas, algumas regras devem ser obedecidas: Olhando
- a partir de um elemento, uma dada saída não pode ser conectada a várias
- entradas de elementos seguintes, pois geraria efeito de duplicidade e inconsist
-ência na rede; a mesma negativa se observa para as entradas do tipo pull;
- nenhum outro elemento é capaz de converter tipos de fluxo exceto as filas,
- como comentado.
+Ainda em relação as portas, algumas regras devem ser obedecidas: olhando
+ a partir de um elemento, uma dada porta de saída não pode ser conectada
+ a várias portas de entrada de outros elementos, pois geraria efeito de
+ duplicidade e inconsistência na rede; as portas de entrada do tipo pull
+ não podem se conectar a mais de uma porta de saída; e nenhum outro elemento
+ é capaz de converter tipos de fluxo exceto as filas, como comentado.
 \end_layout
 
 \begin_layout Standard
@@ -3041,18 +3438,56 @@ key "morris_click_1999"
 \end_layout
 
 \begin_layout Standard
-Dados parâmetros do elemento classificador, os pacotes que entram nele com
- diferentes características possuem quatro caminhos: a) um chaveador de
- fluxo (Meter) que limita em no máximo 7500 pacotes por segundo despejados
- em uma fila ou descarta todos os pacotes; b) uma fila acoplada a um elemento
- limitador de fluxo (Shaper), que solicita pacotes a uma taxa de no máximo
- 10000 pacotes por segundo; c) outro chaveador de fluxo com 12500 pacotes
- por segundo em outra fila, ou a passagem no elemento que marca o campo
- de serviços diferenciados do cabeçalho IP para o valor quatro antes de
- despejar em uma quarta fila; d) quarta fila aliás, que também recebe o
- fluxo que sai pela porta quatro do classificador.
- O percurso dos três primeiros caminhos terminam em um escalonador do tipo
- Round Robin 
+Dado os parâmetros do elemento classificador (
+\family typewriter
+Classifier
+\family default
+), os pacotes que entram nele com diferentes características possuem quatro
+ caminhos:
+\end_layout
+
+\begin_layout Alineas
+Um chaveador de fluxo (
+\family typewriter
+Meter
+\family default
+) que limita em no máximo 7500 quadros por segundo o fluxo, sendo então
+ despejados em uma fila caso respeitem essa taxa ou então descartados pela
+ outra porta de saída;
+\end_layout
+
+\begin_layout Alineas
+Uma fila acoplada a um elemento limitador de fluxo (
+\family typewriter
+Shaper
+\family default
+), que solicita pacotes a uma taxa de no máximo 10000 quadros por segundo
+ através de porta 
+\shape italic
+pull
+\shape default
+;
+\end_layout
+
+\begin_layout Alineas
+Outro chaveador de fluxo com 12500 quadros por segundo em outra fila, ou
+ a passagem no elemento que marca o campo de serviços diferenciados do cabeçalho
+ IP para o valor 4 antes de despejar em uma quarta fila;
+\end_layout
+
+\begin_layout Alineas
+Quarta fila aliás, que também recebe o fluxo que sai pela porta 4 do classificad
+or.
+ 
+\end_layout
+
+\begin_layout Standard
+O percurso dos três primeiros caminhos terminam em um escalonador do tipo
+ 
+\shape italic
+Round Robin
+\shape default
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "RASMUSSEN2008617"
@@ -3061,8 +3496,11 @@ key "RASMUSSEN2008617"
 
 , que após seu processamento, este ainda sofre o processamento de outro
  escalonador baseado em prioridade ordenada, onde a primeira entrada tem
- precedência sobre a seguinte.
- Ao fim, os pacotes saem pela interface escolhida no elemento de envio (ToDevice
+ precedência sobre as seguintes e assim segue da esquerda para a direita.
+ Ao fim, os pacotes saem pela interface escolhida no elemento de envio (
+\family typewriter
+ToDevice
+\family default
 ).
 \end_layout
 
@@ -3075,12 +3513,26 @@ reference "fig:Condicionador-de-tráfego"
 \end_inset
 
 , ao passar pelas filas a coloração das portas muda, indicando a mudança
- de fluxo de processamento de push para pull e o papel das filas nesse quesito
- está representado.
+ de fluxo de processamento de 
+\shape italic
+push
+\shape default
+ para 
+\shape italic
+pull
+\shape default
+.
  Outra observação interessante é quanto a fila do quarto caminho que recebe
  as saídas de processamento de dois elementos, evidenciando que as portas
- de entrada push, ao contrário das portas pull, podem receber fluxos de
- múltiplas saídas.
+ de entrada 
+\shape italic
+push
+\shape default
+, ao contrário das portas 
+\shape italic
+pull
+\shape default
+, podem receber fluxos de múltiplas portas de saída.
 \end_layout
 
 \begin_layout Standard
@@ -3096,27 +3548,50 @@ reference "fig:Uma-aplicação-dos"
  para atuar sobre o protocolo IP: 
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Alineas
 Todos os momentos onde :: é utilizado significa uma definição de nome para
  o elemento criado.
  Toda vez que uma -> é utilizada significa uma ligação entre a porta de
  saída X e a porta de entrada Y de dois elementos;
 \end_layout
 
-\begin_layout Itemize
-O AdressInfo é como um banco de dados rústico, para guardar dados sobre
- um dispositivo e usar a macro atribuída para representá-los;
+\begin_layout Alineas
+O 
+\family typewriter
+AdressInfo
+\family default
+ é como um banco de dados rústico, para guardar dados sobre um dispositivo
+ e usar a macro atribuída para representá-los;
 \end_layout
 
-\begin_layout Itemize
-FromDevice e ToDevice fazem o recebimento e o envio de fragmentos de rede
- dos e para os buffers de rede;
+\begin_layout Alineas
+
+\family typewriter
+FromDevice
+\family default
+ e 
+\family typewriter
+ToDevice
+\family default
+ fazem respectivamente o recebimento dos quadros do 
+\shape italic
+buffer
+\shape default
+ de rede de entrada e o envio de outros para o 
+\shape italic
+buffer
+\shape default
+ de rede de saída;
 \end_layout
 
-\begin_layout Itemize
-Já o Classifier classifica os pacotes com base na comparação de valores
- dos cabeçalhos, onde os dois primeiros parâmetros são códigos referentes
- aos dados do protocolo ARP 
+\begin_layout Alineas
+Já o 
+\family typewriter
+Classifier
+\family default
+ classifica os pacotes com base na comparação de valores presentes nos cabeçalho
+s, onde os dois primeiros parâmetros do exemplo são códigos referentes aos
+ dados do protocolo ARP 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "rfc826"
@@ -3126,19 +3601,49 @@ key "rfc826"
  (consulta e resposta, respectivamente), o terceiro parâmetro contém o código
  para os pacotes com cabeçalho IP e o quarto para todos os outros.
  A análise do cabeçalho é feita de forma que o elemento procura o código
- do cabeçalho em determinado byte, formando a sequência byte/código.
- Em caso de mais de uma sequência, a procura se torna mais específica como
- no caso do protocolo ARP;
+ do cabeçalho em determinado 
+\shape italic
+byte
+\shape default
+ do quadro, formando o par 
+\shape italic
+byte
+\shape default
+/código.
+ Em caso de mais de um par, a procura se torna mais específica, buscando
+ casar mais um valor no 
+\shape italic
+byte
+\shape default
+ indicado, o que nesse caso é a diferença entre consulta e resposta ARP;
 \end_layout
 
-\begin_layout Itemize
-ARPQuerier e ARPResponder realizam o papel de preencher a tabela ARP de
- um dispositivo.
+\begin_layout Alineas
+
+\family typewriter
+ARPQuerier
+\family default
+ e 
+\family typewriter
+ARPResponder
+\family default
+ realizam o papel de preencher a tabela ARP de um dispositivo.
  O primeiro, diante da não existência de uma entrada para o destino solicitado
- por um pacote, consulta o equivalente ao ARPResponder de todos os dispositivos
- na rede acerca do endereço MAC, e ao receber a resposta, encapsula.
- O mesmo vale quando o portão (gateway) se torna o destinatário temporário,
- o que acontece quando o SetIPAddress é usado (detalhes no 
+ por um pacote, consulta ao 
+\family typewriter
+ARPResponder
+\family default
+ de todos os dispositivos na rede acerca do endereço MAC associado a um
+ dado endereço IP, e ao receber a resposta, encapsula o pacote em um quadro.
+ O mesmo vale quando o portão (
+\shape italic
+gateway
+\shape default
+) se torna o destinatário temporário, o que acontece quando o 
+\family typewriter
+SetIPAddress
+\family default
+ é usado (detalhes no 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "chap:PROJETO-E-IMPLEMENTAÇÃO"
@@ -3146,36 +3651,118 @@ reference "chap:PROJETO-E-IMPLEMENTAÇÃO"
 \end_inset
 
 ), por exemplo.
- Como é de se imaginar, o segundo elemento responde às consultas feitas
- por outros dispositivos e pode ser utilizado para realizar Proxy ARP;
+ Como adiantado, o segundo elemento desta alínea responde às consultas feitas
+ por outros dispositivos com 
+\family typewriter
+ARPQuerier
+\family default
+ e pode ser utilizado para realizar um 
+\shape italic
+Proxy
+\shape default
+ ARP 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rfc1027"
+
+\end_inset
+
+;
 \end_layout
 
-\begin_layout Itemize
-Queue define uma fila de 200 entradas para receber os pacotes do fluxo push
- para entregar quando solicitado pelos elementos do fluxo pull;
+\begin_layout Alineas
+
+\family typewriter
+Queue
+\family default
+ define uma fila de 200 entradas para receber os pacotes do fluxo 
+\shape italic
+push
+\shape default
+ para entregar quando solicitado pelos elementos do fluxo 
+\shape italic
+pull
+\shape default
+;
 \end_layout
 
-\begin_layout Itemize
-Conexões entre: FromDevice e o Classifier; Queue e ToDevice; as requisições
- ARP vindas do Classifier e o ARPResponder; deste último e a Queue; as respostas
- ARP vindas do Classifier e a entrada 1 do ARPQuerier; de um indicador de
- aguardo (Idle) e a entrada 0 do ARPQuerier para evitar mensagens de erro,
- e a conexão deste mesmo elemento a uma fila de tamanho 200 para escoar
- os pacotes encapsulados;
+\begin_layout Alineas
+Conexões entre: 
+\family typewriter
+FromDevice
+\family default
+ e o 
+\family typewriter
+Classifier
+\family default
+; 
+\family typewriter
+Queue
+\family default
+ e 
+\family typewriter
+ToDevice
+\family default
+; as requisições ARP vindas do 
+\family typewriter
+Classifier
+\family default
+ e o 
+\family typewriter
+ARPResponder
+\family default
+; deste último e a 
+\family typewriter
+Queue
+\family default
+; as respostas ARP vindas do 
+\family typewriter
+Classifier
+\family default
+ e a porta de entrada 1 do 
+\family typewriter
+ARPQuerier
+\family default
+; de um elemento de controle de erro (
+\family typewriter
+Idle
+\family default
+) e a entrada 0 do 
+\family typewriter
+ARPQuerier
+\family default
+ para evitar mensagens de erro, e a conexão deste mesmo elemento a uma fila
+ de tamanho 200 para escoar os pacotes encapsulados;
 \end_layout
 
-\begin_layout Itemize
-Os pacotes IP classificados no Classifier saem pela porta 2 e então podem
- ser modificados como desejado.
- Inclusive, não é necessário inserir todos os código neste bloco, desde
- que hajam ligações deste que levem até os demais; O último elemento deve
- se conectar ao ARPQuerier para que os pacotes sejam encapsulados e enviados
- através da rede; 
+\begin_layout Alineas
+Os pacotes IP classificados no 
+\family typewriter
+Classifier
+\family default
+ saem pela porta 2 e então podem ser modificados como desejado.
+ Inclusive, não é necessário inserir todos os códigos no bloco indicado
+ para preenchimento, desde que ao fim se conectem desse ponto até o último
+ elemento.
+ Esse aliás, deve se conectar ao 
+\family typewriter
+ARPQuerier
+\family default
+ para que os pacotes sejam encapsulados e sigam o caminho até o elemento
+ que proporciona a saída da rede; 
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Alineas
 Os demais pacotes saem pela porta 3 e são descartados ao ligar tal saída
- do Classifier ao Discard.
+ do 
+\family typewriter
+Classifier
+\family default
+ ao 
+\family typewriter
+Discard
+\family default
+.
 \end_layout
 
 \begin_layout Standard
@@ -3214,6 +3801,11 @@ name "fig:Uma-aplicação-dos"
 
 \end_layout
 
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
+\end_layout
+
 \end_inset
 
 
@@ -3237,10 +3829,13 @@ key "kohler_click:_2018"
 \begin_layout Standard
 A linguagem de marcação de Click possui um analisador que encontra erros
  de sintaxe e semântica em tempo de execução para auxilio no desenvolvimento.
- Na mesma linha, a ferramenta disponibiliza manipuladores de elementos (element
- handlers) básicos para que seja possível analisar comportamentos indesejados
- em tempo de execução.
- Um exemplo é a tabela TCP 
+ Na mesma linha, a ferramenta disponibiliza manipuladores de elementos (
+\shape italic
+element handlers
+\shape default
+) básicos para que seja possível analisar comportamentos indesejados em
+ tempo de execução.
+ Um exemplo é a tabela do protocolo TCP 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "rfc793"
@@ -3254,22 +3849,16 @@ key "rfc793"
  De qualquer forma, Click permite a implementação de outros manipuladores
  para os elementos dado um conhecimento em C++.
  Para consultar quais manipuladores estão implementados, basta consultar
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "kohler_click:_2018"
-
-\end_inset
-
-.
+ a documentação citada.
 \end_layout
 
 \begin_layout Standard
-Outra forma de facilitar a correção de erros e também facilitar o entendimento
+Outra forma de facilitar a correção de erros, e também facilitar o entendimento
  de uma implementação em Click é através do uso da ferramenta de geração
- de grafos distribuída com Click chamada Clicky .
- Ela transforma o código em uma figura baseado em um arquivo de estilo CSS
- e também é capaz de analisar erros e retorná-los.
+ de grafos distribuída com Click chamada Clicky.
+ Ela transforma elementos e portas em uma representação gráfica de um grafo,
+ baseado em um arquivo de Folhas de Estilo em Cascata (CSS), e também é
+ capaz de analisar erros e retorná-los.
  Na 
 \begin_inset CommandInset ref
 LatexCommand formatted
@@ -3284,9 +3873,9 @@ reference "fig:Uma-aplicação-dos"
 
 \end_inset
 
-, exceto o ramo da porta 2 que encontra erros e por isso é ignorado.
- Caso seja da vontade, é possível gerar figuras ou documentos contendo as
- representações.
+, exceto o ramo da porta 2 que encontra erros devido ao bloco fora dos padrões
+ e por isso é ignorado.
+ É possível exportar os grafos para arquivos.
 \end_layout
 
 \begin_layout Standard
@@ -3303,7 +3892,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Interface gráfica e representação gráfica padrão da 
+Interface gráfica e grafo padrão da 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:Uma-aplicação-dos"
@@ -3336,6 +3925,11 @@ name "fig:Interface-gráfica-e"
 
 \end_layout
 
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
+\end_layout
+
 \end_inset
 
 
@@ -3343,91 +3937,116 @@ name "fig:Interface-gráfica-e"
 
 \begin_layout Standard
 Durante o desenvolvimento deste trabalho, algumas limitações nos elementos
- foram observadas: Para criar balanceadores de carga, os elementos existentes
- são limitados ao mecanismo de Round Robin (RoundRobinIPMapper) e distribuição
- por IP de origem (SourceIPHashMapper), sem uma análise da carga dos servidores
- que recebem o balanceamento, através do SNMP 
+ foram observadas: 
+\end_layout
+
+\begin_layout Alineas
+Para criar balanceadores de carga, os elementos existentes são limitados
+ ao mecanismo de 
+\shape italic
+Round Robin
+\shape default
+ (
+\family typewriter
+RoundRobinIPMapper
+\family default
+) e ao mecanismo de distribuição por IP de origem (
+\family typewriter
+SourceIPHashMapper
+\family default
+), sem uma análise de carga dos servidores que recebem o balanceamento,
+ através do SNMP 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "rfc1157"
 
 \end_inset
 
-, por exemplo; a manipulação de mensagens do Protocolo de Datagrama do Usuário
- (UDP) maiores que o Tamanho de Seguimento Máximo (MSS) da camada de transporte
- é um problema quando se desenvolve um NAT em Click, já que para o recálculo
- da soma de verificação (checksum) usando o UDPChecksum, seria necessário
- remontar a mensagem UDP 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "rfc768"
-
-\end_inset
-
-, o que Click não disponibiliza, comprometendo o protocolo nessa situação.
- 
+, por exemplo; 
 \end_layout
 
-\begin_layout Standard
-Outra questão envolvendo estes elementos é que a tabela criada através desses
- não se apaga como deveria 
+\begin_layout Alineas
+A tabela TCP criada no NAT através dos elementos acima não se apaga como
+ deveria 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "kohler_modular_2002"
 
 \end_inset
 
-
-\begin_inset CommandInset citation
-LatexCommand cite
-key "kohler_click:_2018"
-
-\end_inset
-
- devido a um erro de implementação que reinicia o contador responsável,
- e pode criar instabilidade quanto aos balanceamentos.
+ devido a um erro de implementação que reinicia o contador responsável por
+ sua expiração, e pode assim criar instabilidade quanto aos balanceamentos.
  Desta forma os balanceadores só garantem o balanceamento em tempo de criação
  da regra, e uma vez que elas permaneçam indefinidamente, determinadas conexões
  perenes podem desbalancear o sistema, já que não seriam rebalanceadas.
  Este erro foi reportado a comunidade, mas não a tempo de ser corrigido
- para este trabalho.
+ para este trabalho;
+\end_layout
+
+\begin_layout Alineas
+A manipulação de mensagens do Protocolo de Datagrama do Usuário (UDP) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rfc768"
+
+\end_inset
+
+ maiores que o Tamanho de Seguimento Máximo (MSS) deste é um problema quando
+ se desenvolve um NAT em Click, já que para o recálculo da soma de verificação
+ (
+\shape italic
+checksum
+\shape default
+) usando o 
+\family typewriter
+UDPChecksum
+\family default
+, seria necessário remontar a mensagem UDP 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rfc768"
+
+\end_inset
+
+, o que Click não disponibiliza, comprometendo o desenvolvimento de alguma
+ função de rede nessa situação.
 \end_layout
 
 \begin_layout Standard
-Click possui um módulo para operar em espaço de kernel, em substituição
- ao módulo do sistema operacional.
+Click possui um módulo para operar em espaço de 
+\shape italic
+kernel
+\shape default
+ do Linux, em substituição ao módulo do sistema operacional.
  Isso significa um desempenho maior em relação a sua execução em espaço
- de usuário para sistemas com essa divisão.
- É em espaço de kernel que os desenvolvedores, à época, conseguiram desempenho
- próximo ao módulo padrão do Linux
+ de usuário.
+ É em espaço de 
+\shape italic
+kernel
+\shape default
+ que os desenvolvedores, à época, conseguiram desempenho próximo ao módulo
+ padrão do Linux 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "morris_click_1999"
 
 \end_inset
 
-
-\begin_inset CommandInset citation
-LatexCommand cite
-key "noauthor_linux_2018"
-
-\end_inset
-
 .
  No entanto, atualmente o módulo do Click, encontra-se bastante defasado,
- compatibilizando com a versão do kernel Linux 2.6, em face da versão 4.16
- atual.
- Essa defasagem faz com que seu uso em um sistema operacional tradicional
- seja desestimulado, devido a complexidade em se programar para o kernel.
- Seu uso atual possui escopo em middleboxes virtualizados, como em FastClick
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "barbette_fast_2015"
-
-\end_inset
-
-, ESCAPE 
+ compatibilizando apenas com a versão do 
+\shape italic
+kernel
+\shape default
+ Linux 2.6, em face da versão 4.16 atual.
+ Esta defasagem faz com que seu uso em um sistema operacional tradicional
+ seja desestimulado, devido a complexidade em se programar para essa parte
+ de um sistema.
+ Seu uso atual possui escopo em 
+\shape italic
+middleboxes
+\shape default
+ virtualizados, como em ESCAPE 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "csoma_escape:_2014"
@@ -3438,13 +4057,6 @@ key "csoma_escape:_2014"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "laufer_climb:_2016"
-
-\end_inset
-
-, NetBricks
-\begin_inset CommandInset citation
-LatexCommand cite
-key "panda_netbricks:_2016"
 
 \end_inset
 
@@ -3462,24 +4074,15 @@ reference "sec:ClickOS"
 
 \end_inset
 
-) e outros não relacionados a um kernel como o seu uso em DPDK
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Referenciar trabalhos do nerds e outros
-\end_layout
-
-\end_inset
-
-.
- Outros usos mais diversificados são encontrados em 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Verificar quais são ligados a virtualização e quais não
-\end_layout
+) e outros não relacionados a um 
+\shape italic
+kernel
+\shape default
+ como para o Kit de Desenvolvimento em Plano de Dados (DPDK) com FastClick
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "barbette_fast_2015"
 
 \end_inset
 
@@ -3487,11 +4090,19 @@ Verificar quais são ligados a virtualização e quais não
 \end_layout
 
 \begin_layout Standard
-Desde o título esta monografia se propõe a trabalhar com uma dessas aplicações
+Desde o título este trabalho se propõe a trabalhar com uma dessas aplicações
  que cresceram em torno de Click.
- ClickOS especializou uma micro máquina virtual, desenvolvendo novos elementos,
- adaptando seu micro-kernel para executar Click com seu módulo de forma
- eficiente atingindo 10Gb/s para a maioria dos tamanhos de pacotes 
+ ClickOS especializou uma micro-VM, desenvolvendo novos elementos, adaptando
+ seu 
+\shape italic
+micro-kernel
+\shape default
+ para executar Click com seu módulo 
+\shape italic
+kernel
+\shape default
+ de forma eficiente atingindo 10Gb/s para a maioria dos tamanhos de pacotes
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "martins_clickos_2014"
@@ -3499,6 +4110,10 @@ key "martins_clickos_2014"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+OBS: Parei aqui <—
 \end_layout
 
 \begin_layout Section
@@ -3679,7 +4294,7 @@ Antes e depois das alterações mencionadas
 
 \begin_layout Plain Layout
 \align center
-Fonte: 
+Fonte: Adaptado de 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "martins_clickos_2014"
@@ -3705,15 +4320,18 @@ reference "sec:Click"
 \end_inset
 
 .
- ClickOS constroi seu sistema operacional a partir do MiniOS: um micro-kernel
+ ClickOS constrói seu sistema operacional a partir do MiniOS: um micro-kernel
  de sistema operacional minimalista voltado para um processamento quase
  monoprocessado, escalável, e de baixa carga de CPU, criado pelos desenvolvedore
 s do projeto Xen.
  A adaptação de Click ao micro-kernel do MiniOS, inclusive portando as bibliotec
 as necessárias sua construção neste sistema, resultou em um kernel enxuto,
- que dentro de uma micro-VM consume ao executar 5MB de memória, sendo instanciáv
-el em 30 milissegundos, provocando um atraso na rede de 45 microssegundos,
- não necessitando de disco e alcançando uma vazão de 10Gbps 
+ que dentro de uma micro-VM consume 5MB de memória ao executar, sendo instanciáv
+el em 30 ms, provocando um atraso na rede de 45
+\begin_inset Formula $\mu$
+\end_inset
+
+s, não necessitando de disco e alcançando uma vazão de 10Gbps 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "martins_clickos_2014"
@@ -3770,6 +4388,11 @@ name "fig:Exemplo-de-arquivo-cfg"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
 \end_layout
 
 \end_inset
@@ -3847,6 +4470,61 @@ Apesar de não possuir linha de comandos, as máquinas virtuais com o núcleo
  console, que pode reportar erros de codificação de todos os níveis, erros
  de inicialização, más configurações e elementos de análise de erros para
  informar estados através deste.
+\end_layout
+
+\begin_layout Standard
+P4, NetBricks
+\begin_inset CommandInset citation
+LatexCommand cite
+key "panda_netbricks:_2016"
+
+\end_inset
+
+, Elastic Edge
+\begin_inset CommandInset citation
+LatexCommand cite
+key "palkar_e2:_2015"
+
+\end_inset
+
+, OpenNetVM 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "zhang_opennetvm:_2016"
+
+\end_inset
+
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+semelhantes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Encadeamento
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "yurchenko_opennetvm:_2018"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -4202,11 +4880,16 @@ name "fig:Comportamento-esperado-das"
 \begin_inset Graphics
 	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/undergrad-thesis-fw-lbdnat.png
 	lyxscale 59
-	scale 29
+	scale 32
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
 \end_layout
 
 \end_inset
@@ -5606,6 +6289,11 @@ name "fig:Código-fw"
 
 \end_layout
 
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
+\end_layout
+
 \end_inset
 
 
@@ -5731,6 +6419,19 @@ De maneira semelhante, entre as linhas 39 e 42 o processo se repete, e os
 \begin_layout Standard
 Por último, nas linhas 44 e 45, os pacotes que saem pela porta 3 do classificado
 r entram em um elemento que determina o descarte deles.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Inserir clicky
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -6423,6 +7124,11 @@ Código para o balanceador de carga por endereço IP de origem no Click
 
 \end_layout
 
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
+\end_layout
+
 \end_inset
 
 As descrições para as ações programadas entre as linhas 2 e 27 são idênticas
@@ -6439,18 +7145,26 @@ reference "fig:Código-fw"
 
 \begin_layout Standard
 Nas linhas de 29 à 33 há uma declaração e definição do elemento de balanceamento
- por endereço IP de origem, com seu tamanho de tabela hash e semente como
- primeiro parâmetro e nos seguintes, as modificações necessárias para cada
- servidor, a serem mapeadas no próximo elemento como regras de ida e volta.
+ por endereço IP de origem, com seu tamanho de tabela 
+\shape italic
+hash
+\shape default
+ e semente como primeiro parâmetro e nos seguintes, as modificações necessárias
+ para cada servidor, a serem mapeadas no próximo elemento como regras de
+ ida e volta.
  Pode-se ver também os identificadores ao final de cada parâmetro para efeitos
  de comparação.
 \end_layout
 
 \begin_layout Standard
 No caso do elemento de balanceamento por Round Robin, as linhas descritas
- acima são substituidas pela declaração e definição do referido elemento,
+ acima são substituídas pela declaração e definição do referido elemento,
  onde os parâmetros se limitam às modificações necessárias para cada servidor
- disponível, sem os identificadores naturais a tabela hash.
+ disponível, sem os identificadores naturais a tabela 
+\shape italic
+hash
+\shape default
+.
 \end_layout
 
 \begin_layout Standard
@@ -6488,9 +7202,30 @@ As saídas do NAT entre as linhas 46 e 51 têm como destino o encapsulamento
  Porém antes precisam ter suas somas de verificação do protocolo TCP refeitas
  para evitar falsos erros.
  O caso dos pacotes-resposta requer um elemento que anota o endereço do
- gateway ao pacote para que o encapsulamento seja feito com ele, mesmo sem
- alterar o cabeçalho IP.
- O gateway nesse caso é indocado através do parâmetro.
+ 
+\shape italic
+gateway
+\shape default
+ ao pacote para que o encapsulamento seja feito com ele, mesmo sem alterar
+ o cabeçalho IP.
+ O 
+\shape italic
+gateway
+\shape default
+ nesse caso é invocado através do parâmetro.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Inserir clicky
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -8200,16 +8935,6 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\begin_inset Graphics
-	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/undergrad-thesis topology.png
-	scale 58
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -8229,7 +8954,19 @@ name "fig:Protótipo-para-execução"
 \end_layout
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/undergrad-thesis topology.png
+	scale 58
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
 \end_layout
 
 \end_inset
@@ -8446,6 +9183,25 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fluxo de pacotes TCP 80 com foco no firewall
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Fluxo-de-pacotes-fw-80"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tfw/p80_pctsOUTGOING.png
@@ -8470,22 +9226,8 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Fluxo de pacotes TCP 80 com foco no firewall
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Fluxo-de-pacotes-fw-80"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
+\align center
+Fonte: Elaborada pelo autor
 \end_layout
 
 \end_inset
@@ -8498,6 +9240,25 @@ name "fig:Fluxo-de-pacotes-fw-80"
 wide false
 sideways false
 status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fluxo de pacotes TCP 8080 com foco no firewall
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Fluxo-de-pacotes-fw-8080"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \align center
@@ -8524,26 +9285,8 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Fluxo de pacotes TCP 8080 com foco no firewall
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Fluxo-de-pacotes-fw-8080"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
+\align center
+Fonte: elaborada pelo autor
 \end_layout
 
 \end_inset
@@ -8650,10 +9393,6 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -8694,6 +9433,11 @@ name "fig:Fluxo-de-pacotes-lb-sip"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
 \end_layout
 
 \end_inset
@@ -8762,30 +9506,6 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tnatlb_rr/p80_pctsOUTGOING.png
-	lyxscale 47
-	scale 54
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tnatlb_rr/p80_pctsINCOMING.png
-	lyxscale 47
-	scale 54
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -8802,6 +9522,35 @@ name "fig:Fluxo-de-pacotes-lb-rr"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tnatlb_rr/p80_pctsOUTGOING.png
+	lyxscale 95
+	scale 54
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tnatlb_rr/p80_pctsINCOMING.png
+	lyxscale 95
+	scale 54
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
 \end_layout
 
 \end_inset
@@ -8903,17 +9652,6 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tclickos_stress/transacoes.png
-	scale 65
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -8930,6 +9668,22 @@ name "fig:Média-de-transações"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tclickos_stress/transacoes.png
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
 \end_layout
 
 \end_inset
@@ -8998,17 +9752,6 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tclickos_stress/erros.png
-	scale 65
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -9025,6 +9768,22 @@ name "fig:Números-absolutos-de"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tclickos_stress/erros.png
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
 \end_layout
 
 \end_inset
@@ -9089,17 +9848,6 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tclickos_stress/tempo_de_resposta.png
-	scale 65
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -9116,6 +9864,22 @@ name "fig:Tempo-médio-de"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tclickos_stress/tempo_de_resposta.png
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
 \end_layout
 
 \end_inset
