@@ -4,7 +4,7 @@
 \begin_header
 \save_transient_properties true
 \origin unavailable
-\textclass abntex2
+\textclass ../../../../Documentos/UFES/PG/undergraduate-thesis/thesis/lyx/abntex2
 \begin_preamble
 % ---
 % PACOTES
@@ -4285,20 +4285,54 @@ key "martins_clickos_2014"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Explicação desta figura
-\end_layout
+Na 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Arquitetura-inicial-presente"
 
 \end_inset
 
-
+, é possível ver detalhes das entidades que compõem ClickOS sem uma otimização.
+ Nela é possível ver as relações entre os itens de rede em espaço de 
+\shape italic
+kernel
+\shape default
+ como o 
+\shape italic
+driver
+\shape default
+ de rede da máquina hospedeira, o 
+\shape italic
+switch
+\shape default
+ em 
+\shape italic
+software
+\shape default
+, interface virtual de rede, 
+\shape italic
+netback
+\shape default
+, 
+\shape italic
+netfront
+\shape default
+, até a função de rede virtual.
+ Também é visível os itens de administração e interação com o operador,
+ como o comando 
+\family typewriter
+xl
+\family default
+ e o 
+\family typewriter
+cosmos
+\family default
+.
 \end_layout
 
 \begin_layout Standard
-No Xen, algumas se destacam a partir de 
+No tocante as mudanças da arquitetura inicial, algumas se destacam a partir
+ de 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "martins_clickos_2014"
@@ -4310,12 +4344,20 @@ key "martins_clickos_2014"
 \shape italic
 switch
 \shape default
- virtual como o driver 
+ virtual como o 
+\shape italic
+driver
+\shape default
+ 
 \shape italic
 netback
 \shape default
 , que passou a ter um papel de controle apenas.
- Já o driver 
+ Já o 
+\shape italic
+driver
+\shape default
+ 
 \shape italic
 netfront
 \shape default
@@ -4649,16 +4691,6 @@ key "yurchenko_opennetvm:_2018"
 Por fim, ClickOS pode trabalhar em conjunto com soluções NFV através de
  uma integração com o VIM da solução.
  São exemplos já implementados o OpenStack e o Nomad 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-referência
-\end_layout
-
-\end_inset
-
- 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "ventre_performance_2016"
@@ -4666,7 +4698,6 @@ key "ventre_performance_2016"
 \end_inset
 
 .
- OBS: Parei aqui <—
 \end_layout
 
 \begin_layout Standard
@@ -4707,13 +4738,17 @@ reference "sec:Click"
 
 , pavimentam a intenção de demonstrar o desenvolvimento de VNFs de maneira
  mais clara, a partir de uma visão macro em relação àquela vista em linguagens
- de programação, sem se desenhar apenas como uma plataforma de ensino, já
- que em determinado momento é capaz de entregar desempenho satisfatório,
- inclusive sendo habilitável ao NFV.
+ de programação, e sem se desenhar apenas como uma plataforma de ensino,
+ já que em determinado momento é capaz de entregar desempenho satisfatório
+ segundo seus autores, inclusive sendo habilitável ao NFV.
 \end_layout
 
 \begin_layout Standard
-As funções escolhidas são um firewall (
+As funções escolhidas são um 
+\shape italic
+firewall
+\shape default
+ (
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "sec:Firewall"
@@ -4727,12 +4762,19 @@ reference "sec:Balanceador-de-Carga"
 
 \end_inset
 
-) em uma rede com Ethernet, TCP/IP.
+) em uma rede com 
+\shape italic
+Ethernet
+\shape default
+, TCP/IP.
  A escolha se deve pela boa legibilidade e assimilação de suas funções mais
- importantes, ja que são facilmente encontrados nas infraestruturas da Tecnologi
+ importantes, já que são facilmente encontrados nas infraestruturas da Tecnologi
 a da Informação.
- Nesta proposta, o firewall precede o balanceador de carga sem nós intermediário
-s.
+ Nesta proposta, o 
+\shape italic
+firewall
+\shape default
+ precede o balanceador de carga sem nós intermediários.
  No 
 \begin_inset CommandInset ref
 LatexCommand formatted
@@ -4741,16 +4783,24 @@ reference "chap:TESTES"
 \end_inset
 
  tais funções são testados justamente em um cenário de serviço de hospedagem
- web.
+ 
+\shape italic
+web
+\shape default
+.
 \end_layout
 
 \begin_layout Standard
 Espera-se que a curva de aprendizado da ferramenta seja melhor a partir
  dessas funções do que com funções simples porém desintegradas.
  Inclusive, foge o escopo deste trabalho demonstrar VNFs complexas como
- as aplicadas hoje em middleboxes físicos, que significam recursos superestimado
-s e subutilizados na maioria dos casos, o que justamente é um dos pontos
- de combate do NFV e suas funções virtuais.
+ as aplicadas hoje em 
+\shape italic
+middleboxes
+\shape default
+ físicos, que significam recursos superestimados e subutilizados na maioria
+ dos casos, o que justamente é um dos pontos de combate do NFV e suas funções
+ virtuais.
  Um resumo do proposto pode ser visto na 
 \begin_inset CommandInset ref
 LatexCommand formatted
@@ -4762,10 +4812,33 @@ reference "sec:Um-dia-dentro"
 \end_layout
 
 \begin_layout Standard
-Tanto o firewall quanto o balanceador de carga possuem elementos mínimos
- para seu funcionamento, como é o caso da estrutura de camada física e de
- enlace, composta pelos elementos FromDevice, ToDevice, Classifier, ARPQuerier
- e ARPResponder (ver um uso delas na 
+Tanto o 
+\shape italic
+firewall
+\shape default
+ quanto o balanceador de carga possuem elementos mínimos para seu funcionamento,
+ como é o caso daqueles relacionados a camada física e de enlace, composta
+ pelos elementos 
+\family typewriter
+FromDevice
+\family default
+, 
+\family typewriter
+ToDevice
+\family default
+, 
+\family typewriter
+Classifier
+\family default
+, 
+\family typewriter
+ARPQuerier
+\family default
+ e 
+\family typewriter
+ARPResponder
+\family default
+ (ver um uso delas na 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:Uma-aplicação-dos"
@@ -4773,10 +4846,32 @@ reference "fig:Uma-aplicação-dos"
 \end_inset
 
 ).
- Já outros como IPFilter, SetIPAddress, RoundRobinIPMapper, SourceIPHashMapper,
- IPRewriter SetTCPChecksum estão associados a tarefa de cada VNF de forma
- específica.
- Segue um detalhamento deles com base na documentação 
+ Já outros como 
+\family typewriter
+IPFilter
+\family default
+, 
+\family typewriter
+SetIPAddress
+\family default
+, 
+\family typewriter
+RoundRobinIPMapper
+\family default
+, 
+\family typewriter
+SourceIPHashMapper
+\family default
+, 
+\family typewriter
+IPRewriter 
+\family default
+e 
+\family typewriter
+SetTCPChecksum
+\family default
+ estão associados a tarefa de cada VNF de forma específica.
+ Segue um detalhamento deles com base na documentação de 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "kohler_click:_2018"
@@ -4787,77 +4882,138 @@ key "kohler_click:_2018"
 \end_layout
 
 \begin_layout Itemize
-IPFilter: possui uma porta de entrada por onde passam pacotes IP, e duas
- de saída por onde saem fluxos permitidos e fluxos bloqueados.
- Ao invés do último caso, há a possibilidade de ignorá-los, o que faz com
- que tal fluxo não saia pela respectiva porta.
+
+\family typewriter
+IPFilter
+\family default
+: possui uma porta de entrada por onde passam pacotes IP, e duas de saída
+ por onde saem fluxos permitidos e fluxos bloqueados.
+ Ao invés deste último caso, há a possibilidade de ignorá-los, o que faz
+ com que o fluxo não saia pela respectiva porta.
  O que define o caminho dos pacotes são as regras adicionadas nos parâmetros
  do elemento, com base na ação descrita.
- A comparação pacote-regra é feita de forma ordenada, logo as regras mais
- específicas devem estar antes das mais genéricas.
- Em um firewall de produção, é comum que o padrão seja bloquear por padrão
- e aceitar as exceções, sendo que para reproduzir este comportamento, basta
- adicionar as regras de permissão antes da regra deny all ou drop all, ao
- fim;
+ A comparação entre pacote e regra é feita de forma ordenada, logo as regras
+ mais específicas devem estar antes das mais genéricas.
+ Em um 
+\shape italic
+firewall
+\shape default
+ de produção, é comum que o padrão seja bloquear por padrão e aceitar as
+ exceções, sendo que para reproduzir este comportamento, basta adicionar
+ as regras de permissão antes da regra 
+\family typewriter
+deny all
+\family default
+ ou 
+\family typewriter
+drop all
+\family default
+, ao fim;
 \end_layout
 
 \begin_layout Itemize
-SetIPAddress: possui uma porta de entrada e outra de saída.
- É o elemento utilizado para configurar o endereço do gateway da rede, usado
- para os pacotes cujo destino está a mais de um salto a partir da rede atual.
- Quando configurado, realiza uma anotação no pacote recebido que é utilizada
- pelos elementos ARP ao encapsular o pacote IP.
+
+\family typewriter
+SetIPAddress
+\family default
+: possui uma porta de entrada e outra de saída.
+ É o elemento para configurar o endereço da saída padrão (
+\shape italic
+gateway
+\shape default
+) da rede, usado para os pacotes cujo destino está a mais de um salto a
+ partir da rede atual.
+ Quando configurado, realiza uma anotação no pacote recebido que os elementos
+ ARP usam encapsular o pacote IP.
  A anotação tem precedência sobre o endereço IP de destino presente no pacote
- no momento de busca pelo MAC associado na tabela ARP.
- Dessa forma, um pacote consegue saltar para as redes do gateway em busca
- do seu destino, que por sua vez pode repetir a operação sucessivamente
- até que encontre-o;
+ no momento de busca pelo endereço MAC associado na tabela ARP.
+ Assim, um pacote consegue saltar para as redes do 
+\shape italic
+gateway
+\shape default
+ em busca do seu destino, que por sua vez pode repetir a operação sucessivamente
+ a um novo até que encontre-o;
 \end_layout
 
 \begin_layout Itemize
-RoundRobinIPMapper: não possui portas.
- Serve como um anexo ao IPRewriter para determinar qual regra deve ser utilizada
- no momento da reescrição de endereço IP e portas a ser feita por este.
+
+\family typewriter
+RoundRobinIPMapper
+\family default
+: não possui portas.
+ Serve como um anexo ao 
+\family typewriter
+IPRewriter
+\family default
+ para determinar qual regra deve ser utilizada no momento da reescrita de
+ endereços IP e portas a ser feita por este.
  A determinação acontece seguindo um padrão de intervalo de tempo sem prioridade
- como é o escalonamento Round Robin.
- Ele permite que o IPRewriter tente distribuir de maneira uniforme os pacotes
- que recebe;
+ como é o escalonamento 
+\shape italic
+Round Robin
+\shape default
+.
+ Ele permite que o 
+\family typewriter
+IPRewriter
+\family default
+ tente distribuir de maneira uniforme os pacotes que recebe;
 \end_layout
 
 \begin_layout Itemize
-SourceIPHashMapper: na mesma linha do anterior, no entanto a regra utilizada
- nesse caso depende de uma função hash para fazer a escolha dentre aquelas
- configuradas em seus parâmetros, fixando-a através do endereço IP de origem
- para que todos os pacotes provenientes do endereço tenham a mesma ação,
- independentemente de outras variáveis como endereço IP de destino ou portas;
+
+\family typewriter
+SourceIPHashMapper
+\family default
+: na mesma linha do anterior, no entanto a regra utilizada nesse caso depende
+ de uma função 
+\shape italic
+hash
+\shape default
+ para fazer a escolha dentre aquelas configuradas em seus parâmetros, fixando-a
+ através do endereço IP de origem para que todos os pacotes provenientes
+ do endereço tenham o mesmo endereço IP de destino, independentemente de
+ outras variáveis como portas;
 \end_layout
 
 \begin_layout Itemize
-IPRewriter: Um dos elementos mais complexos estudados por esse trabalho,
- pode possuir quantas portas de entrada e saída for necessário.
+
+\family typewriter
+IPRewriter
+\family default
+: Um dos elementos mais complexos estudados por esse trabalho.
+ Pode possuir quantas portas de entrada e saída for necessário.
  De forma geral, este elemento faz o papel de reescrever os cabeçalhos com
  relação aos endereços IP e portas de transporte, com base nas ações configurada
-s em uma tabela pelas regras inseridas nos parâmetros do elemento.
+s em uma tabela, preenchida pelas regras inseridas nos parâmetros do elemento.
  Estas, por sua vez, são combinadas com portas, associando uma porta de
- entrada X ao índice X na lista de parâmetros configurados no elemento.
- Caso os dados do pacote não casem com uma ação previamente estabelecida
- por outra regra, o elemento a cria e a aplica com base na regra da associação,
- atribuindo a porta de saída Y descrita na regra para o pacote alterado
- sair do elemento.
- Inclusive, o NAT costuma receber pacotes-resposta para aqueles que sofreram
- reescrição anteriormente, e por isso o IPRewriter prontamente adiciona
- uma ação de retorno para que ele também reescreva o pacote-resposta, e
- este volte ao requerente através de outra porta de saída Z do elemento,
- configurada também nos parâmetros.
- Em suma, no IPRewriter, o desenvolvedor é responsável por gerir o fluxo
- e dizer onde eles devem entrar e sair, trazendo flexibilidade para a solução.
- Além das regras de reescrição, há outras regras que permitem ações padrão
- caso não haja casamento padrão-pacote naquela porta, como ignorar o pacote
- e simplesmente passar o pacote adiante em uma porta de saída desejada,
+ entrada X ao parâmetro de índice X na lista de parâmetros configurados
+ no elemento.
+ Somente se os metadados do pacote não casem com uma ação previamente estabeleci
+da por outra regra, o elemento cria essa ação e a aplica com base na regra
+ do parâmetro associado àquela porta de entrada, atribuindo a porta de saída
+ Y descrita na regra para o pacote alterado sair do elemento.
+ O NAT costuma receber pacotes-resposta para aqueles que sofreram reescrita
+ anteriormente, e por isso o 
+\family typewriter
+IPRewriter
+\family default
+ prontamente adiciona uma ação de retorno para que ele também reescreva
+ o pacote-resposta, e este volte ao requerente através de outra porta de
+ saída Z do elemento, configurada também nos parâmetros.
+ Em suma, no 
+\family typewriter
+IPRewriter
+\family default
+ o desenvolvedor é responsável por gerir o fluxo e dizer onde eles devem
+ entrar e sair, trazendo flexibilidade para a solução.
+ Além das regras de reescrita, há outras regras que permitem ações padrão
+ caso não haja casamento entre padrão e pacote naquela porta, como ignorar
+ o pacote e simplesmente passar o pacote adiante em uma porta de saída desejada,
  inclusive nas portas já existentes.
- Há também a possibilidade de usar anexos como os disponibilizados pelos
- dois elementos acima descritos, que armazenam suas regras com o mesmo padrão
- utilizado aqui.
+ Há também a possibilidade de usar elementos anexos como os disponibilizados
+ pelos dois elementos acima descritos, que armazenam suas regras com o mesmo
+ padrão utilizado aqui.
  Para um exemplo concreto, veja a implementação do balanceador de carga
  na 
 \begin_inset CommandInset ref
@@ -4870,31 +5026,31 @@ reference "sec:Balanceador-de-Carga"
 \end_layout
 
 \begin_layout Itemize
-SetTCPChecksum: com uma porta de entrada e outra de saída, este elemento
- é responsável por corrigir a soma de verificação do cabeçalho TCP, e garantir
- que os pacotes sejam considerados válidos pelas camadas de transporte que
- os recebem.
- Muito associado as saídas de um IPRewriter para validar os pacotes alterados
- por ele.
+
+\family typewriter
+SetTCPChecksum
+\family default
+: com uma porta de entrada e outra de saída, este elemento é responsável
+ por corrigir a soma de verificação do cabeçalho TCP, e garantir que os
+ pacotes sejam considerados válidos pelas camadas de transporte que os recebem.
+ Muito associado as saídas de um 
+\family typewriter
+IPRewriter
+\family default
+ para validar os pacotes alterados por ele.
 \end_layout
 
 \begin_layout Standard
-No caso deste trabalho, as 
+Neste trabalho, optou-se pelo uso do Ethernet Linux Bridge devido a problemas
+ encontrados nas instalações do 
 \shape italic
-vifs
+switch
 \shape default
- são mantidas.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Escrever sobre as decisões tomadas quanto aos softwares
-\end_layout
-
-\end_inset
-
-
+ Netmap e do OpenVSwitch.
+ Dessa forma, os responsáveis pelo baixo desempenho do ClickOS retornam
+ e evidentemente trazem resultados não muito expressivos com relação a vazão,
+ mas ainda sim validando a viabilidade da implementação de funções de rede
+ sobre uma camada de virtualização.
 \end_layout
 
 \begin_layout Section
@@ -4909,32 +5065,107 @@ name "sec:Um-dia-dentro"
 \end_layout
 
 \begin_layout Standard
-Um pacote criado por um cliente irá solicitar alguma ação para o servidor.
- Dada a abstração para que o dado chegue até o primeiro ponto de parada
- (firewall), ele chega pela rede, entra na interface virtual do switch virtual,
- que encaminha o mesmo para a interface contida na VNF.
- Nesse ponto o pacote é encaminhado para o buffer de entrada presente no
- kernel do ClickOS, que por sua vez permite que o Click receba os pacotes
- na interface de rede 0 através do elemento FromDevice.
- O elemento citado transmite o dado para o classificador (Classifier), que
- diante da análise o passa pela saída 2 ao verificar que se trata de um
- pacote Ethernet com cabeçalho IP na camada mais interna.
- Logo a frente, seu cabeçalho Ethernet é removido (Strip), seu cabeçalho
- IP é checado (CheckIPHeader), para que posteriormente possa ser analisado
- pelo elemento base do Firewall (IPFilter).
- Ao ser autorizado, o pacote inicia o caminho de saída para o próximo nó
- do cenário entrando no elemento responsável por consultar o MAC do próximo
- e encapsulá-lo (ARPQuerier), logo após chegando a fila usada para armazenar
- os pacotes enquanto o dispositivo de saída não está pronto (Queue), que
- quando o buffer de saída estiver apto, é removido de lá pelo elemento ToDevice
+Um pacote criado por um cliente realiza uma requisição qualquer para o servidor.
+ Dada a abstração para que o quadro chegue até o primeiro ponto de parada
+ (
+\shape italic
+firewall
+\shape default
+), ele adentra a rede e entra na interface virtual do 
+\shape italic
+switch
+\shape default
+ virtual, que o comuta e o encaminha à interface de rede associada a VNF,
+ que depois de passar pelo kernel do Xen, chega a interface virtual da função
+ virtual.
+ Nesse ponto o pacote é encaminhado para o 
+\shape italic
+buffer
+\shape default
+ de entrada presente no 
+\shape italic
+kernel
+\shape default
+ do ClickOS, que por sua vez permite que a VNF receba os quadros na interface
+ de rede 0 através do elemento 
+\family typewriter
+FromDevice
+\family default
+.
+ O elemento citado transmite o quadro para o classificador (
+\family typewriter
+Classifier
+\family default
+), que diante sua análise o transmite pela saída 2 ao verificar que se trata
+ de um quadro 
+\family typewriter
+Ethernet
+\family default
+ com cabeçalho IP na camada mais interna.
+ Logo a frente, seu cabeçalho Ethernet é removido (
+\family typewriter
+Strip
+\family default
+) e se torna um pacote, tendo seu cabeçalho IP é checado (
+\family typewriter
+CheckIPHeader
+\family default
+), para que posteriormente possa ser analisado pelo elemento base do 
+\shape italic
+firewall
+\shape default
+ (
+\family typewriter
+IPFilter
+\family default
+).
+ Ao ser considerado apto para seguir, o pacote inicia o caminho de saída
+ para o próximo nó do cenário entrando no elemento responsável por consultar
+ o endereço MAC deste próximo nó, e então encapsular o pacote em um novo
+ quadro (
+\family typewriter
+ARPQuerier
+\family default
+) e entregando a fila usada para armazenar os quadros enquanto o dispositivo
+ de saída não está pronto (
+\family typewriter
+Queue
+\family default
+).
+ O quadro só sai daqui quando o 
+\shape italic
+buffer
+\shape default
+ de saída estiver disponível, o que é feito pelo elemento 
+\family typewriter
+ToDevice
+\family default
  enviando-o pela interface de rede 1, notabilizando uma possível rede diferente
  daquela de entrada.
- Então o pacote vai ao buffer de saída da VNF e de lá para a interface virtual
- e para o switch virtual que encaminha para a porta do próximo nó.
+ Então o pacote vai ao 
+\shape italic
+buffer
+\shape default
+ de saída da VNF e de lá para o Xen, para a interface virtual do 
+\shape italic
+switch
+\shape default
+ e para o 
+\shape italic
+switch
+\shape default
+ virtual que encaminha para a porta do próximo nó.
  Passagens: 1, 2 e parte do 3 na 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:Comportamento-esperado-das"
+
+\end_inset
+
+, e a descrição na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Código-fw"
 
 \end_inset
 
@@ -4944,19 +5175,44 @@ reference "fig:Comportamento-esperado-das"
 \begin_layout Standard
 O processo se repete para a entrada do pacote no balanceador de carga até
  a etapa de checagem do endereço IP, onde ele é entregue ao elemento responsável
- pelo processo de troca de endereços de destino no DNAT (IPRewriter).
+ pelo processo de troca de endereços de destino no DNAT (
+\family typewriter
+IPRewriter
+\family default
+).
  Aqui a troca é feita conforme o elemento configurado para balancear a carga
- (SourceIPHashMapper ou RoundRobinIPMapper).
- O pacote com IP alterado para o servidor escolhido entra pela porta 0 de
- entrada e pela configuração sai pela porta 0 de saída, onde a correção
- da soma de verificação do protocolo TCP o aguarda e logo após o pacote
- sai em direção ao seu encapsulamento do cabeçalho Ethernet, repetindo o
- todo o processo de saída da VNF pela interface de rede 1, e o processo
- para sua entrega ao proximo nó.
+ (
+\family typewriter
+SourceIPHashMapper
+\family default
+ ou 
+\family typewriter
+RoundRobinIPMapper
+\family default
+).
+ O pacote com IP de destino alterado entra pela porta de entrada 0 e pela
+ regra escolhida sai pela porta de saída 0, onde a correção da soma de verificaç
+ão do protocolo TCP o aguarda (
+\family typewriter
+SetTCPChecksum
+\family default
+), e logo após é enviado em direção ao encapsulamento do cabeçalho 
+\shape italic
+Ethernet
+\shape default
+, repetindo o todo o processo de saída da VNF pela interface de rede 1,
+ e o processo para sua entrega ao proximo nó.
  Passagens: parte de 3, 4 e parte do 5 na 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:Comportamento-esperado-das"
+
+\end_inset
+
+, e a descrição na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Código-lb"
 
 \end_inset
 
@@ -4965,14 +5221,29 @@ reference "fig:Comportamento-esperado-das"
 
 \begin_layout Standard
 O próximo nó é o servidor, que assim como os outros recebe em sua interface
- de rede o pacote da interface virtual, adicionando ao buffer de entrada
- que em um momento analisa o protocolo de transporte e entrega-o de acordo
- com o serviço conectado a porta de destino definida.
+ de rede o quadro da interface virtual, adicionando-o ao 
+\shape italic
+buffer
+\shape default
+ de entrada que em um momento analisa o protocolo de transporte e entrega-o
+ de acordo com o serviço conectado a porta de destino definida.
  O serviço destinado analisa o pacote recebido, e supondo que seja respondível,
  o faz, o que ao fim gera um pacote resposta na rede em sentido contrário,
- que inicialmente sai do buffer de saída da interface de rede, passa pela
- interface virtual e chega ao switch virtual, que reencaminha o pacote para
- a porta onde está a interface com o balanceador de carga.
+ que inicialmente sai pelo 
+\shape italic
+buffer
+\shape default
+ de saída da interface de rede, passa pelo Xen, pela interface virtual do
+ 
+\shape italic
+switch
+\shape default
+ e chega ao 
+\shape italic
+switch
+\shape default
+ virtual, que reencaminha o pacote para a porta onde está a interface com
+ o balanceador de carga.
  Passagens: parte do 5, 6 e parte do 7 na 
 \begin_inset CommandInset ref
 LatexCommand formatted
@@ -5031,21 +5302,35 @@ Fonte: Elaborada pelo autor
 \end_layout
 
 \begin_layout Standard
-No sentido contrário, o pacote resposta faz um percurso parecido que no
- sentido normal.
+No sentido contrário, o quadro resposta faz um percurso parecido com aquele
+ no sentido normal.
  As principais diferenças estão na chegada a partir da interface de rede
- 1 e saída para o firewall na interface de saída 0, e no elemento de troca
- de endereços.
- Este último recebe o dado do elemento de checagem de endereços pela porta
- 1 ao invés da porta 0, para que possa descartar o pacote caso não haja
- regra compatível.
+ 1 e saída para o 
+\shape italic
+firewall
+\shape default
+ na interface de saída 0, e no elemento de NAT.
+ Este último recebe o pacote do elemento de checagem de endereços pela porta
+ de entrada 1 ao invés da porta 0, para que possa descartar o pacote caso
+ não haja regra compatível.
  Pela regra gravada na fase de envio, o pacote resposta ao pacote original
  deve sair pela porta 1 do elemento após corretamente convertido para os
  IPs externos.
  Assim que sai pela porta 1, o pacote tem seu reprocessamento da soma de
- verificação como anteriormente, e depois recebe a anotação (SetIPAddress)
- indicando que o pacote precisa passar por um gateway no próximo nó para
- rumar ao seu destino final.
+ verificação como anteriormente, e depois recebe a anotação (
+\family typewriter
+SetIPAddress
+\family default
+) indicando que o pacote precisa passar por um 
+\shape italic
+gateway
+\shape default
+ no próximo nó para rumar ao seu destino final, que será usado pelo elemento
+ de encapsulamento 
+\family typewriter
+ARPQuerier
+\family default
+.
  Todo o restante do processo no balanceador de carga é comum aos passos
  já mencionados.
  Passagens: parte do 7, 8 e parte de 9 na 
@@ -5055,16 +5340,30 @@ reference "fig:Comportamento-esperado-das"
 
 \end_inset
 
+ e a descrição na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Código-lb"
+
+\end_inset
+
 .
 \end_layout
 
 \begin_layout Standard
 Chegando ao firewall, o pacote resposta passa pelo mesmo procedimento mencionado
  no início, trocando as interfaces de rede em que entram e saem os pacotes:
- agora na porta 1 e porta 0, respectivamente.
+ agora a entrada é pela interface 1 e a saída é pela inteface 0, respectivamente.
  A partir deste ponto, retoma-se a abstração com relação a chegada do pacote
  resposta ao cliente.
- Passagens: parte do 9, 10, e 11.
+ Passagens: parte do 9, 10, e 11, e a descrição na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Código-fw"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -5082,7 +5381,11 @@ A proposta aqui passa por realizar os bloqueios no nível da camada de roteament
  e transporte.
  O elemento de Click responsável deve avaliar a quádrupla de endereços e
  portas de origem e destino para decidir com base nas regras implantadas
- a permissão ou não para seguir fluxo, em modo sem estado (stateless).
+ a permissão ou não para seguir no fluxo, em modo sem estado (
+\shape italic
+stateless
+\shape default
+).
  Dada a lista de pacotes no fluxo exibida na 
 \begin_inset CommandInset ref
 LatexCommand formatted
@@ -6274,27 +6577,42 @@ Os pacotes aceitos são transmitidos ao próximo nó da rede: o balanceador
 \end_layout
 
 \begin_layout Standard
-Para que o firewall funcione de acordo com a 
+Para que o 
+\shape italic
+firewall
+\shape default
+ funcione de acordo com a 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "sec:Um-dia-dentro"
 
 \end_inset
 
-, são necessárias duas interfaces de rede para diferenciar os fluxos do
- e para o mundo externo, e o fluxo do e para o balanceador de carga.
+, são necessárias duas interfaces de rede para diferenciar os fluxos do,
+ e para o, mundo externo, e o fluxo do, e para o, balanceador de carga.
  Essa separação naturalmente exige dois conjuntos mínimos de elementos para
  tratar os pacotes na camada de enlace, respondendo e realizando requisições
  ARP, e classificando os pacotes conforme seus cabeçalhos.
  Exige também que o arquivo de configuração da máquina virtual a abrigar
- o firewall ative as placas de rede e atribua endereços IP, endereços MAC
- e os switches virtuais nos quais a interface se conecta.
+ o 
+\shape italic
+firewall
+\shape default
+ ative as placas de rede e atribua endereços IP, endereços MAC e os 
+\shape italic
+switches
+\shape default
+ virtuais nos quais a interface se conecta.
 \end_layout
 
 \begin_layout Standard
 Com relação a memória e processamento, as máquinas virtuais não exigem muitos
- recursos, a ponto de 12MB de memória e uma CPU virtual fazer a maioria
- das tarefas, inclusive um firewall, como demonstra 
+ recursos, a ponto de 12MB de memória e um processador virtual fazerem a
+ maioria das tarefas, inclusive um 
+\shape italic
+firewall
+\shape default
+, como demonstra 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "martins_clickos_2014"
@@ -6302,34 +6620,46 @@ key "martins_clickos_2014"
 \end_inset
 
 .
- Em caso de problemas, ClickOS dá sinais sobre sua parada no registro de
- erros e alertas, e portanto, uma heurística pode definir melhor quais recursos
- ajustar para a função sem que haja desperdício.
+ Em caso de problemas, ClickOS dá sinais sobre sua problemas no registro
+ de erros e alertas, e portanto, uma heurística pode definir melhor quais
+ recursos ajustar para a função sem que haja desperdício.
  O tamanho das filas de saída de pacotes deve ser estudado.
 \end_layout
 
 \begin_layout Standard
 Uma vez que os conjuntos de elementos são corretamente configurados, é preciso
  tratar os pacotes de dados.
- O uso do elemento Strip, passando o número de bytes usados pelo cabeçalho
- Ethernet para que os remova é o primeiro passo.
- Verificar a validade do cabeçalho IP extraído, para garantir que o pacote
- ainda é válido, é o segundo.
- Isto é providenciado pelo elemento CheckIPHeader, que também pode filtrar
- pacotes com base em IPs indesejados, principalmente IPs de comunicação
- abrangente (broadcasts).
- 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-configurar no elemento no código.
+ O uso do elemento 
+\family typewriter
+Strip
+\family default
+, passando o número de 
+\shape italic
+bytes
+\shape default
+ usados pelo cabeçalho 
+\shape italic
+Ethernet
+\shape default
+ para que os remova é o primeiro passo.
+ Verificar a validade do pacote IP extraído, para garantir que este seja
+ válido, é o segundo.
+ Isto é providenciado pelo elemento 
+\family typewriter
+CheckIPHeader
+\family default
+, que também pode filtrar pacotes com base em IPs indesejados, principalmente
+ IPs de comunicação abrangente (
+\shape italic
+broadcasts
+\shape default
+).
+ Depois desse tratamento e checagem, é possível pensar no bloqueio e autorização
+ de pacotes de maneira geral.
 \end_layout
 
-\end_inset
-
-Depois desse tratamento e checagem, é possível pensar no bloqueio e autorização
- de pacotes de maneira geral.
+\begin_layout Standard
+OBS: Parei aqui <—
 \end_layout
 
 \begin_layout Standard
@@ -7239,6 +7569,13 @@ status open
 
 \begin_layout Plain Layout
 Código para o balanceador de carga por endereço IP de origem no Click
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Código-lb"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -7298,6 +7635,16 @@ No caso do elemento de balanceamento por Round Robin, as linhas descritas
 hash
 \shape default
 .
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+inserir figura do bal RR
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
