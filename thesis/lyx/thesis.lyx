@@ -1432,6 +1432,31 @@ status open
 
 \end_inset
 
+MEC
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Acrônimo em língua inglesa para Computação Móvel de Borda
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
 MIT
 \begin_inset ERT
 status open
@@ -1597,6 +1622,31 @@ status open
 
  Sigla em língua inglesa para Infraestrutura de Virtualização de Funções
  de Rede
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+NSH
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Sigla em língua inglesa para Cabeçalho de Serviços de Rede 
 \end_layout
 
 \begin_layout Siglas
@@ -1798,6 +1848,31 @@ status open
 \end_inset
 
  Sigla em língua inglesa para Rede Definida por Software
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+SFC
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Sigla em língua inglesa para Encadeamento de Funções de Serviço
 \end_layout
 
 \begin_layout Siglas
@@ -2177,16 +2252,29 @@ Um dos padrões em desenvolvimento nesse sentido é o de Virtualização de
  ciclo de vida de hardware e software, e economia de recursos e investimentos
  – justamente os pontos fracos do modelo acoplado ao hardware.
  
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-projeção de nfv e cloud 
 \end_layout
+
+\begin_layout Standard
+Uma das tendências para o uso de NFV e motivo de pesquisas nos últimos anos
+ é observada na simplificação da gerência de rede e isolamento em sistemas
+ de Computação Móvel na Borda (MEC) em redes 5G 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "mao_survey_2017"
 
 \end_inset
 
+, que com o advento de Internet das Coisas, Cidades Inteligentes e Indústria
+ 4.0, aborda a necessidade dos serviços estarem cada vez mais próximos do
+ usuário final para a redução do atraso nas comunicações que aplicações
+ nessas áreas requisitam 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "fajardo_introducing_2016"
 
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -2297,7 +2385,7 @@ key "rizzo_vale_2012"
 
 \end_inset
 
- e OpenVSwitch 
+ e Open vSwitch 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "pfaff_extending_2009"
@@ -2806,7 +2894,7 @@ key "pfaff_extending_2009"
 \end_layout
 
 \begin_layout Standard
-Um dos expoentes dessa classe é o OpenVSwitch, que leva programabilidade
+Um dos expoentes dessa classe é o Open vSwitch, que leva programabilidade
  para as redes ao abordar a questão de Redes Definidas por Software (SDNs).
  No entanto outros mais simples podem ser úteis em determinadas situações.
  É o caso do VALE 
@@ -2849,8 +2937,15 @@ O conjunto de portas, usado para encaminhar tráfego entre os dispositivos
 
 \begin_layout Alineas
 O plano de controle, usado para executar o Protocolo de Árvore Geradora
- (STP), que calcula a árvore geradora mínima para a rede local, prevenindo
- que repetições infinitas quebrem a rede;
+ (STP) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "perlman_algorithm_1985"
+
+\end_inset
+
+, que calcula a árvore geradora mínima para a rede local, prevenindo que
+ repetições infinitas quebrem a rede;
 \end_layout
 
 \begin_layout Alineas
@@ -4491,7 +4586,7 @@ key "rizzo_revisiting_2012"
 \end_inset
 
 .
- Ele entra na plataforma substituindo o pouco otimizado OpenVSwitch e ao
+ Ele entra na plataforma substituindo o pouco otimizado Open vSwitch e ao
  fim é alterado para que forneça acesso direto dos 
 \shape italic
 buffers
@@ -4840,11 +4935,11 @@ reference "sec:Click"
 
 \end_inset
 
-, incentivam um desenvolvimento de VNFs a partir de uma visão macro em relação
- àquela vista em linguagens de programação, sem associar-se apenas ao ensino
- de redes em mais alto nível, uma vez que em determinado momento é capaz
- de entregar desempenho satisfatório segundo seus autores, inclusive sendo
- habilitável ao NFV.
+ respectivamente, incentivam um desenvolvimento de VNFs a partir de uma
+ visão macro em relação àquela vista em linguagens de programação, sem associar-
+se apenas ao ensino de redes em mais alto nível, uma vez que em determinado
+ momento é capaz de entregar desempenho satisfatório segundo seus autores,
+ inclusive sendo habilitável ao NFV.
 \end_layout
 
 \begin_layout Standard
@@ -8068,7 +8163,7 @@ hardware
 \shape italic
 software
 \shape default
- necessários para a execução dos testes (
+ necessários para a execução dos testes no 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "sec:Infraestrutura-e-softwares"
@@ -8082,8 +8177,15 @@ reference "sec:Alocação-de-recursos"
 
 \end_inset
 
-); encaminha a configuração de um ambiente de testes com simulação em um
- serviço de hospedagem de páginas 
+, respectivamente; encaminha em 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:Protótipo"
+
+\end_inset
+
+ a configuração de um ambiente de testes com simulação em um serviço de
+ hospedagem de páginas 
 \shape italic
 web
 \shape default
@@ -8094,14 +8196,7 @@ reference "chap:PROJETO-E-IMPLEMENTAÇÃO"
 
 \end_inset
 
- (
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "sec:Protótipo"
-
-\end_inset
-
-); propõe os testes funcionais para o 
+; e propõe os testes funcionais para o 
 \shape italic
 firewall
 \shape default
@@ -8640,7 +8735,7 @@ name "tab:Softwares-para-a-vm"
 \begin_layout Standard
 Importante mencionar que a criação do ClickOSSwitch pelos autores do ClickOS
  não exclui a possibilidade de uso de outros comutadores como o próprio
- OpenVSwitch e o Linux Bridge.
+ Open vSwitch e o Linux Bridge.
  A consequência do uso destes outros é a perda de desempenho de rede de
  forma geral, mas para testes e aplicações que não exijam desempenho prontamente
 , a plataforma incentiva o desenvolvimento naquilo que mais importa: as
@@ -10848,7 +10943,85 @@ name "chap:CONCLUSÃO"
 \end_layout
 
 \begin_layout Standard
-Reafirmar a porra toda
+Os testes realizados ao longo deste trabalho, somado ao desenvolvimento
+ experimentado das funções virtuais de rede, demonstraram o alcance do objetivo
+ firmado.
+ As funções virtuais implementadas desempenharam seu papel funcional proposto
+ no cenário de hospedagem web sem que problemas de implantação fossem encontrado
+s.
+ Ao mesmo tempo, a construção de VNFs simples foi rápida a partir do momento
+ que os conceitos de redes foram melhor absorvidos pelo autor, indicando
+ que o futuro desenvolvedor em ClickOS pode obter rápidos protótipos em
+ um desenvolvimento ágil, com um domínio básico inicial sobre os conceitos
+ de redes TCP/IP e seus 
+\shape italic
+middleboxes
+\shape default
+.
+\end_layout
+
+\begin_layout Standard
+Por outro lado, a ausência testes de desempenho em 
+\shape italic
+hardware
+\shape default
+ e 
+\shape italic
+softwares
+\shape default
+ apropriados não permitiu concluir enfaticamente acerca de ClickOS como
+ uma alternativa viável aos 
+\shape italic
+middleboxes
+\shape default
+ de prateleira, embora sua forma apresentada por este trabalho seja utilizável
+ para ambientes específicos e de baixa carga, a custo de pequenos atrasos
+ na comunicação.
+ É importante destacar que ClickOS ainda se refere a um projeto com pequenos
+ erros de implementação na plataforma, e principalmente com relação a ferramenta
+ Click e seus elementos especificamente, que mesmo seu desenvolvimento ativo
+ de longa data não foi capaz de saná-los.
+\end_layout
+
+\begin_layout Standard
+A título de trabalhos futuros, devido a sua natureza modular e agradável
+ a programação, ClickOS possui requisitos iniciais para motivar a criação
+ de novos elementos sobre novos protocolos e tecnologias como o Cabeçalho
+ de Serviços de Rede (NSH) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rfc8300"
+
+\end_inset
+
+ e Encadeamento de Funções de Serviço (SFC) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rfc7665"
+
+\end_inset
+
+, com eficiência algorítmica para diminuir os atrasos causados pela VNF,
+ visando sua aplicação em MECs, desde que seu desempenho seja verificado
+ de antemão, e toda a integração a tecnologias NFV seja melhor implementada.
+\end_layout
+
+\begin_layout Standard
+No mesmo caminho, uma outra contribuição possível é a montagem de VNFs em
+ ClickOS de forma dinâmica, de acordo com os requisitos atribuídos por um
+ gerente NFV, possibilitando configurações em ainda mais alto nível do que
+ apresentado pela linguagem de marcação de Click.
+\end_layout
+
+\begin_layout Standard
+Este trabalho permitiu uma boa aquisição e aplicação de conhecimentos técnicos
+ sobre redes de computadores TCP/IP, revisitando conceitos aprendidos nas
+ disciplinas de graduação.
+ Mas também significou um aprendizado de vivência em um ambiente associado
+ a redes e telecomunicações.
+ Sua importância para o autor é imensurável uma vez que é um marco pessoal
+ e ao mesmo tempo abre portas para novos desafios na área, sejam na academia
+ ou no mercado de trabalho.
 \end_layout
 
 \begin_layout Standard
