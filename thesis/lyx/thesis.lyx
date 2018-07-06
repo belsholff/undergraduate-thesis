@@ -159,7 +159,7 @@ Citado #1 vezes nas páginas #2.
 \begin_body
 
 \begin_layout Titulo
-Implementação de Funções de Rede Virtuais usando ClickOS
+Implementação de Funções Virtuais de Rede usando ClickOS
 \end_layout
 
 \begin_layout Local
@@ -196,8 +196,8 @@ Julho 2018
 \end_layout
 
 \begin_layout Preambulo
-Projeto final de graduação apresentado ao Departamento de Informática do
- Centro Técnológico da Universidade Federal do Espírito Santo, como requisito
+Trabalho de conclusão de curso apresentado ao Departamento de Informática
+ do Centro Tecnológico da Universidade Federal do Espírito Santo, como requisito
  parcial para obter o título de Bacharel em Ciência da Computação
 \end_layout
 
@@ -530,7 +530,9 @@ imprimircoorientador}
 \backslash
 assinatura{
 \backslash
-textbf{Professor} 
+textbf{Prof.
+ Dr.
+ Vinicius Fernandes Soares Mota} 
 \backslash
 
 \backslash
@@ -544,12 +546,12 @@ textbf{Professor}
 assinatura{
 \backslash
 textbf{Profa.
- Dra.
+ M.Sc.
  Cristina Klippel Dominicini} 
 \backslash
 
 \backslash
- Convidado Externo}
+ Convidada Externa}
 \end_layout
 
 \begin_layout Plain Layout
@@ -723,7 +725,7 @@ middleboxes
 
 \begin_layout Resumo
 Neste quesito, ClickOS propõe uma plataforma de virtualização para criação
- de funções de rede virtuais de alto desempenho, a serem amplamente utilizados
+ de funções virtuais de rede de alto desempenho, a serem amplamente utilizados
  por desenvolvedores de VNFs.
  Ele provê como ferramenta uma máquina virtual minimalista, escalável e
  otimizada para executar o 
@@ -749,7 +751,7 @@ No entanto, a pouca quantidade de trabalhos ou artigos detalhando o uso
 
 \begin_layout Resumo
 Assim sendo, este trabalho tem como objetivo apresentar detalhadamente ClickOS
- como uma alternativa para a implementação de funções de rede virtuais dentro
+ como uma alternativa para a implementação de funções virtuais de rede dentro
  de NFV, usando como cenário o balanceamento de carga em serviços de hospedagem
  
 \shape italic
@@ -764,7 +766,7 @@ web
 \series bold
 Palavras-chave: 
 \series default
-NFV; virtualização de funções de rede; VNF; função de rede virtual; middleboxes
+NFV; virtualização de funções de rede; VNF; função virtual de rede; middleboxes
  virtuais; Click; ClickOS.
 \end_layout
 
@@ -1191,6 +1193,31 @@ status open
 \end_inset
 
  Acrônimo recursivo em língua inglesa para GNU não é Unix
+\end_layout
+
+\begin_layout Siglas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[
+\end_layout
+
+\end_inset
+
+HTML
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+ Sigla em língua inglesa para Linguagem de Marcação de Hipertexto
 \end_layout
 
 \begin_layout Siglas
@@ -1995,7 +2022,7 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa para Função de Rede Virtual
+ Sigla em língua inglesa para Função Virtual de Rede 
 \end_layout
 
 \begin_layout Standard
@@ -2098,7 +2125,7 @@ software
  embarcado, com alto custo e ciclo de vida reduzido, diante do rápido desenvolvi
 mento das redes de computadores.
  No âmbito de atualizações e manutenções, não são equipamentos modulares,
- o que somado ao fim do suporte ocasiona a troca dos aparelhos, prejudicando
+ o que somado ao fim do suporte, ocasiona a troca dos aparelhos, prejudicando
  o capital investido (CAPEX) e a despesa operacional (OPEX) das empresas
  usuárias.
 \end_layout
@@ -2122,10 +2149,10 @@ key "morris_click_1999"
 \end_inset
 
 , por exemplo.
- O início deste século trouxe o processamento em altas frequências, junto
+ O início deste século trouxe o processamento em alta frequência, junto
  com a capacidade de paralelizá-lo, e mais a frente, a viabilidade da camada
  de virtualização de maneira geral, com menor perda de desempenho, grande
- eficiência energética e econômica para os investidores.
+ eficiência energética e econômica.
  Desta forma, os 
 \shape italic
 middleboxes
@@ -2134,7 +2161,7 @@ middleboxes
 \shape italic
 hardware
 \shape default
- se tornaram viáveis, na forma de funções de rede virtuais (VNFs) com o
+ se tornaram viáveis, na forma de funções virtuais de rede (VNFs) com o
  uso de tecnologias como 
 \shape italic
 containers
@@ -2195,10 +2222,10 @@ key "zhang_opennetvm:_2016"
 .
  Citado anteriormente como exemplo, Click foi um dos casos de sucesso em
  matéria de desacoplar código, sendo o equivalente de sua época a uma função
- de rede virtual.
- E mais de uma década depois, sua existência e vantagens se tornaram parte
- de um desses projetos de virtualização de dispositivos de rede e que é
- utilizado neste trabalho: chama-se ClickOS 
+ virtual de rede.
+ E mais de uma década depois, sua existência e suas vantagens se tornaram
+ parte de um desses projetos de virtualização de dispositivos de rede mais
+ populares e que é utilizado neste trabalho: chama-se ClickOS 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "martins_clickos_2014"
@@ -2239,12 +2266,12 @@ uma fácil implementação de VNFs com uma linguagem de marcação voltada para
 \end_layout
 
 \begin_layout Alineas
-para o provimento da camada de virtualização necessária, incluindo a gerência
- dos recursos das máquinas virtuais;
+o provimento da camada de virtualização, incluindo a gerência dos recursos
+ das máquinas virtuais;
 \end_layout
 
 \begin_layout Alineas
-para prover um 
+prover um 
 \shape italic
 micro-kernel
 \shape default
@@ -2257,7 +2284,7 @@ No entanto, até pela questão das disputas do nicho e pelo ainda recente
  desenvolvimento de soluções para provimento de VNFs, a plataforma sofre
  com a falta de materiais didáticos, sejam em inglês ou português, mesmo
  aqueles que tratam apenas de Click, desestimulando seu uso em detrimento
- de outros semelhantes como atualmente acontece com P4.
+ de outros semelhantes como P4.
  Como exemplo dessa questão, é possível citar a falta de documentações sobre:
  a integração de Click com os 
 \shape italic
@@ -2295,8 +2322,8 @@ Este trabalho apresenta a plataforma para implementação de VNFs ClickOS,
 \end_layout
 
 \begin_layout Standard
-Como objetivo específico, no trabalho implementa-se duas funções de rede
- virtuais em ClickOS detalhadamente, com um cenário comum ao balanceamento
+Como objetivo específico, no trabalho implementa-se duas funções virtuais
+ de rede em ClickOS detalhadamente, com um cenário comum ao balanceamento
  de carga em serviços de hospedagem 
 \shape italic
 web
@@ -2400,20 +2427,15 @@ reference "sec:Linux-Bridge"
 \shape italic
 switch
 \shape default
- virtual é posicionado dentro do cenário de virtualização, com o cuidado
- de explicar ao máximo seu mecanismo básico de uso, como insumo para o restante
- do trabalho.
-\end_layout
-
-\begin_layout Standard
-Mais conceitos são tratados no 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "chap:ENTENDENDO-CLICKOS"
+ virtual Ethernet Linux Bridge 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "varis2012anatomy"
 
 \end_inset
 
-, no entanto a riqueza de detalhes faz deste um capítulo com destaque.
+ é posicionado dentro do cenário de virtualização, com o cuidado de explicar
+ ao máximo seu mecanismo básico de uso, como insumo para o restante do trabalho.
 \end_layout
 
 \begin_layout Section
@@ -2458,7 +2480,7 @@ hardware
 \shape italic
 software
 \shape default
- sobre os quais as funções de rede virtualizadas são desenvolvidas.
+ sobre os quais as funções virtuais de rede são desenvolvidas.
  As abstrações dos recursos são atingidas ao inserir sobre elas uma camada
  de virtualização usando 
 \shape italic
@@ -2511,7 +2533,7 @@ key "watson_virtualbox:_2008"
 \end_layout
 
 \begin_layout Alineas
-Serviços e Funções de Rede Virtuais: funções de rede são normalmente dispositivo
+Serviços e Funções Virtuais de Rede: funções de rede são normalmente dispositivo
 s dentro de uma infraestrutura de rede com interfaces externas e comportamento
  bem definidas 
 \begin_inset CommandInset citation
@@ -2577,13 +2599,29 @@ Orquestração e Gerenciamento NFV (NFV MANO): funcionalidades para prover
  de ciclo de vida, e o comportamento das funções virtuais, sob responsabilidade
  do VIM.
  Isso inclui a orquestração e o gerenciamento do ciclo de vida de recursos
- de software e hardware que dão suporte a virtualização.
+ de 
+\shape italic
+software
+\shape default
+ e 
+\shape italic
+hardware
+\shape default
+ que dão suporte a virtualização.
  NFV MANO foca em tarefas especificas para gerenciamento de virtualização
- no framework NFV.
- Já o framework é responsável por definir as interfaces para comunicação
- de componentes do NFV MANO, tal qual a coordenação de sistemas tradicionais
- de gerenciamento como os Sistemas de Suporte às Operações (OSS) e os Sistemas
- de Suporte aos Negócios (BSS) 
+ no 
+\shape italic
+framework
+\shape default
+ NFV.
+ O 
+\shape italic
+framework
+\shape default
+ em si é responsável por definir as interfaces para comunicação de componentes
+ do NFV MANO, tal qual a coordenação de sistemas tradicionais de gerenciamento
+ como os Sistemas de Suporte às Operações (OSS) e os Sistemas de Suporte
+ aos Negócios (BSS) 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "mijumbi_network_2016"
@@ -2627,7 +2665,7 @@ name "fig:Representação-do-modelo-NFV"
 \begin_inset Graphics
 	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/modelo_NFV.png
 	lyxscale 75
-	scale 40
+	scale 35
 
 \end_inset
 
@@ -2684,8 +2722,9 @@ key "mijumbi_network_2016"
 
 \end_inset
 
-, algumas dessas questões são: a) controle e gerência de equipamentos legados;
- b) quais funções de rede virtuais devem ser implantadas em 
+, algumas dessas questões são: a) como realizar o controle e a gerência
+ de equipamentos legados; b) quais funções virtuais de rede devem ser implantada
+s em 
 \shape italic
 datacenters
 \shape default
@@ -2699,7 +2738,7 @@ containers
 \end_layout
 
 \begin_layout Standard
-O modelo projetado traz diversas vantagens em relação ao modelo de software
+O modelo proposto traz diversas vantagens em relação ao modelo de software
  acoplado a hardware além das economias financeiras por si só.
  A programabilidade das funções de rede permitem um desenvolvimento, manutenção
  e implantação de acordo com os anseios do cliente, de maneira mais rápida
@@ -2777,18 +2816,7 @@ key "rizzo_vale_2012"
 
 \end_inset
 
- e do Ethernet Linux Bridge 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "varis2012anatomy"
-
-\end_inset
-
-, que é o 
-\shape italic
-switch
-\shape default
- deste trabalho.
+ e do Ethernet Linux Bridge.
  O Linux Bridge faz parte do 
 \shape italic
 kernel
@@ -2800,8 +2828,11 @@ key "noauthor_linux_2018"
 
 \end_inset
 
- como um módulo e é dividido de forma grosseira em quatro componentes como
- a maioria desses dispositivos 
+ como um módulo e está a pronta entrega para ambientes de virtualização
+ de uso cotidiano ou voltados para testes, necessitando apenas de habilitá-lo
+ no sistema, e possuindo suporte constante e consolidado.
+ Ele é dividido de forma grosseira em quatro componentes como a maioria
+ desses dispositivos 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "varis2012anatomy"
@@ -2812,20 +2843,20 @@ key "varis2012anatomy"
 \end_layout
 
 \begin_layout Alineas
-O conjunto de portas usado para encaminhar tráfego entre os dispositivos
+O conjunto de portas, usado para encaminhar tráfego entre os dispositivos
  ligados a ele, reais ou virtuais;
 \end_layout
 
 \begin_layout Alineas
-O plano de controle usado para executar o Protocolo de Árvore Geradora (STP),
- que calcula a árvore geradora mínima para a rede local, prevenindo que
- repetições infinitas quebrem a rede;
+O plano de controle, usado para executar o Protocolo de Árvore Geradora
+ (STP), que calcula a árvore geradora mínima para a rede local, prevenindo
+ que repetições infinitas quebrem a rede;
 \end_layout
 
 \begin_layout Alineas
-O plano de encaminhamento responsável por processar quadros que entram pela
- porta de rede, fazendo uma decisão de encaminhamento sobre qual porta deve
- recebê-los;
+O plano de encaminhamento, responsável por processar quadros que entram
+ pela porta de rede, fazendo uma decisão sobre para qual das portas deve-se
+ encaminhá-los;
 \end_layout
 
 \begin_layout Alineas
@@ -2836,9 +2867,9 @@ key "noauthor_ieee_2016"
 
 \end_inset
 
- mantém registrado em um banco de dados (tabela) a porta de rede (no caso,
- virtual) na qual o endereço MAC está conectado, e portanto, servindo de
- consulta para encaminhar quadros para seu destinatário.
+ mantém registrado em um banco de dados (tabela) a porta de rede na qual
+ o endereço MAC está conectado, e portanto, servindo de consulta para encaminhar
+ quadros para seu destinatário.
  Caso não conste o endereço, o quadro é enviado para todas as portas exceto
  a de origem.
 \end_layout
@@ -2873,7 +2904,7 @@ name "fig:Estrutura-das-interfaces-bridge"
 \begin_inset Graphics
 	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/vif_bridge.png
 	lyxscale 90
-	scale 50
+	scale 40
 
 \end_inset
 
@@ -2919,9 +2950,12 @@ vif4.0
 \family typewriter
 vif7.0
 \family default
-), uma porta com a interface física do hospedeiro para comunicação externa
- a camada de virtualização, e por último uma porta conectada ao elemento
- de rede que identifica o comutador conectado.
+), uma porta com a interface física do hospedeiro (
+\family typewriter
+eth0
+\family default
+) para comunicação externa a camada de virtualização, e por último uma porta
+ conectada ao elemento de rede que identifica o comutador conectado.
  Este último recebe um endereço do Protocolo de Internet (IP) 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -2953,8 +2987,7 @@ dom7
 \family typewriter
 dom7
 \family default
-, e recebe essa informação do plano de aprendizado de MACs através de consulta
- ao seu banco de dados ou fazendo uma busca.
+ e recebe-a do plano de aprendizado de MACs.
 \end_layout
 
 \begin_layout Standard
@@ -2999,15 +3032,7 @@ switch
 vif = [ ]
 \family default
 .
- A 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:Uma-aplicação-dos"
-
-\end_inset
-
- demonstra um exemplo mais concreto em seu topo, porém um exemplo simplificado
- é 
+ Um exemplo simplificado é 
 \family typewriter
 vif=[ 'bridge=mybridge' ]
 \family default
@@ -3027,7 +3052,7 @@ key "noauthor_xen_nodate"
 \end_layout
 
 \begin_layout Chapter
-ENTENDENDO CLICKOS
+ENTENDENDO CLICK E CLICKOS
 \begin_inset CommandInset label
 LatexCommand label
 name "chap:ENTENDENDO-CLICKOS"
@@ -3097,42 +3122,31 @@ software
  e sem as limitações corriqueiramente impostas por soluções proprietárias
  em redes.
  Não há restrição de camadas ou protocolos de transmissão, bastando adicionar
- seu suporte, porém o foco está na camada 2 e 3 do modelo OSI 
+ seu suporte, porém o foco está nas Camadas 2 e 3 do modelo OSI 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "day_osi_1983"
 
 \end_inset
 
-, com diversas operações na camada 4.
+, com diversas operações na Camada 4.
 \end_layout
 
 \begin_layout Standard
 Click trabalha com uma unidade chamada elemento.
- Ele representa a execução de uma atividade esperada no pacote recebido
- e deve ser conectado a outros como em um grafo, permitindo o fluxo de pacotes.
- A junção de vários desses obedecendo uma lógica cria uma VNF como um 
-\shape italic
-firewall
-\shape default
-, balanceador de carga, ou qualquer outro processador de pacotes.
- Fazem parte do projeto cerca de trezentos elementos pré-implementados pelos
- desenvolvedores e parceiros, em código aberto, e podem ser alterados conforme
- desejado desde que o editor tenha conhecimentos em C++ 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "morris_click_1999"
+ Ele representa a execução de uma atividade programada (classe) no pacote
+ recebido, como 
+\family typewriter
+Tee
+\family default
+ na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Descrição-gráfica-de"
 
 \end_inset
 
-, 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Stroustrup:2013:CPL:2543987"
-
-\end_inset
-
-.
+ recebe quadros e cria uma cópia (parâmetro de valor 2).
 \end_layout
 
 \begin_layout Standard
@@ -3140,10 +3154,6 @@ key "Stroustrup:2013:CPL:2543987"
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -3193,6 +3203,19 @@ key "morris_click_1999"
 \end_layout
 
 \begin_layout Standard
+Fazem parte do projeto cerca de trezentos elementos pré-implementados pelos
+ desenvolvedores e parceiros, em código aberto, e podem ser alterados conforme
+ desejado desde que o editor tenha conhecimentos em C++ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "morris_click_1999,Stroustrup:2013:CPL:2543987"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 Uma lista não extensa desses elementos com base na documentação do Click
  disponível 
 \begin_inset CommandInset citation
@@ -3201,13 +3224,17 @@ key "kohler_click:_2018"
 
 \end_inset
 
-:
+ é apresentada a seguir:
 \end_layout
 
 \begin_layout Alineas
 Protocolo Ethernet: 
 \family typewriter
-EtherEncap, EtherSwitch, EtherVLANEncap, SetEtherAddress
+EtherEncap, EtherSwitch, EtherVLANEncap,
+\begin_inset Newline newline
+\end_inset
+
+SetEtherAddress
 \family default
 ;
 \end_layout
@@ -3247,7 +3274,11 @@ Classifier, IPClassifier
 \begin_layout Alineas
 Roteamento: 
 \family typewriter
-StaticIPLookup, LinearIPLookup, DirectIPLookup, IPRouteTable
+StaticIPLookup, LinearIPLookup, DirectIPLookup,
+\begin_inset Newline newline
+\end_inset
+
+IPRouteTable
 \family default
 ;
 \end_layout
@@ -3255,7 +3286,11 @@ StaticIPLookup, LinearIPLookup, DirectIPLookup, IPRouteTable
 \begin_layout Alineas
 NAT: 
 \family typewriter
-IPRewriter, ICMPRewriter, TCPRewriter, RoundRobinIPMapper, SouceIPHashMapper
+IPRewriter, ICMPRewriter, TCPRewriter, RoundRobinIPMapper,
+\begin_inset Newline newline
+\end_inset
+
+SourceIPHashMapper
 \family default
 ;
 \end_layout
@@ -3299,13 +3334,24 @@ CoDel
 \begin_layout Alineas
 Redes sem Fio: 
 \family typewriter
-WifiEncap, WifiDecap, WirelessInfo, BeaconScanner, OpenAuthRequeser
+WifiEncap, WifiDecap, WirelessInfo, BeaconScanner,
+\begin_inset Newline newline
+\end_inset
+
+OpenAuthRequeser
 \family default
-;
+.
 \end_layout
 
-\begin_layout Alineas
-e demais elementos de controle, de testes e de procura de erros.
+\begin_layout Standard
+Esses e muitos outros elementos devem ser conectados a outros como em um
+ grafo, permitindo o fluxo de pacotes.
+ A junção de vários desses elementos obedecendo uma lógica cria uma VNF
+ qualquer, tais como um 
+\shape italic
+firewall
+\shape default
+, um balanceador de carga, ou qualquer outro processador de pacotes.
 \end_layout
 
 \begin_layout Standard
@@ -3325,7 +3371,14 @@ reference "fig:Descrição-gráfica-de"
 
 \end_inset
 
-e a 
+, 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Condicionador-de-tráfego"
+
+\end_inset
+
+ e a 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:Uma-aplicação-dos"
@@ -3359,7 +3412,7 @@ push
  que as utilizam devem estar sempre disponíveis para receber pacotes ou
  eles se perdem.
  Por fim, há portas chamadas agnósticas, que assumem o comportamento do
- fluxo de processamento predominante
+ fluxo de processamento predominante 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "morris_click_1999"
@@ -3499,22 +3552,27 @@ Classifier
 \end_layout
 
 \begin_layout Alineas
-Um chaveador de fluxo (
+Primeiro um chaveador de fluxo (
 \family typewriter
 Meter
 \family default
-) que limita em no máximo 7500 quadros por segundo o fluxo, sendo então
- despejados em uma fila caso respeitem essa taxa ou então descartados pela
- outra porta de saída;
+) que limita em no máximo 7500 quadros por segundo o fluxo, sendo ele despejado
+ em uma fila caso respeite a taxa ou então descartado caso exceda, pela
+ outra porta de saída em direção ao 
+\family typewriter
+Discard
+\family default
+;
 \end_layout
 
 \begin_layout Alineas
-Uma fila acoplada a um elemento limitador de fluxo (
+Depois, a segunda saída é acoplada a uma fila e a um elemento limitador
+ de fluxo (
 \family typewriter
 Shaper
 \family default
 ), que solicita pacotes a uma taxa de no máximo 10000 quadros por segundo
- através de porta 
+ através de sua porta 
 \shape italic
 pull
 \shape default
@@ -3522,14 +3580,16 @@ pull
 \end_layout
 
 \begin_layout Alineas
-Outro chaveador de fluxo com 12500 quadros por segundo em outra fila, ou
- a passagem no elemento que marca o campo de serviços diferenciados do cabeçalho
- IP para o valor 4 antes de despejar em uma quarta fila;
+Quase no fim, a terceira saída se conecta a outro chaveador de fluxo, dessa
+ vez com 12500 quadros por segundo sendo despejados em uma outra fila diferente
+ caso respeite o limite, ou então a passagem para o elemento que marca o
+ campo de serviços diferenciados do cabeçalho IP para o valor 4, antes de
+ despejar esse mesmo fluxo em uma quarta fila;
 \end_layout
 
 \begin_layout Alineas
-Quarta fila aliás, que também recebe o fluxo que sai pela porta 4 do classificad
-or.
+Por último, a quarta saída conecta-se diretamente a mesma fila que o ramo
+ anterior na condição de fluxo maior que 12500 se conecta.
  
 \end_layout
 
@@ -3574,7 +3634,7 @@ push
 pull
 \shape default
 .
- Outra observação interessante é quanto a fila do quarto caminho que recebe
+ Outra observação interessante é quanto à fila do quarto caminho, que recebe
  as saídas de processamento de dois elementos, evidenciando que as portas
  de entrada 
 \shape italic
@@ -3589,7 +3649,7 @@ pull
 
 \begin_layout Standard
 O exemplo acima possui uma visão em grafo.
- Já o presente na 
+ Já a 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:Uma-aplicação-dos"
@@ -3597,27 +3657,31 @@ reference "fig:Uma-aplicação-dos"
 \end_inset
 
  demonstra através da linguagem de marcação do Click uma estrutura mínima
- para atuar sobre o protocolo IP: 
+ para atuar sobre o protocolo IP, tendo o protocolo 
+\shape italic
+Ethernet
+\shape default
+ e ARP na camada inferior: 
 \end_layout
 
 \begin_layout Alineas
-Todos os momentos onde :: é utilizado significam uma definição de nome para
- o elemento criado.
+Todos os momentos onde :: é utilizado significam uma declaração de nome
+ para o elemento criado.
  Toda vez que uma 
 \family typewriter
 ->
 \family default
  é utilizada significa uma ligação entre a porta de saída X e a porta de
- entrada Y de dois elementos, fluíndo nesse sentido;
+ entrada Y de dois elementos, fluindo nesse sentido;
 \end_layout
 
 \begin_layout Alineas
 O 
 \family typewriter
-AdressInfo
+AddressInfo
 \family default
- é como um banco de dados rústico, para guardar dados sobre um dispositivo
- e usar a macro atribuída para representá-los;
+ é como um banco de dados rústico, utilizado para guardar dados sobre um
+ dispositivo e usar uma macro para representá-los;
 \end_layout
 
 \begin_layout Alineas
@@ -3641,11 +3705,11 @@ buffer
 \end_layout
 
 \begin_layout Alineas
-Já o 
+O 
 \family typewriter
 Classifier
 \family default
- classifica os pacotes com base na comparação de valores presentes nos cabeçalho
+ classifica os quadros com base na comparação de valores presentes nos cabeçalho
 s, onde os dois primeiros parâmetros do exemplo são códigos referentes aos
  dados do protocolo ARP 
 \begin_inset CommandInset citation
@@ -3656,22 +3720,23 @@ key "rfc826"
 
  (consulta e resposta, respectivamente), o terceiro parâmetro contém o código
  para os pacotes com cabeçalho IP e o quarto para todos os outros.
- A análise do cabeçalho é feita de forma que o elemento procura o código
- do cabeçalho em determinado 
+ A análise do cabeçalho é feita de forma que o elemento procura um valor
+ dos campos do cabeçalho em determinado 
 \shape italic
-byte
+Byte
 \shape default
  do quadro, formando o par 
 \shape italic
 byte
 \shape default
-/código.
+/valor.
  Em caso de mais de um par, a procura se torna mais específica, buscando
- casar mais um valor no 
+ casar mais de um valor no 
 \shape italic
-byte
+Byte
 \shape default
- indicado, o que nesse caso é a diferença entre consulta e resposta ARP;
+ indicado, o que no caso do exemplo é a diferença entre um quadro de consulta
+ e outro de resposta ARP;
 \end_layout
 
 \begin_layout Alineas
@@ -3707,8 +3772,12 @@ reference "chap:PROJETO-E-IMPLEMENTAÇÃO"
 \end_inset
 
 ), por exemplo.
- Como adiantado, o segundo elemento desta alínea responde às consultas feitas
- por outros dispositivos com 
+ Como exemplificado, o 
+\family typewriter
+ARPResponder
+\family default
+ responde às consultas feitas por outros dispositivos com algo similar ao
+ 
 \family typewriter
 ARPQuerier
 \family default
@@ -3731,15 +3800,17 @@ key "rfc1027"
 \family typewriter
 Queue
 \family default
- define uma fila de 200 entradas para receber os pacotes do fluxo 
+ define uma fila para receber os pacotes em fluxo 
 \shape italic
 push
 \shape default
- para entregar quando solicitado pelos elementos do fluxo 
+ para entregá-los quando solicitado pelos elementos do fluxo 
 \shape italic
 pull
 \shape default
-;
+.
+ Nesse exemplo contém 200 entradas mas deve ser dimensionado para mitigar
+ perdas de pacotes;
 \end_layout
 
 \begin_layout Alineas
@@ -3787,8 +3858,8 @@ Idle
 \family typewriter
 ARPQuerier
 \family default
- para evitar mensagens de erro, e a conexão deste mesmo elemento a uma fila
- de tamanho 200 para escoar os pacotes encapsulados;
+ para evitar mensagens de erro, e a conexão deste mesmo elemento a fila
+ para escoar os pacotes encapsulados;
 \end_layout
 
 \begin_layout Alineas
@@ -3797,9 +3868,8 @@ Os pacotes IP classificados no
 Classifier
 \family default
  saem pela porta 2 e então podem ser modificados como desejado.
- Inclusive, não é necessário inserir todos os códigos no bloco indicado
- para preenchimento, desde que ao fim se conectem desse ponto até o último
- elemento.
+ Não é necessário inserir todos os códigos no bloco indicado para preenchimento,
+ desde que ao fim se conectem desse ponto até o último elemento.
  Esse aliás, deve se conectar ao 
 \family typewriter
 ARPQuerier
@@ -3876,10 +3946,11 @@ key "kohler_click:_2018"
 
 \end_inset
 
- para um maior entendimento de detalhes que fogem este trabalho.
+ para um melhor entendimento.
  Outra fonte interessante são os livros, artigos, padronizações e textos
  técnicos sobre o uso dos protocolos de rede como por exemplo as Requisições
  Para Comentários (RFCs) do IETF.
+ Muitos deles são referenciados por este trabalho.
 \end_layout
 
 \begin_layout Standard
@@ -3891,7 +3962,11 @@ element handlers
 \shape default
 ) básicos para que seja possível analisar comportamentos indesejados em
  tempo de execução.
- Um exemplo é a tabela do protocolo TCP 
+ Um exemplo é a tabela 
+\family typewriter
+tcp_table
+\family default
+ do Protocolo de Controle de Transmissão (TCP) 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "rfc793"
@@ -3899,12 +3974,21 @@ key "rfc793"
 \end_inset
 
  disponibilizada pelo elemento de NAT (IPRewriter), que pode indicar o correto
- funcionamento ou não de uma VNF que a utilize.
+ funcionamento ou não de uma VNF que utilize seu elemento.
  Outros manipuladores são capazes de alterar determinadas variáveis em tempo
- de execução, mas não são muito comuns.
+ de execução, embora isso seja incomum.
+ Por exemplo, o manipulador 
+\family typewriter
+capacity
+\family default
+ altera o tamanho da tabela de regras do mesmo 
+\family typewriter
+IPRewriter
+\family default
+.
  De qualquer forma, Click permite a implementação de outros manipuladores
  para os elementos dado um conhecimento em C++.
- Para consultar quais manipuladores estão implementados, basta consultar
+ Para consultar quais manipuladores estão implementados, basta utilizar
  a documentação citada.
 \end_layout
 
@@ -3929,9 +4013,14 @@ reference "fig:Uma-aplicação-dos"
 
 \end_inset
 
-, exceto o ramo da porta 2 que encontra erros devido ao bloco fora dos padrões
- e por isso é ignorado.
- É possível exportar os grafos para arquivos.
+, exceto o ramo da porta de saída 2 do classificador (em vermelho) que se
+ encontra fora dos padrões da linguagem por conta das barras (
+\family typewriter
+/ /
+\family default
+) usadas para destacar uma ação a ser tomada pelo desenvolvedor da função,
+ gerando erro.
+ É possível exportar tais grafos para documentos ou imagens.
 \end_layout
 
 \begin_layout Standard
@@ -3974,7 +4063,7 @@ name "fig:Interface-gráfica-e"
 \align center
 \begin_inset Graphics
 	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/clicky-iface.png
-	scale 60
+	scale 50
 
 \end_inset
 
@@ -4065,7 +4154,31 @@ key "rfc768"
 \end_inset
 
 , o que Click não disponibiliza, comprometendo o desenvolvimento de alguma
- função de rede nessa situação.
+ função de rede nessa situação;
+\end_layout
+
+\begin_layout Alineas
+Estranhamente um elemento somente leitura com relação aos pacotes como o
+ 
+\shape italic
+firewall
+\shape default
+ (
+\family typewriter
+IPFilter
+\family default
+) em Click causa erros em transmissão de mensagens TCP caso o encadeamento
+ não possua o 
+\family typewriter
+SetTCPChecksum
+\family default
+, e o destinatário verifique o campo de soma de verificação.
+ Essa característica é comum após o uso de elementos que reescrevam os cabeçalho
+s como o 
+\family typewriter
+IPRewriter
+\family default
+, mas não com um filtro.
 \end_layout
 
 \begin_layout Standard
@@ -4145,29 +4258,6 @@ key "barbette_fast_2015"
 .
 \end_layout
 
-\begin_layout Standard
-Desde o título este trabalho se propõe a trabalhar com uma dessas aplicações
- que cresceram em torno de Click.
- ClickOS especializou uma micro-VM, desenvolvendo novos elementos, adaptando
- seu 
-\shape italic
-micro-kernel
-\shape default
- para executar Click com seu módulo 
-\shape italic
-kernel
-\shape default
- de forma eficiente atingindo 10Gb/s para a maioria dos tamanhos de pacotes
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "martins_clickos_2014"
-
-\end_inset
-
-.
-\end_layout
-
 \begin_layout Section
 \begin_inset CommandInset label
 LatexCommand label
@@ -4191,7 +4281,7 @@ hardware
 \shape default
 .
  Ele se encontra representado no modelo NFV pela camada de virtualização,
- gerenciando localmente as funções de rede virtuais.
+ gerenciando localmente as funções virtuais de rede.
  Trata-se primeiramente de um sistema operacional baseado em Click, focado
  em alta vazão, baixo atraso e isolamento 
 \begin_inset CommandInset citation
@@ -4260,7 +4350,7 @@ name "fig:Arquitetura-inicial-presente"
 \align center
 \begin_inset Graphics
 	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/clickos_arch.png
-	scale 53
+	scale 42
 
 \end_inset
 
@@ -4287,7 +4377,7 @@ key "martins_clickos_2014"
 \begin_layout Standard
 Na 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:Arquitetura-inicial-presente"
 
 \end_inset
@@ -4317,7 +4407,7 @@ netback
 \shape italic
 netfront
 \shape default
-, até a função de rede virtual.
+, até a função virtual de rede.
  Também é visível os itens de administração e interação com o operador,
  como o comando 
 \family typewriter
@@ -4378,7 +4468,7 @@ vifs
 ) foram ignoradas e então removidas.
  Ver 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:Antes-e-depois"
 
 \end_inset
@@ -4387,12 +4477,12 @@ reference "fig:Antes-e-depois"
 \end_layout
 
 \begin_layout Standard
-Já o VALE 
+O VALE 
 \shape italic
 Switch
 \shape default
 , dispositivo de comutação virtual apresentado por Luigi Rizzo e Giuseppe
- Lettieri da Universidade de Pisa, é usado para interconectar máquinas virtuais
+ Lettieri da Universidade de Pisa é usado para interconectar máquinas virtuais
  em redes a partir da API Netmap 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -4402,7 +4492,7 @@ key "rizzo_revisiting_2012"
 
 .
  Ele entra na plataforma substituindo o pouco otimizado OpenVSwitch e ao
- fim é alterado para que forneça acesso direto aos 
+ fim é alterado para que forneça acesso direto dos 
 \shape italic
 buffers
 \shape default
@@ -4410,8 +4500,8 @@ buffers
 \shape italic
 netfront
 \shape default
- de cada VM, e também para que aumente-se o número de portas, para citar
- dois motivos de seu uso 
+ de cada VM, e para que aumente-se seu número de portas visando atender
+ mais VNFs 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "martins_clickos_2014"
@@ -4419,11 +4509,11 @@ key "martins_clickos_2014"
 \end_inset
 
 .
- Ao fim é renomeado para ClickOS 
+ O conjunto de mudanças estimulou a renomeação para ClickOS 
 \shape italic
 Switch
 \shape default
- devido as mudanças realizadas 
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "martins_clickos_2014"
@@ -4463,7 +4553,7 @@ name "fig:Antes-e-depois"
 \begin_inset Graphics
 	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/xen_network_io_scheme.png
 	lyxscale 85
-	scale 45
+	scale 35
 
 \end_inset
 
@@ -4490,7 +4580,7 @@ key "martins_clickos_2014"
 \begin_layout Standard
 A escolha por Click para integrar a plataforma deve-se a flexibilidade e
  o reúso de código mencionados nos objetivos dos criadores e abordados na
- seção 
+ 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "sec:Click"
@@ -4536,6 +4626,14 @@ Para instanciar as VNFs, ClickOS usa o método disponibilizado pelo Xen,
  através de um arquivo de configuração, onde é possível descrever itens
  como quantidade de processadores, memória, interfaces virtuais de rede,
  comportamento de falhas e o nome da função virtual.
+ Ver 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Exemplo-de-arquivo-cfg"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -4571,7 +4669,7 @@ name "fig:Exemplo-de-arquivo-cfg"
 \align center
 \begin_inset Graphics
 	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/vnf_xen_config.png
-	scale 73
+	scale 63
 
 \end_inset
 
@@ -4589,21 +4687,14 @@ Fonte: Elaborada pelo autor
 \end_layout
 
 \begin_layout Standard
-Baseando-se na 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:Exemplo-de-arquivo-cfg"
-
-\end_inset
-
-, é importante dizer que os dados sobre as redes conectadas devem estar
- de acordo com os dados atribuídos a VNF no código de Click para não haver
+É importante dizer que os dados sobre as redes conectadas devem estar de
+ acordo com os dados atribuídos a VNF no código de Click para não haver
  enganos e erros.
  Muito cuidado ao gerar endereços MAC ou IP, pois existem classes e restrições
  em ambos 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "noauthor_ieee_2016"
+key "noauthor_ieee_2016,rfc3330,rfc5737"
 
 \end_inset
 
@@ -4652,12 +4743,12 @@ Apesar de não possuir linha de comando, as máquinas virtuais com o núcleo
 xl console
 \family default
 , que pode reportar erros de codificação de todos os níveis, erros de inicializa
-ção, más configurações e saídas de elementos de análise de erros.
+ção, má configuração.
  É possível também verificar a carga delas através do comando 
 \family typewriter
 xentop
 \family default
-, tomando cuidado para um pequeno erro que faz os valores decrecerem de
+, tomando cuidado para um pequeno erro que faz os valores decrescerem de
  cem por cento para zero ao invés do comportamento costumeiro.
 \end_layout
 
@@ -4701,6 +4792,19 @@ key "ventre_performance_2016"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+anexo de comandos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newpage cleardoublepage
 \end_inset
 
@@ -4720,31 +4824,33 @@ name "chap:PROJETO-E-IMPLEMENTAÇÃO"
 
 \begin_layout Standard
 A partir dos conceitos apresentados, este capítulo propõe, projeta e implementa
- duas funções de rede virtuais, motivado pelos benefícios da camada de virtualiz
+ duas funções virtuais de rede, motivado pelos benefícios da camada de virtualiz
 ação no âmbito de servidores e redes com seus dispositivos.
- As características atribuídas ao ClickOS na 
+ As características atribuídas ao ClickOS e ao Click na 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "sec:ClickOS"
 
 \end_inset
 
-, incluíndo-se Click na 
+ e 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "sec:Click"
 
 \end_inset
 
-, pavimentam a intenção de demonstrar o desenvolvimento de VNFs de maneira
- mais clara, a partir de uma visão macro em relação àquela vista em linguagens
- de programação, e sem se desenhar apenas como uma plataforma de ensino,
- já que em determinado momento é capaz de entregar desempenho satisfatório
- segundo seus autores, inclusive sendo habilitável ao NFV.
+, incentivam um desenvolvimento de VNFs a partir de uma visão macro em relação
+ àquela vista em linguagens de programação, sem associar-se apenas ao ensino
+ de redes em mais alto nível, uma vez que em determinado momento é capaz
+ de entregar desempenho satisfatório segundo seus autores, inclusive sendo
+ habilitável ao NFV.
 \end_layout
 
 \begin_layout Standard
-As funções escolhidas são um 
+A partir desse incentivo, este trabalho projeta e implementa duas funções
+ a título de prova.
+ As funções escolhidas são um 
 \shape italic
 firewall
 \shape default
@@ -4775,32 +4881,12 @@ a da Informação.
 firewall
 \shape default
  precede o balanceador de carga sem nós intermediários.
- No 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "chap:TESTES"
-
-\end_inset
-
- tais funções são testados justamente em um cenário de serviço de hospedagem
- 
-\shape italic
-web
-\shape default
-.
 \end_layout
 
 \begin_layout Standard
 Espera-se que a curva de aprendizado da ferramenta seja melhor a partir
- dessas funções do que com funções simples porém desintegradas.
- Inclusive, foge o escopo deste trabalho demonstrar VNFs complexas como
- as aplicadas hoje em 
-\shape italic
-middleboxes
-\shape default
- físicos, que significam recursos superestimados e subutilizados na maioria
- dos casos, o que justamente é um dos pontos de combate do NFV e suas funções
- virtuais.
+ dessas funções.
+ Foge o escopo deste trabalho demonstrar VNFs complexas.
  Um resumo do proposto pode ser visto na 
 \begin_inset CommandInset ref
 LatexCommand formatted
@@ -4838,7 +4924,7 @@ ARPQuerier
 \family typewriter
 ARPResponder
 \family default
- (ver um uso delas na 
+ (ver seus usos na 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:Uma-aplicação-dos"
@@ -4846,7 +4932,7 @@ reference "fig:Uma-aplicação-dos"
 \end_inset
 
 ).
- Já outros como 
+ Outros como 
 \family typewriter
 IPFilter
 \family default
@@ -5011,9 +5097,15 @@ IPRewriter
  caso não haja casamento entre padrão e pacote naquela porta, como ignorar
  o pacote e simplesmente passar o pacote adiante em uma porta de saída desejada,
  inclusive nas portas já existentes.
- Há também a possibilidade de usar elementos anexos como os disponibilizados
- pelos dois elementos acima descritos, que armazenam suas regras com o mesmo
- padrão utilizado aqui.
+ Há também a possibilidade de usar elementos anexos 
+\family typewriter
+SourceIPHashMapper
+\family default
+ e 
+\family typewriter
+RoundRobinIPMapper
+\family default
+, que armazenam suas regras com o mesmo padrão utilizado aqui.
  Para um exemplo concreto, veja a implementação do balanceador de carga
  na 
 \begin_inset CommandInset ref
@@ -5033,24 +5125,11 @@ SetTCPChecksum
 : com uma porta de entrada e outra de saída, este elemento é responsável
  por corrigir a soma de verificação do cabeçalho TCP, e garantir que os
  pacotes sejam considerados válidos pelas camadas de transporte que os recebem.
- Muito associado as saídas de um 
+ É muito associado as saídas de um 
 \family typewriter
 IPRewriter
 \family default
  para validar os pacotes alterados por ele.
-\end_layout
-
-\begin_layout Standard
-Neste trabalho, optou-se pelo uso do Ethernet Linux Bridge devido a problemas
- encontrados nas instalações do 
-\shape italic
-switch
-\shape default
- Netmap e do OpenVSwitch.
- Dessa forma, os responsáveis pelo baixo desempenho do ClickOS retornam
- e evidentemente trazem resultados não muito expressivos com relação a vazão,
- mas ainda sim validando a viabilidade da implementação de funções de rede
- sobre uma camada de virtualização.
 \end_layout
 
 \begin_layout Section
@@ -5062,6 +5141,19 @@ name "sec:Um-dia-dentro"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Esta seção é destinada a explicar a sequência de ações que acontecem a um
+ quadro quando entra no ambiente de funções virtuais de rede de ClickOS
+ e possui a 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Comportamento-esperado-das"
+
+\end_inset
+
+ como referência.
 \end_layout
 
 \begin_layout Standard
@@ -5175,7 +5267,7 @@ reference "fig:Código-fw"
 \begin_layout Standard
 O processo se repete para a entrada do pacote no balanceador de carga até
  a etapa de checagem do endereço IP, onde ele é entregue ao elemento responsável
- pelo processo de troca de endereços de destino no DNAT (
+ pelo processo de troca de endereços de destino no NAT (
 \family typewriter
 IPRewriter
 \family default
@@ -5227,9 +5319,9 @@ buffer
 \shape default
  de entrada que em um momento analisa o protocolo de transporte e entrega-o
  de acordo com o serviço conectado a porta de destino definida.
- O serviço destinado analisa o pacote recebido, e supondo que seja respondível,
- o faz, o que ao fim gera um pacote resposta na rede em sentido contrário,
- que inicialmente sai pelo 
+ O serviço então analisa o pacote recebido, e supondo que haja necessidade
+ de resposta, o faz, o que ao fim gera um pacote-resposta na rede em sentido
+ contrário, que inicialmente sai pelo 
 \shape italic
 buffer
 \shape default
@@ -5351,9 +5443,13 @@ reference "fig:Código-lb"
 \end_layout
 
 \begin_layout Standard
-Chegando ao firewall, o pacote resposta passa pelo mesmo procedimento mencionado
- no início, trocando as interfaces de rede em que entram e saem os pacotes:
- agora a entrada é pela interface 1 e a saída é pela inteface 0, respectivamente.
+Chegando ao 
+\shape italic
+firewall
+\shape default
+, o pacote resposta passa pelo mesmo procedimento mencionado no início,
+ trocando as interfaces de rede em que entram e saem os pacotes: agora a
+ entrada é pela interface 1 e a saída é pela interface 0, respectivamente.
  A partir deste ponto, retoma-se a abstração com relação a chegada do pacote
  resposta ao cliente.
  Passagens: parte do 9, 10, e 11, e a descrição na 
@@ -5420,7 +5516,11 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Exemplo de fluxo de pacotes que vai ao firewall
+Exemplo de fluxo de pacotes que vai ao 
+\shape italic
+firewall
+\shape default
+
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Exemplo-de-fluxo-fw"
@@ -5753,7 +5853,11 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Exemplo de regras no firewall
+Exemplo de regras no 
+\shape italic
+firewall
+\shape default
+
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Exemplo-de-regras-fw"
@@ -6193,7 +6297,11 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultado do processamento no firewall
+Resultado do processamento no 
+\shape italic
+firewall
+\shape default
+
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Resultado-do-processamento-fw"
@@ -6588,8 +6696,8 @@ reference "sec:Um-dia-dentro"
 
 \end_inset
 
-, são necessárias duas interfaces de rede para diferenciar os fluxos do,
- e para o, mundo externo, e o fluxo do, e para o, balanceador de carga.
+, são necessárias duas interfaces de rede para diferenciar os fluxos do
+ (e para o) mundo externo, e o fluxo do (e para o) balanceador de carga.
  Essa separação naturalmente exige dois conjuntos mínimos de elementos para
  tratar os pacotes na camada de enlace, respondendo e realizando requisições
  ARP, e classificando os pacotes conforme seus cabeçalhos.
@@ -6628,14 +6736,14 @@ key "martins_clickos_2014"
 
 \begin_layout Standard
 Uma vez que os conjuntos de elementos são corretamente configurados, é preciso
- tratar os pacotes de dados.
+ tratar os quadros.
  O uso do elemento 
 \family typewriter
 Strip
 \family default
 , passando o número de 
 \shape italic
-bytes
+Bytes
 \shape default
  usados pelo cabeçalho 
 \shape italic
@@ -6659,18 +6767,26 @@ broadcasts
 \end_layout
 
 \begin_layout Standard
-OBS: Parei aqui <—
-\end_layout
-
-\begin_layout Standard
-IPFilter, a partir de cabeçalhos, realiza filtragens de pacotes usando valores
+O 
+\family typewriter
+IPFilter
+\family default
+, a partir dos cabeçalhos IP, realiza filtragens de pacotes usando valores
  de endereço IP origem e destino, portas de origem e destino, e o tipo de
  protocolo de transporte, inclusive limitando pelos tipos diferentes de
- pacotes dentro destes e valores padrão de variáveis.
+ pacotes dentro destes, além de valores padrão de campos do cabeçalho.
  As regras de autorização ou bloqueio devem ser construídas com essas bases,
  atentando-se para não limitar ou autorizar acesso em excesso.
  Para conhecimento de como as regras devem ser construídas, uma consulta
- aos elementos IPFilter e IPClassifier na documentação é essencial 
+ aos elementos 
+\family typewriter
+IPFilter
+\family default
+ e 
+\family typewriter
+IPClassifier
+\family default
+ na documentação é essencial 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "kohler_click:_2018"
@@ -6681,31 +6797,41 @@ key "kohler_click:_2018"
 \end_layout
 
 \begin_layout Standard
-Dois filtros devem ser configurados: o primeiro trabalha no sentido de entrada
- do fluxo externo, aceitando apenas pacotes cujos cabeçalhos cumpram requisitos
- de endereço de rede IP de origem, endereço único IP de destino, número
- de porta de origem dentro de um intervalo e por fim, o número único de
- porta de destino, limitando não só os recursos e serviços acessados, como
- para quem estão disponíveis, e ignorando os demais; já o segundo trabalha
- no sentido de saída do fluxo, portanto, vindo do balanceador.
+Dois filtros devem ser configurados.
+ O primeiro trabalha no sentido de entrada do fluxo externo, aceitando apenas
+ pacotes cujos cabeçalhos cumpram requisitos de endereço de rede IP de origem,
+ endereço único IP de destino, número de porta de origem dentro de um intervalo,
+ e por fim, o número único de porta de destino, limitando não só os recursos
+ e serviços acessados na rede interna, como para quem estão disponíveis,
+ e ignorando os demais; já o segundo trabalha no sentido de saída do fluxo,
+ portanto, vindo do balanceador.
  Este aceita que apenas os pacotes-resposta retornem ao mundo externo de
  onde vieram suas requisições, e visa limitar a comunicação indesejada dos
  dispositivos balanceados, ignorando os demais pacotes e servindo de camada
  de proteção contra as invasões, principalmente.
  Uma análise de tráfego é mandatória para que nenhuma comunicação crítica
- dos dispositivos seja bloqueada nas redes envolvidas, no caso de firewall
+ dos dispositivos seja bloqueada nas redes envolvidas, no caso de 
+\shape italic
+firewall
+\shape default
  e balanceador em sistemas já implantados.
 \end_layout
 
 \begin_layout Standard
-Uma vez que os pacotes de dados fluem pelas duas interfaces de rede, eles
- são classificados, extraídos de seus cabeçalhos Ethernet, e na sequência
- checados quanto a suas validades.
- Daí então cada fluxo entra em seu respectivo filtro e, se autorizados,
- devem se encaminhados para o reencapsulamento do cabeçalho Ethernet com
- destino ao balanceador ou ao mundo externo, sendo dispensado na respectiva
- fila e depois no respectivo elemento de saída do ClickOS correspondente
- para chegar ao seu destino.
+Uma vez que os quadros fluem pelas duas interfaces de rede, eles são classificad
+os, extraídos de seus cabeçalhos 
+\shape italic
+Ethernet
+\shape default
+, e na sequência checados quanto a suas validades.
+ Daí então, cada fluxo entra em seu respectivo filtro e, se autorizados,
+ devem se encaminhados para o reencapsulamento do cabeçalho 
+\shape italic
+Ethernet
+\shape default
+ com destino ao balanceador ou ao mundo externo, sendo dispensado na respectiva
+ fila de saída e depois no respectivo elemento de saída do ClickOS correspondent
+e para chegar ao seu destino.
 \end_layout
 
 \begin_layout Standard
@@ -6726,7 +6852,11 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Código para o firewall em Click
+Código para o 
+\shape italic
+firewall
+\shape default
+ em Click
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Código-fw"
@@ -6770,20 +6900,34 @@ reference "fig:Código-fw"
 
 \end_inset
 
- demonstra a implementação realizada e utilizada no 
+ demonstra a implementação realizada.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+e 
 \begin_inset CommandInset ref
 LatexCommand formatted
-reference "chap:TESTES"
+reference "fig:Visão-gráfica-do-fw"
 
 \end_inset
 
-.
+ a visão da mesma VNF em alto nível através de um grafo.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Da linha 2 à 5 há uma definição de macros no AddressInfo, que nos dois primeiros
- parâmetros descrevem para net0 e net1 endereços IP próprios, endereços
- IP das redes e endereços MAC respectivamente.
+Da linha 2 à 5 há uma definição de macros no 
+\family typewriter
+AddressInfo
+\family default
+, que nos dois primeiros parâmetros descrevem para net0 e net1 endereços
+ IP próprios, endereços IP das redes e endereços MAC respectivamente.
  Estes são os endereços atribuídos as interfaces de rede ao inserí-los nos
  elementos ARP.
  O terceiro parâmetro guarda apenas o endereço IP do balanceador de carga
@@ -6791,33 +6935,62 @@ Da linha 2 à 5 há uma definição de macros no AddressInfo, que nos dois prime
 \end_layout
 
 \begin_layout Standard
-De 7 à 11 há a definição e declaração de dois classificadores, sendo um
- para cada rede.
+De 7 à 11 há a definição e declaração de dois 
+\family typewriter
+Classifiers
+\family default
+, sendo um para cada rede.
  Ambos, idênticos, são definidos para filtrar pacotes de consulta do protocolo
- ARP na porta 0, pacotes de respostas do protocolo ARP na porta 1, pacotes
- do protocolo IP quaisquer na porta 2, e por fim os demais pacotes na porta
- 3.
+ ARP na porta de saída 0, pacotes de respostas do protocolo ARP na porta
+ de saída 1, pacotes do protocolo IP quaisquer na porta de saída 2, e por
+ fim os demais pacotes na porta de saída 3.
 \end_layout
 
 \begin_layout Standard
-Nas linhas 13 e 14, acontece a conexão entre as entradas de pacotes das
- interfaces de rede e a porta 0 de seus respectivos classificadores.
+Nas linhas 13 e 14, acontece a conexão entre 
+\family typewriter
+FromDevices
+\family default
+ das interfaces de rede e a porta de entrada 0 de seus respectivos 
+\family typewriter
+Classifiers
+\family default
+.
 \end_layout
 
 \begin_layout Standard
-Nas linhas 16 e 17 há a declaração e definição das duas filas necessárias
- para a conversão do fluxo push em pull no momento do despacho dos pacotes
- já filtrados, sendo uma para cada interface novamente.
- A porta 0 de saída de cada fila se conecta com a porta 0 de entrada do
- respectivo elemento de saída de pacotes à respectiva interface de rede.
+Nas linhas 16 e 17 há a declaração e definição das duas 
+\family typewriter
+Queues
+\family default
+ necessárias para a conversão do fluxo 
+\shape italic
+push
+\shape default
+ em 
+\shape italic
+pull
+\shape default
+ no momento do despacho dos pacotes já filtrados, sendo uma para cada interface
+ novamente.
+ A porta de saída 0 de cada uma se conecta com a porta de entrada 0 do respectiv
+o 
+\family typewriter
+FromDevice
+\family default
+ da respectiva interface de rede.
 \end_layout
 
 \begin_layout Standard
 Logo abaixo, na linha 19 e 20, duas novas declarações e definições são realizada
 s, com o intuito de inserir o par de endereços IP e MAC de cada interface
- da VNF (net0 e net1) na respectiva tabela ARP, para quê o elemento de consulta
- desse protocolo realize o correto encapsulamento no nível da camada de
- enlace, principalmente o que diz respeito ao MAC de origem.
+ da VNF (net0 e net1) no respectivo 
+\family typewriter
+ARPQuerier
+\family default
+, para quê o elemento de consulta desse protocolo realize o correto encapsulamen
+to no nível da camada de enlace, principalmente o que diz respeito ao MAC
+ de origem.
  Após isso, a porta de saída 0 de tais elementos é conectada a porta de
  entrada da respectiva fila.
 \end_layout
@@ -6825,25 +6998,32 @@ s, com o intuito de inserir o par de endereços IP e MAC de cada interface
 \begin_layout Standard
 Continuando nas linhas 22 e 23, as portas de saída 1 dos classificadores
  contém as respostas de consultas ARP, e são conectadas as portas de entrada
- 1 dos respectivos elementos de consulta para que as receba corretamente
- e possa encapsular pacotes IP com o correto endereço MAC de destino consultado.
+ 1 dos respectivos elementos de consulta para que receba as respostas corretamen
+te e possa encapsular pacotes IP com o correto endereço MAC de destino consultad
+o.
 \end_layout
 
 \begin_layout Standard
 Nas linhas 25 e 26, as portas de saída 0 de ambos classificadores se conectam
- as respectivas portas de entradas 0 do elemento responsável por responder
- as consultas ARP de outros dispositivos com o correto endereço MAC para
- o endereço seu IP consultado.
+ as respectivas portas de entradas 0 do elemento 
+\family typewriter
+ARPResponder
+\family default
+ respondendo as requisições de outros dispositivos com o correto endereço
+ MAC para o endereço IP consultado.
  Tal elemento é responsável por atribuir o endereço IP daquela interface
  de rede na VNF, podendo responder por mais de um deles caso seja desejado.
  Perceba que os endereços configurados aqui são os mesmos que foram configurados
  nas linhas 19 e 20, para que haja não só o recebimento dos pacotes mas
- também a correta indicação ao par da comunicação de para quem enviar os
- seus.
+ também a correta indicação ao par da comunicação de quem a máquina é na
+ rede.
 \end_layout
 
 \begin_layout Standard
-Nas linhas 28 e 29, ocorre uma declaração e definição do elemento de filtragem
+Nas linhas 28 e 29, ocorre uma declaração e definição do 
+\family typewriter
+IPFilter
+\family default
  que está relacionado a entrada do fluxo externo.
  Ele possui apenas duas regras definidas em seus parâmetros: uma para permitir
  pacotes com endereço IP de origem local à interface de rede 0, que tenham
@@ -6861,40 +7041,36 @@ e a anterior, mudando apenas o foco de seu uso: a intenção agora é filtrar
 \end_layout
 
 \begin_layout Standard
-Entre as linhas 34 e 37, a porta de saida 2 do classificador da rede 0 entrega
- os pacotes para a extração do pacote IP no elemento, que por sua vez despacha
- os pacotes IP para o elemento de checagem do cabeçalho IP, que por sua
- vez passa os pacotes checados para o filtro de entrada, que realizando
- sua tarefa, encaminha-os para o encapsulamento da camada de enlace na rede
- 1, fluindo em direção a respectiva interface de rede, onde está o balanceador
- de carga.
+Entre as linhas 34 e 37, a porta de saída 2 do classificador da rede 0 entrega
+ os pacotes para o 
+\family typewriter
+Strip
+\family default
+, que por sua vez despacha os pacotes IP para o elemento de checagem do
+ cabeçalho IP, que por sua vez passa os pacotes checados para o 
+\family typewriter
+CheckIPHeader
+\family default
+, que realizando sua tarefa, encaminha-os para o encapsulamento da camada
+ de enlace da rede 1 no 
+\family typewriter
+ARPQuerier
+\family default
+, fluindo em direção a interface de rede, onde está o balanceador de carga.
  Todas as portas não mencionadas, sejam de entrada ou saída, são de índice
  0.
 \end_layout
 
 \begin_layout Standard
 De maneira semelhante, entre as linhas 39 e 42 o processo se repete, e os
- pacotes-resposta vindos do balanceador pela interface de rede 1, que são
- autorizados, são entregues para encapsulamento na rede 0, fluindo em direção
- a sua respectiva interface.
+ pacotes-resposta vindos do balanceador pela interface de rede 1 que são
+ autorizados, então são entregues para encapsulamento na rede 0, fluindo
+ em direção a sua respectiva interface do requisitante.
 \end_layout
 
 \begin_layout Standard
 Por último, nas linhas 44 e 45, os pacotes que saem pela porta 3 do classificado
 r entram em um elemento que determina o descarte deles.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Inserir clicky
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -6912,20 +7088,41 @@ A proposta para esta VNF é dividir um determinado fluxo entre servidores
  de uma função semelhante, diminuindo a possibilidade de um servidor específico
  sobrecarregar ou ter vida útil reduzida, conferindo maior disponibilidade
  e durabilidade dos equipamentos.
- Podem haver duas versões, entre o método conhecido como Round Robin e o
- método por endereço IP de origem.
+ Podem haver duas versões, entre o método conhecido como 
+\shape italic
+Round Robin
+\shape default
+ e o método por endereço IP de origem.
  O primeiro divide os pacotes para os servidores com base em um tempo de
  concessão fixo e o segundo envia todos os pacotes com um mesmo endereço
  IP de origem para o mesmo servidor destino, fazendo a seleção com base
- em uma hash.
- Ele não avalia a carga atual e a situação atual dos servidores para tomar
- as decisões, recebendo como entrada apenas o número de servidores disponibiliza
-dos.
+ em uma função de 
+\shape italic
+hashing
+\shape default
+.
+ O balanceador 
+\shape italic
+Round Robin
+\shape default
+ não avalia a carga atual e a situação atual dos servidores para tomar as
+ decisões, recebendo como entrada apenas o número de servidores disponibilizados.
 \end_layout
 
 \begin_layout Standard
-Dado 1500 pacotes emitido pelo cliente, espera-se que os servidores recebam
- os pacotes aproximadamente da seguinte forma com o método Round Robin:
+Dado 1500 pacotes emitidos pelo cliente, com o método 
+\shape italic
+Round Robin
+\shape default
+ espera-se, idealmente, que os servidores recebam os pacotes aproximadamente
+ como demonstrado na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:Exemplo-de-divisão-rr"
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
@@ -7158,7 +7355,14 @@ Servidor n
 
 \begin_layout Standard
 Já no método por endereço IP de origem, com três diferentes clientes e 1500
- pacotes cada, espera-se que:
+ pacotes cada, espera-se tal qual a 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:Exemplo-de-divisão-sip"
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
@@ -7485,60 +7689,94 @@ reference "tab:Exemplo-de-divisão-rr"
 , são necessárias duas interfaces de rede para diferenciar os fluxos originados
  e destinados ao mundo externo, dos fluxos originados e destinados aos servidore
 s.
- Assim como no firewall, esta separação exige dois conjuntos mínimos de
- elementos na camada de enlace para tratar a entrada e saída na rede, gerenciar
- os pacotes de controle do protocolo ARP e separar os pacotes de acordo
- com o protocolo.
+ Assim como no 
+\shape italic
+firewall
+\shape default
+, esta separação exige dois conjuntos mínimos de elementos na camada de
+ enlace para tratar a entrada e saída na rede, gerenciar os pacotes de controle
+ do protocolo ARP e separar os pacotes de acordo com o protocolo.
  A semelhança segue com os requisitos de memória e processamento, a correta
- configuração dos elementos mínimos e os elementos Strip de desencapsulamento
- e CheckIPHeader de checagem do protocolo IP.
+ configuração dos elementos mínimos, dos elementos de desencapsulamento
+ e por fim, de dos elementos de checagem do protocolo IP.
 \end_layout
 
 \begin_layout Standard
 Um elemento sem portas de entrada ou saída deve ser configurado para cada
  método descrito.
- Aquele que cobre o método Round Robin (RoundRobinIPMapper), deve conter
- um parâmetro para cada servidor disponível, num formato que indique qual
- a modificação para cada um dos itens dentre endereço IP de origem, número
- de porta de origem, endereço IP de destino e número de porta de destino,
- nessa ordem, sendo que os não indicados permanecem intactos.
+ Aquele que cobre o método 
+\shape italic
+Round Robin
+\shape default
+ (
+\family typewriter
+RoundRobinIPMapper
+\family default
+), deve conter um parâmetro para cada servidor disponível, num formato que
+ indique qual a modificação para cada um dos itens dentre endereço IP de
+ origem, número de porta de origem, endereço IP de destino e número de porta
+ de destino, nessa ordem, sendo que os não indicados permanecem inalterados.
  Após tais indicações, os parâmetros são finalizados com o informe de uma
  porta de saída do elemento para a regra criada a partir dessas indicações,
  e o informe de uma porta de saída para a regra de conversão do seu pacote-respo
 sta, já em fluxo de retorno.
  Já que este elemento não possui portas, elas são alocadas no elemento de
- NAT no IPRewriter, pois a função deste é fornecer novas funcionalidades
- ao NAT disponível por Click, tal qual uma variação no momento de criação
- de suas regras.
+ NAT no 
+\family typewriter
+IPRewriter
+\family default
+, pois a função deste é fornecer novas funcionalidades ao NAT disponível
+ no Click, tal qual uma variação no momento de criação de suas regras.
 \end_layout
 
 \begin_layout Standard
-Já o elemento para o método de balanceamento por endereço IP de origem (SouceIPH
-ashMapper) precisa de mais parâmetros.
- Como trabalha com uma estrutura de tabela hash, é preciso indicar uma semente
- e um tamanho de tabela como primeiro parâmetro, e só após iniciar com os
- parâmetro de modificação de cabeçalho.
+Diferentemente do anterior, o elemento para o método de balanceamento por
+ endereço IP de origem (
+\family typewriter
+SourceIPHashMapper
+\family default
+) precisa de mais parâmetros.
+ Como trabalha com uma estrutura de tabela 
+\shape italic
+hash
+\shape default
+, é preciso indicar uma semente e um tamanho de tabela como primeiro parâmetro,
+ e só após iniciar com os parâmetros de modificação de cabeçalhos.
  Estes, por sua vez, possuem apenas uma modificação inserida ao final de
- cada parâmetro: um identificador para comparações na tabela.
+ cada parâmetro: um identificador para comparações na tabela é adicionado.
  Assim como o elemento anterior, ele não possui portas, servindo como uma
- nova funcionalidade ao NAT no IPRewriter.
+ nova funcionalidade ao NAT no 
+\family typewriter
+IPRewriter
+\family default
+.
 \end_layout
 
 \begin_layout Standard
-O elemento de NAT (IPRewriter) dessa proposta é simples e passa como parâmetro
- o conjunto de indicações dos elementos acima, para que sejam usados no
- caso dos pacotes de entrada de sua respectiva porta não combinarem com
- as regras existentes; e também uma outra determinação para ignorar os pacotes
- que entram por um outra porta na mesma situação.
+O elemento de NAT (
+\family typewriter
+IPRewriter
+\family default
+) dessa proposta é simples e passa como parâmetro o conjunto de indicações
+ dos elementos acima, para que sejam usados no caso dos pacotes de entrada
+ de sua respectiva porta não combinarem com as regras existentes; e também
+ uma outra determinação para ignorar os pacotes que entram por uma outra
+ porta caso novamente não haja combinação.
 \end_layout
 
 \begin_layout Standard
-Uma vez que os pacotes de dados fluem pelas duas interfaces de rede, eles
- são classificados, extraídos de seus cabeçalhos Ethernet, e na sequência
- checados quanto a suas validades.
- Dai então o fluxo vindo do mundo externo entra por sua porta 0 e o fluxo
- vindo dos servidores pela sua porta 1.
- A saída do primeiro fluxo, com as modificações deve acontecer pela porta
+Uma vez que os quadros fluam pelas duas interfaces de rede, eles são classificad
+os, extraídos de seus cabeçalhos 
+\shape italic
+Ethernet
+\shape default
+, e na sequência checados quanto a suas validades.
+ Dai então o fluxo vindo do mundo externo entra no 
+\family typewriter
+IPRewriter
+\family default
+ pela porta 0 e o fluxo vindo dos servidores pela sua porta 1.
+ A saída do primeiro fluxo com as modificações deve acontecer pela porta
  0, e a saída do outro fluxo pela porta 1, permitindo então que a soma de
  verificação do protocolo TCP seja redefinida separadamente em ambos, através
  de elementos instanciados.
@@ -7549,9 +7787,16 @@ Após esse processo, os pacotes são encaminhados para o reencapsulamento
  com destino ao servidor definido pelo NAT e ao cliente, respectivamente.
  Uma observação importante é que no último caso, o destino só é alcançável
  com mais de um salto na rede, o que significa que o reencapsulamento da
- camada de enlace deve ser atribuído ao gateway da rede, no caso o próprio
- firewall, para que ele possa dar destino ao pacote.
- Um elemento deve realizar a tarefa de indicá-lo.
+ camada de enlace deve ser atribuído ao 
+\shape italic
+gateway
+\shape default
+ da rede, no caso o próprio 
+\shape italic
+firewall
+\shape default
+, para que ele possa dar destino ao pacote.
+ Um elemento deve realizar a tarefa de indicá-lo antes do encapsulamento.
 \end_layout
 
 \begin_layout Standard
@@ -7614,12 +7859,15 @@ reference "fig:Código-fw"
 \end_layout
 
 \begin_layout Standard
-Nas linhas de 29 à 33 há uma declaração e definição do elemento de balanceamento
- por endereço IP de origem, com seu tamanho de tabela 
+Nas linhas de 29 à 33 há uma declaração e definição do 
+\family typewriter
+SourceIPHashMapper
+\family default
+, com seu tamanho de tabela 
 \shape italic
 hash
 \shape default
- e semente como primeiro parâmetro e nos seguintes, as modificações necessárias
+ e semente como primeiro parâmetro, e nos seguintes, as modificações necessárias
  para cada servidor, a serem mapeadas no próximo elemento como regras de
  ida e volta.
  Pode-se ver também os identificadores ao final de cada parâmetro para efeitos
@@ -7627,19 +7875,48 @@ hash
 \end_layout
 
 \begin_layout Standard
-No caso do elemento de balanceamento por Round Robin, as linhas descritas
- acima são substituídas pela declaração e definição do referido elemento,
- onde os parâmetros se limitam às modificações necessárias para cada servidor
- disponível, sem os identificadores naturais a tabela 
-\shape italic
-hash
-\shape default
-.
-\begin_inset Note Note
+\begin_inset Float figure
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
-inserir figura do bal RR
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Código para a modificação do tipo de balanceador para Round Robin
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Código-para-rr"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/rr_code.png
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
 \end_layout
 
 \end_inset
@@ -7648,51 +7925,89 @@ inserir figura do bal RR
 \end_layout
 
 \begin_layout Standard
-Nas linhas 34 à 36 acontece uma declaração e definição do elemento que reescreve
- os cabeçalhos conforme as regras determinadas pelos elementos de balanceamento.
- Ele reescreve desta forma apenas os pacotes que entram pela sua porta 0
- e não possuem um regra de reescrição anteriormente definida.
- Já os pacotes que entram pela porta 1, são ignorados caso não possuam regra
- predefinida.
+No caso do 
+\family typewriter
+RoundRobinIPMapper
+\family default
+ (ver 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Código-para-rr"
+
+\end_inset
+
+), as linhas do outro elemento de balanceamento descritas acima são substituídas
+ pela declaração e definição do referido elemento, onde os parâmetros se
+ limitam às modificações necessárias para endereçar cada servidor disponível,
+ sem os identificadores naturais a tabela 
+\shape italic
+hash
+\shape default
+.
+\end_layout
+
+\begin_layout Standard
+Nas linhas 34 à 36 acontece uma declaração e definição do 
+\family typewriter
+IPRewriter
+\family default
+, que conforme os parâmetros define as regras descritas pelos elementos
+ de balanceamento.
+ Ele reescreve apenas os pacotes que entram pela sua porta 0 seja criando
+ a partir dos parâmetros ou utilizando regras definidas, uma vez que os
+ pacotes que entram pela porta 1 são ignorados caso não possuam uma regra
+ preexistente.
 \end_layout
 
 \begin_layout Standard
 Entre as linhas 38 e 44, dado que as portas não mencionadas de entrada e
- saída são portas 0, os classificadores das diferentes interfaces de rede
- enviam os pacotes IP por suas portas de saída 2, onde entram nos elementos
- de extração de cabeçalho Ethernet, saíndo direto para a entrada nos elementos
- de checagem do cabeçalho IP, e após esse processo, entram cada um em uma
- porta de entrada diferente do elemento responsável pelo NAT.
- O primeiro fluxo entra pela porta 0 e se depara com o elemento de balanceamento
-, que nesse caso sorteia um servidor e executa a reescrição, enviando o
- pacote pela sua porta de saída 0.
- O segundo fluxo entra pela porta 1 e espera encontrar a regra inversa a
- alteração efetuada para que possa retornar para aquele dispositivo que
- o requisitou.
- A porta de saída nesse caso é a de número 1.
+ saída são portas 0, os 
+\family typewriter
+Classifiers
+\family default
+ das diferentes interfaces de rede enviam os pacotes IP por suas portas
+ de saída 2, onde entram respectivos 
+\family typewriter
+Strips
+\family default
+, indo direto para a entrada 
+\family typewriter
+CheckIPHeader
+\family default
+, e após esse processo, entram cada um em uma porta de entrada diferente
+ do elemento responsável pelo NAT.
+ O fluxo vindo do mundo externo entra pela porta 0 e se depara com o elemento
+ de balanceamento, que nesse caso sorteia um servidor e executa a reescrita
+ de cabeçalho, enviando o pacote pela sua porta de saída 0.
+ O fluxo de retorno entra pela porta 1 e espera encontrar a regra inversa
+ a alteração efetuada para que possa retornar para o dispositivo requisitante.
+ através da porta de saída 1.
  Caso não encontrem a regra, os pacotes nessa situação são simplesmente
- ignorados.
+ ignorados como mencionado.
 \end_layout
 
 \begin_layout Standard
 As saídas do NAT entre as linhas 46 e 51 têm como destino o encapsulamento
- no respectivo elemento de consulta ARP.
+ no respectivo 
+\family typewriter
+ARPQuerier
+\family default
+.
  No caso, o encapsulamento dos pacotes que chegam de fora, é feito pelo
  elemento ARP associado a rede do balanceador, e vice versa.
- Porém antes precisam ter suas somas de verificação do protocolo TCP refeitas
- para evitar falsos erros.
- O caso dos pacotes-resposta requer um elemento que anota o endereço do
- 
+ Porém antes, precisam ter suas somas de verificação do protocolo TCP refeitas
+ com 
+\family typewriter
+SetTCPChecksum
+\family default
+ para evitar erros de validação dos pacotes.
+ No caso do ramo contendo os pacotes-resposta, também requer um elemento
+ que anota o endereço do 
 \shape italic
 gateway
 \shape default
  ao pacote para que o encapsulamento seja feito com ele, mesmo sem alterar
  o cabeçalho IP.
- O 
-\shape italic
-gateway
-\shape default
- nesse caso é invocado através do parâmetro.
 \end_layout
 
 \begin_layout Standard
@@ -7709,13 +8024,11 @@ Inserir clicky
 \end_layout
 
 \begin_layout Standard
-Comandos para criação e execução, monitoramento e análise de erros estão
- no apêndice 
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-inserir o apendice
+inserir o anexo com códigos
 \end_layout
 
 \end_inset
@@ -7742,10 +8055,20 @@ name "chap:TESTES"
 \end_layout
 
 \begin_layout Standard
-Dadas as implementações de firewall e balanceador de carga com DNAT, os
- testes demonstram suas validades.
- Este capítulo discorre sobre os recursos de hardware e software necessários
- para a execução dos testes (
+Dadas as implementações de 
+\shape italic
+firewall
+\shape default
+ e balanceador de carga, os testes demonstram suas validades.
+ Este capítulo discorre sobre os recursos de 
+\shape italic
+hardware
+\shape default
+ e 
+\shape italic
+software
+\shape default
+ necessários para a execução dos testes (
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "sec:Infraestrutura-e-softwares"
@@ -7760,8 +8083,11 @@ reference "sec:Alocação-de-recursos"
 \end_inset
 
 ); encaminha a configuração de um ambiente de testes com simulação em um
- serviço de hospedagem de páginas web na internet, tomando como base os
- elementos construídos no 
+ serviço de hospedagem de páginas 
+\shape italic
+web
+\shape default
+ na internet, tomando como base os elementos construídos no 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "chap:PROJETO-E-IMPLEMENTAÇÃO"
@@ -7775,8 +8101,12 @@ reference "sec:Protótipo"
 
 \end_inset
 
-); e propõe os testes, descreve a execução e apresenta os resultados encontrados
-, pontuando seus detalhes (
+); propõe os testes funcionais para o 
+\shape italic
+firewall
+\shape default
+ e os balanceadores de carga, descrevendo a execução e apresentando os resultado
+s encontrados, pontuando seus detalhes (
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "sec:Proposta_exec_resultados"
@@ -7801,7 +8131,14 @@ name "sec:Infraestrutura-e-softwares"
 A estrutura utilizada para os testes consiste em um servidor de virtualização
  com VMware, onde uma máquina virtual com o sistema operacional Debian é
  alocada para todo o experimento.
- As especificações são:
+ As especificações estão na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:Especificações-de-hardware"
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
@@ -7919,6 +8256,13 @@ Debian Server 8.7 - kernel 3.16.51-3
 
 \begin_layout Plain Layout
 Especificações de hardware para os testes
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Especificações-de-hardware"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -7964,7 +8308,14 @@ ação não se mostrou um problema da maior relevância.
 
 \begin_layout Standard
 Ao que se refere aos softwares instalados na máquina virtual criada pelo
- VMware, uma lista não extensiva deles é:
+ VMware, uma lista não extensiva deles está na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:Softwares-para-a-vm"
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
@@ -8244,6 +8595,13 @@ Ntpdate
 
 \begin_layout Plain Layout
 Softwares para a VM hospedeira
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Softwares-para-a-vm"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -8283,16 +8641,43 @@ Softwares para a VM hospedeira
 Importante mencionar que a criação do ClickOSSwitch pelos autores do ClickOS
  não exclui a possibilidade de uso de outros comutadores como o próprio
  OpenVSwitch e o Linux Bridge.
- A consequência do uso destes outros é a perda de desempenho, mas para testes
- e aplicações que não exijam desempenho prontamente, a plataforma facilita
- sua aplicação nesses ambientes.
- Este trecho é importante no contexto deste trabalho, uma vez que o foco
+ A consequência do uso destes outros é a perda de desempenho de rede de
+ forma geral, mas para testes e aplicações que não exijam desempenho prontamente
+, a plataforma incentiva o desenvolvimento naquilo que mais importa: as
+ VNFs.
+ Com a facilidade de uso, de ativação, de configuração e confiabilidade
+ do Linux Bridge, criar o ambiente para desenvolvimento das funções virtuais
+ e operá-lo consome bem menos tempo do que algo customizado nos demais 
+\shape italic
+switches
+\shape default
+ citados por este trabalho.
+ Esse trecho é importante no contexto deste trabalho, uma vez que o foco
  é a implementação e o Linux Bridge entrega o mínimo para a troca de fluxos.
 \end_layout
 
 \begin_layout Standard
-Já os softwares instalados nas máquinas virtualizadas pelo Xen que fazem
- papel de clientes (cli[1-3]) do serviço de hospedagem web são:
+Já os 
+\shape italic
+softwares
+\shape default
+ instalados nas máquinas virtualizadas pelo Xen que fazem papel de clientes
+ (
+\family typewriter
+cli[1-3]
+\family default
+) do serviço de hospedagem 
+\shape italic
+web
+\shape default
+ são descritos na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:Softwares-para-as-cli"
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
@@ -8514,6 +8899,13 @@ route
 
 \begin_layout Plain Layout
 Softwares para as VMs clientes
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Softwares-para-as-cli"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -8550,8 +8942,27 @@ Softwares para as VMs clientes
 \end_layout
 
 \begin_layout Standard
-Por fim, os softwares instalados nas máquinas virtualizadas pelo Xen que
- fazem o papel de servidores web (ws[1-3]) do serviço em questão são:
+Por fim, os 
+\shape italic
+softwares
+\shape default
+ instalados nas máquinas virtualizadas pelo Xen que fazem o papel de servidores
+ 
+\shape italic
+web
+\shape default
+ (
+\family typewriter
+ws[1-3]
+\family default
+) do serviço em questão são descritas na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:Softwares-para-as-srvds"
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
@@ -8715,6 +9126,13 @@ route
 
 \begin_layout Plain Layout
 Softwares para as VMs servidoras
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Softwares-para-as-srvds"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -8774,9 +9192,20 @@ reference "sec:Infraestrutura-e-softwares"
 
 \end_inset
 
-, aqui o Xen também virtualiza duas micro-VMs para o firewall e o balanceador
- de carga respectivamente.
- Seguem os recursos alocados para cada uma delas através de virtualização:
+, aqui o Xen também virtualiza duas micro-VMs para o 
+\shape italic
+firewall
+\shape default
+ e o balanceador de carga respectivamente.
+ Os recursos alocados para cada uma delas através de virtualização seguem
+ na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:Recursos-do-hospedeiro"
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
@@ -8894,6 +9323,13 @@ Swap em disco
 
 \begin_layout Plain Layout
 Recursos do hospedeiro (dom0)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Recursos-do-hospedeiro"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -8922,9 +9358,31 @@ Recursos do hospedeiro (dom0)
 
 \begin_layout Standard
 Esta alocação dedicada retira tais recursos do total disponível para a virtualiz
-ação, assim restando 5GB de memória e três CPUs das fornecidas pelo VMware
- para toda a estrutura do teste.
- Os recursos restantes são todos compartilhados com os dispositivos abaixo:
+ação, assim restando 5GB de memória e três processadores dos fornecidos
+ pelo VMware para toda a estrutura do teste.
+ Os recursos restantes são todos compartilhados com os dispositivos abaixo
+ para clientes 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:Recursos-das-três-cli"
+
+\end_inset
+
+, servidores 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:Recursos-das-três-srvds"
+
+\end_inset
+
+, e VNFs 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:Recursos-das-duas-vnfs"
+
+\end_inset
+
+:
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="2">
 <features islongtable="true" longtabularalignment="center">
@@ -9059,6 +9517,13 @@ Interface de Rede
 
 \begin_layout Plain Layout
 Recursos das três VMs clientes
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Recursos-das-três-cli"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -9217,6 +9682,13 @@ Interface de Rede
 
 \begin_layout Plain Layout
 Recursos das três VMs servidoras
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Recursos-das-três-srvds"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -9335,6 +9807,13 @@ Interface de Rede
 
 \begin_layout Plain Layout
 Recursos das duas VMs para as VNFs
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Recursos-das-duas-vnfs"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -9366,7 +9845,7 @@ Recursos das duas VMs para as VNFs
 status open
 
 \begin_layout Plain Layout
-Como essa alocação é feita nos arquivos .cfg
+inserir anexo com arquivos de configuração
 \end_layout
 
 \end_inset
@@ -9394,13 +9873,21 @@ reference "sec:Alocação-de-recursos"
 \end_inset
 
  foram alocados pensando em um ambiente de validação baseado em hospedagem
- web.
+ 
+\shape italic
+web
+\shape default
+.
  Nesse ambiente é provável encontrar equipamentos que desempenham as funções
- de rede implementadas no capítulo anterior, sendo as empresas desse setor
- possíveis interessadas neste protótipo de solução virtualizada.
- No entanto, o ambiente proposto abstrai certa complexidade quando conecta
- o cliente diretamente ao firewall, sem saltos e sem que ao invés disso
- haja um dispositivo que redirecione as requisições ao mesmo.
+ de rede implementadas no capítulo anterior, com cenários bem mais complexos
+ e completos.
+ No entanto, o ambiente proposto abstrai um pouco disso quando conecta o
+ cliente diretamente ao 
+\shape italic
+firewall
+\shape default
+, sem saltos e sem que ao invés disso haja um dispositivo que redirecione
+ as requisições ao mesmo.
  Mas é importante notar que esta adaptação não prejudica os testes que são
  propostos na 
 \begin_inset CommandInset ref
@@ -9410,13 +9897,10 @@ reference "sec:Proposta_exec_resultados"
 \end_inset
 
 .
- O protótipo planejado segue abaixo e esta presente no 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Colocar figura no apêndice em folha A4
-\end_layout
+ O protótipo planejado segue na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Protótipo-para-execução"
 
 \end_inset
 
@@ -9470,22 +9954,50 @@ Fonte: Elaborada pelo autor
 \end_layout
 
 \begin_layout Standard
-Três pontes (bridges) ethernet foram criadas no switch virtual Linux Bridge
- para prover as conexões entre as máquinas virtuais, e uma entre estas e
- as demais redes físicas para fins de administração dos testes.
+Quatro pontes (
+\shape italic
+bridges
+\shape default
+) 
+\shape italic
+Ethernet
+\shape default
+ foram criadas no 
+\shape italic
+switch
+\shape default
+ virtual Linux Bridge para prover as conexões entre as máquinas virtuais
+ e o 
+\shape italic
+firewall
+\shape default
+, este e o balanceador, e deste último com os servidores.
+ A última delas é uma ponte para que o autor pudesse gerenciar mais facilmente
+ as máquinas clientes, que exigiam mais modificações que eram dificultadas
+ pelo terminal pouco responsivo do Xen para o Debian.
 \end_layout
 
 \begin_layout Standard
-Após criadas e configuradas com seus softwares, as máquinas usuárias têm
- suas interfaces de rede configuradas com um IP e máscara de sub-rede usados
- para a comunicação entre VMs (198.51.100.0/24) e outro para que o controle
- das operações seja realizado de outra máquina (192.168.0.0/23) via SSH.
+Após criadas e configuradas com seus 
+\shape italic
+softwares
+\shape default
+, as máquinas usuárias têm suas interfaces de rede configuradas com um IP
+ e máscara de sub-rede usados para a comunicação entre VMs (198.51.100.0/24)
+ e outro para que o controle das operações seja realizado de outra máquina
+ (192.168.0.0/23) via Secure Shell (SSH).
  Tal configuração é feita na linha de comando das VMs clientes para cada
- interface de rede usando o ifconfig, e também no arquivo de configuração
- das VMs no hospedeiro.
- Neste arquivo também se determina a qual rede do switch virtual as interfaces
- de rede virtuais das VMs estão conectadas.
- No caso do protótipo, trata-se das redes dentro das áreas amarelas na 
+ interface de rede usando o 
+\family typewriter
+ifconfig
+\family default
+, e também no arquivo de configuração das VMs no hospedeiro.
+ Neste arquivo também se determina a qual rede do 
+\shape italic
+switch
+\shape default
+ virtual as interfaces de rede virtuais das VMs estão conectadas.
+ No caso do protótipo, trata-se das redes dentro das áreas amarelas da 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:Protótipo-para-execução"
@@ -9493,16 +10005,35 @@ reference "fig:Protótipo-para-execução"
 \end_inset
 
  e a rede de controle que não é exibida na figura.
- Por fim, as interfaces usadas para o teste em si recebem através do route
- a informação de um gateway.
- Isto é essencial para que os pacotes cheguem até o serviço web, tendo o
- firewall como intermediário.
+ Por fim, as interfaces usadas para o teste em si recebem através do comando
+ 
+\family typewriter
+route
+\family default
+ a informação de um 
+\shape italic
+gateway
+\shape default
+.
+ Isto é essencial para que os pacotes cheguem até o serviço 
+\shape italic
+web
+\shape default
+, tendo o 
+\shape italic
+firewall
+\shape default
+ como intermediário.
 \end_layout
 
 \begin_layout Standard
-O firewall e o balanceador de carga recebem boa parte das suas configurações
- na fase de implementação, de modo estático, tais como IPs e máscaras de
- sub-rede como os vistos na 
+O 
+\shape italic
+firewall
+\shape default
+ e o balanceador de carga recebem boa parte das suas configurações na fase
+ de implementação, de modo estático, tais como IPs e máscaras de sub-rede
+ como os vistos na 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:Protótipo-para-execução"
@@ -9512,44 +10043,65 @@ reference "fig:Protótipo-para-execução"
 .
  Para uma melhor visualização da configuração de rede dessas VNFs, o ideal
  é consultar a 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-seção do fw no cap de implementação
-\end_layout
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:Firewall"
 
 \end_inset
 
-e a 
+ e a 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:Balanceador-de-Carga"
+
+\end_inset
+
+
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
-seção do lb no cap de implementação
+adicionar o anexo dos .cfg
 \end_layout
 
 \end_inset
 
 .
  No mais, os arquivos de configuração das VMs no hospedeiro recebem as informaçõ
-es sobre as redes do switch virtual usadas e as suas configurações para
- cada uma delas.
+es sobre as redes do 
+\shape italic
+switch
+\shape default
+ virtual usadas em cada uma e as mesmas configurações de endereço IP, e
+ máscara do código Click.
  
 \end_layout
 
 \begin_layout Standard
 Idênticos aos clientes com relação a configuração de rede, os servidores
- web abdicam de interfaces de rede virtuais para seu gerenciamento, já que
+ 
+\shape italic
+web
+\shape default
+ não possuem interfaces de rede virtuais para seu gerenciamento, já que
  se configurados uma única vez se tornam dispositivos passivos nesse quesito,
- com modificações esporádicas e suportáveis através do hospedeiro.
+ com modificações esporádicas e suportáveis através do terminal Xen para
+ Debian no hospedeiro.
  Antes de inseridos a rede local alimentada pelo balanceador de carga (172.16.0.0/1
-2), seus softwares são configurados e recebem a página web que será usada
- para os testes, que possui cerca de 200 bytes.
- Trata-se de uma página HTML minimalista contendo apenas a identificação
- exclusiva de cada um dos três servidores.
- Nenhum ajuste extra foi feito no Apache Worker além do bloqueio de escrita
- de registros apenas para os testes da 
+2), seus softwares são configurados e recebem a página 
+\shape italic
+web
+\shape default
+ que será usada para os testes, que possui cerca de 200 Bytes.
+ Trata-se de uma página em Linguagem de Marcação de Hipertexto (HTML) minimalist
+a contendo apenas a identificação exclusiva de cada um dos três servidores.
+ Nenhum ajuste extra foi feito no Apache Worker.
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+além do bloqueio de escrita de registros apenas para os testes da 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "subsec:Desempenho"
@@ -9559,26 +10111,36 @@ reference "subsec:Desempenho"
 , já que as operações estavam afetando sensivelmente a análise dos resultados.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-Alguns detalhes comuns a alguns ou todos os dispositivos:
+Alguns detalhes comuns a alguns ou a todos os dispositivos:
 \end_layout
 
-\begin_layout Itemize
-A unidade de transporte máxima (MTU) é padronizada em 1500 bytes para todos
- do protótipo através do uso do 
+\begin_layout Alineas
+A Unidade de Transporte Máxima (MTU) é padronizada em 1500 bytes para todos
+ do protótipo através do uso do comando 
+\family typewriter
+ifconfig 
+\family default
+nas interfaces de rede virtuais e nas interfaces do 
 \shape italic
-ifconfig
+switch
 \shape default
- nas interfaces de rede virtuais e nas interfaces do switch virtual;
+ virtual;
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Alineas
 Os relógios dos clientes, servidores web, e hospedeiro foram sincronizados
- antes dos testes para facilitar a análise dos resultados, usando o 
-\shape italic
-Ntpdate
-\shape default
- com o servidor b.ntp.br do NIC.BR;
+ antes dos testes para facilitar a análise dos resultados, usando o Ntpdate
+ com o servidor 
+\family typewriter
+b.ntp.br
+\family default
+ do Núcleo de Informação e Coordenação do Ponto BR (NIC.BR).
 \end_layout
 
 \begin_layout Section
@@ -9602,23 +10164,41 @@ reference "sec:Protótipo"
 \end_inset
 
 .
- O primeiro testa a função do firewall em bloquear o acesso a determinadas
- portas, como por exemplo, a capacidade da função de rede programada de
- exercer o bloqueio ao acesso por máquinas indesejáveis.
- De forma idêntica, o segundo testa a função do balanceador de carga em
- dividir o fluxo de entrada entre vários servidores com base no endereço
- IP e na nº da porta de origem do pacote.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Reescrever
-\end_layout
+ A 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "subsec:Firewall"
 
 \end_inset
 
+ testa a função do 
+\shape italic
+firewall
+\shape default
+ em bloquear o acesso a determinadas portas e endereços, como por exemplo,
+ a capacidade da função de rede programada de exercer o bloqueio ao acesso
+ por máquinas indesejáveis.
+ Já a 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "subsec:Balanceador-de-carga-sip"
 
+\end_inset
+
+ e a 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "subsec:Balanceador-de-carga-rr"
+
+\end_inset
+
+ testam a função do balanceador de carga em dividir o fluxo de entrada entre
+ vários servidores com base no endereço IP de origem, no primeiro caso,
+ e com base no método 
+\shape italic
+Round Robin
+\shape default
+, no segundo.
 \end_layout
 
 \begin_layout Subsection
@@ -9633,8 +10213,15 @@ name "subsec:Firewall"
 \end_layout
 
 \begin_layout Standard
-Usando o Siege a partir de um cliente qualquer da rede, emite-se tráfego
- tendo como destino a borda do serviço de hospedagem como na figura 
+Usando o Siege 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "noauthor_siege_nodate"
+
+\end_inset
+
+ a partir de um cliente qualquer da rede, emite-se tráfego tendo como destino
+ a borda do serviço de hospedagem como na figura 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:Protótipo-para-execução"
@@ -9642,17 +10229,30 @@ reference "fig:Protótipo-para-execução"
 \end_inset
 
 .
- O tráfego HTTP gerado passa obrigatoriamente pelo firewall, permitindo
- uma análise detalhada do fluxo, realizando concessões e bloqueios conforme
- a proposta.
+ O tráfego HTTP gerado passa obrigatoriamente pelo 
+\shape italic
+firewall
+\shape default
+, permitindo uma análise detalhada do fluxo, realizando concessões e bloqueios
+ conforme a proposta.
  
 \end_layout
 
 \begin_layout Standard
 As decisões tomadas pela função afetam a execução do Siege.
- Para monitorá-las, aplica-se o BWM-NG nas interfaces virtuais relacionadas
- ao firewall e ao cliente em questão, a procura de padrões que demonstrem
- o comportamento do fluxo.
+ Para monitorá-las, aplica-se o BWM-NG 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "gropp_bwm-ng:_2018"
+
+\end_inset
+
+ nas interfaces virtuais relacionadas ao 
+\shape italic
+firewall
+\shape default
+ e ao cliente em questão, a procura de padrões que demonstrem o comportamento
+ do fluxo.
  Não trafegam quaisquer outras conexões pelas interfaces testadas.
 \end_layout
 
@@ -9660,15 +10260,66 @@ As decisões tomadas pela função afetam a execução do Siege.
 Para a execução, executa-se os softwares em paralelo e sincronizadamente,
  com o Siege no cliente e o BWM-NG no hospedeiro da plataforma ClickOS.
  O primeiro é configurado para uma execução em no máximo quinze segundos
- com cem processos concorrentes emitindo requisições para http://192.0.2.61:X/index
-2.html, onde X é o número da porta a ser acessada.
+ com cem processos concorrentes emitindo requisições para 
+\family typewriter
+http://192.0.2.61:X/index2.html
+\family default
+, onde 
+\family typewriter
+X
+\family default
+ é o número da porta a ser acessada.
  Já o segundo guarda uma leitura do fluxo dos pacotes a cada meio segundo
- nas interfaces selecionadas, de acordo com padrão CSV.
+ nas interfaces selecionadas, de acordo com padrão de Valores Separados
+ por Vírgula (CSV).
 \end_layout
 
 \begin_layout Standard
 Para auxílio na geração dos gráficos e análise dos resultados, os arquivos
- resultantes de ambos comandos armazenam os segundos do relógio do sistema.
+ resultantes de ambos comandos armazenam o tempo em segundos do relógio
+ do sistema.
+ Para tornar os gráficos mais limpos, foram excluídas as representações
+ dos clientes não utilizados no momento da execução.
+ Para a 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Fluxo-de-pacotes-fw-80"
+
+\end_inset
+
+ e a 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Fluxo-de-pacotes-fw-8080"
+
+\end_inset
+
+, 
+\family typewriter
+cli_in
+\family default
+, 
+\family typewriter
+cli_out
+\family default
+, 
+\family typewriter
+fw_in
+\family default
+ e 
+\family typewriter
+fw_out
+\family default
+ significam respectivamente entrada de quadros no cliente, saída de quadros
+ do cliente, entrada de quadros no 
+\shape italic
+firewall
+\shape default
+ e saída de quadros do 
+\shape italic
+firewall
+\shape default
+.
 \end_layout
 
 \begin_layout Standard
@@ -9681,7 +10332,11 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Fluxo de pacotes TCP 80 com foco no firewall
+Fluxo de pacotes TCP 80 com foco no 
+\shape italic
+firewall
+\shape default
+
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Fluxo-de-pacotes-fw-80"
@@ -9740,7 +10395,11 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Fluxo de pacotes TCP 8080 com foco no firewall
+Fluxo de pacotes TCP 8080 com foco no 
+\shape italic
+firewall
+\shape default
+
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Fluxo-de-pacotes-fw-8080"
@@ -9781,17 +10440,12 @@ name "fig:Fluxo-de-pacotes-fw-8080"
 
 \begin_layout Plain Layout
 \align center
-Fonte: elaborada pelo autor
+Fonte: Elaborada pelo autor
 \end_layout
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-Para tornar os gráficos mais limpos, foram excluídas as representações dos
- clientes não utilizados no momento da execução.
 \end_layout
 
 \begin_layout Standard
@@ -9804,10 +10458,13 @@ reference "fig:Fluxo-de-pacotes-fw-80"
 
 , o cliente configurado para enviar o fluxo de requisições através da porta
  TCP 80 possui um padrão condizente com o esperado em uma conexão normal,
- respeitando o controle de fluxo nativo do protocolo de transporte em questão,
- e sem perdas significantes.
+ respeitando o controle de fluxo nativo do TCP, e sem perdas significantes.
  O tráfego gerado por ele é notado nas interfaces de entrada e de saída
- do firewall, demonstrando aceitação deste pelas regras.
+ do 
+\shape italic
+firewall
+\shape default
+, demonstrando aceitação deste pelas regras.
  No outro sentido do tráfego e na parte inferior da figura, as respostas
  mantêm proporções semelhantes se comparadas ao gráfico de envio, salvo
  variações mínimas nas quantidades a serem interpretadas como naturais ao
@@ -9824,19 +10481,33 @@ reference "fig:Fluxo-de-pacotes-fw-8080"
 \end_inset
 
 , demonstra problemas para utilizar o protocolo para estabelecer transporte
- para o servidor web, enviando apenas cem pacotes de sincronia em intervalos
- de tempo binários, e que não aparecem na interface virtual de saída do
- firewall, sendo então bloqueados pela função de rede virtual.
+ para o servidor 
+\shape italic
+web
+\shape default
+, enviando apenas cem pacotes de abertura de conexão TCP em intervalos de
+ tempo binários, e que não aparecem na interface virtual de saída do 
+\shape italic
+firewall
+\shape default
+, sendo então bloqueados pela função virtual de rede.
  Este número não é em vão, já que são cem os processos concorrentes que
  requisitam conexões com o serviço.
  Se o fluxo de saída não chega ao serviço, logo é improvável que seja haja
  resposta em forma de tráfego de entrada representado na parte inferior,
  o que de fato não ocorre exceto por um único pacote, que por exclusão,
- é uma resposta ARP do próprio firewall a uma requisição do cliente (veja
- no segundo seis de ambos gráficos).
- Importante lembrar que este firewall trabalha apenas com filtragem de pacotes
- IP e não responde pelos pacotes ARP, que seguem outros fluxos na árvore
- de execução do Click como visto na 
+ é uma resposta ARP do próprio 
+\shape italic
+firewall
+\shape default
+ a uma requisição do cliente (veja no instante 6s de ambos gráficos).
+ Importante lembrar que este 
+\shape italic
+firewall
+\shape default
+ trabalha apenas com filtragem de pacotes IP e não responde pelos pacotes
+ ARP, que seguem outros fluxos na árvore de execução do Click como visto
+ na 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:Uma-aplicação-dos"
@@ -9860,25 +10531,52 @@ name "subsec:Balanceador-de-carga-sip"
 \begin_layout Standard
 Neste teste, três clientes emitem fluxos para a borda do serviço de hospedagem
  duas vezes cada, de forma que as emissões não se sobrepõem.
- O tráfego gerado passa obrigatoriamente pelo firewall, e uma vez filtrado
- chega ao balanceador, que o distribui aos servidores web configurados na
- VNF através da aplicação de um DNAT.
+ O tráfego gerado passa obrigatoriamente pelo 
+\shape italic
+firewall
+\shape default
+, e uma vez filtrado chega ao balanceador, que o distribui aos servidores
+ 
+\shape italic
+web
+\shape default
+ configurados na VNF.
 \end_layout
 
 \begin_layout Standard
 Novamente o BWM-NG é usado para monitorar as interfaces virtuais relacionadas
  ao cliente e aos servidores, que são respectivamente origem e destino dos
- pacotes, a procura de padrões que demonstrem o comportamento do fluxo.
+ quadros, a procura de padrões que demonstrem o comportamento do fluxo.
  Não existem quaisquer outras conexões vigentes no ambiente de teste.
 \end_layout
 
 \begin_layout Standard
 A execução é feita em sequência, partindo do primeiro cliente ao terceiro,
- duas vezes.
- São seis execuções sequenciais e alternadas de no máximo quinze segundos
- cada para http://192.0.2.61:80/index2.html, gerando o arquivo CSV, e armazenando
- os segundos do relógio do sistema para auxílio na geração dos gráficos
- e análise dos resultados.
+ duas vezes, com a intenção de verificar a manutenção do envio dos pacotes
+ ao mesmo servidor sempre.
+ São seis execuções sequenciais e alternadas de duração máxima de quinze
+ segundos cada para 
+\family typewriter
+http://192.0.2.61:80/index2.html
+\family default
+, gerando o arquivo CSV, e armazenando o tempo em segundos do relógio do
+ sistema para auxílio na geração dos gráficos e análise dos resultados.
+ O padrão de legendas do teste na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "subsec:Firewall"
+
+\end_inset
+
+ é mantido para os gráficos destes, onde 
+\family typewriter
+*in
+\family default
+ e 
+\family typewriter
+*out
+\family default
+ significam entrada e saída com relação aos dispositivos precedentes.
 \end_layout
 
 \begin_layout Standard
@@ -9948,16 +10646,20 @@ reference "fig:Fluxo-de-pacotes-lb-sip"
 
 \end_inset
 
-o primeiro, acima, demonstra a saída dos pacotes dos clientes e a chegada
- deles nos servidores web e o segundo, abaixo, demonstra o caminho contrário,
- onde os pacotes-resposta retornam do servidor para o cliente.
- Em todos os seis momentos do primeiro gráfico há um cliente enviando e
- seus pacotes chegando a um único servidor, inclusive mantendo a relação
- cliente servidor definida nas segundas tentativas.
+ o primeiro, acima, demonstra a saída dos quadros dos clientes e a chegada
+ deles nos servidores 
+\shape italic
+web
+\shape default
+ e o segundo, abaixo, demonstra o caminho contrário, onde os quadros-resposta
+ retornam do servidor para o cliente.
+ Em todos as seis execuções do primeiro gráfico há um cliente enviando e
+ seus quadros chegando a um único servidor, inclusive mantendo a relação
+ cliente-servidor definida nas primeiras execuções.
  Cada cliente foi balanceado para um servidor diferente, embora nesse caso
  não seja um resultado ruim que dois deles fossem encaminhados para o mesmo
  servidor, já que o elemento não analisa o estado atual dos nós balanceadores.
- Claro que ao se tratar de uma conexão TCP, os pacotes-resposta também precisam
+ Claro que ao se tratar de uma conexão TCP, os quadros-resposta também precisam
  retornar corretamente para que não haja uma queda na transmissão por parte
  do cliente, o que acontece e valida o bom funcionamento da VNF.
 \end_layout
@@ -9974,24 +10676,69 @@ name "subsec:Balanceador-de-carga-rr"
 \end_layout
 
 \begin_layout Standard
-O Siege emite o mesmo tipo de fluxo do firewall partir de um cliente para
- a borda do serviço de hospedagem.
- O tráfego HTTP na porta 80 passa obrigatoriamente pelo firewall, e uma
- vez filtrado chega ao balanceador de carga, que o distribui aos servidores
- web configurados na VNF, através da aplicação de um DNAT.
+O Siege emite o mesmo tipo de fluxo do 
+\shape italic
+firewall
+\shape default
+ partir de um cliente para a borda do serviço de hospedagem.
+ O tráfego HTTP na porta 80 passa obrigatoriamente pelo 
+\shape italic
+firewall
+\shape default
+, e uma vez filtrado chega ao balanceador de carga, que o distribui aos
+ servidores 
+\shape italic
+web
+\shape default
+ configurados na VNF.
 \end_layout
 
 \begin_layout Standard
 O BWM-NG é usado novamente para monitorar as interfaces virtuais relacionadas
- ao cliente e aos servidores web, que são origem e destino dos pacotes,
- a procura de padrões que demonstrem o comportamento do fluxo.
+ ao cliente e aos servidores 
+\shape italic
+web
+\shape default
+, que são origem e destino dos pacotes, a procura de padrões que demonstrem
+ o comportamento do fluxo.
  Não trafegam quaisquer outras conexões pelas interfaces testadas.
 \end_layout
 
 \begin_layout Standard
 A execução ocorre de forma parecida com a do teste anterior, porém sem a
- necessidade de múltiplas execuções.
- Desta forma, apenas um cliente é necessário.
+ necessidade de múltiplas execuções ou clientes, restringindo-se a uma execução
+ em um cliente.
+ Logo, para tornar os gráficos mais limpos foram excluídas as representações
+ dos clientes não utilizados no momento da execução.
+ Com relação a legenda da 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Fluxo-de-pacotes-lb-rr"
+
+\end_inset
+
+, a única novidade em relação a 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "subsec:Balanceador-de-carga-sip"
+
+\end_inset
+
+ é a soma dos quadros que entram e saem dos servidores 
+\shape italic
+web
+\shape default
+, com o nome de 
+\family typewriter
+soma_wsx
+\family default
+.
+ para facilitar a demonstração entre o medido na saída do cliente e a entrada
+ dos servidores 
+\shape italic
+web
+\shape default
+.
 \end_layout
 
 \begin_layout Standard
@@ -10064,352 +10811,22 @@ reference "fig:Fluxo-de-pacotes-lb-rr"
 , está o fluxo de pacotes enviados pelo cliente.
  Observa-se uma semelhança entre as quantidades de pacotes enviados pelo
  cliente e recebidos por todos os servidores.
- Os servidores web recebem individualmente cerca de um terço do total de
- pacotes, como é possível ver nas três linhas que os representam, praticamente
- sobrepostas, e corroboram com a expectativa despejada em cima do balanceador
- de carga desenvolvido.
+ Os servidores 
+\shape italic
+web
+\shape default
+ recebem individualmente cerca de um terço do total de pacotes, como é possível
+ ver nas três linhas que os representam, praticamente sobrepostas, e corroborand
+o com a expectativa sobre o balanceador de carga desenvolvido.
 \end_layout
 
 \begin_layout Standard
-Na parte inferior da figura está o fluxo de pacotes recebido pelo cliente,
+Na parte inferior da figura está o fluxo de quadros recebidos pelo cliente,
  vindo dos servidores, e em resposta as requisições HTTP.
  Este gráfico se assemelha ao anterior em suas linhas e nas quantidades
  de pacotes enviados a cada intervalo, o que é de se esperar de uma rede
- neutra, e demonstrando que o teste não sofreu reações adversas, tampouco
- alta carga de processamento com os parâmetros usados.
-\end_layout
-
-\begin_layout Standard
-Para tornar os gráficos mais limpos, foram excluídas as representações dos
- clientes não utilizados no momento da execução.
-\end_layout
-
-\begin_layout Subsection
-Desempenho
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:Desempenho"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Embora o desempenho não seja primordial para este trabalho, é possível fazer
- algumas análises sobre a adição de ClickOS ao ambiente virtualizado, mesmo
- com uma camada extra de virtualização.
- A intenção é analisar o tráfego, os erros e o tempo de resposta médio do
- protótipo e de seus recortes, onde as VNFs são retiradas gradativamente
- começando pelo balanceador, passando pelo firewall e assim chegando a uma
- conexão direta entre cliente e servidor.
-\end_layout
-
-\begin_layout Standard
-Apenas o Siege é utilizado, já que em seu relatório indica os dados necessários
- e com a facilidade do formato CSV.
- Ele é configurado para enviar pacotes por sessenta segundos aos endereços,
- que por sua vez variam de acordo com o recorte do protótipo.
- Outra variável é o número de usuários concorrentes em cada máquina cliente.
- Durante os pré-testes, verificou-se uma limitação de mil usuários simultâneos
- para cada cliente, e números acima deste causam vazamentos de memória nas
- máquinas.
- Dado que o cenário é todo virtualizado, optou-se por manter três clientes
- ao invés de buscar mais recursos e clientes com novas VMs.
-\end_layout
-
-\begin_layout Standard
-Para gerar uma amostragem, um passo de cem clientes foi escolhido, totalizando
- dez execuções crescentes para o protótipo e os recortes.
- Uma pausa de cinco minutos é dada entre uma execução de amostra e outra,
- totalizando cerca de sessenta minutos de execução para cada situação testada,
- para eliminar qualquer conexão ainda estabelecida nos servidores web que
- estejam aguardando resposta, e portanto ocupando-o.
-\end_layout
-
-\begin_layout Standard
-Dessa forma, os gráficos representam quatro situações: com balanceador Round
- Robin, com balanceador por endereço IP de origem, apenas com o firewall,
- e sem VNFs.
- Todas foram medidas separadamente, de forma que as interferências inerentes
- ao processamento compartilhado das máquinas e do ambiente de virtualização
- podem afetar uma mas não a outra.
- Uma tentativa de minimizar este problema reside em anular o registro de
- acessos e erros do Apache Worker no caso do processamento nas máquinas,
- e restringir o uso das máquinas virtuais em meio aos testes, inclusive
- fazendo os testes durante horários de pouca carga no ambiente do VMware.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Média de transações por segundo de acordo com o número de usuários
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Média-de-transações"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tclickos_stress/transacoes.png
-	scale 65
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-Fonte: Elaborada pelo autor
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Na 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:Média-de-transações"
-
-\end_inset
-
-, fica clara a influência das VNFs na quantidade de transações efetuadas.
- É de se esperar que uma ligação direta entre as VMs clientes e as servidoras
- traga melhores resultados; que logo em seguida viria o desempenho de um
- elemento que, neste trabalho, é considerado somente leitura, adicionando
- mais um nó na comunicação cliente-servidor; e por último, também adicionando
- mais um nó, estariam os balanceadores de carga, que efetuam altas cargas
- de escrita e afetam o tempo de resposta como demonstrado na 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:Tempo-médio-de"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Entre os balanceadores cabe analisar a eficiência de cada um deles dentro
- do protótipo.
- Essencialmente, o IPRewriter realiza quatro operações de escrita nos pacotes
- associados a uma transação, independente do método de balanceamento: as
- alterações de cabeçalho IP, e o recálculo da soma de verificação TCP, em
- cada sentido.
- A adição dessas operações ao sistema trazem os benefícios desejados, mas
- também uma queda de desempenho notável, aliada a uma falha de implementação
- que impede as regras com conexões finalizadas sejam eliminadas da tabela
- de regras, causando nesta um crescimento proporcional ao fluxo de entrada,
- e tornando sua consulta cada vez mais lenta até que o balanceador seja
- reiniciado.
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-OBS: Favor ignorar daqui pra frente
-\end_layout
-
-\begin_layout Standard
-Com os dados gerados dos vários pré-testes, não foi possível atribuir diferença
- significativa de desempenho entre os métodos de balanceamento, e portanto,
- qualquer avaliação dos códigos de ambos não faz efeito.
- A alta variação da média de transações do balanceamento por IP de origem
- não encontra explicações nos estudos feitos feitos sobre a ferramenta,
- e passa a assumir questões da carga do sistema como um todo.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Números absolutos de erros de acordo com o número de usuários
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Números-absolutos-de"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tclickos_stress/erros.png
-	scale 65
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-Fonte: Elaborada pelo autor
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Nesta parte do teste, é preciso diferenciar os dois principais tipos de
- erros que acontecem.
- O primeiro é o erro de tempo limite atingido, que cancela uma conexão dado
- uma ausência de pacotes de dados ou de controle trocados em determinado
- tempo.
- O Siege configura um tempo limite de trinta segundos para estabelecimento
- de conexão e quando atingido libera o usuário para uma nova tentativa.
- Já o Apache, configura vários destes no âmbito de dados, podendo o tempo
- variar de vinte a sessenta segundos por padrão.
- Já o segundo trata-se de uma conexão reiniciada pelo par, que pode acontecer
- tanto da parte do cliente quanto do servidor...
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Continuar
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-A grande parte dos erros apresentados para as execuções sem balanceador
- são do tipo tempo limite atingido, onde o servidor web reporta com o código
- 408 o fim do tempo de espera para o recebimento de algum pacote de dados.
- No caso das execuções com o balanceador, o tipo predominante de erro é
- o de conexão reiniciada.
- É de se esperar que o número de erros fosse de uma grandeza próxima na
- primeira situação devido a exclusiva leitura do firewall, e que crescesse
- na segunda situação devido as operações de escrita, mas a mudança no tipo
- de erro merece atenção.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Qual a justificativa associada a escrita dos pacotes para essa mudança?
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Tempo médio de resposta de acordo com o número de usuários
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Tempo-médio-de"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tclickos_stress/tempo_de_resposta.png
-	scale 65
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-Fonte: Elaborada pelo autor
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-O tempo de resposta na 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:Tempo-médio-de"
-
-\end_inset
-
- acompanha quase que rigorosamente o comportamento da média da taxa de transaçõe
-s da 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:Média-de-transações"
-
-\end_inset
-
-.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-continuar
-\end_layout
-
-\end_inset
-
-
+ neutra, e demonstrando que o teste ocorreu em perfeitas condições a partir
+ dos parâmetros usados.
 \end_layout
 
 \begin_layout Standard
@@ -10445,7 +10862,7 @@ Reafirmar a porra toda
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 bibfiles "thesis"
-options "bibtotoc,abntex2-num"
+options "abntex2-num"
 
 \end_inset
 
