@@ -4,7 +4,7 @@
 \begin_header
 \save_transient_properties true
 \origin unavailable
-\textclass ../../../../Documentos/UFES/PG/undergraduate-thesis/thesis/lyx/abntex2
+\textclass abntex2
 \begin_preamble
 % ---
 % PACOTES
@@ -2255,9 +2255,9 @@ Um dos padrões em desenvolvimento nesse sentido é o de Virtualização de
 \end_layout
 
 \begin_layout Standard
-Uma das tendências para o uso de NFV e motivo de pesquisas nos últimos anos
- é observada na simplificação da gerência de rede e isolamento em sistemas
- de Computação Móvel na Borda (MEC) em redes 5G 
+O uso de NFV é motivo de pesquisas nos últimos anos, especialmente na simplifica
+ção da gerência de rede e isolamento em sistemas de Computação Móvel na
+ Borda (MEC) em redes 5G 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "mao_survey_2017"
@@ -2286,14 +2286,14 @@ key "Bosshart:2014:PPP:2656877.2656890"
 
 \end_inset
 
-, NetBricks
+, NetBricks 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "panda_netbricks:_2016"
 
 \end_inset
 
-, Elastic Edge
+, Elastic Edge 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "palkar_e2:_2015"
@@ -4736,10 +4736,6 @@ reference "fig:Exemplo-de-arquivo-cfg"
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
