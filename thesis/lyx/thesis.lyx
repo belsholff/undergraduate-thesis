@@ -4,7 +4,7 @@
 \begin_header
 \save_transient_properties true
 \origin unavailable
-\textclass ../../../../Documentos/UFES/PG/undergraduate-thesis/thesis/lyx/abntex2
+\textclass /media/Dados/felipe/Documentos/UFES/PG/undergraduate-thesis/thesis/lyx/abntex2
 \begin_preamble
 % ---
 % PACOTES
@@ -645,7 +645,59 @@ Em memória de Leonina.
 \end_layout
 
 \begin_layout Agradecimentos
-A
+Primeiramente agradeço aos meus pais, Leonina e José Dório, por possibilitarem
+ as melhores condições de estudo técnico e de formação cidadã necessárias
+ para que fizesse minhas escolhas.
+ Especialmente minha mãe, que com sua garra e persistência como exemplo,
+ tornou aqueles ao seu redor muito mais fortes, e principalmente humanos.
+ Mãe, todos os meus sonhos, de hoje e sempre, só existem pela herança que
+ me deixou.
+ Sou eternamente grato por ter cumprido mais do que seu papel.
+\end_layout
+
+\begin_layout Agradecimentos
+A minha irmã, Eloisa, por ter me apoiado durante toda a graduação diretamente,
+ mesmo do alto de sua juventude, com muita compreensão.
+ Sem ela, com certeza este trabalho não estaria aqui.
+\end_layout
+
+\begin_layout Agradecimentos
+A minha tia Dilma, e minha prima Fernanda, que acolheram mais dois filhos
+ nos últimos anos em seus portos, com o mesmo amor que recebi de minha mãe,
+ trazendo segurança para a reta final desta graduação com muita atenção
+ dada, sábios conselhos, e afagos.
+\end_layout
+
+\begin_layout Agradecimentos
+Aos meus mais diversos amigos que a vida trouxe e levou, que tiveram papel
+ importante em me novos mundos a partir de seus pontos de vista, passando
+ pelos dias e dias de futebol, pipas, gude, peões de tampinhas de detergente
+ com rolamento, etc na rua; pelos dias de lanches e video games; de estudos,
+ passeios, viagens; de trabalho, reflexão, discussão, brigas e também de
+ festa.
+ Por mais desconexo que pareça, a falta ridícula que o aprendiz de árbitro
+ não deu no jogo da minha rua com a rua debaixo valendo um refrigerante
+ reflete naquele devaneio de horas após a leitura de um artigo científico
+ enquanto subo o Mestre Álvaro e sonhando com uma vida estável.
+\end_layout
+
+\begin_layout Agradecimentos
+Agradeço a Universidade Federal do Espírito Santo por fazer parte dessa
+ conquista.
+ Nessa nossa relação de amor e ódio, ser o ambiente que entrei adolescente
+ e sai adulto obviamente marca.
+ E marcou de uma forma que não acreditaria ser possível em outra instituição
+ nesse Estado, se lhe conheço bem.
+\end_layout
+
+\begin_layout Agradecimentos
+Especificamente agradeço a aqueles que construíram, mantiveram, e mantém
+ o Núcleo de Cidadania Digital, onde fui membro por quase três anos e coloquei
+ em prática muito dos conhecimentos técnicos do curso e também absorvi uma
+ ampla gama de conhecimento sobre os pessoas.
+ Na outra ponta desta linha do tempo, agradeço ao Núcleo de Estudos em Redes
+ Definidas por Software por terem me acolhido para esse trabalho e permitido
+ meu crescimento profissional e acadêmico.
 \end_layout
 
 \begin_layout Epigrafe
@@ -8241,8 +8293,9 @@ name "sec:Infraestrutura-e-softwares"
 
 \begin_layout Standard
 A estrutura utilizada para os testes consiste em um servidor de virtualização
- com VMware, onde uma máquina virtual com o sistema operacional Debian é
- alocada para todo o experimento.
+ com VMware compartilhando recursos com diversos projetos do laboratório,
+ onde uma máquina virtual com o sistema operacional Debian é alocada para
+ todo o experimento.
  As especificações estão na 
 \begin_inset CommandInset ref
 LatexCommand formatted
@@ -10964,9 +11017,10 @@ name "subsec:Desempenho"
 Embora o desempenho não seja primordial para este trabalho, é possível fazer
  algumas análises sobre a adição de ClickOS ao ambiente virtualizado, mesmo
  com uma camada extra de virtualização.
- A intenção é analisar o tráfego, os erros e o tempo de resposta médio do
- protótipo e de seus recortes, onde as VNFs são retiradas gradativamente
- começando pelo balanceador, passando pelo 
+ A intenção é analisar a velocidade das transações realizadas, a quantidade
+ de erros e o tempo de resposta do protótipo e de suas derivações, onde
+ as VNFs são retiradas gradativamente começando pelo balanceador, passando
+ pelo 
 \shape italic
 firewall
 \shape default
@@ -10974,16 +11028,16 @@ firewall
 \end_layout
 
 \begin_layout Standard
-Apenas o Siege é utilizado, já que em seu relatório indica os dados necessários
- e com a facilidade do formato CSV.
- Ele é configurado para enviar pacotes por sessenta segundos aos endereços,
- que por sua vez variam de acordo com o recorte do protótipo.
+Apenas o Siege é utilizado, já que seu relatório indica os dados necessários,
+ com a facilidade do formato CSV.
+ Ele é configurado para enviar pacotes por sessenta segundos aos servidores
+ independentemente da versão do protótipo.
  Outra variável é o número de usuários concorrentes em cada máquina cliente.
  Durante os testes preliminares, verificou-se uma limitação de mil usuários
  simultâneos para cada cliente, e números acima deste causam vazamentos
  de memória nos clientes.
- Dado que o cenário é todo virtualizado, optou-se por manter três clientes
- ao invés de buscar mais recursos com novas VMs.
+ Dado que o cenário é todo virtualizado, optou-se por manter os três clientes
+ do cenário ao invés de buscar mais recursos com novas VMs.
 \end_layout
 
 \begin_layout Standard
@@ -10995,8 +11049,8 @@ firewall
 \shape default
 , e sem quaisquer VNFs ClickOS.
  Todas foram executadas sequencialmente, de forma que as interferências
- inerentes ao processamento compartilhado das máquinas e do ambiente de
- virtualização podem afetar uma mas não a outra.
+ inerentes a virtualização das máquinas e do ambiente de virtualização do
+ hospedeiro podem afetar uma máquina mas não a outra.
 
 \emph on
  
@@ -11009,20 +11063,27 @@ web
 \shape default
 .
  Outra tentativa aplicada, essa com menor eficiência, foi realizar os testes
- durante horários de pouca carga no ambiente do VMware.
+ durante horários de pouca carga no ambiente do VMware descrito na 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Infraestrutura-e-softwares"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-Para gerar uma amostragem, cada situação descrita é executada no Siege com
- valores entre cem e mil usuários simultâneos para cada máquina cliente,
- com um passo de cem usuários, totalizando dez execuções crescentes para
- cada.
- Uma pausa de cinco minutos é dada entre a execução de um salto e outro
- para eliminar qualquer conexão ainda órfã estabelecida nos servidores 
+Para gerar amostras, cada situação descrita é executada no Siege com valores
+ entre cem e mil usuários simultâneos para cada máquina cliente, com um
+ passo de cem usuários, totalizando dez execuções crescentes e sequentes
+ para cada.
+ Uma pausa de cinco minutos é dada entre a execução de um passo e outro
+ para eliminar qualquer conexão órfã ainda estabelecida nos servidores 
 \shape italic
 web
 \shape default
- que esteja aguardando resposta, e portanto ocupando-o.
+, e portanto ocupando-o.
  Dessa forma, cada situação representa uma execução de cerca de sessenta
  minutos.
 \end_layout
@@ -11136,7 +11197,7 @@ web
 firewall
 \shape default
 , mas que diante das adaptações para execução do teste, passou a ser um
- elemento de escrita.
+ elemento com escrita.
  
 \end_layout
 
@@ -11147,7 +11208,7 @@ firewall
 \shape default
  é claramente uma função virtual somente leitura.
  No entanto, um erro de implementação desconhecido de Click faz com que
- nesta adaptação do teste os pacotes necessitem ter a soma de verificação
+ nessa adaptação do cenário os pacotes necessitem ter a soma de verificação
  do cabeçalho TCP recalculada para que o servidor 
 \shape italic
 web
@@ -11157,13 +11218,17 @@ web
 \end_layout
 
 \begin_layout Standard
-Por último, adicionando mais um nó e efetuando altas cargas de escrita em
- pacotes (quatro por transação) estão os balanceadores de carga.
+Por último, adicionando o segundo nó e efetuando altas cargas de escrita
+ em pacotes (quatro por transação) estão os balanceadores de carga.
  Suas adições, embora signifiquem agregar funcionalidades importantes para
  o cenário, degradam sensivelmente o desempenho.
  Através do gráfico, a taxa média de transações realizadas por segundo no
- balanceador Round Robin é ligeiramente maior do que aquele por endereço
- IP de origem em números absolutos para a maioria dos casos.
+ balanceador 
+\shape italic
+Round Robin
+\shape default
+ é ligeiramente maior do que aquele por endereço IP de origem em números
+ absolutos para a maioria dos casos.
  No entanto, uma grande variação foi detectada durante as três execuções
  desta situação do cenário.
  Isso é exposto pelo desvio padrão apresentado, tornando impossível nessa
@@ -11195,92 +11260,14 @@ reference "fig:Números-absolutos-de"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Extrato de pacotes filtrados a partir do cliente na condição do teste corrente
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Extrato-de-pacotes-err"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/wireshark_err.png
-	lyxscale 65
-	scale 35
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-Fonte: Elaborada pelo autor
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Na figura 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:Extrato-de-pacotes-err"
-
-\end_inset
-
- é possível visualizar duas transações ocorrendo a partir da porta TCP 37448
- e TCP 38871.
- A primeira é uma transmissão sem erros.
- Seu padrão segue os parâmetros para troca de mensagens dos protocolos em
- questão e serve de comparação para a conexão seguinte.
- Essa, que inicia na linha 9624, tem um comportamento desencontrado, onde
- o cliente solicita o fim da conexão antes mesmo de receber qualquer comunicado
- do servidor (linha 32905), seis décimos de segundo após o envio de uma
- requisição de página (linha 24734).
- Após algumas retransmissões por parte do cliente requisitando o fim da
- conexão e a página, o servidor 
-\shape italic
-web
-\shape default
- responde primeiro com a página requisitada ao invés de um 
-\family typewriter
-FIN, ACK
-\family default
- confirmando o encerramento da conexão.
- O cliente então entende por um comportamento anômalo e solicita o reinício
- da conexão, gerando o erro.
-\end_layout
-
-\begin_layout Standard
-Na 
+Ainda na 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:Números-absolutos-de"
 
 \end_inset
 
-, a legenda segue o mesmo padrão da 
+, é importante dizer que a legenda segue o mesmo padrão da 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:Média-de-transações"
@@ -11338,7 +11325,90 @@ Fonte: Elaborada pelo autor
 \end_layout
 
 \begin_layout Standard
-A grande parte dos erros apresentados para as execuções sem balanceador
+Na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Extrato-de-pacotes-err"
+
+\end_inset
+
+ é possível visualizar duas transações ocorrendo a partir da porta TCP 37448
+ e TCP 38871 do endereço IP 198.51.100.1 do cliente.
+ A primeira é uma transmissão sem erros.
+ Seu padrão segue os parâmetros para troca de mensagens dos protocolos em
+ questão e serve de comparação para a conexão seguinte.
+ Essa, que inicia na linha 9624, tem um comportamento desencontrado, que
+ seis décimos de segundo após estabelecer a conexão e requisitar a página
+ (linha 24734), solicita o fim da conexão antes mesmo de receber qualquer
+ comunicado do servidor (linha 32905).
+ Após algumas retransmissões por parte do cliente requisitando novamente
+ o fim da conexão e também a página, chega do servidor 
+\shape italic
+web
+\shape default
+ a confirmação do recebimento dos dois pacotes retranstransmitidos e depois
+ a página requisitada.
+ O cliente então entende o recebimento de dados por uma conexão prestes
+ a ser fechada e com um comportamento anômalo solicita o reinício da conexão,
+ gerando o erros no ponto de vista do Siege.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Extrato de pacotes filtrados a partir do cliente na condição do teste corrente
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Extrato-de-pacotes-err"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/wireshark_err.png
+	lyxscale 65
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Em se tratando da 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Números-absolutos-de"
+
+\end_inset
+
+, grande parte dos erros apresentados para as situações sem balanceador
  são do tipo tempo limite atingido, onde o servidor 
 \shape italic
 web
@@ -11362,9 +11432,12 @@ firewall
  no balanceador.
  Novamente, as funções com balanceadores se destacam do restante devido
  a um grande número de erros por conexão reiniciada.
- E muito embora as linhas possam dizer que a implementação por endereço
+ E muito embora as médias possam dizer que a implementação por endereço
  IP de origem se sobressai, novamente os desvios padrão tratam de desmenti-las
  ao se sobreporem.
+ Talvez, para esse teste fossem necessárias ainda mais repetições para visualiza
+r alguma diferença concreta que justifique qualquer qualificação sobre suas
+ comparações.
 \end_layout
 
 \begin_layout Standard
@@ -11375,10 +11448,12 @@ reference "fig:Extrato-de-pacotes-err"
 
 \end_inset
 
-, a desordem na entrega de pacotes causada pelo gargalo do balanceador de
- carga acentua a quantidade de erros a medida que o processamento de pacotes
- aumenta, demandando mais esforço computacional para a função virtual.
- Não há certeza sobre o ponto onde perdas e atrasos acontecem.
+, a desordem na entrega de pacotes possivelmente causada pelo gargalo do
+ balanceador de carga acentua a quantidade de erros a medida que o processamento
+ de pacotes aumenta, demandando mais esforço computacional para a função
+ virtual.
+ A partir do conjunto de testes elaborado, não há certeza sobre o ponto
+ onde as perdas e atrasos acontecem dentro da VNF programada.
 \end_layout
 
 \begin_layout Standard
@@ -11453,14 +11528,14 @@ reference "fig:Tempo-médio-de"
 
 \end_inset
 
- acompanha quase que rigorosamente um comportamento análogo ao da 
+ acompanha quase que rigorosamente um comportamento complementar ao da 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:Média-de-transações"
 
 \end_inset
 
-, esta figura contabiliza o tempo de resposta médio as requisições respondidas
+, esta figura contabiliza o tempo de resposta médio às requisições respondidas
  pelo servidor 
 \shape italic
 web
@@ -11489,7 +11564,7 @@ reference "fig:Média-de-transações"
  Essas mudanças são refletidas nesta figura, mesmo que em sutis aumentos
  e melhoras.
  Esses reflexos sutis fazem sentido, uma vez que a média do tempo de resposta
- é calculada pela divisão da soma do tempo levado pelos quadros das requisições
+ é calculada pela da soma do tempo gasto na respostas as requisições dividido
  pelo número de requisições, e portanto, entrar menos ou mais pacotes não
  o altera diretamente.
 \end_layout
@@ -11534,21 +11609,25 @@ middleboxes
 \end_layout
 
 \begin_layout Standard
-Por outro lado, a ausência testes de desempenho em 
+Por outro lado, os testes de desempenho das funções virtuais de rede em
+ ClickOS demonstraram nos parâmetros medidos a carga inserida por elas,
+ sejam encadeadas ou não, trazendo, no caso da velocidade de transações,
+ uma queda de 35% do desempenho em relação a versão sem VNFs.
+ É um valor considerável se comparado ao resultados obtidos pelo autor em
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "martins_clickos_2014"
+
+\end_inset
+
+, mas entendível diante do 
 \shape italic
-hardware
+switch
 \shape default
- e 
-\shape italic
-softwares
-\shape default
- apropriados não permitiu concluir enfaticamente acerca de ClickOS como
- uma alternativa viável aos 
-\shape italic
-middleboxes
-\shape default
- de prateleira, embora sua forma apresentada por este trabalho seja utilizável
- para ambientes específicos e de baixa carga.
+ virtual usado.
+ No entanto, seu uso para ambientes específicos, com outras finalidade principai
+s que não o máximo desempenho, seu valor deve ser considerado.
  É importante destacar que ClickOS ainda se refere a um projeto com pequenos
  erros de implementação na plataforma, e principalmente com relação a ferramenta
  Click e seus elementos especificamente, que mesmo seu desenvolvimento ativo
@@ -11557,12 +11636,8 @@ middleboxes
 
 \begin_layout Standard
 A título de trabalhos futuros, novas baterias de testes podem ser feitas
- para buscar as altas taxas de transferências de ClickOS, em um ambiente
- apropriado e voltado a o desempenho, com o 
-\shape italic
-switch
-\shape default
- VALE.
+ para para melhor avaliar o desempenho de ClickOS, em um ambiente apropriado
+ e voltado para tal.
  Outros podem acontecer para buscar explicações elaboradas e profundas acerca
  do desempenho tão parecido dos balanceadores implementados neste trabalho.
 \end_layout
@@ -11623,9 +11698,85 @@ options "abntex2-num"
 \end_inset
 
 
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{apendicesenv}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+partapendices
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+ARQUIVOS
+\end_layout
+
+\begin_layout Section
+Configuração
+\end_layout
+
+\begin_layout Section
+Código fonte
+\end_layout
+
+\begin_layout Chapter
+COMANDOS
+\end_layout
+
+\begin_layout Section
+Gerência de VNFs ClickOS
+\end_layout
+
+\begin_layout Section
+Uso do Clicky
+\end_layout
+
+\begin_layout Section
+Testes
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{apendicesenv}
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
