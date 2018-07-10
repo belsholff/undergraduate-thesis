@@ -650,22 +650,22 @@ Primeiramente agradeço aos meus pais, Leonina e José Dório, por possibilitare
  para que fizesse minhas escolhas.
  Especialmente minha mãe, que com sua garra e persistência como exemplo,
  tornou aqueles ao seu redor muito mais fortes, e principalmente humanos.
- Mãe, todos os meus sonhos, de hoje e sempre, só existem pela herança que
- me deixou.
- Sou eternamente grato por ter cumprido mais do que seu papel.
+ Mãe, todos os meus sonhos, de hoje e sempre, só existem pela legado que
+ você deixou.
+ Sou eternamente grato por você ter cumprido mais do que seu papel.
 \end_layout
 
 \begin_layout Agradecimentos
 A minha irmã, Eloisa, por ter me apoiado durante toda a graduação diretamente,
  mesmo do alto de sua juventude, com muita compreensão.
- Sem ela, com certeza este trabalho não estaria aqui.
+ Sem ela, com certeza este trabalho não existiria.
 \end_layout
 
 \begin_layout Agradecimentos
 A minha tia Dilma, e minha prima Fernanda, que acolheram mais dois filhos
  nos últimos anos em seus portos, com o mesmo amor que recebi de minha mãe,
- trazendo segurança para a reta final desta graduação com muita atenção
- dada, sábios conselhos, e afagos.
+ trazendoacima de tudo segurança para a reta final desta graduação, com
+ muita atenção dada, sábios conselhos, e afagos.
 \end_layout
 
 \begin_layout Agradecimentos
@@ -4226,6 +4226,17 @@ Fonte: Elaborada pelo autor
 \end_layout
 
 \begin_layout Standard
+Os comandos básicos para utilizar a ferramenta estão no Anexo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Uso-do-Clicky"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 Durante o desenvolvimento deste trabalho, algumas limitações nos elementos
  foram observadas: 
 \end_layout
@@ -4926,16 +4937,14 @@ key "ventre_performance_2016"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-anexo de comandos
-\end_layout
+Os comandos usados para gerenciar VNFs em ClickOS estão no Anexo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Gerência-de-VNFs"
 
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Standard
@@ -5603,6 +5612,8 @@ name "sec:Firewall"
 
 \end_inset
 
+
+\shape italic
 Firewall
 \end_layout
 
@@ -6980,24 +6991,18 @@ reference "fig:Código-fw"
 
 \end_inset
 
- demonstra a implementação realizada.
- 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-e 
+ demonstra a implementação realizada e o Anexo 
 \begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:Visão-gráfica-do-fw"
+LatexCommand ref
+reference "sec:Grafo-do-Firewall"
 
 \end_inset
 
  a visão da mesma VNF em alto nível através de um grafo.
+ 
 \end_layout
 
-\end_inset
-
+\begin_layout Standard
 Da linha 2 à 5 há uma definição de macros no 
 \family typewriter
 AddressInfo
@@ -7941,24 +7946,17 @@ reference "fig:Código-lb"
 
 \end_inset
 
- demonstra a implementação realizada.
- 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-e 
+ demonstra a implementação realizada e o Anexo 
 \begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:Visão-gráfica-do-fw"
+LatexCommand ref
+reference "sec:Grafo-do-balanceador-sip"
 
 \end_inset
 
- a visão da mesma VNF em alto nível através de um grafo.
+ a visão da mesma VNF através de um grafo.
 \end_layout
 
-\end_inset
-
+\begin_layout Standard
 As descrições para as ações programadas entre as linhas 2 e 27 são idênticas
  para aquelas feitas na implementação  da 
 \begin_inset CommandInset ref
@@ -8175,25 +8173,18 @@ Fonte: Elaborada pelo autor
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Inserir clicky
-\end_layout
+O código completo do balanceador Round Robin e sua representação gráfica
+ estão nos Anexos 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Código-fonte"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-inserir o anexo com códigos
-\end_layout
+ e 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Grafo-do-balanceador-rr"
 
 \end_inset
 
@@ -9937,7 +9928,7 @@ Memória
 \begin_inset Text
 
 \begin_layout Plain Layout
-24MB compartilhado
+12MB compartilhado
 \end_layout
 
 \end_inset
@@ -10006,16 +9997,15 @@ name "tab:Recursos-das-duas-vnfs"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-inserir anexo com arquivos de configuração
-\end_layout
+Os arquivos de configuração que delimitam os recursos para as VNFs estão
+ no Anexo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Configuração"
 
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Section
@@ -10214,20 +10204,17 @@ reference "sec:Firewall"
 
 \end_inset
 
- e a Seção 
+, a Seção 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Balanceador-de-Carga"
 
 \end_inset
 
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-adicionar o anexo dos .cfg
-\end_layout
+ e o Anexo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Configuração"
 
 \end_inset
 
@@ -10260,25 +10247,15 @@ web
  que será usada para os testes, que possui cerca de 200 Bytes.
  Trata-se de uma página em Linguagem de Marcação de Hipertexto (HTML) minimalist
 a contendo apenas a identificação exclusiva de cada um dos três servidores.
- Nenhum ajuste extra foi feito no Apache Worker.
- 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-além do bloqueio de escrita de registros apenas para os testes da 
+ Nenhum ajuste extra foi feito no Apache Worker além do bloqueio de escrita
+ de registros apenas para os testes da 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "subsec:Desempenho"
 
 \end_inset
 
-, já que as operações estavam afetando sensivelmente a análise dos resultados.
-\end_layout
-
-\end_inset
-
-
+, já que tal operação estava afetando sensivelmente a análise dos resultados.
 \end_layout
 
 \begin_layout Standard
@@ -10551,10 +10528,34 @@ Fonte: Elaborada pelo autor
 \end_layout
 
 \begin_layout Standard
+Como se pode observar na parte superior da 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Fluxo-de-pacotes-fw-80"
+
+\end_inset
+
+, o cliente configurado para enviar o fluxo de requisições através da porta
+ TCP 80 possui um padrão condizente com o esperado em uma conexão normal,
+ respeitando o controle de fluxo nativo do TCP, e sem perdas significantes.
+ O tráfego gerado por ele é notado nas interfaces de entrada e de saída
+ do 
+\shape italic
+firewall
+\shape default
+, demonstrando aceitação deste pelas regras.
+ No outro sentido do tráfego e na parte inferior da figura, as respostas
+ mantêm proporções semelhantes se comparadas ao gráfico de envio, salvo
+ variações mínimas nas quantidades a serem interpretadas como naturais ao
+ procedimento de medição, e demonstrando inexistência de condições adversas.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -10614,29 +10615,6 @@ Fonte: Elaborada pelo autor
 \end_layout
 
 \begin_layout Standard
-Como se pode observar na parte superior da 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:Fluxo-de-pacotes-fw-80"
-
-\end_inset
-
-, o cliente configurado para enviar o fluxo de requisições através da porta
- TCP 80 possui um padrão condizente com o esperado em uma conexão normal,
- respeitando o controle de fluxo nativo do TCP, e sem perdas significantes.
- O tráfego gerado por ele é notado nas interfaces de entrada e de saída
- do 
-\shape italic
-firewall
-\shape default
-, demonstrando aceitação deste pelas regras.
- No outro sentido do tráfego e na parte inferior da figura, as respostas
- mantêm proporções semelhantes se comparadas ao gráfico de envio, salvo
- variações mínimas nas quantidades a serem interpretadas como naturais ao
- procedimento de medição, e demonstrando inexistência de condições adversas.
-\end_layout
-
-\begin_layout Standard
 Já o cliente configurado para enviar requisições HTTP pela porta TCP 8080,
  na parte superior da 
 \begin_inset CommandInset ref
@@ -10658,7 +10636,10 @@ firewall
 , sendo então bloqueados pela função virtual de rede.
  Este número não é em vão, já que são cem os processos concorrentes que
  requisitam conexões com o serviço.
- Se o fluxo de saída não chega ao serviço, logo é improvável que seja haja
+\end_layout
+
+\begin_layout Standard
+Se o fluxo de saída não chega ao serviço, logo é improvável que seja haja
  resposta em forma de tráfego de entrada representado na parte inferior,
  o que de fato não ocorre exceto por um único pacote, que por exclusão,
  é uma resposta ARP do próprio 
@@ -10666,7 +10647,10 @@ firewall
 firewall
 \shape default
  a uma requisição do cliente (veja no instante 6s de ambos gráficos).
- Importante lembrar que este 
+\end_layout
+
+\begin_layout Standard
+Importante lembrar que este 
 \shape italic
 firewall
 \shape default
@@ -10694,15 +10678,8 @@ name "subsec:Balanceador-de-carga-sip"
 \end_layout
 
 \begin_layout Standard
-Neste teste (
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:Fluxo-de-pacotes-lb-sip"
-
-\end_inset
-
-), três clientes emitem fluxos para a borda do serviço de hospedagem duas
- vezes cada, de forma que as emissões não se sobrepõem.
+Neste teste, três clientes emitem fluxos para a borda do serviço de hospedagem
+ duas vezes cada, de forma que as emissões não se sobrepõem.
  O tráfego gerado passa obrigatoriamente pelo 
 \shape italic
 firewall
@@ -10717,7 +10694,7 @@ web
 
 \begin_layout Standard
 \begin_inset Float figure
-placement H
+placement h
 wide false
 sideways false
 status open
@@ -10874,48 +10851,17 @@ web
 \shape default
 , que são origem e destino dos pacotes, a procura de padrões que demonstrem
  o comportamento do fluxo.
+ A execução ocorre de forma parecida com a do teste anterior, porém sem
+ a necessidade de múltiplas execuções ou clientes, restringindo-se a uma
+ execução em um cliente.
+ Logo, para tornar os gráficos mais limpos foram excluídas as representações
+ dos clientes não utilizados no momento da execução.
  Não trafegam quaisquer outras conexões pelas interfaces testadas.
 \end_layout
 
 \begin_layout Standard
-A execução ocorre de forma parecida com a do teste anterior, porém sem a
- necessidade de múltiplas execuções ou clientes, restringindo-se a uma execução
- em um cliente.
- Logo, para tornar os gráficos mais limpos foram excluídas as representações
- dos clientes não utilizados no momento da execução.
- Com relação a legenda da 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:Fluxo-de-pacotes-lb-rr"
-
-\end_inset
-
-, a única novidade em relação a 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "subsec:Balanceador-de-carga-sip"
-
-\end_inset
-
- é a soma dos quadros que entram e saem dos servidores 
-\shape italic
-web
-\shape default
-, com o nome de 
-\family typewriter
-soma_wsx
-\family default
-.
- para facilitar a demonstração entre o medido na saída do cliente e a entrada
- dos servidores 
-\shape italic
-web
-\shape default
-.
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -10971,6 +10917,38 @@ Fonte: Elaborada pelo autor
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Com relação a legenda da 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Fluxo-de-pacotes-lb-rr"
+
+\end_inset
+
+, a única novidade em relação a 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "subsec:Balanceador-de-carga-sip"
+
+\end_inset
+
+ é a soma dos quadros que entram e saem dos servidores 
+\shape italic
+web
+\shape default
+, com o nome de 
+\family typewriter
+soma_wsx
+\family default
+.
+ para facilitar a demonstração entre o medido na saída do cliente e a entrada
+ dos servidores 
+\shape italic
+web
+\shape default
+.
 \end_layout
 
 \begin_layout Standard
@@ -11354,6 +11332,17 @@ web
 \end_layout
 
 \begin_layout Standard
+A figura ampliada está no Anexo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Análise-dos-pacotes-wshark"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -11712,7 +11701,7 @@ status open
 
 
 \backslash
-begin{apendicesenv}
+begin{anexosenv}
 \end_layout
 
 \end_inset
@@ -11728,7 +11717,324 @@ status open
 
 
 \backslash
-partapendices
+partanexos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+COMANDOS
+\end_layout
+
+\begin_layout Section
+Uso do Clicky
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Uso-do-Clicky"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comandos para visualizar VNFs ClickOS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/comandos_clicky.png
+	scale 57
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborado pelo autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Gerência de VNFs ClickOS
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Gerência-de-VNFs"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comandos para gerir VNFs em ClickOS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/comandos_clickos.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Testes
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Testes"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Os pontos grossos (
+\begin_inset Formula $\bullet$
+\end_inset
+
+) presentes na identificação de linhas significam a continuação da linha
+ anterior.
+ Para todos os casos, o BWM-NG é executado no hospedeiro, enquanto o Siege
+ é executado remotamente no(s) cliente(s).
+ Ambos comandos são executados no mesmo momento.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Teste do 
+\shape italic
+firewall
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/comandos_teste_fw.png
+	scale 59
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Teste do balanceador de carga por endereço IP de origem
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/comandos_teste_balancSIP.png
+	scale 59
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Teste do balanceador de carga por 
+\shape italic
+Round Robin
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/comandos_teste_balancRR.png
+	scale 59
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Teste-de-estresse"
+
+\end_inset
+
+, os endereços IP remotos (por exemplo 192.168.0.101) variam entre as três
+ máquinas clientes.
+ Os comandos para execução sem balanceador e sem ClickOS contém no endereço
+ de destino do teste uma variável 
+\family typewriter
+X
+\family default
+ que deve ser alterada, preenchendo então o correto endereço do servidor
+ para cada cliente que executa o teste, de modo que este envie pacotes para
+ apenas um servidor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Teste de desempenho do protótipo e suas variações
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Teste-de-estresse"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/comandos_teste_stress.png
+	scale 59
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
 \end_layout
 
 \end_inset
@@ -11738,30 +12044,535 @@ partapendices
 
 \begin_layout Chapter
 ARQUIVOS
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:ARQUIVOS"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
 Configuração
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Configuração"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Estes são os arquivos de configuração usados em ClickOS e Xen que contém
+ as especificações para as VMs do 
+\shape italic
+firewall
+\shape default
+ e do balanceador de carga desenvolvidos e usados nos testes.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+firewall.cfg
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/firewall_cfg.png
+	scale 78
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+balanceadores.cfg
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/natlb_cfg.png
+	scale 76
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para criação de clientes e servidores, É recomendado seguir o padrão do
+ Xen descrito nos manuais do comando 
+\family typewriter
+xen-create-image
+\family default
+, disponível no pacote 
+\family typewriter
+xen-tools
+\family default
+ do próprio Debian hospedeiro.
 \end_layout
 
 \begin_layout Section
 Código fonte
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Código-fonte"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Estes são os arquivos contendo os códigos-fonte para as VNFs implementadas
+ e aplicadas nos testes.
+ Os pontos grossos (
+\begin_inset Formula $\bullet$
+\end_inset
+
+) presentes na identificação de linhas significam a continuação da linha
+ anterior.
+ As linhas contendo 
+\family typewriter
+SetTCPChecksum
+\family default
+ na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:firewall.click"
+
+\end_inset
+
+ estão comentadas e são apenas para uso nos testes sem balanceadores.
+ Ainda sobre esse teste, a entrada 
+\family typewriter
+natlb
+\family default
+ nas linhas 28 e 31 devem ser complementadas para 
+\family typewriter
+natlb:ipnet
+\family default
+, e os servidores então fazerem parte dessa rede.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+firewall.click
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:firewall.click"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/firewall_click.png
+	scale 69
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborado pelo autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+balanceador_roundrobin.click
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/natlb_rr_click.png
+	scale 67
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborado pelo autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+balanceador_enderecoip.click
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/natlb_sip_click.png
+	scale 67
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborado pelo autor
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
-COMANDOS
+IMAGENS
 \end_layout
 
 \begin_layout Section
-Gerência de VNFs ClickOS
+Grafo do 
+\shape italic
+Firewall
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Grafo-do-Firewall"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Representação gráfica do firewall.click
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/clicky_firewall.pdf
+	lyxscale 180
+	scale 148
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
-Uso do Clicky
+Grafo do balanceador de carga por endereço IP
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Grafo-do-balanceador-sip"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Representação gráfica do balanceador_enderecoip.click
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/clicky_balancsIP.pdf
+	lyxscale 180
+	scale 117
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
-Testes
+Grafo do balanceador de carga 
+\shape italic
+Round Robin
+\shape default
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Grafo-do-balanceador-rr"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Representação gráfica do balanceador_roundrobin.click
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/clicky_balancRR.pdf
+	lyxscale 180
+	scale 117
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Análise dos pacotes no teste de desempenho
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Análise-dos-pacotes-wshark"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Wireshark para transações com e sem erros 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/wireshark_err.png
+	scale 43
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborado pelo autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -11772,7 +12583,7 @@ status open
 
 
 \backslash
-end{apendicesenv}
+end{anexosenv}
 \end_layout
 
 \end_inset
