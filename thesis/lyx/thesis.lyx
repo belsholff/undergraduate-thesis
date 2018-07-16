@@ -617,6 +617,16 @@ end{center}
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset External
+	template PDFPages
+	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/Trabalho aprovado.pdf
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Dedicatoria
 \align center
 \begin_inset VSpace vfill*
@@ -761,14 +771,14 @@ Cloud Computing
 \end_layout
 
 \begin_layout Resumo
-Neste cenário, o objetivo do paradigma NFV é prover funções de rede como:
- 
+Neste cenário, o objetivo do paradigma de Virtualização de Funções de Rede
+ (NFV) é prover funções de rede como: 
 \shape italic
 firewalls
 \shape default
-, balanceadores de carga, NATs, e IDSs, etc, através de uma linguagem de
- marcação, colaborando com a flexibilidade do provisionamento e a programabilida
-de de tais funções, até então também engessadas pelo uso dos 
+, balanceadores de carga, NATs, IDSs, etc, colaborando com a flexibilidade
+ do provisionamento e a programabilidade de tais funções, até então também
+ engessadas pelo uso dos 
 \shape italic
 middleboxes
 \shape default
@@ -776,11 +786,12 @@ middleboxes
 \end_layout
 
 \begin_layout Resumo
-Neste quesito, ClickOS propõe uma plataforma de virtualização para criação
- de funções virtuais de rede de alto desempenho, a serem amplamente utilizados
- por desenvolvedores de VNFs.
- Ele provê como ferramenta uma máquina virtual minimalista, escalável e
- otimizada para executar o 
+Neste quesito, ClickOS propõe uma plataforma de virtualização para programação
+ de funções virtuais de rede (VNFs) de alto desempenho, a serem amplamente
+ utilizados por desenvolvedores através de uma linguagem de marcação baseada
+ em fluxo.
+ Ele provê como ferramenta uma máquina virtual minimalista e escalável para
+ executar o 
 \shape italic
 software
 \shape default
@@ -794,18 +805,20 @@ hypervisor
 
 \begin_layout Resumo
 No entanto, a pouca quantidade de trabalhos ou artigos detalhando o uso
- de ClickOS diante da atual demanda por NFV, até mesmo em língua inglesa,
- dificulta sua adoção, difusão, e por fim, o desenvolvimento da plataforma
- e seus conceitos por pesquisadores, professores, empresas e outros atores
- interessados, mesmo que este seja em software livre e possua uma documentação
- online, já que o conhecimento sobre ele está disperso.
+ de ClickOS, até mesmo em língua inglesa, dificulta sua adoção, difusão,
+ e por fim, o desenvolvimento da plataforma e seus conceitos por pesquisadores,
+ professores, empresas e outros atores interessados, diante da atual demanda
+ por NFV.
+ A adoção de software livre para distribuição e uma documentação online
+ disponível não melhora a situação já que o conhecimento sobre ele está
+ disperso.
 \end_layout
 
 \begin_layout Resumo
-Assim sendo, este trabalho tem como objetivo apresentar detalhadamente ClickOS
- como uma alternativa para a implementação de funções virtuais de rede dentro
- de NFV, usando como cenário o balanceamento de carga em serviços de hospedagem
- 
+Assim, este trabalho tem como objetivo avaliar ClickOS como uma alternativa
+ para a implementação de funções virtuais de rede dentro de NFV, gerando
+ documentação detalhada, usando como cenário o balanceamento de carga em
+ serviços de hospedagem 
 \shape italic
 web
 \shape default
@@ -840,33 +853,35 @@ With the advent of virtualization and the Cloud Computing model arising,
 \end_layout
 
 \begin_layout Resumo
-In this scenario, the NFV paradigm goals is provide network functions as:
- firewalls, load balancers, NATs, IDSes, etc, through a markup language,
- collaborating with the provisioning flexibility and programmability of
- such functions, until then also plastered by the use if shelf middleboxes.
+In this scenario, the Network Function Virtualization (NFV) paradigm goals
+ is provide network functions as: firewalls, load balancers, NATs, IDSes,
+ etc, collaborating with the provisioning flexibility and programmability
+ of such functions, until then also plastered by the use if shelf middleboxes.
 \end_layout
 
 \begin_layout Resumo
 In this regard, ClickOS proposes a virtualization platform for high performance
- virtual network functions construction by developers.
- It provides as a tool a minimalist, scalable, and optimized virtual machine
- to run Click software in the Xen Project hypervisor, followed by some optimizat
-ions focused on packet throughput.
+ virtual network functions (VNFs) programming by developers through a flow-based
+ markup language.
+ It provides as a tool a minimalist and scalable virtual machine to run
+ Click software in the Xen Project hypervisor, followed by some optimizations
+ focused on packet throughput.
 \end_layout
 
 \begin_layout Resumo
-However, a lack of works, articles or papers detailing ClickOS use in face
- of current NFV demand, even in english language, makes it difficult to
- adopt, disseminate, and finally, the development of the platform and its
- concepts by reseachers, professors, companies and other stakeholders, even
- if it is in free software and has an online documentation, since the knowledge
- about it is dispersed.
+However, a lack of works, articles or papers detailing ClickOS use, even
+ in english language, makes it difficult to adopt, disseminate, and finally,
+ the development of the platform and its concepts by reseachers, professors,
+ companies and other stakeholders, in face of current NFV demand.
+ The free software adoption for distribution and an online documentation
+ available doesn't improve this situation since the knowledge about it is
+ dispersed.
 \end_layout
 
 \begin_layout Resumo
-Thus, this work aims to present in detail ClickOS as an alternative to the
- virtual network functions implementation within NFV, using a load balancing
- scenario in web hosting services.
+Thus, this work aims to evaluate ClickOS as an alternative to the virtual
+ network functions implementation within NFV, generating detailed documentation,
+ using a load balancing scenario in web hosting services.
 \end_layout
 
 \begin_layout Resumo
@@ -940,7 +955,11 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa para Interface de Programação de Aplicação
+ Sigla em língua inglesa para 
+\shape italic
+Application Programming Interface
+\shape default
+ ou Interface de Programação de Aplicação na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -965,7 +984,11 @@ status open
 
 \end_inset
 
- Acrônimo em língua inglesa para Protocolo de Resolução de Endereços
+ Acrônimo em língua inglesa para 
+\shape italic
+Address Resolution Protocol
+\shape default
+ ou Protocolo de Resolução de Endereços na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -990,7 +1013,11 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa para Sistemas de Suporte aos Negócios
+ Sigla em língua inglesa para 
+\shape italic
+Business Support Systems
+\shape default
+ ou Sistemas de Suporte aos Negócios na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -1015,7 +1042,11 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa para Monitor de Largura de Banda NG
+ Sigla em língua inglesa para 
+\shape italic
+Bandwidth Monitor NG
+\shape default
+ ou Monitor de Largura de Banda NG na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -1065,7 +1096,11 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa para Unidade de Processamento Central
+ Sigla em língua inglesa para 
+\shape italic
+Central Processing Unit
+\shape default
+ ou Unidade de Processamento Central na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -1090,7 +1125,11 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa para Folhas de Estilo em Cascata
+ Sigla em língua inglesa para 
+\shape italic
+Cascading Style Sheets
+\shape default
+ ou Folhas de Estilo em Cascata na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -1115,59 +1154,11 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa para Valores Separados por Vírgula
-\end_layout
-
-\begin_layout Siglas
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-[
-\end_layout
-
-\end_inset
-
-DHCP
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-]
-\end_layout
-
-\end_inset
-
- Sigla em língua inglesa para Protocolo de Configuração Dinâmica de Dispositivos
- 
-\end_layout
-
-\begin_layout Siglas
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-[
-\end_layout
-
-\end_inset
-
-DNAT
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-]
-\end_layout
-
-\end_inset
-
- Acrônimo em língua inglesa para Tradução de Endereços de Rede de Destino.
- Não confundir neste trabalho com Tradução de Endereços de Rede Dinâmicos.
+ Sigla em língua inglesa para 
+\shape italic
+Comma Separated Values
+\shape default
+ ou Valores Separados por Vírgula na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -1192,8 +1183,11 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa para Kit de Desenvolvimento em Plano de Dados da
- Intel
+ Sigla em língua inglesa para 
+\shape italic
+Data Plane Development Kit
+\shape default
+ ou Kit de Desenvolvimento em Plano de Dados da Intel na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -1218,8 +1212,11 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa para o Instituto de Padronização de Telecomunicações
- Europeu
+ Sigla em língua inglesa para 
+\shape italic
+European Telecomunications Standards Institute
+\shape default
+ ou Instituto de Padronização de Telecomunicações Europeu na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -1244,7 +1241,11 @@ status open
 
 \end_inset
 
- Acrônimo recursivo em língua inglesa para GNU não é Unix
+ Acrônimo recursivo em língua inglesa para 
+\shape italic
+GNU is not Linux
+\shape default
+ ou GNU não é Unix na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -1269,7 +1270,11 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa para Linguagem de Marcação de Hipertexto
+ Sigla em língua inglesa para 
+\shape italic
+Hypertext Markup Language
+\shape default
+ ou Linguagem de Marcação de Hipertexto na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -1294,7 +1299,11 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa para Protocolo de Transmissão de Hipertexto
+ Sigla em língua inglesa para 
+\shape italic
+Hypertext Transfer Protocol
+\shape default
+ ou Protocolo de Transferência de Hipertexto na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -1319,7 +1328,11 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa para Sistema de Detecção de Intrusão
+ Sigla em língua inglesa para 
+\shape italic
+Intrusion Detection System
+\shape default
+ ou Sistema de Detecção de Intrusão na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -1344,7 +1357,11 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa para Força-Tarefa de Engenharia da Internet
+ Sigla em língua inglesa para 
+\shape italic
+Internet Enginnering Task Force
+\shape default
+ ou Força-Tarefa de Engenharia da Internet na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -1369,7 +1386,11 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa para Força-Tarefa de Pesquisa da Internet
+ Sigla em língua inglesa para 
+\shape italic
+Internet Research Task Force
+\shape default
+ ou Força-Tarefa de Pesquisa da Internet na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -1394,7 +1415,11 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa para Protocolo da Internet
+ Sigla em língua inglesa para 
+\shape italic
+Internet Protocol
+\shape default
+ ou Protocolo da Internet na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -1419,7 +1444,11 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa para Máquina Virtual baseada em Núcleo
+ Sigla em língua inglesa para 
+\shape italic
+Kernel Virtual Machine
+\shape default
+ ou Máquina Virtual baseada em Núcleo na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -1470,7 +1499,11 @@ status open
 
 \end_inset
 
- Acrônimo em língua inglesa para Controle de Acesso ao Meio
+ Acrônimo em língua inglesa para 
+\shape italic
+Medium Access Control
+\shape default
+ ou Controle de Acesso ao Meio na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -1495,7 +1528,11 @@ status open
 
 \end_inset
 
- Acrônimo em língua inglesa para Computação Móvel de Borda
+ Acrônimo em língua inglesa para 
+\shape italic
+Mobile Edge Computing
+\shape default
+ ou Computação Móvel de Borda na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -1520,8 +1557,11 @@ status open
 
 \end_inset
 
- Acrônimo em língua inglesa para Instituto Tecnológico de Massachussetts,
- Estados Unidos
+ Acrônimo em língua inglesa para 
+\shape italic
+Massachussetts Institute of Technology
+\shape default
+ ou Instituto Tecnológico de Massachussetts, Estados Unidos na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -1546,7 +1586,11 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa para Tamanho de Segmento Máximo
+ Sigla em língua inglesa para 
+\shape italic
+Maximum Segment Size
+\shape default
+ ou Tamanho de Segmento Máximo na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -1571,7 +1615,11 @@ status open
 
 \end_inset
 
- Acrônimo em língua inglesa para Tradução de Endereços de Rede
+ Acrônimo em língua inglesa para 
+\shape italic
+Network Address Translation
+\shape default
+ ou Tradução de Endereços de Rede na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -1596,7 +1644,11 @@ status open
 
 \end_inset
 
- Acrônimo em língua inglesa para Companhia Elérica Nipônica
+ Acrônimo em língua inglesa para 
+\shape italic
+Nippon Eletric Company
+\shape default
+ ou Companhia Elétrica Nipônica na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -1621,7 +1673,11 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa para Virtualização de Funções de Rede
+ Sigla em língua inglesa para 
+\shape italic
+Network Function Virtualization
+\shape default
+ ou Virtualização de Funções de Rede na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -1646,8 +1702,11 @@ status open
 
 \end_inset
 
- Combinação de sigla e acrônimo em língua inglesa para Orquestração e Gerenciame
-nto da Virtualização de Funções de Rede
+ Combinação de sigla e acrônimo em língua inglesa para 
+\shape italic
+NFV Management and Orchestration
+\shape default
+ ou Orquestração e Gerenciamento de NFV
 \end_layout
 
 \begin_layout Siglas
@@ -1672,8 +1731,11 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa para Infraestrutura de Virtualização de Funções
- de Rede
+ Sigla em língua inglesa para 
+\shape italic
+NFV Infrastructure
+\shape default
+ ou Infraestrutura NFV na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -1698,7 +1760,11 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa para Cabeçalho de Serviços de Rede 
+ Sigla em língua inglesa para 
+\shape italic
+Network Service Header
+\shape default
+ ou Cabeçalho de Serviços de Rede na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -1774,32 +1840,11 @@ status open
 
 \end_inset
 
- Acrônimo em língua inglesa para Interconexão de Sistemas Abertos
-\end_layout
-
-\begin_layout Siglas
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-[
-\end_layout
-
-\end_inset
-
-PHP
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-]
-\end_layout
-
-\end_inset
-
- Sigla em língua inglesa para Personal Home Page
+ Acrônimo em língua inglesa para 
+\shape italic
+Open Systems Interconnection
+\shape default
+ ou Interconexão de Sistemas Abertos na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -1824,7 +1869,11 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa para Sistemas de Suporte às Operações
+ Sigla em língua inglesa para 
+\shape italic
+Operation Support Systems
+\shape default
+ ou Sistemas de Suporte às Operações na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -1849,7 +1898,11 @@ status open
 
 \end_inset
 
- Acrônimo em língua inglesa para Detecção Adiantada Randômica
+ Acrônimo em língua inglesa para 
+\shape italic
+Random Early Detection
+\shape default
+ ou Detecção Adiantada Randômica na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -1874,7 +1927,11 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa para Requisição Para Comentários
+ Sigla em língua inglesa para 
+\shape italic
+Request For Comments
+\shape default
+ ou Requisição Para Comentários na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -1899,7 +1956,11 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa para Rede Definida por Software
+ Sigla em língua inglesa para 
+\shape italic
+Software Defined Networking
+\shape default
+ ou Redes Definidas por Software na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -1924,7 +1985,11 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa para Encadeamento de Funções de Serviço
+ Sigla em língua inglesa para 
+\shape italic
+Service Function Chaining
+\shape default
+ ou Encadeamento de Funções de Serviço na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -1949,32 +2014,8 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa para Protocolo Simples de Gerência de Rede
-\end_layout
-
-\begin_layout Siglas
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-[
-\end_layout
-
-\end_inset
-
-SQL
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-]
-\end_layout
-
-\end_inset
-
- Sigla em língua inglesa para Linguagem de Consulta Estruturada
+ Sigla em língua inglesa para Simple Network Management Protocol ou Protocolo
+ Simples de Gerência de Rede na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -1999,7 +2040,11 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa para o protocolo Shell Seguro
+ Sigla em língua inglesa para 
+\shape italic
+Secure Shell protocol
+\shape default
+ ou protocolo Shell Seguro na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -2024,7 +2069,11 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa para Protocolo de Árvore Geradora
+ Sigla em língua inglesa para 
+\shape italic
+Spanning Tree Protocol
+\shape default
+ ou Protocolo de Árvore Geradora na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -2049,7 +2098,11 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa Protocolo de Controle de Transmissão
+ Sigla em língua inglesa 
+\shape italic
+Transmission Control Protocol
+\shape default
+ ou Protocolo de Controle de Transmissão na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -2074,7 +2127,11 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa Protocolo de Datagramas de Usuário
+ Sigla em língua inglesa para 
+\shape italic
+User Datagram Protocol
+\shape default
+ ou Protocolo de Datagramas de Usuário na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -2099,7 +2156,11 @@ status open
 
 \end_inset
 
- Acrônimo em língua inglesa para Gerente de Infraestrutura Virtual
+ Acrônimo em língua inglesa para 
+\shape italic
+Virtual Infrastructure Manager
+\shape default
+ ou Gerente de Infraestrutura Virtual na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -2124,7 +2185,11 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa para Máquina Virtual
+ Sigla em língua inglesa para 
+\shape italic
+Virtual Machine
+\shape default
+ ou Máquina Virtual na língua portuguesa
 \end_layout
 
 \begin_layout Siglas
@@ -2149,7 +2214,11 @@ status open
 
 \end_inset
 
- Sigla em língua inglesa para Função Virtual de Rede 
+ Sigla em língua inglesa para 
+\shape italic
+Virtual Network Function
+\shape default
+ ou Função Virtual de Rede na língua portuguesa
 \end_layout
 
 \begin_layout Standard
@@ -2248,7 +2317,7 @@ mento das redes de computadores.
 \end_layout
 
 \begin_layout Standard
-No entanto, este modelo não está mais sozinho.
+No entanto, estes dispositivos não estão mais sozinhos.
  Esforços para a construção de 
 \shape italic
 middleboxes
@@ -2267,9 +2336,9 @@ key "morris_click_1999"
 
 , por exemplo.
  O início deste século trouxe o processamento em alta frequência, junto
- com a capacidade de paralelizá-lo, e mais a frente, a viabilidade da camada
- de virtualização de maneira geral, com menor perda de desempenho, grande
- eficiência energética e econômica.
+ com a capacidade de paralelizá-lo, e mais a frente, também trouxe a viabilidade
+ da camada de virtualização de maneira geral, com baixa perda de desempenho,
+ e grande eficiência energética e econômica.
  Desta forma, os 
 \shape italic
 middleboxes
@@ -2287,28 +2356,36 @@ containers
 \end_layout
 
 \begin_layout Standard
-Um dos padrões em desenvolvimento nesse sentido é o de Virtualização de
- Funções de Rede (NFV), que sob responsabilidade do Gerente de Infraestrutura
- Virtual (VIM) aloca recursos de um hardware de propósito geral para prover
- funções personalizadas, habilitando escalabilidade, manutenibilidade, maior
- ciclo de vida de hardware e software, e economia de recursos e investimentos
- – justamente os pontos fracos do modelo acoplado ao hardware.
- 
+Um dos paradigmas em desenvolvimento nesse sentido é o de Virtualização
+ de Funções de Rede (NFV), que sob responsabilidade do 
+\shape italic
+Virtual Infrastructure Manager
+\shape default
+ (VIM).
+ Ele aloca recursos de um hardware de propósito geral para prover funções
+ personalizadas, habilitando escalabilidade, manutenibilidade, maior ciclo
+ de vida de hardware e software, e economia de recursos e investimentos,
+ sendo este último justamente um dos pontos fracos do modelo acoplado ao
+ hardware.
 \end_layout
 
 \begin_layout Standard
 O uso de NFV é motivo de pesquisas nos últimos anos, especialmente na simplifica
-ção da gerência de rede e isolamento em sistemas de Computação Móvel na
- Borda (MEC) em redes 5G 
+ção da gerência de rede e isolamento em sistemas 
+\shape italic
+Mobile Edge Computing
+\shape default
+ (MEC) em redes 5G 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "mao_survey_2017"
 
 \end_inset
 
-, que com o advento de Internet das Coisas, Cidades Inteligentes e Indústria
- 4.0, aborda a necessidade dos serviços estarem cada vez mais próximos do
- usuário final para a redução do atraso nas comunicações que aplicações
+.
+ Com o advento de Internet das Coisas, Cidades Inteligentes e Indústria
+ 4.0, NFV aborda a necessidade dos serviços estarem cada vez mais próximos
+ do usuário final para a redução do atraso nas comunicações que aplicações
  nessas áreas requisitam 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -2351,11 +2428,12 @@ key "zhang_opennetvm:_2016"
 
 .
  Citado anteriormente como exemplo, Click foi um dos casos de sucesso em
- matéria de desacoplar código, sendo o equivalente de sua época a uma função
- virtual de rede.
- E mais de uma década depois, sua existência e suas vantagens se tornaram
- parte de um desses projetos de virtualização de dispositivos de rede mais
- populares e que é utilizado neste trabalho: chama-se ClickOS 
+ matéria de desacoplar código, sendo o equivalente de sua época ao provedor
+ de funções virtuais de rede.
+ Mais de uma década depois, sua existência e vantagens, principalmente com
+ relação ao desenvolvimento amigável, se tornaram parte de um dos projetos
+ de virtualização de dispositivos de rede mais populares e que é utilizado
+ neste trabalho: ClickOS 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "martins_clickos_2014"
@@ -2392,7 +2470,9 @@ key "ventre_performance_2016"
 
 \begin_layout Alineas
 uma fácil implementação de VNFs com uma linguagem de marcação voltada para
- visão de fluxos, sendo de fácil legibilidade;
+ visão de fluxos, sendo de fácil legibilidade, manutenibilidade, com programação
+ e manipulação a nível de conceitos de rede e permitindo a customização
+ e criação de novos módulos para operar aplicações específicas desejadas;
 \end_layout
 
 \begin_layout Alineas
@@ -2444,21 +2524,20 @@ OBJETIVO
 \end_layout
 
 \begin_layout Standard
-Este trabalho apresenta a plataforma para implementação de VNFs ClickOS,
- destacando sua importância e atuação dentro de NFV, entregando um rápido
- desenvolvimento e manutenção de funções, e consolidando a virtualização
- de dispositivos de redes como alternativa viável aos dispositivos físicos
- semelhantes.
+Este trabalho avalia a plataforma para implementação de VNFs ClickOS, destacando
+ sua importância e atuação dentro de NFV, com rápido desenvolvimento e manutençã
+o de funções, e consolidando a virtualização de dispositivos de redes como
+ alternativa viável aos dispositivos físicos semelhantes.
 \end_layout
 
 \begin_layout Standard
-Como objetivo específico, no trabalho implementa-se duas funções virtuais
- de rede em ClickOS detalhadamente, com um cenário comum ao balanceamento
- de carga em serviços de hospedagem 
+Como objetivo específico, implementa-se detalhadamente duas funções virtuais
+ de rede em ClickOS com intuito de documentação, em um cenário comum ao
+ balanceamento de carga em serviços de hospedagem 
 \shape italic
 web
 \shape default
-, e avalia a prova de conceito da plataforma a partir de testes.
+, e as avalia a partir de testes funcionais e de desempenho.
 \end_layout
 
 \begin_layout Section
@@ -2498,9 +2577,9 @@ reference "chap:TESTES"
 
 \end_inset
 
- versa sobre a realização e os resultados dos testes no cenário proposto,
- buscando confirmar a posição de ClickOS como alternativa aos dispositivos
- físicos de rede; o 
+ versa sobre a realização e os resultados dos testes propostos, buscando
+ confirmar a posição de ClickOS como alternativa aos dispositivos físicos
+ de rede; o 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "chap:CONCLUSÃO"
@@ -2581,8 +2660,11 @@ name "sec:Virtualização-de-Funções"
 
 \begin_layout Standard
 O modelo NFV foi proposto em 2012 pelas empresas de telecomunicações em
- conjunto com o Instituto de Padronização de Telecomunicações Europeu (ETSI),
- tendo a redução de CAPEX e de OPEX como principal objetivo.
+ conjunto com o 
+\shape italic
+European Telecomunications Standards Institute
+\shape default
+ (ETSI), tendo a redução de CAPEX e de OPEX como principal objetivo.
  Para tal, a proposta é desacoplar as funções em software dos equipamentos
  de rede hospedeiros 
 \begin_inset CommandInset citation
@@ -2625,9 +2707,13 @@ software
 hypervisors
 \shape default
 , habilitando então a separação entre as funções de rede e os recursos físicos.
- Máquinas Virtuais (VMs) representam o uso de recursos de processamento
- e armazenamento, enquanto elos e nós virtuais (sistemas operacionais em
- VMs) representam o uso de recursos de rede 
+ 
+\shape italic
+Virtual Machines
+\shape default
+ (VMs) representam o uso de recursos de processamento e armazenamento, enquanto
+ elos e nós virtuais (sistemas operacionais em VMs) representam o uso de
+ recursos de rede 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "mijumbi_network_2016"
@@ -2639,7 +2725,11 @@ key "mijumbi_network_2016"
 \shape italic
 hypervisors
 \shape default
- o Projeto Xen, KVM 
+ o Projeto Xen, 
+\shape italic
+Kernel Virtual Machine
+\shape default
+ (KVM) 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "kvm_article"
@@ -2758,8 +2848,15 @@ framework
 \shape default
  em si é responsável por definir as interfaces para comunicação de componentes
  do NFV MANO, tal qual a coordenação de sistemas tradicionais de gerenciamento
- como os Sistemas de Suporte às Operações (OSS) e os Sistemas de Suporte
- aos Negócios (BSS) 
+ como os 
+\shape italic
+Operation Support Systems
+\shape default
+ (OSS) e os 
+\shape italic
+Business Support Systems
+\shape default
+ (BSS) 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "mijumbi_network_2016"
@@ -2851,8 +2948,15 @@ key "_irtf_nfvrg_2015"
 
 \end_inset
 
- da Força-Tarefa de Pesquisa da Internet (IRTF), associada a Força-Tarefa
- de Engenharia da Internet (IETF).
+ da 
+\shape italic
+Internet Research Task Force
+\shape default
+ (IRTF), associada a 
+\shape italic
+Internet Enginnering Task Force
+\shape default
+ (IETF).
  Segundo 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -2945,7 +3049,11 @@ key "pfaff_extending_2009"
 
 \begin_layout Standard
 Um dos expoentes dessa classe é o Open vSwitch, que leva programabilidade
- para as redes ao abordar a questão de Redes Definidas por Software (SDNs).
+ para as redes ao abordar a questão de 
+\shape italic
+Software Defined Networking
+\shape default
+ (SDN).
  No entanto outros mais simples podem ser úteis em determinadas situações.
  É o caso do VALE e do Ethernet Linux Bridge.
  O Linux Bridge faz parte do 
@@ -2962,8 +3070,8 @@ key "noauthor_linux_2018"
  como um módulo e está a pronta entrega para ambientes de virtualização
  de uso cotidiano ou voltados para testes, necessitando apenas de habilitá-lo
  no sistema, e possuindo suporte constante e consolidado.
- Ele é dividido de forma grosseira em quatro componentes como a maioria
- desses dispositivos 
+ Ele é dividido em quatro componentes como a maioria desses dispositivos
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "varis2012anatomy"
@@ -2979,7 +3087,10 @@ O conjunto de portas, usado para encaminhar tráfego entre os dispositivos
 \end_layout
 
 \begin_layout Alineas
-O plano de controle, usado para executar o Protocolo de Árvore Geradora
+O plano de controle, usado para executar o 
+\shape italic
+Spanning Tree Protocol
+\shape default
  (STP) 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -2998,7 +3109,11 @@ O plano de encaminhamento, responsável por processar quadros que entram
 \end_layout
 
 \begin_layout Alineas
-O aprendizado de endereços de Controle de Acesso ao Meio (MAC) 
+O aprendizado de endereços 
+\shape italic
+Medium Access Control
+\shape default
+ (MAC) 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "noauthor_ieee_2016"
@@ -3040,7 +3155,11 @@ eth0
 \family default
 ) para comunicação externa a camada de virtualização, e por último uma porta
  conectada ao elemento de rede que identifica o comutador conectado.
- Este último recebe um endereço do Protocolo de Internet (IP) 
+ Este último recebe um endereço do 
+\shape italic
+Internet Protocol
+\shape default
+ (IP) 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "rfc791"
@@ -3201,7 +3320,7 @@ name "chap:ENTENDENDO-CLICKOS"
 \end_layout
 
 \begin_layout Standard
-Este capítulo expõe de forma aprofundada as duas principais tecnologias
+Este capítulo expõe de forma mais aprofundada as duas principais tecnologias
  utilizadas neste trabalho.
  Na Seção 
 \begin_inset CommandInset ref
@@ -3210,29 +3329,71 @@ reference "sec:Click"
 
 \end_inset
 
-, Click é dissecado com detalhes sobre seu funcionamento, entregando uma
- literatura básica para que seja possível compreender e posteriormente desenvolv
-er funções de rede a partir do zero.
- Alguns pequenos problemas encontrados durante o desenvolvimento deste trabalho
- também recebem destaque, junto com seu principal caso de uso atual no âmbito
- de NFV, e sua ferramenta de geração de grafos para maior visibilidade quando
- necessário.
+, Click é dissecado com detalhes sobre seu funcionamento (
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "subsec:Elementos"
+
+\end_inset
+
+ e 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "subsec:Portas-e-fluxos"
+
+\end_inset
+
+), entregando uma literatura básica para que seja possível compreender e
+ posteriormente desenvolver funções de rede a partir do zero.
+ Na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "subsec:Clicky"
+
+\end_inset
+
+, sua ferramenta de geração de grafos é apresentada para uma melhor visão
+ das funções implementadas quando necessário.
+ A 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "subsec:Exemplos-de-VNFs"
+
+\end_inset
+
+ apresenta alguns exemplos de funções e demonstra pela primeira vez a linguagem
+ de marcação usada em Click.
+ E por fim, a 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "subsec:Detalhes-importantes"
+
+\end_inset
+
+ finaliza a seção com questões acerca de manipuladores para depuração de
+ erros, modos de uso, junto com seu principal caso de uso atual no âmbito
+ de NFV.
  
 \end_layout
 
 \begin_layout Standard
-Já na Seção 
+Na Seção 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:ClickOS"
 
 \end_inset
 
-, o mesmo detalhamento com relação a tecnologia ClickOS e seu uso é feito,
- mantendo o cuidado com a função de uma literatura de consulta para o leitor.
- Todo o processo para a instanciação de uma máquina virtual é citado, mesmo
- de forma ampla, deixando a implementação para capítulos posteriores.
- 
+, o mesmo detalhamento com relação a tecnologia ClickOS é feito, falando
+ principalmente da forma como foi realizada a união entre os diversos 
+\shape italic
+softwares
+\shape default
+ que o compõe.
+ Também explica-se o processo para a instanciação de uma máquina virtual
+ e criação de uma VNF, mesmo que de forma superficial, detalhando sua operaciona
+lização e características da plataforma nesse âmbito, deixando a implementação
+ para capítulos posteriores.
 \end_layout
 
 \begin_layout Section
@@ -3247,8 +3408,11 @@ Click
 
 \begin_layout Standard
 A arquitetura Click foi idealizada por Robert Morris, Eddie Kohler e a equipe
- do Laboratório de Ciências da Computação do Instituto Tecnológico de Massachuse
-tts (MIT) em 1999, que propuseram e desenvolveram uma plataforma em 
+ do Laboratório de Ciências da Computação do 
+\shape italic
+Massachussetts Institute of Technology
+\shape default
+ (MIT) em 1999, que propuseram e desenvolveram uma plataforma em 
 \shape italic
 hardware
 \shape default
@@ -3260,7 +3424,11 @@ software
  e sem as limitações corriqueiramente impostas por soluções proprietárias
  em redes.
  Não há restrição de camadas ou protocolos de transmissão, bastando adicionar
- seu suporte, porém o foco está nas Camadas 2 e 3 do modelo OSI 
+ seu suporte, porém o foco está nas Camadas 2 e 3 do modelo 
+\shape italic
+Operation Support Systems
+\shape default
+ (OSI) 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "day_osi_1983"
@@ -3270,10 +3438,20 @@ key "day_osi_1983"
 , com diversas operações na Camada 4.
 \end_layout
 
+\begin_layout Subsection
+Elementos
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Elementos"
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-Click trabalha com uma unidade chamada elemento.
- Ele representa a execução de uma atividade programada (classe) no pacote
- recebido, como 
+Elementos representam a execução de uma atividade programada (classe) no
+ pacote recebido, como 
 \family typewriter
 Tee
 \family default
@@ -3466,7 +3644,7 @@ RED
 \family typewriter
 CoDel
 \family default
- (Controlled Delay);
+ (Atraso controlado);
 \end_layout
 
 \begin_layout Alineas
@@ -3493,7 +3671,7 @@ firewall
 \end_layout
 
 \begin_layout Standard
-A reutilização de código é visível, porém a legibilidade é tão importante
+A reutilização de códigos é visível, porém a legibilidade é tão importante
  quanto.
  Para isso, a ferramenta dispõe de uma linguagem marcação própria que esconde
  sua linguagem de programação base.
@@ -3512,18 +3690,29 @@ reference "fig:Descrição-gráfica-de"
 , 
 \begin_inset CommandInset ref
 LatexCommand formatted
-reference "fig:Condicionador-de-tráfego"
+reference "fig:Uma-aplicação-dos"
 
 \end_inset
 
  e a 
 \begin_inset CommandInset ref
 LatexCommand formatted
-reference "fig:Uma-aplicação-dos"
+reference "fig:Condicionador-de-tráfego"
 
 \end_inset
 
  para exemplos.
+\end_layout
+
+\begin_layout Subsection
+Portas e fluxos
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Portas-e-fluxos"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3597,7 +3786,11 @@ push
 pull
 \shape default
  o envio.
- Já as filas, que são o único elemento capaz de converter o fluxo de 
+ 
+\end_layout
+
+\begin_layout Standard
+Já as filas, que são o único elemento capaz de converter o fluxo de 
 \shape italic
 push
 \shape default
@@ -3623,6 +3816,70 @@ Ainda em relação as portas, algumas regras devem ser obedecidas: olhando
  é capaz de converter tipos de fluxo exceto as filas, como comentado.
 \end_layout
 
+\begin_layout Subsection
+Clicky
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Clicky"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para facilitar a correção de erros e o entendimento de uma implementação
+ os autores distribuem com Click uma ferramenta chamada Clicky.
+ Ela transforma elementos e portas em uma representação gráfica de um grafo,
+ baseado em um arquivo de 
+\shape italic
+Cascading Style Sheets
+\shape default
+ (CSS), e também é capaz de analisar erros e retorná-los.
+ 
+\end_layout
+
+\begin_layout Standard
+Os elementos com as portas brancas pertencem ao fluxo 
+\shape italic
+pull,
+\shape default
+ e aqueles com as portas pretas ao fluxo 
+\shape italic
+push
+\shape default
+.
+ As portas com bordas diferentes em seu desenho são portas agnósticas que
+ assumiram um determinado comportamento.
+ Em Clicky, triângulos representam portas de entrada e retângulos as portas
+ de saída.
+ As filas estão devidamente representadas como seu conceito foi determinado
+ na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "subsec:Portas-e-fluxos"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Interface-gráfica-e"
+
+\end_inset
+
+, pode-se ver o grafo em Clicky, onde apenas o ramo da porta de saída 2
+ do classificador (em vermelho) se encontra fora dos padrões da linguagem,
+ gerando erros.
+ Isso acontece devido a inexistência de elementos conectados a sua saída,
+ de forma proposital, para demarcar onde devem acontecer as operações dos
+ pacotes IP de acordo com o conjunto de elementos escolhido pelo desenvolvedor.
+\end_layout
+
 \begin_layout Standard
 \begin_inset Float figure
 wide false
@@ -3630,17 +3887,20 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Condicionador de tráfego em Click
+Interface gráfica e grafo padrão da 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Uma-aplicação-dos"
+
+\end_inset
+
+ em Clicky
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Condicionador-de-tráfego"
+name "fig:Interface-gráfica-e"
 
 \end_inset
 
@@ -3655,7 +3915,7 @@ name "fig:Condicionador-de-tráfego"
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/click_traffic_cond.png
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/clicky-iface.png
 	scale 50
 
 \end_inset
@@ -3665,14 +3925,7 @@ name "fig:Condicionador-de-tráfego"
 
 \begin_layout Plain Layout
 \align center
-Fonte: 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "morris_click_1999"
-
-\end_inset
-
-
+Fonte: Elaborada pelo autor
 \end_layout
 
 \end_inset
@@ -3681,120 +3934,30 @@ key "morris_click_1999"
 \end_layout
 
 \begin_layout Standard
-Dado os parâmetros do elemento classificador (
-\family typewriter
-Classifier
-\family default
-) na 
+É possível exportar tais grafos para documentos ou imagens.
+ Os comandos básicos para utilizar a ferramenta estão no Anexo 
 \begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:Condicionador-de-tráfego"
+LatexCommand ref
+reference "sec:Uso-do-Clicky"
 
 \end_inset
 
-, os pacotes que entram nele com diferentes características possuem quatro
- caminhos:
-\end_layout
-
-\begin_layout Alineas
-Primeiro um chaveador de fluxo (
-\family typewriter
-Meter
-\family default
-) que limita em no máximo 7500 quadros por segundo o fluxo, sendo ele despejado
- em uma fila caso respeite a taxa ou então descartado caso exceda, pela
- outra porta de saída em direção ao 
-\family typewriter
-Discard
-\family default
-;
-\end_layout
-
-\begin_layout Alineas
-Depois, a segunda saída é acoplada a uma fila e a um elemento limitador
- de fluxo (
-\family typewriter
-Shaper
-\family default
-), que solicita pacotes a uma taxa de no máximo 10000 quadros por segundo
- através de sua porta 
-\shape italic
-pull
-\shape default
-;
-\end_layout
-
-\begin_layout Alineas
-Quase no fim, a terceira saída se conecta a outro chaveador de fluxo, dessa
- vez com 12500 quadros por segundo sendo despejados em uma outra fila diferente
- caso respeite o limite, ou então a passagem para o elemento que marca o
- campo de serviços diferenciados do cabeçalho IP para o valor 4, antes de
- despejar esse mesmo fluxo em uma quarta fila;
-\end_layout
-
-\begin_layout Alineas
-Por último, a quarta saída conecta-se diretamente a mesma fila que o ramo
- anterior na condição de fluxo maior que 12500 se conecta.
- 
-\end_layout
-
-\begin_layout Standard
-O percurso dos três primeiros caminhos terminam em um escalonador do tipo
- 
-\shape italic
-Round Robin
-\shape default
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "RASMUSSEN2008617"
-
-\end_inset
-
-, que após seu processamento, este ainda sofre o processamento de outro
- escalonador baseado em prioridade ordenada, onde a primeira entrada tem
- precedência sobre as seguintes e assim segue da esquerda para a direita.
- Ao fim, os pacotes saem pela interface escolhida no elemento de envio (
-\family typewriter
-ToDevice
-\family default
-).
-\end_layout
-
-\begin_layout Standard
-Ainda sobre a 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:Condicionador-de-tráfego"
-
-\end_inset
-
-, ao passar pelas filas a coloração das portas muda, indicando a mudança
- de fluxo de processamento de 
-\shape italic
-push
-\shape default
- para 
-\shape italic
-pull
-\shape default
 .
- Outra observação interessante é quanto à fila do quarto caminho, que recebe
- as saídas de processamento de dois elementos, evidenciando que as portas
- de entrada 
-\shape italic
-push
-\shape default
-, ao contrário das portas 
-\shape italic
-pull
-\shape default
-, podem receber fluxos de múltiplas portas de saída.
+\end_layout
+
+\begin_layout Subsection
+Exemplos de VNFs
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Exemplos-de-VNFs"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-O exemplo acima possui uma visão em grafo.
- Já a 
+A 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:Uma-aplicação-dos"
@@ -3806,7 +3969,83 @@ reference "fig:Uma-aplicação-dos"
 \shape italic
 Ethernet
 \shape default
- e ARP na camada inferior: 
+ e o 
+\shape italic
+Address Resolution Protocol
+\shape default
+ (ARP) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rfc826"
+
+\end_inset
+
+ na camada inferior:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Uma aplicação dos elementos mínimos para ações sobre o protocolo IP
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Uma-aplicação-dos"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/clickos_arquivoBase.png
+	scale 63
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Primeiramente, recomenda-se utilizar como apoio para entendimento da construção
+ desta VNF a 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Interface-gráfica-e"
+
+\end_inset
+
+ da 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "subsec:Clicky"
+
+\end_inset
+
+, que representa graficamente o referido código.
 \end_layout
 
 \begin_layout Alineas
@@ -3856,15 +4095,9 @@ Classifier
 \family default
  classifica os quadros com base na comparação de valores presentes nos cabeçalho
 s, onde os dois primeiros parâmetros do exemplo são códigos referentes aos
- dados do protocolo ARP 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "rfc826"
-
-\end_inset
-
- (consulta e resposta, respectivamente), o terceiro parâmetro contém o código
- para os pacotes com cabeçalho IP e o quarto para todos os outros.
+ dados do protocolo ARP (consulta e resposta, respectivamente), o terceiro
+ parâmetro contém o código para os pacotes com cabeçalho IP e o quarto para
+ todos os outros.
  A análise do cabeçalho é feita de forma que o elemento procura um valor
  dos campos do cabeçalho em determinado 
 \shape italic
@@ -4037,6 +4270,64 @@ Discard
 \end_layout
 
 \begin_layout Standard
+Na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Condicionador-de-tráfego"
+
+\end_inset
+
+, dado os parâmetros do elemento classificador (
+\family typewriter
+Classifier
+\family default
+), os pacotes que entram nele com diferentes características possuem quatro
+ caminhos:
+\end_layout
+
+\begin_layout Alineas
+Primeiro um chaveador de fluxo (
+\family typewriter
+Meter
+\family default
+) que limita em no máximo 7500 quadros por segundo o fluxo, sendo ele despejado
+ em uma fila caso respeite a taxa ou então descartado caso exceda, pela
+ outra porta de saída em direção ao 
+\family typewriter
+Discard
+\family default
+;
+\end_layout
+
+\begin_layout Alineas
+Depois, a segunda saída é acoplada a uma fila e a um elemento limitador
+ de fluxo (
+\family typewriter
+Shaper
+\family default
+), que solicita pacotes a uma taxa de no máximo 10000 quadros por segundo
+ através de sua porta 
+\shape italic
+pull
+\shape default
+;
+\end_layout
+
+\begin_layout Alineas
+Quase no fim, a terceira saída se conecta a outro chaveador de fluxo, dessa
+ vez com 12500 quadros por segundo sendo despejados em uma outra fila diferente
+ caso respeite o limite, ou então a passagem para o elemento que marca o
+ campo de serviços diferenciados do cabeçalho IP para o valor 4, antes de
+ despejar esse mesmo fluxo em uma quarta fila;
+\end_layout
+
+\begin_layout Alineas
+Por último, a quarta saída conecta-se diretamente a mesma fila que o ramo
+ anterior na condição de fluxo maior que 12500 se conecta.
+ 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -4046,14 +4337,14 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Uma aplicação dos elementos mínimos para ações sobre o protocolo IP
+Condicionador de tráfego em Click
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Uma-aplicação-dos"
+name "fig:Condicionador-de-tráfego"
 
 \end_inset
 
- 
+
 \end_layout
 
 \end_inset
@@ -4064,8 +4355,8 @@ name "fig:Uma-aplicação-dos"
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/clickos_arquivoBase.png
-	scale 63
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/click_traffic_cond.png
+	scale 50
 
 \end_inset
 
@@ -4074,7 +4365,14 @@ name "fig:Uma-aplicação-dos"
 
 \begin_layout Plain Layout
 \align center
-Fonte: Elaborada pelo autor
+Fonte: 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "morris_click_1999"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -4083,8 +4381,62 @@ Fonte: Elaborada pelo autor
 \end_layout
 
 \begin_layout Standard
-Todos os elementos podem ser consultados na documentação oficial do Click
- em 
+O percurso dos três primeiros caminhos terminam em um escalonador do tipo
+ 
+\shape italic
+Round Robin
+\shape default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "RASMUSSEN2008617"
+
+\end_inset
+
+, que após seu processamento, este ainda sofre o processamento de outro
+ escalonador baseado em prioridade ordenada, onde a primeira entrada tem
+ precedência sobre as seguintes e assim segue da esquerda para a direita.
+ Ao fim, os pacotes saem pela interface escolhida no elemento de envio (
+\family typewriter
+ToDevice
+\family default
+).
+\end_layout
+
+\begin_layout Standard
+Ainda sobre a 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Condicionador-de-tráfego"
+
+\end_inset
+
+, ao passar pelas filas a coloração das portas muda, indicando a mudança
+ de fluxo de processamento de 
+\shape italic
+push
+\shape default
+ para 
+\shape italic
+pull
+\shape default
+.
+ Outra observação interessante é quanto à fila do quarto caminho, que recebe
+ as saídas de processamento de dois elementos, evidenciando que as portas
+ de entrada 
+\shape italic
+push
+\shape default
+, ao contrário das portas 
+\shape italic
+pull
+\shape default
+, podem receber fluxos de múltiplas portas de saída.
+\end_layout
+
+\begin_layout Standard
+Todos os elementos citados podem ser consultados na documentação oficial
+ do Click em 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "kohler_click:_2018"
@@ -4093,9 +4445,23 @@ key "kohler_click:_2018"
 
  para um melhor entendimento.
  Outra fonte interessante são os livros, artigos, padronizações e textos
- técnicos sobre o uso dos protocolos de rede como por exemplo as Requisições
- Para Comentários (RFCs) do IETF.
+ técnicos sobre o uso dos protocolos de rede como por exemplo as 
+\shape italic
+Request For Comments
+\shape default
+ (RFCs) do IETF.
  Muitos deles são referenciados por este trabalho.
+\end_layout
+
+\begin_layout Subsection
+Detalhes importantes
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Detalhes-importantes"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4111,15 +4477,27 @@ element handlers
 \family typewriter
 tcp_table
 \family default
- do Protocolo de Controle de Transmissão (TCP) 
+ do 
+\shape italic
+Transmission Control Protocol
+\shape default
+ (TCP) 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "rfc793"
 
 \end_inset
 
- disponibilizada pelo elemento de NAT (IPRewriter), que pode indicar o correto
- funcionamento ou não de uma VNF que utilize seu elemento.
+ disponibilizada pelo elemento de 
+\shape italic
+Network Address Translation
+\shape default
+ (NAT) 
+\family typewriter
+IPRewriter
+\family default
+, que pode indicar o correto funcionamento ou não de uma VNF que utilize
+ seu elemento.
  Outros manipuladores são capazes de alterar determinadas variáveis em tempo
  de execução, embora isso seja incomum.
  Por exemplo, o manipulador 
@@ -4135,206 +4513,6 @@ IPRewriter
  para os elementos dado um conhecimento em C++.
  Para consultar quais manipuladores estão implementados, basta utilizar
  a documentação citada.
-\end_layout
-
-\begin_layout Standard
-Outra forma de facilitar a correção de erros, e também facilitar o entendimento
- de uma implementação em Click é através do uso da ferramenta de geração
- de grafos distribuída com Click chamada Clicky.
- Ela transforma elementos e portas em uma representação gráfica de um grafo,
- baseado em um arquivo de Folhas de Estilo em Cascata (CSS), e também é
- capaz de analisar erros e retorná-los.
- Na 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:Interface-gráfica-e"
-
-\end_inset
-
-, pode-se ver o grafo em Clicky, representando o código descrito na 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:Uma-aplicação-dos"
-
-\end_inset
-
-, exceto o ramo da porta de saída 2 do classificador (em vermelho) que se
- encontra fora dos padrões da linguagem por conta das barras (
-\family typewriter
-/ /
-\family default
-) usadas para destacar uma ação a ser tomada pelo desenvolvedor da função,
- gerando erro.
- É possível exportar tais grafos para documentos ou imagens.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Interface gráfica e grafo padrão da 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:Uma-aplicação-dos"
-
-\end_inset
-
- em Clicky
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Interface-gráfica-e"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/clicky-iface.png
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-Fonte: Elaborada pelo autor
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Os comandos básicos para utilizar a ferramenta estão no Anexo 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Uso-do-Clicky"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Durante o desenvolvimento deste trabalho, algumas limitações nos elementos
- foram observadas: 
-\end_layout
-
-\begin_layout Alineas
-Para criar balanceadores de carga, os elementos existentes são limitados
- ao mecanismo de 
-\shape italic
-Round Robin
-\shape default
- (
-\family typewriter
-RoundRobinIPMapper
-\family default
-) e ao mecanismo de distribuição por IP de origem (
-\family typewriter
-SourceIPHashMapper
-\family default
-), sem uma análise de carga dos servidores que recebem o balanceamento,
- através do SNMP 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "rfc1157"
-
-\end_inset
-
-, por exemplo; 
-\end_layout
-
-\begin_layout Alineas
-A tabela TCP criada no NAT através dos elementos acima não se apaga como
- deveria 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "kohler_modular_2002"
-
-\end_inset
-
- devido a um erro de implementação que reinicia o contador responsável por
- sua expiração, e pode assim criar instabilidade quanto aos balanceamentos.
- Desta forma os balanceadores só garantem o balanceamento em tempo de criação
- da regra, e uma vez que elas permaneçam indefinidamente, determinadas conexões
- perenes podem desbalancear o sistema, já que não seriam rebalanceadas.
- Este erro foi reportado a comunidade, mas não a tempo de ser corrigido
- para este trabalho;
-\end_layout
-
-\begin_layout Alineas
-A manipulação de mensagens do Protocolo de Datagrama do Usuário (UDP) 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "rfc768"
-
-\end_inset
-
- maiores que o Tamanho de Seguimento Máximo (MSS) deste é um problema quando
- se desenvolve um NAT em Click, já que para o recálculo da soma de verificação
- (
-\shape italic
-checksum
-\shape default
-) usando o 
-\family typewriter
-UDPChecksum
-\family default
-, seria necessário remontar a mensagem UDP 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "rfc768"
-
-\end_inset
-
-, o que Click não disponibiliza, comprometendo o desenvolvimento de alguma
- função de rede nessa situação;
-\end_layout
-
-\begin_layout Alineas
-Estranhamente um elemento somente leitura com relação aos pacotes como o
- 
-\shape italic
-firewall
-\shape default
- (
-\family typewriter
-IPFilter
-\family default
-) em Click causa erros em transmissão de mensagens TCP caso o encadeamento
- não possua o 
-\family typewriter
-SetTCPChecksum
-\family default
-, e o destinatário verifique o campo de soma de verificação.
- Essa característica é comum após o uso de elementos que reescrevam os cabeçalho
-s como o 
-\family typewriter
-IPRewriter
-\family default
-, mas não com um filtro.
 \end_layout
 
 \begin_layout Standard
@@ -4403,8 +4581,11 @@ reference "sec:ClickOS"
 \shape italic
 kernel
 \shape default
- como para o Kit de Desenvolvimento em Plano de Dados (DPDK) com FastClick
- 
+ como para o 
+\shape italic
+Data Plane Development Kit
+\shape default
+ (DPDK) com FastClick 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "barbette_fast_2015"
@@ -4426,8 +4607,12 @@ ClickOS
 
 \begin_layout Standard
 ClickOS é parte de um projeto de pesquisa da Universidade Politécnica de
- Bucareste junto com a Companhia Elétrica Nipônica na Europa (NEC Europe)
- para o provisionamento de VNFs que possam substituir 
+ Bucareste junto com a 
+\shape italic
+Nippon Eletric Company
+\shape default
+ na Europa (NEC Europe) para o provisionamento de VNFs que possam substituir
+ 
 \shape italic
 middleboxes
 \shape default
@@ -4467,7 +4652,7 @@ Para a alcunha de plataforma fazer sentido, ClickOS ultrapassa os limites
 \shape italic
 switch
 \shape default
- VALE e propõe mudanças significativas as estruturas de ambos ao aglutiná-los.
+ VALE e propõe mudanças significativas nas estruturas de ambos ao aglutiná-los.
 \end_layout
 
 \begin_layout Standard
@@ -4508,7 +4693,7 @@ name "fig:Arquitetura-inicial-presente"
 
 \begin_layout Plain Layout
 \align center
-Fonte: 
+Fonte: Adaptado de 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "martins_clickos_2014"
@@ -4531,8 +4716,10 @@ reference "fig:Arquitetura-inicial-presente"
 
 \end_inset
 
-, é possível ver detalhes das entidades que compõem ClickOS sem uma otimização.
- Nela é possível ver as relações entre os itens de rede em espaço de 
+, é possível ver detalhes das entidades que compõem ClickOS, antes de qualquer
+ modificação e otimização.
+ Nela é possível ver as relações entre as entidades de rede em espaço de
+ 
 \shape italic
 kernel
 \shape default
@@ -4632,7 +4819,11 @@ switch
 \shape default
  VALE, dispositivo de comutação virtual apresentado por Luigi Rizzo e Giuseppe
  Lettieri da Universidade de Pisa é usado para interconectar máquinas virtuais
- em redes a partir da API Netmap 
+ em redes a partir da 
+\shape italic
+Application Programming Interface
+\shape default
+ (API) do Netmap 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "rizzo_revisiting_2012"
@@ -4766,7 +4957,7 @@ key "martins_clickos_2014"
 \end_inset
 
 .
- Este desempenho confirma as caracteristicas atribuídas a ele no inicio
+ Este desempenho confirma as características atribuídas a ele no inicio
  desta seção.
 \end_layout
 
@@ -4854,10 +5045,18 @@ O segundo passo da criação de VNFs em ClickOS passa pelo uso do gerente
 kernel
 \shape default
  ClickOS para inserir o primeiro no segundo, transformando-o em uma VNF.
+ Detalhes sobre os comandos utilizados são vistos no Anexo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Gerência-de-VNFs"
+
+\end_inset
+
+, com seu uso a partir do hospedeiro.
 \end_layout
 
 \begin_layout Standard
-Elas não possuem entrada em linha de comando para seu gerenciamento próprio,
+As VNFs não possuem entrada em linha de comando para seu gerenciamento próprio,
  sendo esse um papel da máquina hospedeira.
  No momento da implantação das funções a partir do hospedeiro, não há passagem
  de parâmetros em tempo de inicialização.
@@ -4893,8 +5092,9 @@ xl console
 \family typewriter
 xentop
 \family default
-, tomando cuidado para um pequeno erro que faz os valores decrescerem de
- cem por cento para zero ao invés do comportamento costumeiro.
+, tomando cuidado para uma pequena diferença de implementação que contabiliza
+ os valores de maneira decrescente de cem para zero por cento ao invés do
+ comportamento costumeiro.
 \end_layout
 
 \begin_layout Standard
@@ -4907,7 +5107,7 @@ key "martins_clickos_2014"
 
  demonstra, ClickOS sofre com um problema comum a essas soluções e que é
  alvo de pesquisas no momento: a queda de desempenho ao encadear VNFs uma
- após a outra para prover um serviço mais completo.
+ após a outra para prover um serviço mais completo e complexo.
  Uma das soluções para amenizar esse efeito está presente no 
 \shape italic
 zero-copy
@@ -4920,7 +5120,7 @@ key "yurchenko_opennetvm:_2018"
 \end_inset
 
 , mas ClickOS, um projeto de quatro anos em relação ao anterior, ainda não
- possui algo do tipo.
+ implementa.
 \end_layout
 
 \begin_layout Standard
@@ -4930,17 +5130,6 @@ Por fim, ClickOS pode trabalhar em conjunto com soluções NFV através de
 \begin_inset CommandInset citation
 LatexCommand cite
 key "ventre_performance_2016"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Os comandos usados para gerenciar VNFs em ClickOS estão no Anexo 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Gerência-de-VNFs"
 
 \end_inset
 
@@ -5015,10 +5204,18 @@ reference "sec:Balanceador-de-Carga"
 \shape italic
 Ethernet
 \shape default
-, TCP/IP.
- A escolha se deve pela boa legibilidade e assimilação de suas funções mais
- importantes, já que são facilmente encontrados nas infraestruturas da Tecnologi
-a da Informação.
+, TCP/IP de autoria do autor deste trabalho, que podem ser acessados, em
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "belsholff_undergraduate-thesis:_2018"
+
+\end_inset
+
+.
+ A escolha do autor se deve pela boa legibilidade e assimilação de suas
+ funções mais importantes, já que são facilmente encontrados nas infraestruturas
+ da Tecnologia da Informação.
  Nesta proposta, o 
 \shape italic
 firewall
@@ -5275,6 +5472,114 @@ IPRewriter
  para validar os pacotes alterados por ele.
 \end_layout
 
+\begin_layout Standard
+Antes de seguir, é importante mencionar alguns erros e limitações observadas
+ durante a implementação das VNFs propostas: 
+\end_layout
+
+\begin_layout Alineas
+Para criar balanceadores de carga, os elementos existentes são limitados
+ ao mecanismo de 
+\shape italic
+Round Robin
+\shape default
+ (
+\family typewriter
+RoundRobinIPMapper
+\family default
+) e ao mecanismo de distribuição por IP de origem (
+\family typewriter
+SourceIPHashMapper
+\family default
+), sem uma análise de carga dos servidores que recebem o balanceamento,
+ através do Simple Network Management Protocol (SNMP) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rfc1157"
+
+\end_inset
+
+, por exemplo; 
+\end_layout
+
+\begin_layout Alineas
+A tabela TCP criada no NAT através dos elementos acima não se apaga como
+ deveria 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kohler_modular_2002"
+
+\end_inset
+
+ devido a um erro de implementação que reinicia o contador responsável por
+ sua expiração, e pode assim criar instabilidade quanto aos balanceamentos.
+ Desta forma os balanceadores só garantem o balanceamento em tempo de criação
+ da regra, e uma vez que elas permaneçam indefinidamente, determinadas conexões
+ perenes podem desbalancear o sistema, já que não seriam rebalanceadas.
+ Este erro foi reportado a comunidade, mas não a tempo de ser corrigido
+ para este trabalho;
+\end_layout
+
+\begin_layout Alineas
+A manipulação de mensagens do 
+\shape italic
+User Datagram Protocol
+\shape default
+ (UDP) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rfc768"
+
+\end_inset
+
+ maiores que o 
+\shape italic
+Maximum Segment Size
+\shape default
+ (MSS) deste é um problema quando se desenvolve um NAT em Click, já que
+ para o recálculo da soma de verificação (
+\shape italic
+checksum
+\shape default
+) usando o 
+\family typewriter
+UDPChecksum
+\family default
+, seria necessário remontar a mensagem UDP 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rfc768"
+
+\end_inset
+
+, o que Click não disponibiliza, comprometendo o desenvolvimento de alguma
+ função de rede nessa situação;
+\end_layout
+
+\begin_layout Alineas
+Estranhamente um elemento somente leitura com relação aos pacotes como o
+ 
+\shape italic
+firewall
+\shape default
+ (
+\family typewriter
+IPFilter
+\family default
+) em Click causa erros em transmissão de mensagens TCP caso o encadeamento
+ não possua o 
+\family typewriter
+SetTCPChecksum
+\family default
+, e o destinatário verifique o campo de soma de verificação.
+ Essa característica é comum após o uso de elementos que reescrevam os cabeçalho
+s como o 
+\family typewriter
+IPRewriter
+\family default
+, mas não com um filtro.
+\end_layout
+
 \begin_layout Section
 Um dia dentro das funções propostas
 \begin_inset CommandInset label
@@ -5397,10 +5702,10 @@ reference "fig:Comportamento-esperado-das"
 
 \end_inset
 
-, e a descrição na 
+, e a descrição no Anexo 
 \begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:Código-fw"
+LatexCommand ref
+reference "fig:firewall.click"
 
 \end_inset
 
@@ -5595,10 +5900,10 @@ firewall
  entrada é pela interface 1 e a saída é pela interface 0, respectivamente.
  A partir deste ponto, retoma-se a abstração com relação a chegada do pacote
  resposta ao cliente.
- Passagens: parte do 9, 10, e 11, e a descrição na 
+ Passagens: parte do 9, 10, e 11, e a descrição no Anexo 
 \begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:Código-fw"
+LatexCommand ref
+reference "fig:firewall.click"
 
 \end_inset
 
@@ -5618,8 +5923,8 @@ Firewall
 \end_layout
 
 \begin_layout Standard
-A proposta aqui passa por realizar os bloqueios no nível da camada de roteamento
- e transporte.
+A proposta do autor deste trabalho passa por realizar os bloqueios no nível
+ das Camadas 3 e 4.
  O elemento de Click responsável deve avaliar a quádrupla de endereços e
  portas de origem e destino para decidir com base nas regras implantadas
  a permissão ou não para seguir no fluxo, em modo sem estado (
@@ -6825,8 +7130,8 @@ REJEITADO em 6
 \end_layout
 
 \begin_layout Standard
-Os pacotes aceitos são transmitidos ao próximo nó da rede: o balanceador
- de carga.
+Os pacotes aceitos são transmitidos ao próximo nó da rede, se configurado
+ em conjunto com esta VNF.
 \end_layout
 
 \begin_layout Standard
@@ -6856,27 +7161,14 @@ firewall
 switches
 \shape default
  virtuais nos quais a interface se conecta.
-\end_layout
-
-\begin_layout Standard
-Com relação a memória e processamento, as máquinas virtuais não exigem muitos
- recursos, a ponto de 12MB de memória e um processador virtual fazerem a
- maioria das tarefas, inclusive um 
-\shape italic
-firewall
-\shape default
-, como demonstra 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "martins_clickos_2014"
+ Ver Seção 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Alocação-de-recursos"
 
 \end_inset
 
 .
- Em caso de problemas, ClickOS dá sinais sobre sua problemas no registro
- de erros e alertas, e portanto, uma heurística pode definir melhor quais
- recursos ajustar para a função sem que haja desperdício.
- O tamanho das filas de saída de pacotes deve ser estudado.
 \end_layout
 
 \begin_layout Standard
@@ -6977,6 +7269,8 @@ Ethernet
  com destino ao balanceador ou ao mundo externo, sendo dispensado na respectiva
  fila de saída e depois no respectivo elemento de saída do ClickOS correspondent
 e para chegar ao seu destino.
+ O tamanho das filas de saída de pacotes deve ser estudado com testes.
+ O padrão para a implementação nesse caso é 1024 espaços.
 \end_layout
 
 \begin_layout Standard
@@ -6984,26 +7278,86 @@ Por fim, pacotes não classificados são descartados.
 \end_layout
 
 \begin_layout Standard
-Uma vez o projeto descrito, a 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:Código-fw"
-
-\end_inset
-
- demonstra a implementação realizada e o Anexo 
+Uma vez o projeto descrito, o Anexo 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sec:Grafo-do-Firewall"
+reference "sec:Código-fonte"
 
 \end_inset
 
- a visão da mesma VNF em alto nível através de um grafo.
- 
+ contém a implementação realizada.
+ Esta implementação é discutida a partir de agora por partes.
+ A 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Representação-gráfica-fw"
+
+\end_inset
+
+ traz a visão da mesma VNF em alto nível através de um grafo.
 \end_layout
 
 \begin_layout Standard
-Da linha 2 à 5 há uma definição de macros no 
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Representação gráfica do 
+\shape italic
+firewall
+\shape default
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Representação-gráfica-fw"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/clicky_firewall.pdf
+	lyxscale 180
+	scale 148
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Da linha 2 à 5 na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Elemento-AddressInfo"
+
+\end_inset
+
+ há uma definição de macros no 
 \family typewriter
 AddressInfo
 \family default
@@ -7023,7 +7377,62 @@ net1
 \end_layout
 
 \begin_layout Standard
-De 7 à 11 há a definição e declaração de dois 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Elemento 
+\family typewriter
+AddressInfo
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Elemento-AddressInfo"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/firewall_code_part1.png
+	scale 69
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Elemento-Classifier"
+
+\end_inset
+
+, de 7 à 11 há a definição e declaração de dois 
 \family typewriter
 Classifiers
 \family default
@@ -7035,7 +7444,62 @@ Classifiers
 \end_layout
 
 \begin_layout Standard
-Nas linhas 13 e 14, acontece a conexão entre 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Elemento 
+\family typewriter
+Classifier
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Elemento-Classifier"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/firewall_code_part2.png
+	scale 69
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Elemento-ToDevice-FromDevice"
+
+\end_inset
+
+, nas linhas 13 e 14 acontece a conexão entre 
 \family typewriter
 FromDevices
 \family default
@@ -7070,22 +7534,7 @@ FromDevice
 \end_layout
 
 \begin_layout Standard
-Logo abaixo, na linha 19 e 20, duas novas declarações e definições são realizada
-s, com o intuito de inserir o par de endereços IP e MAC de cada interface
- da VNF (net0 e net1) no respectivo 
-\family typewriter
-ARPQuerier
-\family default
-, para quê o elemento de consulta desse protocolo realize o correto encapsulamen
-to no nível da camada de enlace, principalmente o que diz respeito ao MAC
- de origem.
- Após isso, a porta de saída 0 de tais elementos é conectada a porta de
- entrada da respectiva fila.
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
-placement H
 wide false
 sideways false
 status open
@@ -7094,14 +7543,18 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Código para o 
-\shape italic
-firewall
-\shape default
- em Click
+Elemento 
+\family typewriter
+ToDevice, FromDevice 
+\family default
+e
+\family typewriter
+ Queue 
+\family default
+além de fluxos
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Código-fw"
+name "fig:Elemento-ToDevice-FromDevice"
 
 \end_inset
 
@@ -7116,8 +7569,8 @@ name "fig:Código-fw"
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/firewall_code.png
-	scale 67
+	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/firewall_code_part3.png
+	scale 69
 
 \end_inset
 
@@ -7135,6 +7588,27 @@ Fonte: Elaborada pelo autor
 \end_layout
 
 \begin_layout Standard
+Visto na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Elemento-ARPQuerier-ARPResponder"
+
+\end_inset
+
+, nas linhas 19 e 20, duas novas declarações e definições são realizadas,
+ com o intuito de inserir o par de endereços IP e MAC de cada interface
+ da VNF (net0 e net1) no respectivo 
+\family typewriter
+ARPQuerier
+\family default
+, para quê o elemento de consulta desse protocolo realize o correto encapsulamen
+to no nível da camada de enlace, principalmente o que diz respeito ao MAC
+ de origem.
+ Após isso, a porta de saída 0 de tais elementos é conectada a porta de
+ entrada da respectiva fila.
+\end_layout
+
+\begin_layout Standard
 Continuando nas linhas 22 e 23, as portas de saída 1 dos classificadores
  contém as respostas de consultas ARP, e são conectadas as portas de entrada
  1 dos respectivos elementos de consulta para que receba as respostas corretamen
@@ -7143,7 +7617,7 @@ o.
 \end_layout
 
 \begin_layout Standard
-Nas linhas 25 e 26, as portas de saída 0 de ambos classificadores se conectam
+E nas linhas 25 e 26, as portas de saída 0 de ambos classificadores se conectam
  as respectivas portas de entradas 0 do elemento 
 \family typewriter
 ARPResponder
@@ -7159,7 +7633,64 @@ ARPResponder
 \end_layout
 
 \begin_layout Standard
-Nas linhas 28 e 29, ocorre uma declaração e definição do 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Elemento 
+\family typewriter
+ARPQuerier, ARPResponder 
+\family default
+e conexões
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Elemento-ARPQuerier-ARPResponder"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/firewall_code_part4.png
+	scale 69
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nas linhas 28 e 29 da 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Elementos-IPFilter-de"
+
+\end_inset
+
+, ocorre uma declaração e definição do 
 \family typewriter
 IPFilter
 \family default
@@ -7172,16 +7703,74 @@ IPFilter
 \end_layout
 
 \begin_layout Standard
-Com a mesma intenção, nas linhas 31 e 32 há uma declaração e definição semelhant
-e a anterior, mudando apenas o foco de seu uso: a intenção agora é filtrar
- os pacotes que chegam do balanceador e que estão de saída para redes externas.
+Com a mesma intenção, nas linhas 31 e 32 da mesma figura há uma declaração
+ e definição semelhante a anterior, mudando apenas o foco de seu uso: a
+ intenção agora é filtrar os pacotes que chegam do balanceador e que estão
+ de saída para redes externas.
  Para isso, os endereços e números de portas que eram de origem se tornam
  de destino e vice-versa.
 \end_layout
 
 \begin_layout Standard
-Entre as linhas 34 e 37, a porta de saída 2 do classificador da rede 0 entrega
- os pacotes para o 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Elementos 
+\family typewriter
+IPFilter
+\family default
+ de entrada e saída
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Elementos-IPFilter-de"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/firewall_code_part5.png
+	scale 69
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Entre as linhas 34 e 37 da 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Conexões-entre-os-class-filtro"
+
+\end_inset
+
+, a porta de saída 2 do classificador da rede 0 entrega os pacotes para
+ o 
 \family typewriter
 Strip
 \family default
@@ -7208,8 +7797,108 @@ De maneira semelhante, entre as linhas 39 e 42 o processo se repete, e os
 \end_layout
 
 \begin_layout Standard
-Por último, nas linhas 44 e 45, os pacotes que saem pela porta 3 do classificado
-r entram em um elemento que determina o descarte deles.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Conexões entre os classificadores, elementos de cabeçalho, os filtros e
+ encapsulador
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Conexões-entre-os-class-filtro"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/firewall_code_part6.png
+	scale 69
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por último, nas linhas 44 e 45 da 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Conexão-de-descarte"
+
+\end_inset
+
+, os pacotes que saem pela porta 3 do classificador entram em um elemento
+ que determina o descarte deles.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Conexão de descarte de pacotes fora do padrão
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Conexão-de-descarte"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/firewall_code_part7.png
+	scale 69
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -7223,10 +7912,10 @@ Balanceador de Carga
 \end_layout
 
 \begin_layout Standard
-A proposta para esta VNF é dividir um determinado fluxo entre servidores
- de uma função semelhante, diminuindo a possibilidade de um servidor específico
- sobrecarregar ou ter vida útil reduzida, conferindo maior disponibilidade
- e durabilidade dos equipamentos.
+A proposta do autor deste trabalho para esta VNF é dividir um determinado
+ fluxo entre servidores de uma função semelhante, diminuindo a possibilidade
+ de um servidor específico sobrecarregar ou ter vida útil reduzida, conferindo
+ maior disponibilidade e durabilidade dos equipamentos.
  Podem haver duas versões, entre o método conhecido como 
 \shape italic
 Round Robin
@@ -7818,7 +8507,14 @@ reference "sec:Um-dia-dentro"
 
 \end_inset
 
- e a 
+, a 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:Exemplo-de-divisão-sip"
+
+\end_inset
+
+ e eventualmente a 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "tab:Exemplo-de-divisão-rr"
@@ -7939,29 +8635,86 @@ firewall
 \end_layout
 
 \begin_layout Standard
-Uma vez o projeto descrito, a 
+Uma vez o projeto descrito, o Anexo 
 \begin_inset CommandInset ref
 LatexCommand formatted
-reference "fig:Código-lb"
+reference "sec:Código-fonte"
 
 \end_inset
 
- demonstra a implementação realizada e o Anexo 
+ contém as implementações realizadas para ambos métodos, e são discutidas
+ a partir de agora por partes.
+ A 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Representação-gráfica-sip"
+
+\end_inset
+
+ traz a visão da VNF pelo método de endereço IP de origem através de um
+ grafo, e a VNF do método Round Robin está no Anexo 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sec:Grafo-do-balanceador-sip"
+reference "sec:Grafo-do-balanceador-rr"
 
 \end_inset
 
- a visão da mesma VNF através de um grafo.
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Representação gráfica do balanceador de carga por endereço IP de origem
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Representação-gráfica-sip"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/clicky_balancsIP.pdf
+	lyxscale 180
+	scale 117
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 As descrições para as ações programadas entre as linhas 2 e 27 são idênticas
- para aquelas feitas na implementação  da 
+ para aquelas feitas na implementação  da Seção 
 \begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:Código-fw"
+LatexCommand ref
+reference "sec:Firewall"
 
 \end_inset
 
@@ -7970,7 +8723,14 @@ reference "fig:Código-fw"
 \end_layout
 
 \begin_layout Standard
-Nas linhas de 29 à 33 há uma declaração e definição do 
+Na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Elementos-SourceIPHashMapper-e"
+
+\end_inset
+
+, linhas de 29 à 33 há uma declaração e definição do 
 \family typewriter
 SourceIPHashMapper
 \family default
@@ -7986,110 +8746,25 @@ hash
 \end_layout
 
 \begin_layout Standard
-No caso do 
-\family typewriter
-RoundRobinIPMapper
-\family default
- (ver 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:Código-para-rr"
-
-\end_inset
-
-), as linhas do outro elemento de balanceamento descritas acima são substituídas
- pela declaração e definição do referido elemento, onde os parâmetros se
- limitam às modificações necessárias para endereçar cada servidor disponível,
- sem os identificadores naturais a tabela 
-\shape italic
-hash
-\shape default
-.
-\end_layout
-
-\begin_layout Standard
-Nas linhas 34 à 36 acontece uma declaração e definição do 
-\family typewriter
-IPRewriter
-\family default
-, que conforme os parâmetros define as regras descritas pelos elementos
- de balanceamento.
- Ele reescreve apenas os pacotes que entram pela sua porta 0 seja criando
- a partir dos parâmetros ou utilizando regras definidas, uma vez que os
- pacotes que entram pela porta 1 são ignorados caso não possuam uma regra
- preexistente.
-\end_layout
-
-\begin_layout Standard
-Entre as linhas 38 e 44, dado que as portas não mencionadas de entrada e
- saída são portas 0, os 
-\family typewriter
-Classifiers
-\family default
- das diferentes interfaces de rede enviam os pacotes IP por suas portas
- de saída 2, onde entram respectivos 
-\family typewriter
-Strips
-\family default
-, indo direto para a entrada 
-\family typewriter
-CheckIPHeader
-\family default
-, e após esse processo, entram cada um em uma porta de entrada diferente
- do elemento responsável pelo NAT.
- O fluxo vindo do mundo externo entra pela porta 0 e se depara com o elemento
- de balanceamento, que nesse caso sorteia um servidor e executa a reescrita
- de cabeçalho, enviando o pacote pela sua porta de saída 0.
- O fluxo de retorno entra pela porta 1 e espera encontrar a regra inversa
- a alteração efetuada para que possa retornar para o dispositivo requisitante.
- através da porta de saída 1.
- Caso não encontrem a regra, os pacotes nessa situação são simplesmente
- ignorados como mencionado.
-\end_layout
-
-\begin_layout Standard
-As saídas do NAT entre as linhas 46 e 51 têm como destino o encapsulamento
- no respectivo 
-\family typewriter
-ARPQuerier
-\family default
-.
- No caso, o encapsulamento dos pacotes que chegam de fora, é feito pelo
- elemento ARP associado a rede do balanceador, e vice versa.
- Porém antes, precisam ter suas somas de verificação do protocolo TCP refeitas
- com 
-\family typewriter
-SetTCPChecksum
-\family default
- para evitar erros de validação dos pacotes.
- No caso do ramo contendo os pacotes-resposta, também requer um elemento
- que anota o endereço do 
-\shape italic
-gateway
-\shape default
- ao pacote para que o encapsulamento seja feito com ele, mesmo sem alterar
- o cabeçalho IP.
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
-placement H
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Código para o balanceador de carga por endereço IP de origem no Click
+Elementos 
+\family typewriter
+SourceIPHashMapper
+\family default
+ e 
+\family typewriter
+IPRewriter
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Código-lb"
+name "fig:Elementos-SourceIPHashMapper-e"
 
 \end_inset
 
@@ -8104,7 +8779,7 @@ name "fig:Código-lb"
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/lb_code.png
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/lb_code_part1.png
 	scale 65
 
 \end_inset
@@ -8123,20 +8798,55 @@ Fonte: Elaborada pelo autor
 \end_layout
 
 \begin_layout Standard
+Nas linhas 34 à 36 acontece uma declaração e definição do 
+\family typewriter
+IPRewriter
+\family default
+, que conforme os parâmetros define as regras descritas pelos elementos
+ de balanceamento.
+ Ele reescreve apenas os pacotes que entram pela sua porta 0 seja criando
+ a partir dos parâmetros ou utilizando regras definidas, uma vez que os
+ pacotes que entram pela porta 1 são ignorados caso não possuam uma regra
+ preexistente.
+\end_layout
+
+\begin_layout Standard
+No caso do 
+\family typewriter
+RoundRobinIPMapper em
+\family default
+ 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Código-para-rr"
+
+\end_inset
+
+, as linhas do elemento de balanceamento descritas acima são substituídas
+ pela declaração e definição do referido elemento, onde os parâmetros se
+ limitam às modificações necessárias para endereçar cada servidor disponível,
+ sem os identificadores naturais a tabela 
+\shape italic
+hash
+\shape default
+.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Código para a modificação do tipo de balanceador para Round Robin
+Código para a modificação do tipo de balanceador para 
+\shape italic
+Round Robin
+\shape default
+
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Código-para-rr"
@@ -8173,22 +8883,168 @@ Fonte: Elaborada pelo autor
 \end_layout
 
 \begin_layout Standard
-O código completo do balanceador Round Robin e sua representação gráfica
- estão nos Anexos 
+Entre as linhas 38 e 44 da 
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Código-fonte"
+LatexCommand formatted
+reference "fig:Conexões-ate-os-balanc"
 
 \end_inset
 
- e 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Grafo-do-balanceador-rr"
+, dado que as portas não mencionadas de entrada e saída são portas 0, os
+ 
+\family typewriter
+Classifiers
+\family default
+ das diferentes interfaces de rede enviam os pacotes IP por suas portas
+ de saída 2, onde entram respectivos 
+\family typewriter
+Strips
+\family default
+, indo direto para a entrada 
+\family typewriter
+CheckIPHeader
+\family default
+, e após esse processo, entram cada um em uma porta de entrada diferente
+ do elemento responsável pelo NAT.
+ O fluxo vindo do mundo externo entra pela porta 0 e se depara com o elemento
+ de balanceamento, que nesse caso sorteia um servidor e executa a reescrita
+ de cabeçalho, enviando o pacote pela sua porta de saída 0.
+ O fluxo de retorno entra pela porta 1 e espera encontrar a regra inversa
+ a alteração efetuada para que possa retornar para o dispositivo requisitante.
+ através da porta de saída 1.
+ Caso não encontrem a regra, os pacotes nessa situação são simplesmente
+ ignorados como mencionado.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Conexões entre os classificadores, elementos de cabeçalho e o elemento NAT
+ com o balanceador
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Conexões-ate-os-balanc"
 
 \end_inset
 
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/lb_code_part2.png
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As saídas do NAT entre as linhas 46 e 51 da 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Conexões-até-o encapsulamento"
+
+\end_inset
+
+ têm como destino o encapsulamento no respectivo 
+\family typewriter
+ARPQuerier
+\family default
 .
+ No caso, o encapsulamento dos pacotes que chegam de fora, é feito pelo
+ elemento ARP associado a rede do balanceador, e vice versa.
+ Porém antes, precisam ter suas somas de verificação do protocolo TCP refeitas
+ com 
+\family typewriter
+SetTCPChecksum
+\family default
+ para evitar erros de validação dos pacotes.
+ No caso do ramo contendo os pacotes-resposta, também requer um elemento
+ que anota o endereço do 
+\shape italic
+gateway
+\shape default
+ ao pacote para que o encapsulamento seja feito com ele, mesmo sem alterar
+ o cabeçalho IP.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Conexões entre os elementos de NAT e os encapsuladores, com indicação de
+ 
+\shape italic
+gateway
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Conexões-até-o encapsulamento"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/lb_code_part3.png
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -8459,7 +9315,11 @@ reference "sec:ClickOS"
  Como o foco deste trabalho é a implementação, o excesso de camadas de virtualiz
 ação não se mostrou um problema da maior relevância.
  Reserva-se para trabalhos futuros a otimização deste ambiente de testes
- com foco em desempenho.
+ com foco em desempenho, onde no melhor caso a máquina 
+\family typewriter
+dom0
+\family default
+ deve ser um servidor físico.
 \end_layout
 
 \begin_layout Standard
@@ -9598,7 +10458,7 @@ Memória
 \begin_inset Text
 
 \begin_layout Plain Layout
-256MB compartilhado
+256MB alocados dinamicamente
 \end_layout
 
 \end_inset
@@ -9763,7 +10623,7 @@ Memória
 \begin_inset Text
 
 \begin_layout Plain Layout
-768MB compartilhado
+768MB alocados dinamicamente
 \end_layout
 
 \end_inset
@@ -9928,7 +10788,7 @@ Memória
 \begin_inset Text
 
 \begin_layout Plain Layout
-12MB compartilhado
+12MB alocados dinamicamente
 \end_layout
 
 \end_inset
@@ -9997,11 +10857,39 @@ name "tab:Recursos-das-duas-vnfs"
 \end_layout
 
 \begin_layout Standard
+Com relação a memória e processamento, as máquinas virtuais não exigem muitos
+ recursos, a ponto de 12MB de memória e um processador virtual fazerem a
+ maioria das tarefas, inclusive um 
+\shape italic
+firewall
+\shape default
+, como demonstra 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "martins_clickos_2014"
+
+\end_inset
+
+.
+ De qualquer forma recomenda-se testes para verificar se as configurações
+ das VNFs não estão limitando as aplicações ou superdimensionadas.
+ Em caso de problemas, ClickOS dá sinais sobre seus problemas no registro
+ de erros e alertas, como vazamentos de memória.
+\end_layout
+
+\begin_layout Standard
 Os arquivos de configuração que delimitam os recursos para as VNFs estão
  no Anexo 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Configuração"
+
+\end_inset
+
+, e também no repositório 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "belsholff_undergraduate-thesis:_2018"
 
 \end_inset
 
@@ -10121,8 +11009,11 @@ Ethernet
 \shape italic
 switch
 \shape default
- virtual Linux Bridge para prover as conexões entre as máquinas virtuais
- e o 
+ virtual Linux Bridge com o comando 
+\family typewriter
+brctl
+\family default
+ para prover as conexões entre as máquinas virtuais e o 
 \shape italic
 firewall
 \shape default
@@ -10137,10 +11028,14 @@ Após criadas e configuradas com seus
 \shape italic
 softwares
 \shape default
-, as máquinas usuárias têm suas interfaces de rede configuradas com um IP
+, as máquinas clientes têm suas interfaces de rede configuradas com um IP
  e máscara de sub-rede usados para a comunicação entre VMs (198.51.100.0/24)
  e outro para que o controle das operações seja realizado de outra máquina
- (192.168.0.0/23) via Secure Shell (SSH).
+ (192.168.0.0/23) via 
+\shape italic
+Secure Shell
+\shape default
+ (SSH).
  Tal configuração é feita na linha de comando das VMs clientes para cada
  interface de rede usando o 
 \family typewriter
@@ -10187,8 +11082,8 @@ O
 firewall
 \shape default
  e o balanceador de carga recebem boa parte das suas configurações na fase
- de implementação, de modo estático, tais como IPs e máscaras de sub-rede
- como os vistos na 
+ de implementação e implantação, de modo estático, tais como IPs e máscaras
+ de sub-rede como os vistos na 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:Protótipo-para-execução"
@@ -10218,15 +11113,23 @@ reference "sec:Configuração"
 
 \end_inset
 
-.
- No mais, os arquivos de configuração das VMs no hospedeiro recebem as informaçõ
-es sobre as redes do 
-\shape italic
-switch
-\shape default
- virtual usadas em cada uma e as mesmas configurações de endereço IP, e
- máscara do código Click.
+, mas de forma geral os códigos Click para as VNFs recebem os respectivos
+ IPs e outros parâmetros de rede em seus elementos responsáveis (ex.
  
+\family typewriter
+ARPQuerier
+\family default
+ e 
+\family typewriter
+ARPResponder
+\family default
+).
+ Os arquivos de configuração das VMs no hospedeiro recebem as informações
+ sobre os 
+\shape italic
+switches
+\shape default
+ virtuais usados em cada VNF para se conectar as redes.
 \end_layout
 
 \begin_layout Standard
@@ -10245,8 +11148,12 @@ web
 web
 \shape default
  que será usada para os testes, que possui cerca de 200 Bytes.
- Trata-se de uma página em Linguagem de Marcação de Hipertexto (HTML) minimalist
-a contendo apenas a identificação exclusiva de cada um dos três servidores.
+ Trata-se de uma página em 
+\shape italic
+Hypertext Markup Language
+\shape default
+ (HTML) minimalista contendo apenas a identificação exclusiva de cada um
+ dos três servidores.
  Nenhum ajuste extra foi feito no Apache Worker além do bloqueio de escrita
  de registros apenas para os testes da 
 \begin_inset CommandInset ref
@@ -10283,6 +11190,18 @@ Os relógios dos clientes, servidores web, e hospedeiro foram sincronizados
 b.ntp.br
 \family default
  do Núcleo de Informação e Coordenação do Ponto BR (NIC.BR).
+\end_layout
+
+\begin_layout Standard
+Para uma documentação passo a passo da montagem deste cenário, favor consultar
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "belsholff_undergraduate-thesis:_2018"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -10343,6 +11262,26 @@ Round Robin
 , no segundo.
 \end_layout
 
+\begin_layout Standard
+Os testes de desempenho visam, dentro das condições descritas nas Seções
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Infraestrutura-e-softwares"
+
+\end_inset
+
+ e 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Alocação-de-recursos"
+
+\end_inset
+
+, visualizar a carga adicionada pelas VNFs e analisá-la sob três óticas:
+ velocidade de transações completadas, erros, e tempo de resposta.
+\end_layout
+
 \begin_layout Subsection
 Firewall
 \begin_inset CommandInset label
@@ -10371,7 +11310,11 @@ reference "fig:Protótipo-para-execução"
 \end_inset
 
 .
- O tráfego HTTP gerado passa obrigatoriamente pelo 
+ O tráfego em 
+\shape italic
+Hypertext Transfer Protocol
+\shape default
+ (HTTP) gerado passa obrigatoriamente pelo 
 \shape italic
 firewall
 \shape default
@@ -10382,7 +11325,11 @@ firewall
 
 \begin_layout Standard
 As decisões tomadas pela função afetam a execução do Siege.
- Para monitorá-las, aplica-se o BWM-NG 
+ Para monitorá-las, aplica-se o 
+\shape italic
+Bandwidth Monitor NG
+\shape default
+ (BWM-NG) 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "gropp_bwm-ng:_2018"
@@ -10412,8 +11359,11 @@ X
 \family default
  é o número da porta a ser acessada.
  Já o segundo guarda uma leitura do fluxo dos pacotes a cada meio segundo
- nas interfaces selecionadas, de acordo com padrão de Valores Separados
- por Vírgula (CSV).
+ nas interfaces selecionadas, de acordo com padrão de 
+\shape italic
+Comma Separated Values
+\shape default
+ (CSV).
 \end_layout
 
 \begin_layout Standard
@@ -10422,17 +11372,49 @@ Para auxílio na geração dos gráficos e análise dos resultados, os arquivos
  do sistema.
  Para tornar os gráficos mais limpos, foram excluídas as representações
  dos clientes não utilizados no momento da execução.
- Para a 
+ Os comandos para execução destes testes estão no Anexo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Testes"
+
+\end_inset
+
+ e no repositório 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "belsholff_undergraduate-thesis:_2018"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Para a 
 \begin_inset CommandInset ref
 LatexCommand formatted
-reference "fig:Fluxo-de-pacotes-fw-80"
+reference "fig:Fluxo-de-pacotes-fw-out-80"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Fluxo-de-pacotes-fw-in-80"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Fluxo-de-pacotes-fw-out-8080"
 
 \end_inset
 
  e a 
 \begin_inset CommandInset ref
 LatexCommand formatted
-reference "fig:Fluxo-de-pacotes-fw-8080"
+reference "fig:Fluxo-de-pacotes-fw-in-8080"
 
 \end_inset
 
@@ -10453,11 +11435,7 @@ fw_in
 fw_out
 \family default
  significam respectivamente entrada de quadros no cliente, saída de quadros
- do cliente, entrada de quadros no 
-\shape italic
-firewall
-\shape default
- e saída de quadros do 
+ do cliente, entrada de quadros e saída de quadros do 
 \shape italic
 firewall
 \shape default
@@ -10474,14 +11452,14 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Fluxo de pacotes TCP 80 com foco no 
+Fluxo de pacotes TCP 80 de clientes para servidores com foco no 
 \shape italic
 firewall
 \shape default
 
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Fluxo-de-pacotes-fw-80"
+name "fig:Fluxo-de-pacotes-fw-out-80"
 
 \end_inset
 
@@ -10498,19 +11476,7 @@ name "fig:Fluxo-de-pacotes-fw-80"
 \begin_inset Graphics
 	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tfw/p80_pctsOUTGOING.png
 	lyxscale 95
-	scale 54
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tfw/p80_pctsINCOMING.png
-	lyxscale 95
-	scale 54
+	scale 50
 
 \end_inset
 
@@ -10528,10 +11494,10 @@ Fonte: Elaborada pelo autor
 \end_layout
 
 \begin_layout Standard
-Como se pode observar na parte superior da 
+Como se pode observar na 
 \begin_inset CommandInset ref
 LatexCommand formatted
-reference "fig:Fluxo-de-pacotes-fw-80"
+reference "fig:Fluxo-de-pacotes-fw-out-80"
 
 \end_inset
 
@@ -10544,10 +11510,71 @@ reference "fig:Fluxo-de-pacotes-fw-80"
 firewall
 \shape default
 , demonstrando aceitação deste pelas regras.
- No outro sentido do tráfego e na parte inferior da figura, as respostas
- mantêm proporções semelhantes se comparadas ao gráfico de envio, salvo
- variações mínimas nas quantidades a serem interpretadas como naturais ao
- procedimento de medição, e demonstrando inexistência de condições adversas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fluxo de pacotes TCP 80 de servidores para clientes com foco no 
+\shape italic
+firewall
+\shape default
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Fluxo-de-pacotes-fw-in-80"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tfw/p80_pctsINCOMING.png
+	lyxscale 95
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Fluxo-de-pacotes-fw-in-80"
+
+\end_inset
+
+, as respostas mantêm proporções semelhantes se comparadas ao gráfico de
+ envio, salvo variações mínimas nas quantidades a serem interpretadas como
+ naturais ao procedimento de medição, e demonstrando inexistência de condições
+ adversas.
 \end_layout
 
 \begin_layout Standard
@@ -10555,20 +11582,20 @@ firewall
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Fluxo de pacotes TCP 8080 com foco no 
+Fluxo de pacotes TCP 8080 de clientes para servidores com foco no 
 \shape italic
 firewall
 \shape default
 
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Fluxo-de-pacotes-fw-8080"
+name "fig:Fluxo-de-pacotes-fw-out-8080"
 
 \end_inset
 
@@ -10585,19 +11612,7 @@ name "fig:Fluxo-de-pacotes-fw-8080"
 \begin_inset Graphics
 	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tfw/p8080_pctsOUTGOING.png
 	lyxscale 95
-	scale 54
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tfw/p8080_pctsINCOMING.png
-	lyxscale 95
-	scale 54
+	scale 50
 
 \end_inset
 
@@ -10616,10 +11631,10 @@ Fonte: Elaborada pelo autor
 
 \begin_layout Standard
 Já o cliente configurado para enviar requisições HTTP pela porta TCP 8080,
- na parte superior da 
+ da 
 \begin_inset CommandInset ref
 LatexCommand formatted
-reference "fig:Fluxo-de-pacotes-fw-8080"
+reference "fig:Fluxo-de-pacotes-fw-out-8080"
 
 \end_inset
 
@@ -10639,9 +11654,67 @@ firewall
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fluxo de pacotes TCP 8080 de servidores para clientes com foco no 
+\shape italic
+firewall
+\shape default
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Fluxo-de-pacotes-fw-in-8080"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tfw/p8080_pctsINCOMING.png
+	lyxscale 95
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Se o fluxo de saída não chega ao serviço, logo é improvável que seja haja
- resposta em forma de tráfego de entrada representado na parte inferior,
- o que de fato não ocorre exceto por um único pacote, que por exclusão,
+ resposta em forma de tráfego de entrada representado na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Fluxo-de-pacotes-fw-in-8080"
+
+\end_inset
+
+, o que de fato não ocorre exceto por um único pacote, que por exclusão,
  é uma resposta ARP do próprio 
 \shape italic
 firewall
@@ -10693,66 +11766,6 @@ web
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-placement h
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Fluxo de pacotes no balanceador de carga por endereço IP
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Fluxo-de-pacotes-lb-sip"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tnatlb_sip/p80_pctsOUTGOING.png
-	lyxscale 95
-	scale 54
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tnatlb_sip/p80_pctsINCOMING.png
-	lyxscale 95
-	scale 54
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-Fonte: Elaborada pelo autor
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 Novamente o BWM-NG é usado para monitorar as interfaces virtuais relacionadas
  ao cliente e aos servidores, que são respectivamente origem e destino dos
  quadros, a procura de padrões que demonstrem o comportamento do fluxo.
@@ -10770,7 +11783,25 @@ http://192.0.2.61:80/index2.html
 \family default
 , gerando o arquivo CSV, e armazenando o tempo em segundos do relógio do
  sistema para auxílio na geração dos gráficos e análise dos resultados.
- O padrão de legendas do teste na 
+ Novamente os comandos para execução destes testes estão no Anexo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Testes"
+
+\end_inset
+
+ e no repositório 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "belsholff_undergraduate-thesis:_2018"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+O padrão de legendas do teste presente na 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "subsec:Firewall"
@@ -10789,23 +11820,129 @@ reference "subsec:Firewall"
 \end_layout
 
 \begin_layout Standard
-Nos gráficos da 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:Fluxo-de-pacotes-lb-sip"
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fluxo de pacotes de clientes para servidores no balanceador de carga por
+ endereço IP
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Fluxo-de-pacotes-lb-sip-out"
 
 \end_inset
 
- o primeiro, acima, demonstra a saída dos quadros dos clientes e a chegada
- deles nos servidores 
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tnatlb_sip/p80_pctsOUTGOING.png
+	lyxscale 95
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fluxo de pacotes de servidores para clientes no balanceador de carga por
+ endereço IP
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Fluxo-de-pacotes-lb-sip-in"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tnatlb_sip/p80_pctsINCOMING.png
+	lyxscale 95
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nos gráfico da 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Fluxo-de-pacotes-lb-sip-out"
+
+\end_inset
+
+ demonstra-se a saída dos quadros dos clientes e a chegada deles nos servidores
+ 
 \shape italic
 web
 \shape default
- e o segundo, abaixo, demonstra o caminho contrário, onde os quadros-resposta
- retornam do servidor para o cliente.
- Em todos as seis execuções do primeiro gráfico há um cliente enviando e
- seus quadros chegando a um único servidor, inclusive mantendo a relação
- cliente-servidor definida nas primeiras execuções.
+.
+ Na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Fluxo-de-pacotes-lb-sip-in"
+
+\end_inset
+
+ demonstra-se o caminho contrário, onde os quadros-resposta retornam do
+ servidor para o cliente.
+ Em todas as seis execuções há um cliente enviando e seus quadros chegando
+ a um único servidor, inclusive mantendo a relação cliente-servidor definida
+ nas primeiras execuções.
  Cada cliente foi balanceado para um servidor diferente, embora nesse caso
  não seja um resultado ruim que dois deles fossem encaminhados para o mesmo
  servidor, já que o elemento não analisa o estado atual dos nós balanceadores.
@@ -10854,76 +11991,41 @@ web
  A execução ocorre de forma parecida com a do teste anterior, porém sem
  a necessidade de múltiplas execuções ou clientes, restringindo-se a uma
  execução em um cliente.
- Logo, para tornar os gráficos mais limpos foram excluídas as representações
- dos clientes não utilizados no momento da execução.
+ os comandos para execução destes testes estão no Anexo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Testes"
+
+\end_inset
+
+ e no repositório 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "belsholff_undergraduate-thesis:_2018"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Para tornar os gráficos mais limpos foram excluídas as representações dos
+ clientes não utilizados no momento da execução.
  Não trafegam quaisquer outras conexões pelas interfaces testadas.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Fluxo de pacotes no balanceador de carga por Round Robin
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Fluxo-de-pacotes-lb-rr"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tnatlb_rr/p80_pctsOUTGOING.png
-	lyxscale 95
-	scale 54
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tnatlb_rr/p80_pctsINCOMING.png
-	lyxscale 95
-	scale 54
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-Fonte: Elaborada pelo autor
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Com relação a legenda da 
+Com relação as legendas da 
 \begin_inset CommandInset ref
 LatexCommand formatted
-reference "fig:Fluxo-de-pacotes-lb-rr"
+reference "fig:Fluxo-de-pacotes-lb-rr-out"
+
+\end_inset
+
+ e da 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Fluxo-de-pacotes-lb-rr-in"
 
 \end_inset
 
@@ -10952,14 +12054,63 @@ web
 \end_layout
 
 \begin_layout Standard
-Na parte superior da 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:Fluxo-de-pacotes-lb-rr"
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fluxo de pacotes de clientes para servidores no balanceador de carga por
+ Round Robin
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Fluxo-de-pacotes-lb-rr-out"
 
 \end_inset
 
-, está o fluxo de pacotes enviados pelo cliente.
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tnatlb_rr/p80_pctsOUTGOING.png
+	lyxscale 95
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Fluxo-de-pacotes-lb-rr-out"
+
+\end_inset
+
+ está o fluxo de pacotes enviados pelo cliente.
  Observa-se uma semelhança entre as quantidades de pacotes enviados pelo
  cliente e recebidos por todos os servidores.
  Os servidores 
@@ -10972,8 +12123,64 @@ o com a expectativa sobre o balanceador de carga desenvolvido.
 \end_layout
 
 \begin_layout Standard
-Na parte inferior da figura está o fluxo de quadros recebidos pelo cliente,
- vindo dos servidores, e em resposta as requisições HTTP.
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fluxo de pacotes de servidores para clientes no balanceador de carga por
+ Round Robin
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Fluxo-de-pacotes-lb-rr-in"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tnatlb_rr/p80_pctsINCOMING.png
+	lyxscale 95
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Fluxo-de-pacotes-lb-rr-in"
+
+\end_inset
+
+ está o fluxo de quadros recebidos pelo cliente, vindo dos servidores, e
+ em resposta as requisições HTTP.
  Este gráfico se assemelha ao anterior em suas linhas e nas quantidades
  de pacotes enviados a cada intervalo, o que é de se esperar de uma rede
  neutra, e demonstrando que o teste ocorreu em perfeitas condições a partir
@@ -11010,25 +12217,47 @@ Apenas o Siege é utilizado, já que seu relatório indica os dados necessários
  com a facilidade do formato CSV.
  Ele é configurado para enviar pacotes por sessenta segundos aos servidores
  independentemente da versão do protótipo.
- Outra variável é o número de usuários concorrentes em cada máquina cliente.
+ Outra variável é o número de usuários simultâneos em cada máquina cliente.
  Durante os testes preliminares, verificou-se uma limitação de mil usuários
- simultâneos para cada cliente, e números acima deste causam vazamentos
- de memória nos clientes.
- Dado que o cenário é todo virtualizado, optou-se por manter os três clientes
- do cenário ao invés de buscar mais recursos com novas VMs.
+ simultâneos para cada VM cliente, e números acima deste causam vazamentos
+ de memória nos mesmos.
+ Dado que a implantação do cenário é toda virtualizada, optou-se por manter
+ as três máquinas ao invés de buscar mais recursos com novas VMs.
 \end_layout
 
 \begin_layout Standard
-Os gráficos contém quatro situações: execução com balanceador Round Robin,
- execução com balanceador por endereço IP de origem, execução sem balanceador,
- somente com o 
+Os gráficos contém resultados de quatro cenários criados a partir do protótipo,
+ sendo dois deles novos: 
+\end_layout
+
+\begin_layout Enumerate
+Execução com balanceador Round Robin;
+\end_layout
+
+\begin_layout Enumerate
+Execução com balanceador por endereço IP de origem;
+\end_layout
+
+\begin_layout Enumerate
+Execução sem balanceador, onde o 
 \shape italic
 firewall
 \shape default
-, e sem quaisquer VNFs ClickOS.
- Todas foram executadas sequencialmente, de forma que as interferências
- inerentes a virtualização das máquinas e do ambiente de virtualização do
- hospedeiro podem afetar uma máquina mas não a outra.
+ faz uma conexão local com os servidores web e os clientes endereçam suas
+ requisições diretamente a eles;
+\end_layout
+
+\begin_layout Enumerate
+E sem quaisquer VNFs ClickOS, onde os clientes e servidores estão diretamente
+ conectados em uma rede local e os primeiros também endereçam suas requisições
+ diretamente aos segundos.
+ 
+\end_layout
+
+\begin_layout Standard
+Todas foram executadas sequencialmente, de forma que as interferências inerentes
+ a virtualização das máquinas e do ambiente de virtualização do hospedeiro
+ podem afetar uma máquina mas não a outra.
 
 \emph on
  
@@ -11048,28 +12277,45 @@ reference "sec:Infraestrutura-e-softwares"
 
 \end_inset
 
-.
+, para evitar problemas de concorrência com outros usos da infraestrutura
+ disponibilizada por outros atores.
 \end_layout
 
 \begin_layout Standard
-Para gerar amostras, cada situação descrita é executada no Siege com valores
+Para gerar amostras, cada cenário descrito é executado no Siege com valores
  entre cem e mil usuários simultâneos para cada máquina cliente, com um
  passo de cem usuários, totalizando dez execuções crescentes e sequentes
  para cada.
- Uma pausa de cinco minutos é dada entre a execução de um passo e outro
+ Uma pausa de cinco minutos é dada entre a execução de uma amostra e outra
  para eliminar qualquer conexão órfã ainda estabelecida nos servidores 
 \shape italic
 web
 \shape default
 , e portanto ocupando-o.
- Dessa forma, cada situação representa uma execução de cerca de sessenta
+ Dessa forma, cada cenário representa uma execução de cerca de sessenta
  minutos.
+ Assim como nos testes anteriores, os comandos para execução destes testes
+ estão no Anexo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Testes"
+
+\end_inset
+
+ e no repositório 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "belsholff_undergraduate-thesis:_2018"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
 Diante dos resultados preliminares, optou-se por executar os testes relativos
- aos balanceadores três vezes e plotar as médias de ambos, acrescidas de
- seus desvios padrão.
+ aos balanceadores três vezes e plotar as médias de ambos, acrescidos de
+ seus intervalos de confiança.
 \end_layout
 
 \begin_layout Standard
@@ -11209,22 +12455,15 @@ Round Robin
  absolutos para a maioria dos casos.
  No entanto, uma grande variação foi detectada durante as três execuções
  desta situação do cenário.
- Isso é exposto pelo desvio padrão apresentado, tornando impossível nessa
- bateria de testes apontar uma melhor opção dentre elas, exceto pela execução
- com 2400 e 2700 usuários onde o balanceador por endereço IP de origem é
- melhor.
+ Isso é exposto pelo intervalo de confiança apresentado, tornando impossível
+ nessa bateria de testes apontar uma melhor opção dentre elas, exceto pela
+ execução com 2400 e 2700 usuários onde o balanceador por endereço IP de
+ origem é melhor.
 \end_layout
 
 \begin_layout Standard
-Para a análise do número de erros absolutos de cada situação na 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:Números-absolutos-de"
-
-\end_inset
-
-, é preciso diferenciar os dois principais tipos de erros que acontecem
- no cenário.
+Para a análise do número de erros absolutos que vem a seguir, é preciso
+ diferenciar os dois principais tipos de erros que acontecem no cenário.
  O primeiro é o erro de tempo limite atingido, que cancela uma conexão dado
  uma ausência de pacotes de dados ou de controle trocados em determinado
  tempo.
@@ -11235,71 +12474,6 @@ reference "fig:Números-absolutos-de"
  Já o segundo trata-se de uma conexão reiniciada pelo par, que pode acontecer
  tanto da parte do cliente quanto do servidor, mas nesse caso segue um padrão
  de reinicialização por parte do cliente.
-\end_layout
-
-\begin_layout Standard
-Ainda na 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:Números-absolutos-de"
-
-\end_inset
-
-, é importante dizer que a legenda segue o mesmo padrão da 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:Média-de-transações"
-
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Média dos números absolutos de erros de acordo com o número de usuários
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Números-absolutos-de"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tclickos_stress/erros.png
-	scale 65
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-Fonte: Elaborada pelo autor
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -11390,6 +12564,72 @@ Fonte: Elaborada pelo autor
 \end_layout
 
 \begin_layout Standard
+Na 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Números-absolutos-de"
+
+\end_inset
+
+ que exibe os resultados encontrados, é importante dizer que a legenda segue
+ o mesmo padrão da 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Média-de-transações"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Média dos números absolutos de erros de acordo com o número de usuários
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Números-absolutos-de"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/Dados/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/results/tclickos_stress/erros.png
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Elaborada pelo autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Em se tratando da 
 \begin_inset CommandInset ref
 LatexCommand formatted
@@ -11406,14 +12646,7 @@ web
  algum pacote de dados.
  No caso das execuções com o balanceador, o tipo predominante de erro é
  o de conexão reiniciada.
- Na 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:Números-absolutos-de"
-
-\end_inset
-
-, é de se esperar que o número de erros com a VNF do 
+ É de se esperar que o número de erros com a VNF do 
 \shape italic
 firewall
 \shape default
@@ -11422,8 +12655,8 @@ firewall
  Novamente, as funções com balanceadores se destacam do restante devido
  a um grande número de erros por conexão reiniciada.
  E muito embora as médias possam dizer que a implementação por endereço
- IP de origem se sobressai, novamente os desvios padrão tratam de desmenti-las
- ao se sobreporem.
+ IP de origem se sobressai, novamente os intervalos de confiança tratam
+ de desmenti-las ao se sobreporem.
  Talvez, para esse teste fossem necessárias ainda mais repetições para visualiza
 r alguma diferença concreta que justifique qualquer qualificação sobre suas
  comparações.
@@ -11434,6 +12667,13 @@ Como visto na
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:Extrato-de-pacotes-err"
+
+\end_inset
+
+ com ajuda da 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Números-absolutos-de"
 
 \end_inset
 
@@ -11550,12 +12790,13 @@ reference "fig:Média-de-transações"
 
 , é visível as mudanças bruscas da taxa média de transações entre 600 e
  1200 usuários, e entre 2100 e 2400 deles.
- Essas mudanças são refletidas nesta figura, mesmo que em sutis aumentos
+ Essas mudanças são refletidas gráfico atual debatido, mesmo com sutis aumentos
  e melhoras.
- Esses reflexos sutis fazem sentido, uma vez que a média do tempo de resposta
- é calculada pela da soma do tempo gasto na respostas as requisições dividido
- pelo número de requisições, e portanto, entrar menos ou mais pacotes não
- o altera diretamente.
+ E eles fazem sentido, uma vez que um dos componentes para encontrar o tempo
+ médio de resposta é o número de requisições completadas, que é parte integrante
+ do número de transações completadas do gráfico anterior.
+ Logo, se o número de transações diminui ou aumenta, impacta diretamente
+ no tempo de resposta discutido aqui.
 \end_layout
 
 \begin_layout Standard
@@ -11598,25 +12839,39 @@ middleboxes
 \end_layout
 
 \begin_layout Standard
-Por outro lado, os testes de desempenho das funções virtuais de rede em
- ClickOS demonstraram nos parâmetros medidos a carga inserida por elas,
- sejam encadeadas ou não, trazendo, no caso da velocidade de transações,
- uma queda de 35% do desempenho em relação a versão sem VNFs.
- É um valor considerável se comparado ao resultados obtidos pelo autor em
- 
+Mais especificamente, além da velocidade, todo o processo foi mais agradável
+ diante da boa linguagem de marcação que Click disponibiliza para esconder
+ sua real linguagem de programação usada.
+ O entendimento das operações casa com as operações definidas em livros
+ e manuais de redes, não necessitando se ater a detalhes de programação
+ em um primeiro momento.
+ A manutenção de VNFs é facilitada pelo mesmo motivo e também pelo 
+\shape italic
+feedback
+\shape default
+ dado pelos analisadores de código do Click.
+ Outro ponto que auxilia nos casos citados é a reutilização do código, que
+ além de outras coisas eleva a confiabilidade da implementação.
+ Por fim, a implantação das VNFs é facilitada com o auxílio das bem conhecidas
+ ferramentas do Projeto Xen para a criação das VMs e o uso de comandos simples
+ providos pelo Cosmos.
+\end_layout
+
+\begin_layout Standard
+Os testes de desempenho das funções virtuais de rede em ClickOS demonstraram
+ nos parâmetros medidos as perdas inseridas por elas em cada variação do
+ protótipo, desde a variação sem VNFs, trazendo, no caso da velocidade de
+ transações, uma queda de 35% do desempenho em relação a versão sem VNFs,
+ e contrastando com resultados obtidos pelo autor em 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "martins_clickos_2014"
 
 \end_inset
 
-, mas entendível diante do 
-\shape italic
-switch
-\shape default
- virtual usado.
- No entanto, seu uso para ambientes específicos, com outras finalidade principai
-s que não o máximo desempenho, seu valor deve ser considerado.
+.
+ No entanto, seu uso para ambientes específicos, com outras finalidades
+ principais que não o máximo desempenho pode ser considerado.
  É importante destacar que ClickOS ainda se refere a um projeto com pequenos
  erros de implementação na plataforma, e principalmente com relação a ferramenta
  Click e seus elementos especificamente, que mesmo seu desenvolvimento ativo
@@ -11628,20 +12883,29 @@ A título de trabalhos futuros, novas baterias de testes podem ser feitas
  para para melhor avaliar o desempenho de ClickOS, em um ambiente apropriado
  e voltado para tal.
  Outros podem acontecer para buscar explicações elaboradas e profundas acerca
- do desempenho tão parecido dos balanceadores implementados neste trabalho.
+ do desempenho tão variável e ao mesmo tempo parecido dos balanceadores
+ implementados neste trabalho.
 \end_layout
 
 \begin_layout Standard
 Devido a sua natureza modular e agradável para programação, ClickOS possui
  requisitos iniciais para motivar a criação de novos elementos sobre novos
- protocolos e tecnologias como o Cabeçalho de Serviços de Rede (NSH) 
+ protocolos e tecnologias como o 
+\shape italic
+Network Service Header
+\shape default
+ (NSH) 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "rfc8300"
 
 \end_inset
 
- e Encadeamento de Funções de Serviço (SFC) 
+ e 
+\shape italic
+Service Function Chaining
+\shape default
+ (SFC) 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "rfc7665"
@@ -11727,6 +12991,13 @@ partanexos
 
 \begin_layout Chapter
 COMANDOS
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:COMANDOS"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -12333,125 +13604,6 @@ Fonte: Elaborado pelo autor
 
 \begin_layout Chapter
 IMAGENS
-\end_layout
-
-\begin_layout Section
-Grafo do 
-\shape italic
-Firewall
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:Grafo-do-Firewall"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Representação gráfica do firewall.click
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/clicky_firewall.pdf
-	lyxscale 180
-	scale 148
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-Fonte: Elaborada pelo autor
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage pagebreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Grafo do balanceador de carga por endereço IP
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:Grafo-do-balanceador-sip"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Representação gráfica do balanceador_enderecoip.click
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename /home/felipe/Área de trabalho/undergraduate-thesis/thesis/docs/graphs/clicky_balancsIP.pdf
-	lyxscale 180
-	scale 117
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-Fonte: Elaborada pelo autor
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage pagebreak
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
